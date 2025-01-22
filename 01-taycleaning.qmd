@@ -1,0 +1,88 @@
+---
+title: "Taycleaning"
+---
+
+## Goals of this notebook
+
+We will set up our data following these steps:
+
+- Download and import our data
+- Clean up data types and columns
+- Export data by album/playlist
+
+## Set up
+
+```{r set-up}
+
+library(tidyverse)
+library(janitor)
+library(lubridate)
+library(hms)
+
+```
+
+## Importing
+
+Let's import our data into our notebook.
+
+```{r import}
+
+taylor <- read.csv("data-raw/taylor_swift_spotify.csv") |> clean_names()
+
+taylor
+```
+
+## Remove unnedded columns
+
+```{r remove}
+
+taylor_remove <- taylor |>
+  select(
+    name,
+    album,
+    release_date,
+    track_number,
+    uri,
+    acousticness,
+    danceability,
+    energy,
+    instrumentalness,
+    liveness,
+    loudness,
+    speechiness,
+    tempo,
+    valence,
+    popularity,
+    duration_ms
+  )
+
+taylor_remove
+
+```
+
+## Fixing song length
+
+```{r song-length}
+
+taylor_clean <- taylor_remove |>
+  mutate(duration_ms = format(as.POSIXct(Sys.Date()) + duration_ms /1000, "%M:%S"))
+
+taylor_clean
+
+```
+
+## Dividing by album
+
+```{r album}
+
+taylor_split <- split(taylor_clean, taylor_clean$album)
+
+folder_path <- "data-processed"
+
+for(album in names(taylor_split)){
+  file_name <- paste0(album, ".csv")
+  file_path <- file.path(folder_path, file_name)
+  write.csv(taylor_split[[album]], file_path, row.names =FALSE)
+  
+}
+```

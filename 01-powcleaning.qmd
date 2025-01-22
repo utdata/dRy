@@ -1,0 +1,90 @@
+---
+title: "Power outage cleaning"
+---
+
+## Goals for this notebook
+
+We will set up our data following these steps:
+
+- Download and import our data
+- Clean up data types and columns
+- Export data by album/playlist
+
+## Set up
+
+```{r set-up}
+
+library(tidyverse)
+library(janitor)
+library(lubridate)
+library(hms)
+library(clipr)
+
+```
+
+## Import
+
+```{r import}
+power_files_list <- list.files(
+  "power-raw",
+  full.names =T
+)
+
+power_files_list
+
+```
+
+```{r combine}
+
+power_all <- map(
+  power_files_list,
+  read_csv
+) |>
+  list_rbind() |>
+  clean_names()
+
+power_all |> glimpse()
+
+```
+
+## Remove unneeded columns
+
+```{r remove}
+
+power_clean <- power_all |>
+  select(
+    state_event,
+    datetime_event_began,
+    datetime_restoration,
+    event_type,
+    fips,
+    state,
+    county,
+    start_time,
+    duration,
+    end_time,
+    min_customers,
+    max_customers,
+    mean_customers
+  )
+
+power_clean
+
+```
+
+## Dividing by state
+
+```{r state}
+
+power_split <- split(power_clean, power_clean$state_event)
+
+folder_path <- "power-processed"
+
+for(state_events in names(power_split)){
+  file_name <- paste0(state_events, ".csv")
+  file_path <- file.path(folder_path, file_name)
+  write.csv(power_split[[state_events]], file_path, row.names =FALSE)
+  
+}
+```
+
