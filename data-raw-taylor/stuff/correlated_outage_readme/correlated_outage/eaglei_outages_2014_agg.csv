@@ -1,0 +1,599 @@
+state,year,month,outage_count,max_outage_duration,customer_weighted_hours
+Alabama,2014,0,33,26.5,51208.25
+Alabama,2014,1,0,0.0,0.0
+Alabama,2014,2,0,0.0,0.0
+Alabama,2014,3,0,0.0,0.0
+Alabama,2014,4,0,0.0,0.0
+Alabama,2014,5,0,0.0,0.0
+Alabama,2014,6,0,0.0,0.0
+Alabama,2014,7,0,0.0,0.0
+Alabama,2014,8,0,0.0,0.0
+Alabama,2014,9,0,0.0,0.0
+Alabama,2014,10,0,0.0,0.0
+Alabama,2014,11,18,26.5,42203.75
+Alabama,2014,12,15,2.5,9004.5
+Arkansas,2014,0,153,8.5,245037.75
+Arkansas,2014,1,0,0.0,0.0
+Arkansas,2014,2,0,0.0,0.0
+Arkansas,2014,3,0,0.0,0.0
+Arkansas,2014,4,0,0.0,0.0
+Arkansas,2014,5,0,0.0,0.0
+Arkansas,2014,6,0,0.0,0.0
+Arkansas,2014,7,0,0.0,0.0
+Arkansas,2014,8,0,0.0,0.0
+Arkansas,2014,9,0,0.0,0.0
+Arkansas,2014,10,0,0.0,0.0
+Arkansas,2014,11,79,8.5,103117.25
+Arkansas,2014,12,74,7.0,141920.5
+California,2014,0,845,139.5,6107708.0
+California,2014,1,0,0.0,0.0
+California,2014,2,0,0.0,0.0
+California,2014,3,0,0.0,0.0
+California,2014,4,0,0.0,0.0
+California,2014,5,0,0.0,0.0
+California,2014,6,0,0.0,0.0
+California,2014,7,0,0.0,0.0
+California,2014,8,0,0.0,0.0
+California,2014,9,0,0.0,0.0
+California,2014,10,0,0.0,0.0
+California,2014,11,415,59.25,2607854.25
+California,2014,12,430,139.5,3499853.75
+Colorado,2014,0,170,8.25,272750.0
+Colorado,2014,1,0,0.0,0.0
+Colorado,2014,2,0,0.0,0.0
+Colorado,2014,3,0,0.0,0.0
+Colorado,2014,4,0,0.0,0.0
+Colorado,2014,5,0,0.0,0.0
+Colorado,2014,6,0,0.0,0.0
+Colorado,2014,7,0,0.0,0.0
+Colorado,2014,8,0,0.0,0.0
+Colorado,2014,9,0,0.0,0.0
+Colorado,2014,10,0,0.0,0.0
+Colorado,2014,11,136,8.25,243791.25
+Colorado,2014,12,34,4.0,28958.75
+Connecticut,2014,0,186,31.5,297185.0
+Connecticut,2014,1,0,0.0,0.0
+Connecticut,2014,2,0,0.0,0.0
+Connecticut,2014,3,0,0.0,0.0
+Connecticut,2014,4,0,0.0,0.0
+Connecticut,2014,5,0,0.0,0.0
+Connecticut,2014,6,0,0.0,0.0
+Connecticut,2014,7,0,0.0,0.0
+Connecticut,2014,8,0,0.0,0.0
+Connecticut,2014,9,0,0.0,0.0
+Connecticut,2014,10,0,0.0,0.0
+Connecticut,2014,11,108,31.5,222859.0
+Connecticut,2014,12,78,6.25,74326.0
+Delaware,2014,0,55,11.75,84283.75
+Delaware,2014,1,0,0.0,0.0
+Delaware,2014,2,0,0.0,0.0
+Delaware,2014,3,0,0.0,0.0
+Delaware,2014,4,0,0.0,0.0
+Delaware,2014,5,0,0.0,0.0
+Delaware,2014,6,0,0.0,0.0
+Delaware,2014,7,0,0.0,0.0
+Delaware,2014,8,0,0.0,0.0
+Delaware,2014,9,0,0.0,0.0
+Delaware,2014,10,0,0.0,0.0
+Delaware,2014,11,31,11.75,35632.25
+Delaware,2014,12,24,2.75,48651.5
+District of Columbia,2014,0,33,8.0,25290.75
+District of Columbia,2014,1,0,0.0,0.0
+District of Columbia,2014,2,0,0.0,0.0
+District of Columbia,2014,3,0,0.0,0.0
+District of Columbia,2014,4,0,0.0,0.0
+District of Columbia,2014,5,0,0.0,0.0
+District of Columbia,2014,6,0,0.0,0.0
+District of Columbia,2014,7,0,0.0,0.0
+District of Columbia,2014,8,0,0.0,0.0
+District of Columbia,2014,9,0,0.0,0.0
+District of Columbia,2014,10,0,0.0,0.0
+District of Columbia,2014,11,16,8.0,11720.75
+District of Columbia,2014,12,17,5.5,13570.0
+Florida,2014,0,1361,22.0,1603307.25
+Florida,2014,1,0,0.0,0.0
+Florida,2014,2,0,0.0,0.0
+Florida,2014,3,0,0.0,0.0
+Florida,2014,4,0,0.0,0.0
+Florida,2014,5,0,0.0,0.0
+Florida,2014,6,0,0.0,0.0
+Florida,2014,7,0,0.0,0.0
+Florida,2014,8,0,0.0,0.0
+Florida,2014,9,0,0.0,0.0
+Florida,2014,10,0,0.0,0.0
+Florida,2014,11,797,22.0,1074061.0
+Florida,2014,12,564,18.5,529246.25
+Georgia,2014,0,414,14.5,476116.0
+Georgia,2014,1,0,0.0,0.0
+Georgia,2014,2,0,0.0,0.0
+Georgia,2014,3,0,0.0,0.0
+Georgia,2014,4,0,0.0,0.0
+Georgia,2014,5,0,0.0,0.0
+Georgia,2014,6,0,0.0,0.0
+Georgia,2014,7,0,0.0,0.0
+Georgia,2014,8,0,0.0,0.0
+Georgia,2014,9,0,0.0,0.0
+Georgia,2014,10,0,0.0,0.0
+Georgia,2014,11,246,14.5,317022.0
+Georgia,2014,12,168,10.0,159094.0
+Idaho,2014,0,31,20.75,86227.5
+Idaho,2014,1,0,0.0,0.0
+Idaho,2014,2,0,0.0,0.0
+Idaho,2014,3,0,0.0,0.0
+Idaho,2014,4,0,0.0,0.0
+Idaho,2014,5,0,0.0,0.0
+Idaho,2014,6,0,0.0,0.0
+Idaho,2014,7,0,0.0,0.0
+Idaho,2014,8,0,0.0,0.0
+Idaho,2014,9,0,0.0,0.0
+Idaho,2014,10,0,0.0,0.0
+Idaho,2014,11,12,8.0,39483.75
+Idaho,2014,12,19,20.75,46743.75
+Illinois,2014,0,402,18.0,497360.5
+Illinois,2014,1,0,0.0,0.0
+Illinois,2014,2,0,0.0,0.0
+Illinois,2014,3,0,0.0,0.0
+Illinois,2014,4,0,0.0,0.0
+Illinois,2014,5,0,0.0,0.0
+Illinois,2014,6,0,0.0,0.0
+Illinois,2014,7,0,0.0,0.0
+Illinois,2014,8,0,0.0,0.0
+Illinois,2014,9,0,0.0,0.0
+Illinois,2014,10,0,0.0,0.0
+Illinois,2014,11,267,18.0,351203.75
+Illinois,2014,12,135,11.0,146156.75
+Indiana,2014,0,248,19.75,313434.0
+Indiana,2014,1,0,0.0,0.0
+Indiana,2014,2,0,0.0,0.0
+Indiana,2014,3,0,0.0,0.0
+Indiana,2014,4,0,0.0,0.0
+Indiana,2014,5,0,0.0,0.0
+Indiana,2014,6,0,0.0,0.0
+Indiana,2014,7,0,0.0,0.0
+Indiana,2014,8,0,0.0,0.0
+Indiana,2014,9,0,0.0,0.0
+Indiana,2014,10,0,0.0,0.0
+Indiana,2014,11,173,19.75,230773.5
+Indiana,2014,12,75,13.0,82660.5
+Iowa,2014,0,52,5.0,68835.5
+Iowa,2014,1,0,0.0,0.0
+Iowa,2014,2,0,0.0,0.0
+Iowa,2014,3,0,0.0,0.0
+Iowa,2014,4,0,0.0,0.0
+Iowa,2014,5,0,0.0,0.0
+Iowa,2014,6,0,0.0,0.0
+Iowa,2014,7,0,0.0,0.0
+Iowa,2014,8,0,0.0,0.0
+Iowa,2014,9,0,0.0,0.0
+Iowa,2014,10,0,0.0,0.0
+Iowa,2014,11,31,5.0,51249.0
+Iowa,2014,12,21,3.0,17586.5
+Kansas,2014,0,25,2.25,13852.5
+Kansas,2014,1,0,0.0,0.0
+Kansas,2014,2,0,0.0,0.0
+Kansas,2014,3,0,0.0,0.0
+Kansas,2014,4,0,0.0,0.0
+Kansas,2014,5,0,0.0,0.0
+Kansas,2014,6,0,0.0,0.0
+Kansas,2014,7,0,0.0,0.0
+Kansas,2014,8,0,0.0,0.0
+Kansas,2014,9,0,0.0,0.0
+Kansas,2014,10,0,0.0,0.0
+Kansas,2014,11,20,2.25,8833.0
+Kansas,2014,12,5,1.5,5019.5
+Kentucky,2014,0,227,15.0,352207.5
+Kentucky,2014,1,0,0.0,0.0
+Kentucky,2014,2,0,0.0,0.0
+Kentucky,2014,3,0,0.0,0.0
+Kentucky,2014,4,0,0.0,0.0
+Kentucky,2014,5,0,0.0,0.0
+Kentucky,2014,6,0,0.0,0.0
+Kentucky,2014,7,0,0.0,0.0
+Kentucky,2014,8,0,0.0,0.0
+Kentucky,2014,9,0,0.0,0.0
+Kentucky,2014,10,0,0.0,0.0
+Kentucky,2014,11,144,15.0,234253.0
+Kentucky,2014,12,83,7.5,117954.5
+Louisiana,2014,0,473,28.75,565425.5
+Louisiana,2014,1,0,0.0,0.0
+Louisiana,2014,2,0,0.0,0.0
+Louisiana,2014,3,0,0.0,0.0
+Louisiana,2014,4,0,0.0,0.0
+Louisiana,2014,5,0,0.0,0.0
+Louisiana,2014,6,0,0.0,0.0
+Louisiana,2014,7,0,0.0,0.0
+Louisiana,2014,8,0,0.0,0.0
+Louisiana,2014,9,0,0.0,0.0
+Louisiana,2014,10,0,0.0,0.0
+Louisiana,2014,11,271,24.25,315825.75
+Louisiana,2014,12,202,28.75,249599.75
+Maine,2014,0,268,100.25,9401067.75
+Maine,2014,1,0,0.0,0.0
+Maine,2014,2,0,0.0,0.0
+Maine,2014,3,0,0.0,0.0
+Maine,2014,4,0,0.0,0.0
+Maine,2014,5,0,0.0,0.0
+Maine,2014,6,0,0.0,0.0
+Maine,2014,7,0,0.0,0.0
+Maine,2014,8,0,0.0,0.0
+Maine,2014,9,0,0.0,0.0
+Maine,2014,10,0,0.0,0.0
+Maine,2014,11,160,100.25,9228341.5
+Maine,2014,12,108,12.75,172726.25
+Maryland,2014,0,233,8.5,228555.25
+Maryland,2014,1,0,0.0,0.0
+Maryland,2014,2,0,0.0,0.0
+Maryland,2014,3,0,0.0,0.0
+Maryland,2014,4,0,0.0,0.0
+Maryland,2014,5,0,0.0,0.0
+Maryland,2014,6,0,0.0,0.0
+Maryland,2014,7,0,0.0,0.0
+Maryland,2014,8,0,0.0,0.0
+Maryland,2014,9,0,0.0,0.0
+Maryland,2014,10,0,0.0,0.0
+Maryland,2014,11,138,8.5,113681.25
+Maryland,2014,12,95,8.25,114874.0
+Massachusetts,2014,0,386,70.5,1396331.75
+Massachusetts,2014,1,0,0.0,0.0
+Massachusetts,2014,2,0,0.0,0.0
+Massachusetts,2014,3,0,0.0,0.0
+Massachusetts,2014,4,0,0.0,0.0
+Massachusetts,2014,5,0,0.0,0.0
+Massachusetts,2014,6,0,0.0,0.0
+Massachusetts,2014,7,0,0.0,0.0
+Massachusetts,2014,8,0,0.0,0.0
+Massachusetts,2014,9,0,0.0,0.0
+Massachusetts,2014,10,0,0.0,0.0
+Massachusetts,2014,11,229,70.5,1244131.0
+Massachusetts,2014,12,157,16.5,152200.75
+Michigan,2014,0,581,49.0,4030271.25
+Michigan,2014,1,0,0.0,0.0
+Michigan,2014,2,0,0.0,0.0
+Michigan,2014,3,0,0.0,0.0
+Michigan,2014,4,0,0.0,0.0
+Michigan,2014,5,0,0.0,0.0
+Michigan,2014,6,0,0.0,0.0
+Michigan,2014,7,0,0.0,0.0
+Michigan,2014,8,0,0.0,0.0
+Michigan,2014,9,0,0.0,0.0
+Michigan,2014,10,0,0.0,0.0
+Michigan,2014,11,392,49.0,3601210.75
+Michigan,2014,12,189,14.25,429060.5
+Minnesota,2014,0,107,8.25,122964.0
+Minnesota,2014,1,0,0.0,0.0
+Minnesota,2014,2,0,0.0,0.0
+Minnesota,2014,3,0,0.0,0.0
+Minnesota,2014,4,0,0.0,0.0
+Minnesota,2014,5,0,0.0,0.0
+Minnesota,2014,6,0,0.0,0.0
+Minnesota,2014,7,0,0.0,0.0
+Minnesota,2014,8,0,0.0,0.0
+Minnesota,2014,9,0,0.0,0.0
+Minnesota,2014,10,0,0.0,0.0
+Minnesota,2014,11,71,7.25,72437.75
+Minnesota,2014,12,36,8.25,50526.25
+Mississippi,2014,0,106,20.75,198466.25
+Mississippi,2014,1,0,0.0,0.0
+Mississippi,2014,2,0,0.0,0.0
+Mississippi,2014,3,0,0.0,0.0
+Mississippi,2014,4,0,0.0,0.0
+Mississippi,2014,5,0,0.0,0.0
+Mississippi,2014,6,0,0.0,0.0
+Mississippi,2014,7,0,0.0,0.0
+Mississippi,2014,8,0,0.0,0.0
+Mississippi,2014,9,0,0.0,0.0
+Mississippi,2014,10,0,0.0,0.0
+Mississippi,2014,11,58,20.25,68943.0
+Mississippi,2014,12,48,20.75,129523.25
+Missouri,2014,0,94,11.25,104972.5
+Missouri,2014,1,0,0.0,0.0
+Missouri,2014,2,0,0.0,0.0
+Missouri,2014,3,0,0.0,0.0
+Missouri,2014,4,0,0.0,0.0
+Missouri,2014,5,0,0.0,0.0
+Missouri,2014,6,0,0.0,0.0
+Missouri,2014,7,0,0.0,0.0
+Missouri,2014,8,0,0.0,0.0
+Missouri,2014,9,0,0.0,0.0
+Missouri,2014,10,0,0.0,0.0
+Missouri,2014,11,70,8.75,73636.0
+Missouri,2014,12,24,11.25,31336.5
+Montana,2014,0,22,26.5,77730.5
+Montana,2014,1,0,0.0,0.0
+Montana,2014,2,0,0.0,0.0
+Montana,2014,3,0,0.0,0.0
+Montana,2014,4,0,0.0,0.0
+Montana,2014,5,0,0.0,0.0
+Montana,2014,6,0,0.0,0.0
+Montana,2014,7,0,0.0,0.0
+Montana,2014,8,0,0.0,0.0
+Montana,2014,9,0,0.0,0.0
+Montana,2014,10,0,0.0,0.0
+Montana,2014,11,9,26.5,56130.5
+Montana,2014,12,13,6.0,21600.0
+Nebraska,2014,0,6,4.75,6048.25
+Nebraska,2014,1,0,0.0,0.0
+Nebraska,2014,2,0,0.0,0.0
+Nebraska,2014,3,0,0.0,0.0
+Nebraska,2014,4,0,0.0,0.0
+Nebraska,2014,5,0,0.0,0.0
+Nebraska,2014,6,0,0.0,0.0
+Nebraska,2014,7,0,0.0,0.0
+Nebraska,2014,8,0,0.0,0.0
+Nebraska,2014,9,0,0.0,0.0
+Nebraska,2014,10,0,0.0,0.0
+Nebraska,2014,11,6,4.75,6048.25
+Nebraska,2014,12,0,0.0,0.0
+New Hampshire,2014,0,177,97.0,8866733.5
+New Hampshire,2014,1,0,0.0,0.0
+New Hampshire,2014,2,0,0.0,0.0
+New Hampshire,2014,3,0,0.0,0.0
+New Hampshire,2014,4,0,0.0,0.0
+New Hampshire,2014,5,0,0.0,0.0
+New Hampshire,2014,6,0,0.0,0.0
+New Hampshire,2014,7,0,0.0,0.0
+New Hampshire,2014,8,0,0.0,0.0
+New Hampshire,2014,9,0,0.0,0.0
+New Hampshire,2014,10,0,0.0,0.0
+New Hampshire,2014,11,93,97.0,8724880.0
+New Hampshire,2014,12,84,8.0,141853.5
+New Jersey,2014,0,355,30.0,476703.0
+New Jersey,2014,1,0,0.0,0.0
+New Jersey,2014,2,0,0.0,0.0
+New Jersey,2014,3,0,0.0,0.0
+New Jersey,2014,4,0,0.0,0.0
+New Jersey,2014,5,0,0.0,0.0
+New Jersey,2014,6,0,0.0,0.0
+New Jersey,2014,7,0,0.0,0.0
+New Jersey,2014,8,0,0.0,0.0
+New Jersey,2014,9,0,0.0,0.0
+New Jersey,2014,10,0,0.0,0.0
+New Jersey,2014,11,204,30.0,276920.5
+New Jersey,2014,12,151,10.25,199782.5
+New Mexico,2014,0,18,3.75,28847.25
+New Mexico,2014,1,0,0.0,0.0
+New Mexico,2014,2,0,0.0,0.0
+New Mexico,2014,3,0,0.0,0.0
+New Mexico,2014,4,0,0.0,0.0
+New Mexico,2014,5,0,0.0,0.0
+New Mexico,2014,6,0,0.0,0.0
+New Mexico,2014,7,0,0.0,0.0
+New Mexico,2014,8,0,0.0,0.0
+New Mexico,2014,9,0,0.0,0.0
+New Mexico,2014,10,0,0.0,0.0
+New Mexico,2014,11,14,3.75,18384.75
+New Mexico,2014,12,4,3.0,10462.5
+New York,2014,0,703,65.0,3316326.0
+New York,2014,1,0,0.0,0.0
+New York,2014,2,0,0.0,0.0
+New York,2014,3,0,0.0,0.0
+New York,2014,4,0,0.0,0.0
+New York,2014,5,0,0.0,0.0
+New York,2014,6,0,0.0,0.0
+New York,2014,7,0,0.0,0.0
+New York,2014,8,0,0.0,0.0
+New York,2014,9,0,0.0,0.0
+New York,2014,10,0,0.0,0.0
+New York,2014,11,337,65.0,2330273.5
+New York,2014,12,366,38.75,986052.5
+North Carolina,2014,0,400,16.5,614265.75
+North Carolina,2014,1,0,0.0,0.0
+North Carolina,2014,2,0,0.0,0.0
+North Carolina,2014,3,0,0.0,0.0
+North Carolina,2014,4,0,0.0,0.0
+North Carolina,2014,5,0,0.0,0.0
+North Carolina,2014,6,0,0.0,0.0
+North Carolina,2014,7,0,0.0,0.0
+North Carolina,2014,8,0,0.0,0.0
+North Carolina,2014,9,0,0.0,0.0
+North Carolina,2014,10,0,0.0,0.0
+North Carolina,2014,11,237,16.5,353761.0
+North Carolina,2014,12,163,13.75,260504.75
+North Dakota,2014,0,1,4.5,1131.75
+North Dakota,2014,1,0,0.0,0.0
+North Dakota,2014,2,0,0.0,0.0
+North Dakota,2014,3,0,0.0,0.0
+North Dakota,2014,4,0,0.0,0.0
+North Dakota,2014,5,0,0.0,0.0
+North Dakota,2014,6,0,0.0,0.0
+North Dakota,2014,7,0,0.0,0.0
+North Dakota,2014,8,0,0.0,0.0
+North Dakota,2014,9,0,0.0,0.0
+North Dakota,2014,10,0,0.0,0.0
+North Dakota,2014,11,1,4.5,1131.75
+North Dakota,2014,12,0,0.0,0.0
+Ohio,2014,0,908,54.75,2050300.0
+Ohio,2014,1,0,0.0,0.0
+Ohio,2014,2,0,0.0,0.0
+Ohio,2014,3,0,0.0,0.0
+Ohio,2014,4,0,0.0,0.0
+Ohio,2014,5,0,0.0,0.0
+Ohio,2014,6,0,0.0,0.0
+Ohio,2014,7,0,0.0,0.0
+Ohio,2014,8,0,0.0,0.0
+Ohio,2014,9,0,0.0,0.0
+Ohio,2014,10,0,0.0,0.0
+Ohio,2014,11,632,54.75,1629432.75
+Ohio,2014,12,276,10.25,420867.25
+Oklahoma,2014,0,182,14.75,232531.0
+Oklahoma,2014,1,0,0.0,0.0
+Oklahoma,2014,2,0,0.0,0.0
+Oklahoma,2014,3,0,0.0,0.0
+Oklahoma,2014,4,0,0.0,0.0
+Oklahoma,2014,5,0,0.0,0.0
+Oklahoma,2014,6,0,0.0,0.0
+Oklahoma,2014,7,0,0.0,0.0
+Oklahoma,2014,8,0,0.0,0.0
+Oklahoma,2014,9,0,0.0,0.0
+Oklahoma,2014,10,0,0.0,0.0
+Oklahoma,2014,11,127,9.0,154670.25
+Oklahoma,2014,12,55,14.75,77860.75
+Oregon,2014,0,107,58.0,1797386.25
+Oregon,2014,1,0,0.0,0.0
+Oregon,2014,2,0,0.0,0.0
+Oregon,2014,3,0,0.0,0.0
+Oregon,2014,4,0,0.0,0.0
+Oregon,2014,5,0,0.0,0.0
+Oregon,2014,6,0,0.0,0.0
+Oregon,2014,7,0,0.0,0.0
+Oregon,2014,8,0,0.0,0.0
+Oregon,2014,9,0,0.0,0.0
+Oregon,2014,10,0,0.0,0.0
+Oregon,2014,11,57,58.0,772710.25
+Oregon,2014,12,50,44.0,1024676.0
+Pennsylvania,2014,0,922,58.75,1987817.5
+Pennsylvania,2014,1,0,0.0,0.0
+Pennsylvania,2014,2,0,0.0,0.0
+Pennsylvania,2014,3,0,0.0,0.0
+Pennsylvania,2014,4,0,0.0,0.0
+Pennsylvania,2014,5,0,0.0,0.0
+Pennsylvania,2014,6,0,0.0,0.0
+Pennsylvania,2014,7,0,0.0,0.0
+Pennsylvania,2014,8,0,0.0,0.0
+Pennsylvania,2014,9,0,0.0,0.0
+Pennsylvania,2014,10,0,0.0,0.0
+Pennsylvania,2014,11,554,58.75,1508301.5
+Pennsylvania,2014,12,368,19.25,479516.0
+Rhode Island,2014,0,36,10.25,49037.0
+Rhode Island,2014,1,0,0.0,0.0
+Rhode Island,2014,2,0,0.0,0.0
+Rhode Island,2014,3,0,0.0,0.0
+Rhode Island,2014,4,0,0.0,0.0
+Rhode Island,2014,5,0,0.0,0.0
+Rhode Island,2014,6,0,0.0,0.0
+Rhode Island,2014,7,0,0.0,0.0
+Rhode Island,2014,8,0,0.0,0.0
+Rhode Island,2014,9,0,0.0,0.0
+Rhode Island,2014,10,0,0.0,0.0
+Rhode Island,2014,11,27,10.25,28119.75
+Rhode Island,2014,12,9,2.25,20917.25
+South Carolina,2014,0,190,18.75,390600.25
+South Carolina,2014,1,0,0.0,0.0
+South Carolina,2014,2,0,0.0,0.0
+South Carolina,2014,3,0,0.0,0.0
+South Carolina,2014,4,0,0.0,0.0
+South Carolina,2014,5,0,0.0,0.0
+South Carolina,2014,6,0,0.0,0.0
+South Carolina,2014,7,0,0.0,0.0
+South Carolina,2014,8,0,0.0,0.0
+South Carolina,2014,9,0,0.0,0.0
+South Carolina,2014,10,0,0.0,0.0
+South Carolina,2014,11,117,18.75,313104.25
+South Carolina,2014,12,73,10.25,77496.0
+South Dakota,2014,0,5,3.75,6757.0
+South Dakota,2014,1,0,0.0,0.0
+South Dakota,2014,2,0,0.0,0.0
+South Dakota,2014,3,0,0.0,0.0
+South Dakota,2014,4,0,0.0,0.0
+South Dakota,2014,5,0,0.0,0.0
+South Dakota,2014,6,0,0.0,0.0
+South Dakota,2014,7,0,0.0,0.0
+South Dakota,2014,8,0,0.0,0.0
+South Dakota,2014,9,0,0.0,0.0
+South Dakota,2014,10,0,0.0,0.0
+South Dakota,2014,11,4,3.75,6165.75
+South Dakota,2014,12,1,0.5,591.25
+Tennessee,2014,0,181,19.75,250016.5
+Tennessee,2014,1,0,0.0,0.0
+Tennessee,2014,2,0,0.0,0.0
+Tennessee,2014,3,0,0.0,0.0
+Tennessee,2014,4,0,0.0,0.0
+Tennessee,2014,5,0,0.0,0.0
+Tennessee,2014,6,0,0.0,0.0
+Tennessee,2014,7,0,0.0,0.0
+Tennessee,2014,8,0,0.0,0.0
+Tennessee,2014,9,0,0.0,0.0
+Tennessee,2014,10,0,0.0,0.0
+Tennessee,2014,11,95,19.75,148783.25
+Tennessee,2014,12,86,15.25,101233.25
+Texas,2014,0,1664,136.0,2496748.0
+Texas,2014,1,0,0.0,0.0
+Texas,2014,2,0,0.0,0.0
+Texas,2014,3,0,0.0,0.0
+Texas,2014,4,0,0.0,0.0
+Texas,2014,5,0,0.0,0.0
+Texas,2014,6,0,0.0,0.0
+Texas,2014,7,0,0.0,0.0
+Texas,2014,8,0,0.0,0.0
+Texas,2014,9,0,0.0,0.0
+Texas,2014,10,0,0.0,0.0
+Texas,2014,11,1062,136.0,1746304.5
+Texas,2014,12,602,24.75,750443.5
+Vermont,2014,0,164,102.0,2462484.25
+Vermont,2014,1,0,0.0,0.0
+Vermont,2014,2,0,0.0,0.0
+Vermont,2014,3,0,0.0,0.0
+Vermont,2014,4,0,0.0,0.0
+Vermont,2014,5,0,0.0,0.0
+Vermont,2014,6,0,0.0,0.0
+Vermont,2014,7,0,0.0,0.0
+Vermont,2014,8,0,0.0,0.0
+Vermont,2014,9,0,0.0,0.0
+Vermont,2014,10,0,0.0,0.0
+Vermont,2014,11,47,25.75,99843.5
+Vermont,2014,12,117,102.0,2362640.75
+Virginia,2014,0,261,52.75,650291.25
+Virginia,2014,1,0,0.0,0.0
+Virginia,2014,2,0,0.0,0.0
+Virginia,2014,3,0,0.0,0.0
+Virginia,2014,4,0,0.0,0.0
+Virginia,2014,5,0,0.0,0.0
+Virginia,2014,6,0,0.0,0.0
+Virginia,2014,7,0,0.0,0.0
+Virginia,2014,8,0,0.0,0.0
+Virginia,2014,9,0,0.0,0.0
+Virginia,2014,10,0,0.0,0.0
+Virginia,2014,11,178,52.75,561249.5
+Virginia,2014,12,83,11.5,89041.75
+Washington,2014,0,67,15.75,302229.5
+Washington,2014,1,0,0.0,0.0
+Washington,2014,2,0,0.0,0.0
+Washington,2014,3,0,0.0,0.0
+Washington,2014,4,0,0.0,0.0
+Washington,2014,5,0,0.0,0.0
+Washington,2014,6,0,0.0,0.0
+Washington,2014,7,0,0.0,0.0
+Washington,2014,8,0,0.0,0.0
+Washington,2014,9,0,0.0,0.0
+Washington,2014,10,0,0.0,0.0
+Washington,2014,11,36,15.75,143016.5
+Washington,2014,12,31,14.75,159213.0
+West Virginia,2014,0,530,55.0,1497620.0
+West Virginia,2014,1,0,0.0,0.0
+West Virginia,2014,2,0,0.0,0.0
+West Virginia,2014,3,0,0.0,0.0
+West Virginia,2014,4,0,0.0,0.0
+West Virginia,2014,5,0,0.0,0.0
+West Virginia,2014,6,0,0.0,0.0
+West Virginia,2014,7,0,0.0,0.0
+West Virginia,2014,8,0,0.0,0.0
+West Virginia,2014,9,0,0.0,0.0
+West Virginia,2014,10,0,0.0,0.0
+West Virginia,2014,11,346,55.0,1164470.25
+West Virginia,2014,12,184,16.75,333149.75
+Wisconsin,2014,0,133,21.75,261547.75
+Wisconsin,2014,1,0,0.0,0.0
+Wisconsin,2014,2,0,0.0,0.0
+Wisconsin,2014,3,0,0.0,0.0
+Wisconsin,2014,4,0,0.0,0.0
+Wisconsin,2014,5,0,0.0,0.0
+Wisconsin,2014,6,0,0.0,0.0
+Wisconsin,2014,7,0,0.0,0.0
+Wisconsin,2014,8,0,0.0,0.0
+Wisconsin,2014,9,0,0.0,0.0
+Wisconsin,2014,10,0,0.0,0.0
+Wisconsin,2014,11,72,7.25,65696.75
+Wisconsin,2014,12,61,21.75,195851.0
+Wyoming,2014,0,1,16.5,5428.5
+Wyoming,2014,1,0,0.0,0.0
+Wyoming,2014,2,0,0.0,0.0
+Wyoming,2014,3,0,0.0,0.0
+Wyoming,2014,4,0,0.0,0.0
+Wyoming,2014,5,0,0.0,0.0
+Wyoming,2014,6,0,0.0,0.0
+Wyoming,2014,7,0,0.0,0.0
+Wyoming,2014,8,0,0.0,0.0
+Wyoming,2014,9,0,0.0,0.0
+Wyoming,2014,10,0,0.0,0.0
+Wyoming,2014,11,1,16.5,5428.5
+Wyoming,2014,12,0,0.0,0.0
