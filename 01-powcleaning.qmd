@@ -12,21 +12,25 @@ We will set up our data following these steps:
 
 ## Set up
 
-```{r set-up}
+```{r}
+
+#| label: setup
+#| message: false
+#| warning: false
 
 library(tidyverse)
 library(janitor)
-library(lubridate)
-library(hms)
-library(clipr)
 
 ```
 
 ## Import
 
-```{r import}
+```{r}
+
+#|label: import
+
 power_files_list <- list.files(
-  "power-raw",
+  "data-raw-power",
   full.names =T
 )
 
@@ -34,7 +38,11 @@ power_files_list
 
 ```
 
-```{r combine}
+```{r}
+
+#| label: combine
+#| message: false
+#| warning: false
 
 power_all <- map(
   power_files_list,
@@ -49,24 +57,12 @@ power_all |> glimpse()
 
 ## Remove unneeded columns
 
-```{r remove}
+```{r}
+
+#| label: remove
 
 power_clean <- power_all |>
-  select(
-    state_event,
-    datetime_event_began,
-    datetime_restoration,
-    event_type,
-    fips,
-    state,
-    county,
-    start_time,
-    duration,
-    end_time,
-    min_customers,
-    max_customers,
-    mean_customers
-  )
+  select(-event_id)
 
 power_clean
 
@@ -74,11 +70,13 @@ power_clean
 
 ## Dividing by state
 
-```{r state}
+```{r}
+
+#| label: export
 
 power_split <- split(power_clean, power_clean$state_event)
 
-folder_path <- "power-processed"
+folder_path <- "data-processed-power"
 
 for(state_events in names(power_split)){
   file_name <- paste0(state_events, ".csv")

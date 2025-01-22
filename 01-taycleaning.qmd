@@ -12,12 +12,14 @@ We will set up our data following these steps:
 
 ## Set up
 
-```{r set-up}
+```{r}
+
+#| label: setup
+#| message: false
+#| warning: false
 
 library(tidyverse)
 library(janitor)
-library(lubridate)
-library(hms)
 
 ```
 
@@ -25,36 +27,23 @@ library(hms)
 
 Let's import our data into our notebook.
 
-```{r import}
+```{r}
 
-taylor <- read.csv("data-raw/taylor_swift_spotify.csv") |> clean_names()
+#| label: import
+
+taylor <- read.csv("data-raw-taylor/taylor_swift_spotify.csv") |> clean_names()
 
 taylor
 ```
 
 ## Remove unnedded columns
 
-```{r remove}
+```{r}
+
+#| label: remove
 
 taylor_remove <- taylor |>
-  select(
-    name,
-    album,
-    release_date,
-    track_number,
-    uri,
-    acousticness,
-    danceability,
-    energy,
-    instrumentalness,
-    liveness,
-    loudness,
-    speechiness,
-    tempo,
-    valence,
-    popularity,
-    duration_ms
-  )
+  select(-x, -id)
 
 taylor_remove
 
@@ -62,10 +51,14 @@ taylor_remove
 
 ## Fixing song length
 
-```{r song-length}
+```{r}
 
-taylor_clean <- taylor_remove |>
-  mutate(duration_ms = format(as.POSIXct(Sys.Date()) + duration_ms /1000, "%M:%S"))
+#| label: song-length
+
+taylor_clean <- taylor_remove |> mutate(
+  duration_min = duration_ms/60000,
+) |>
+  select(-duration_ms)
 
 taylor_clean
 
@@ -73,11 +66,13 @@ taylor_clean
 
 ## Dividing by album
 
-```{r album}
+```{r}
+
+#| label: export
 
 taylor_split <- split(taylor_clean, taylor_clean$album)
 
-folder_path <- "data-processed"
+folder_path <- "data-processed-taylor"
 
 for(album in names(taylor_split)){
   file_name <- paste0(album, ".csv")
