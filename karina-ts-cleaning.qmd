@@ -1,0 +1,38 @@
+---
+title: "karina-ts-cleaning"
+format: html
+---
+
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+```
+
+```{r}
+#| label: import
+
+t_swift <- read_csv("data-raw/taylor_swift_spotify.csv") |> clean_names()
+
+t_swift
+```
+
+Changing duration_ms to minutes
+
+```{r}
+t_swift_clean <- t_swift |> mutate(
+  duration_min = duration_ms/60000,
+  duration = dmilliseconds(duration_ms)
+)
+
+t_swift_clean
+```
+
+```{r}
+
+```
+

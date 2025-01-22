@@ -1,0 +1,64 @@
+---
+title: "karina-cleaning"
+format: html
+---
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+```
+
+```{r}
+#| label: import
+
+list_files <-  list.files(
+    "data-raw/outages",
+    pattern = ".csv",
+    full.names = T
+  )
+
+list_files
+
+```
+
+```{r}
+outages_all <- map(
+  list_files,
+  read_csv
+) |> list_rbind() |> clean_names()
+
+outages_all
+```
+
+Exporting by year
+
+```{r}
+export_year <- function(yr) {
+  filtered_data <- outages_all |> filter( year(datetime_event_began) == yr) 
+  file_name <- paste0("data-processed/outages_", yr,".rds")
+  write_rds(filtered_data, file_name)
+}
+
+```
+
+```{r}
+export_year(2014)
+export_year(2015)
+export_year(2016)
+export_year(2017)
+export_year(2018)
+export_year(2019)
+export_year(2020)
+export_year(2021)
+export_year(2022)
+export_year(2023)
+
+
+```
+
+
+
