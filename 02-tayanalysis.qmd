@@ -4,8 +4,14 @@ title: "Taycleaning"
 
 ## Initial Questions
 
-- Which album/song has the most acousticnesss?
-- Which album/song 
+- Which album/song has the most acousticnesss?...for all categories
+- Which song is the longest? Shortest?
+- Which release year had the highest popularity?
+- What year had the most and least energetic songs?
+- Are longer or shorter songs more popular?
+- Tempo vs danceability?
+- tempo and duration?
+
 
 ## Set up
 
@@ -19,3 +25,28 @@ library(tidyverse)
 library(janitor)
 
 ```
+
+```{r}
+#| label: import
+
+taylor_files_list <- list.files(
+  "data-processed-taylor",
+  full.names = T
+)
+
+taylor_files_list
+```
+
+```{r}
+#| label: combine-files # maybe use changin column type here as a new function
+
+taylor_all <- map(
+  taylor_files_list,
+  read_csv
+) |>
+  list_rbind() |>
+  clean_names()
+
+taylor_all |> glimpse()
+```
+
