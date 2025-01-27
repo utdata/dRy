@@ -1,0 +1,21 @@
+---
+title: "Taycleaning"
+---
+
+## Initial Questions
+
+- Which album/song has the most acousticnesss?
+- Which album/song 
+
+## Set up
+
+```{r}
+
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+
+```
