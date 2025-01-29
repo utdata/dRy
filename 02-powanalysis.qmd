@@ -1,5 +1,5 @@
 ---
-title: "Taycleaning"
+title: "Power Analysis"
 ---
 
 ## Initial Questions
@@ -8,6 +8,7 @@ title: "Taycleaning"
 - What cause leads to the longest power outages?
 - What state resolves issues the quickest? Longest?
 - What state has the most outages? Least? -> Choropleth map, can do Texas and counties too
+
 
 ## Setup
 
@@ -60,12 +61,50 @@ power_all |> group_by (event_type) |>
   summarize(total_events = n()) |> 
   arrange(total_events |> desc())
 ```
+
 Need to create a new column for event_type categories that are similar
+
+## Creating new column for event_type (categories that are similar)
+
+```{r}
+
+power_cat <- power_all |>
+  mutate(event_category = case_when(
+    str_detect(power_all$event_type, "Weather") == TRUE ~ "Weather",
+    str_detect(power_all$event_type, "System Operations") == TRUE ~ "System Operations",
+    str_detect(power_all$event_type, "Suspicious Activity") == TRUE ~ "Suspiciour Activity",
+    str_detect(power_all$event_type, "Transmission") == TRUE ~ "Equipment Issue",
+    str_detect(power_all$event_type, "Fuel") == TRUE ~ "Fuel Supply Issue",
+    str_detect(power_all$event_type, "Cyber") == TRUE ~ "Cyber Issue",
+    str_detect(power_all$event_type, "Physical") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(power_all$event_type, "Vandalism") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(power_all$event_type, "Generation") == TRUE ~ "Generation Inedequacy",
+    str_detect(power_all$event_type, "Sabotage") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(power_all$event_type, "Natural Disaster") == TRUE ~ "Natural Disaster",
+    str_detect(power_all$event_type, "Suspicious") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(power_all$event_type, "Distribution Interruption") == TRUE ~ "Distribution Interruption",
+    str_detect(power_all$event_type, "Islanding") == TRUE ~ "Islanding",    
+    str_detect(power_all$event_type, "Theft") == TRUE ~ "Theft",
+    str_detect(power_all$event_type, "Public Appeal") == TRUE ~ "Public Appeal",
+    str_detect(power_all$event_type, "Failure at high voltage substation or switchyard") == TRUE ~ "Failure at high voltage substation or switchyard",
+        str_detect(power_all$event_type, "physical") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(power_all$event_type, "Unknown") == TRUE ~ "Unkown", #second to last
+    str_detect(power_all$event_type, "Other") == TRUE ~ "Unkown" #make this last, so something-other is not affected
+    ))
+
+```
+
+```{r}
+power_cat |> group_by (event_category) |> 
+  summarize(total_events = n()) |> 
+  arrange(total_events |> desc())
+```
+
 
 ## What cause leads to the longest power outages?
 
 ```{r}
-power_all |> group_by (event_type) |> # change event_type to event category
+power_cat |> group_by (event_category) |> 
   summarize(avg_outage_length = mean(duration), total_occurences = n()) |> 
   arrange(avg_outage_length |> desc(), total_occurences)
 ```
@@ -73,13 +112,14 @@ power_all |> group_by (event_type) |> # change event_type to event category
 ## What state resolves issues the quickest? slowest?
 
 ```{r}
-power_all |> group_by (state_event) |> 
+power_cat |> group_by (state_event) |> 
   summarize(avg_event_length = mean(duration), total_occurences = n()) |> 
   arrange(avg_event_length)
 ```
 
 ```{r}
-power_all |> group_by (state_event) |> 
+
+power_cat |> group_by (state_event) |> 
   summarize(avg_event_length = mean(duration), total_occurences = n()) |> 
   arrange(avg_event_length |> desc())
 ```
@@ -87,15 +127,16 @@ power_all |> group_by (state_event) |>
 ## What state has the most outages? Least?
 
 ```{r}
-power_all |> group_by (state_event) |> 
+power_cat |> group_by (state_event) |> 
   summarize(total_outages = n()) |> 
   arrange(total_outages |> desc())
 ```
 
 ```{r}
-power_all |> group_by (state_event) |> 
+power_cat |> group_by (state_event) |> 
   summarize(total_outages = n()) |> 
   arrange(total_outages)
 ```
 
 ## Chloropleth graph
+
