@@ -1,0 +1,175 @@
+---
+title: "Taycleaning"
+---
+
+## Initial Questions
+
+- Which album/song has the most acousticnesss?...for all categories
+- Which song is the longest? Shortest?
+- Which release year had the highest popularity?
+- Are longer or shorter songs more popular?
+- Tempo vs danceability?
+
+
+## Set up
+
+```{r}
+
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+
+```
+
+```{r}
+#| label: import
+
+taylor_files_list <- list.files(
+  "data-processed-taylor",
+  pattern = ".csv",
+  full.names = T
+)
+
+taylor_files_list
+```
+
+```{r}
+#| label: combine-files # maybe use changin column type here as a new function -- is there a better way to do this? @crit
+
+read_taylor_files <- function(x) {
+  df <- read_csv(x) |> mutate(album = as.character(album))
+}
+
+taylor_all <- taylor_files_list |> map(read_taylor_files) |> list_rbind() |>
+  clean_names()
+
+taylor_all |> glimpse()
+```
+
+## Which album/song has the most acousticness?...for all categories
+
+```{r}
+
+acousticness <- taylor_all |> group_by (album) |> 
+  summarize(avg_accoustic = mean(acousticness, na.rm = T) |> round(2)) |> 
+  arrange(avg_accoustic |> desc())
+
+
+acousticness
+```
+
+```{r}
+danceability <- taylor_all |> group_by (album) |> 
+  summarize(avg_danceability = mean(danceability, na.rm = T) |> round(2)) |> 
+  arrange(avg_danceability |> desc())
+
+
+danceability
+```
+
+```{r}
+instrumentalism <- taylor_all |> group_by (album) |> 
+  summarize(avg_instrumentalism = mean(instrumentalness, na.rm = T) |> round(2)) |> 
+  arrange(avg_instrumentalism |> desc())
+
+
+instrumentalism
+```
+
+```{r}
+energy <- taylor_all |> group_by (album) |> 
+  summarize(avg_energy = mean(energy, na.rm = T) |> round(2)) |> 
+  arrange(avg_energy |> desc())
+
+
+energy
+```
+
+```{r}
+tempo <- taylor_all |> group_by (album) |> 
+  summarize(avg_tempo = mean(tempo, na.rm = T) |> round(2)) |> 
+  arrange(avg_tempo |> desc())
+
+
+tempo
+```
+
+
+```{r}
+popularity <- taylor_all |> group_by (album) |> 
+  summarize(avg_popularity = mean(popularity, na.rm = T) |> round(2)) |> 
+  arrange(avg_popularity |> desc())
+
+
+popularity
+```
+
+## Which song is the longest? Shortest?
+
+```{r}
+shortest_longest <- taylor_all |> group_by(album) |> 
+  summarize(shortest_song = name[which.min(duration_min)],
+            longest_song = name[which.max(duration_min)]) 
+
+shortest_longest
+
+```
+
+## Which release year had the highest popularity?
+
+```{r}
+year_popularity <- taylor_all |> group_by (year(release_date)) |> 
+  summarize(avg_popularity = mean(popularity),
+            song_count = n()) |> 
+  arrange(avg_popularity |> desc())
+
+year_popularity
+```
+
+## Are shorter or longer songs more popular?
+
+```{r}
+ggplot(taylor_all, aes(x = duration_min, y = popularity)) +
+  geom_point()
+```
+
+## Tempo vs popularity
+
+```{r}
+ggplot(taylor_all, aes(x = tempo, y = popularity)) +
+  geom_point()
+```
+
+## Tempo vs danceability
+
+```{r}
+ggplot(taylor_all, aes(x = tempo, y = danceability)) +
+  geom_point()
+```
+
+## Energy vs danceability
+
+```{r}
+ggplot(taylor_all, aes(x = energy, y = danceability)) +
+  geom_point()
+```
+
+
+## Energy vs popularity
+
+```{r}
+ggplot(taylor_all, aes(x = energy, y = popularity)) +
+  geom_point()
+```
+
+
+## Danceability vs popularity
+
+```{r}
+ggplot(taylor_all, aes(x = danceability, y = popularity)) +
+  geom_point()
+```
+

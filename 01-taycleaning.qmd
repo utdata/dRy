@@ -56,7 +56,7 @@ taylor_remove
 #| label: song-length
 
 taylor_clean <- taylor_remove |> mutate(
-  duration_min = duration_ms/60000,
+  duration_min = duration_ms/60000
 ) |>
   select(-duration_ms)
 
