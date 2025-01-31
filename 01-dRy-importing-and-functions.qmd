@@ -1,0 +1,108 @@
+---
+title: "01-dRy-importing-and-functions"
+format: html
+---
+
+# Don't Repeat Yourself in R
+By Ella Barnes and Karina Kumar - Data Fellows of the Media Innovation Group at University of Texas at Austin.
+
+## Goals of this session
+- Import multiple files at once
+- Create your own function
+- Generate parameterized reports quickly
+
+Why dRy? Our coding often requires repetitive processes. These tools can help you unnecessary repetition and maximize your efficiency. 
+
+## The data
+
+## How this lesson works
+
+# Importing multiple files at once
+
+## Set up
+
+Importing our libraries
+
+```{r}
+
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+
+```
+
+Creating a list of file names
+
+```{r}
+#| label: import
+
+taylor_files_list <- list.files(
+  "data-processed-taylor",
+  pattern = ".csv",
+  full.names = T   
+)
+
+taylor_files_list
+```
+
+1. list.files()
+2. where to get the file
+3. pattern = how to find the files
+4. full.names = T gets the full path name rather than just the file name
+
+```{r}
+#| label: combine-files 
+
+# add set_names(basename) to create a column that has the file name
+
+taylor_songs <- taylor_files_list |> map(
+  read_csv,
+  col_types = cols(album = col_character())
+) |> list_rbind() |> 
+  clean_names()
+
+taylor_songs |> glimpse()
+```
+
+1. map
+2. read_csv
+3. col_types
+4. list_rbind()
+5. clean_names()
+
+# OYO: Importing multiple files at once - Power Outages
+
+```{r}
+#| label: import
+
+#data-processed-power
+
+power_files_list <- 
+
+```
+
+```{r}
+#| label: combine-files
+
+power_outages <-  
+
+power_outages |> glimpse()
+```
+
+# Creating your own function
+
+```{r}
+
+```
+
+
+# OYO: Creating your own function
+
+```{r}
+
+```
+
+

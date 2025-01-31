@@ -19,6 +19,8 @@ title: "Power Analysis"
 
 library(tidyverse)
 library(janitor)
+library(tigris)
+library(sf)
 ```
 
 ## Import multiple files
@@ -139,4 +141,29 @@ power_cat |> group_by (state_event) |>
 ```
 
 ## Chloropleth graph
+
+```{r}
+states <- states(cb = TRUE, class = "sf")
+```
+
+```{r}
+power_states <- power_cat |> group_by(state_event) |> 
+  summarize(total_events = n())
+
+power_states
+```
+
+```{r}
+power_state_graph <- states |> 
+  left_join(power_states, by = c("NAME" = "state_event")) |> 
+  filter(!(NAME %in% c("Alaska", "Hawaii", "Guam", "American Samoa", "United States Virgin Islands", "Puerto Rico", "Commonwealth of the Northern Mariana Islands")))
+
+```
+
+
+```{r}
+ggplot(power_state_graph) +
+  geom_sf(aes(fill = total_events), color = "white", size = 0.2) +
+  scale_fill_viridis_c(option = "plasma", na.value = "gray")
+```
 

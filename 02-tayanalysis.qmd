@@ -37,13 +37,12 @@ taylor_files_list
 ```
 
 ```{r}
-#| label: combine-files # maybe use changin column type here as a new function -- is there a better way to do this? @crit
+#| label: combine-files 
 
-read_taylor_files <- function(x) {
-  df <- read_csv(x) |> mutate(album = as.character(album))
-}
-
-taylor_all <- taylor_files_list |> map(read_taylor_files) |> list_rbind() |>
+taylor_all <- taylor_files_list |> map(
+  read_csv,
+  col_types = cols(album = col_character())
+) |> list_rbind() |> 
   clean_names()
 
 taylor_all |> glimpse()
