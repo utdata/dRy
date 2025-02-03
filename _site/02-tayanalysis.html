@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>dRy - Taycleaning</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">dRy</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#initial-questions" id="toc-initial-questions" class="nav-link active" data-scroll-target="#initial-questions">Initial Questions</a></li>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">Set up</a></li>
+  <li><a href="#which-albumsong-has-the-most-acousticnessfor-all-categories" id="toc-which-albumsong-has-the-most-acousticnessfor-all-categories" class="nav-link" data-scroll-target="#which-albumsong-has-the-most-acousticnessfor-all-categories">Which album/song has the most acousticness?…for all categories</a></li>
+  <li><a href="#which-song-is-the-longest-shortest" id="toc-which-song-is-the-longest-shortest" class="nav-link" data-scroll-target="#which-song-is-the-longest-shortest">Which song is the longest? Shortest?</a></li>
+  <li><a href="#which-release-year-had-the-highest-popularity" id="toc-which-release-year-had-the-highest-popularity" class="nav-link" data-scroll-target="#which-release-year-had-the-highest-popularity">Which release year had the highest popularity?</a></li>
+  <li><a href="#are-shorter-or-longer-songs-more-popular" id="toc-are-shorter-or-longer-songs-more-popular" class="nav-link" data-scroll-target="#are-shorter-or-longer-songs-more-popular">Are shorter or longer songs more popular?</a></li>
+  <li><a href="#tempo-vs-popularity" id="toc-tempo-vs-popularity" class="nav-link" data-scroll-target="#tempo-vs-popularity">Tempo vs popularity</a></li>
+  <li><a href="#tempo-vs-danceability" id="toc-tempo-vs-danceability" class="nav-link" data-scroll-target="#tempo-vs-danceability">Tempo vs danceability</a></li>
+  <li><a href="#energy-vs-danceability" id="toc-energy-vs-danceability" class="nav-link" data-scroll-target="#energy-vs-danceability">Energy vs danceability</a></li>
+  <li><a href="#energy-vs-popularity" id="toc-energy-vs-popularity" class="nav-link" data-scroll-target="#energy-vs-popularity">Energy vs popularity</a></li>
+  <li><a href="#danceability-vs-popularity" id="toc-danceability-vs-popularity" class="nav-link" data-scroll-target="#danceability-vs-popularity">Danceability vs popularity</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Taycleaning</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="initial-questions" class="level2">
+<h2 class="anchored" data-anchor-id="initial-questions">Initial Questions</h2>
+<ul>
+<li>Which album/song has the most acousticnesss?…for all categories</li>
+<li>Which song is the longest? Shortest?</li>
+<li>Which release year had the highest popularity?</li>
+<li>Are longer or shorter songs more popular?</li>
+<li>Tempo vs danceability?</li>
+</ul>
+</section>
+<section id="set-up" class="level2">
+<h2 class="anchored" data-anchor-id="set-up">Set up</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.3     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'janitor'
+
+The following objects are masked from 'package:stats':
+
+    chisq.test, fisher.test</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>taylor_files_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data-processed-taylor"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">".csv"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">full.names =</span> T</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>taylor_files_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "data-processed-taylor/1989 (Deluxe).csv"                                                                      
+ [2] "data-processed-taylor/1989 (Taylor's Version) [Deluxe].csv"                                                   
+ [3] "data-processed-taylor/1989 (Taylor's Version).csv"                                                            
+ [4] "data-processed-taylor/1989.csv"                                                                               
+ [5] "data-processed-taylor/evermore (deluxe version).csv"                                                          
+ [6] "data-processed-taylor/evermore.csv"                                                                           
+ [7] "data-processed-taylor/Fearless (International Version).csv"                                                   
+ [8] "data-processed-taylor/Fearless (Platinum Edition).csv"                                                        
+ [9] "data-processed-taylor/Fearless (Taylor's Version).csv"                                                        
+[10] "data-processed-taylor/folklore (deluxe version).csv"                                                          
+[11] "data-processed-taylor/folklore: the long pond studio sessions (from the Disney+ special) [deluxe edition].csv"
+[12] "data-processed-taylor/folklore.csv"                                                                           
+[13] "data-processed-taylor/Live From Clear Channel Stripped 2008.csv"                                              
+[14] "data-processed-taylor/Lover.csv"                                                                              
+[15] "data-processed-taylor/Midnights (3am Edition).csv"                                                            
+[16] "data-processed-taylor/Midnights (The Til Dawn Edition).csv"                                                   
+[17] "data-processed-taylor/Midnights.csv"                                                                          
+[18] "data-processed-taylor/Red (Deluxe Edition).csv"                                                               
+[19] "data-processed-taylor/Red (Taylor's Version).csv"                                                             
+[20] "data-processed-taylor/Red.csv"                                                                                
+[21] "data-processed-taylor/reputation Stadium Tour Surprise Song Playlist.csv"                                     
+[22] "data-processed-taylor/reputation.csv"                                                                         
+[23] "data-processed-taylor/Speak Now (Deluxe Package).csv"                                                         
+[24] "data-processed-taylor/Speak Now (Taylor's Version).csv"                                                       
+[25] "data-processed-taylor/Speak Now World Tour Live.csv"                                                          
+[26] "data-processed-taylor/Speak Now.csv"                                                                          
+[27] "data-processed-taylor/Taylor Swift (Deluxe Edition).csv"                                                      
+[28] "data-processed-taylor/THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY.csv"                                       
+[29] "data-processed-taylor/THE TORTURED POETS DEPARTMENT.csv"                                                      </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>taylor_all <span class="ot">&lt;-</span> taylor_files_list <span class="sc">|&gt;</span> <span class="fu">map</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  read_csv,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">album =</span> <span class="fu">col_character</span>())</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">list_rbind</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>taylor_all <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 582
+Columns: 16
+$ name             &lt;chr&gt; "Welcome To New York", "Blank Space", "Style", "Out O…
+$ album            &lt;chr&gt; "1989 (Deluxe)", "1989 (Deluxe)", "1989 (Deluxe)", "1…
+$ release_date     &lt;date&gt; 2014-01-01, 2014-01-01, 2014-01-01, 2014-01-01, 2014…
+$ track_number     &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16…
+$ uri              &lt;chr&gt; "spotify:track:3nRmDz7qGCvsMS30rGGY0x", "spotify:trac…
+$ acousticness     &lt;dbl&gt; 0.034800, 0.103000, 0.002450, 0.000743, 0.002010, 0.0…
+$ danceability     &lt;dbl&gt; 0.789, 0.760, 0.588, 0.553, 0.605, 0.647, 0.653, 0.64…
+$ energy           &lt;dbl&gt; 0.634, 0.703, 0.791, 0.841, 0.725, 0.800, 0.893, 0.79…
+$ instrumentalness &lt;dbl&gt; 1.64e-06, 0.00e+00, 2.58e-03, 1.19e-05, 2.02e-05, 0.0…
+$ liveness         &lt;dbl&gt; 0.3020, 0.0913, 0.1180, 0.3410, 0.1010, 0.3340, 0.102…
+$ loudness         &lt;dbl&gt; -4.762, -5.412, -5.595, -6.937, -5.729, -5.384, -5.96…
+$ speechiness      &lt;dbl&gt; 0.0323, 0.0540, 0.0402, 0.0396, 0.0323, 0.1650, 0.053…
+$ tempo            &lt;dbl&gt; 116.992, 95.997, 94.933, 92.008, 96.970, 160.078, 118…
+$ valence          &lt;dbl&gt; 0.658, 0.570, 0.487, 0.338, 0.539, 0.942, 0.513, 0.28…
+$ popularity       &lt;dbl&gt; 48, 81, 79, 59, 47, 80, 51, 52, 52, 55, 50, 50, 55, 5…
+$ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550, 3.6…</code></pre>
+</div>
+</div>
+</section>
+<section id="which-albumsong-has-the-most-acousticnessfor-all-categories" class="level2">
+<h2 class="anchored" data-anchor-id="which-albumsong-has-the-most-acousticnessfor-all-categories">Which album/song has the most acousticness?…for all categories</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>acousticness <span class="ot">&lt;-</span> taylor_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (album) <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_accoustic =</span> <span class="fu">mean</span>(acousticness, <span class="at">na.rm =</span> T) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_accoustic <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>acousticness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 29 × 2
+   album                                                           avg_accoustic
+   &lt;chr&gt;                                                                   &lt;dbl&gt;
+ 1 evermore                                                                 0.8 
+ 2 evermore (deluxe version)                                                0.79
+ 3 folklore: the long pond studio sessions (from the Disney+ spec…          0.79
+ 4 folklore (deluxe version)                                                0.72
+ 5 folklore                                                                 0.71
+ 6 THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY                             0.57
+ 7 Live From Clear Channel Stripped 2008                                    0.55
+ 8 THE TORTURED POETS DEPARTMENT                                            0.46
+ 9 Midnights (3am Edition)                                                  0.41
+10 Midnights (The Til Dawn Edition)                                         0.4 
+# ℹ 19 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>danceability <span class="ot">&lt;-</span> taylor_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (album) <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_danceability =</span> <span class="fu">mean</span>(danceability, <span class="at">na.rm =</span> T) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_danceability <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>danceability</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 29 × 2
+   album                            avg_danceability
+   &lt;chr&gt;                                       &lt;dbl&gt;
+ 1 Lover                                        0.66
+ 2 reputation                                   0.66
+ 3 1989                                         0.65
+ 4 Midnights                                    0.64
+ 5 1989 (Deluxe)                                0.63
+ 6 1989 (Taylor's Version)                      0.63
+ 7 1989 (Taylor's Version) [Deluxe]             0.63
+ 8 Red (Deluxe Edition)                         0.63
+ 9 Midnights (3am Edition)                      0.62
+10 Midnights (The Til Dawn Edition)             0.62
+# ℹ 19 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>instrumentalism <span class="ot">&lt;-</span> taylor_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (album) <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_instrumentalism =</span> <span class="fu">mean</span>(instrumentalness, <span class="at">na.rm =</span> T) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_instrumentalism <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>instrumentalism</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 29 × 2
+   album                            avg_instrumentalism
+   &lt;chr&gt;                                          &lt;dbl&gt;
+ 1 Midnights                                       0.03
+ 2 Midnights (3am Edition)                         0.02
+ 3 evermore                                        0.02
+ 4 evermore (deluxe version)                       0.02
+ 5 Midnights (The Til Dawn Edition)                0.01
+ 6 1989                                            0   
+ 7 1989 (Deluxe)                                   0   
+ 8 1989 (Taylor's Version)                         0   
+ 9 1989 (Taylor's Version) [Deluxe]                0   
+10 Fearless (International Version)                0   
+# ℹ 19 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>energy <span class="ot">&lt;-</span> taylor_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (album) <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_energy =</span> <span class="fu">mean</span>(energy, <span class="at">na.rm =</span> T) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_energy <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>energy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 29 × 2
+   album                                          avg_energy
+   &lt;chr&gt;                                               &lt;dbl&gt;
+ 1 1989                                                 0.7 
+ 2 1989 (Taylor's Version)                              0.66
+ 3 1989 (Taylor's Version) [Deluxe]                     0.66
+ 4 Speak Now                                            0.66
+ 5 Speak Now (Deluxe Package)                           0.66
+ 6 Speak Now (Taylor's Version)                         0.66
+ 7 Taylor Swift (Deluxe Edition)                        0.66
+ 8 Speak Now World Tour Live                            0.65
+ 9 reputation Stadium Tour Surprise Song Playlist       0.65
+10 Fearless (International Version)                     0.64
+# ℹ 19 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>tempo <span class="ot">&lt;-</span> taylor_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (album) <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_tempo =</span> <span class="fu">mean</span>(tempo, <span class="at">na.rm =</span> T) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_tempo <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>tempo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 29 × 2
+   album                                        avg_tempo
+   &lt;chr&gt;                                            &lt;dbl&gt;
+ 1 Live From Clear Channel Stripped 2008             138.
+ 2 Speak Now (Deluxe Package)                        133.
+ 3 Speak Now                                         133.
+ 4 Fearless (Taylor's Version)                       131.
+ 5 Speak Now (Taylor's Version)                      130.
+ 6 reputation                                        128.
+ 7 1989 (Deluxe)                                     127.
+ 8 Taylor Swift (Deluxe Edition)                     126.
+ 9 THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY      125.
+10 Fearless (International Version)                  125.
+# ℹ 19 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>popularity <span class="ot">&lt;-</span> taylor_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (album) <span class="sc">|&gt;</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_popularity =</span> <span class="fu">mean</span>(popularity, <span class="at">na.rm =</span> T) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">2</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_popularity <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>popularity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 29 × 2
+   album                                        avg_popularity
+   &lt;chr&gt;                                                 &lt;dbl&gt;
+ 1 THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY           78.8
+ 2 THE TORTURED POETS DEPARTMENT                          77  
+ 3 Lover                                                  75.9
+ 4 reputation                                             75.7
+ 5 Midnights                                              74.2
+ 6 folklore                                               72.8
+ 7 1989 (Taylor's Version)                                72.2
+ 8 Speak Now (Taylor's Version)                           69.4
+ 9 Red (Taylor's Version)                                 67.2
+10 evermore                                               66.4
+# ℹ 19 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="which-song-is-the-longest-shortest" class="level2">
+<h2 class="anchored" data-anchor-id="which-song-is-the-longest-shortest">Which song is the longest? Shortest?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>shortest_longest <span class="ot">&lt;-</span> taylor_all <span class="sc">|&gt;</span> <span class="fu">group_by</span>(album) <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">shortest_song =</span> name[<span class="fu">which.min</span>(duration_min)],</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">longest_song =</span> name[<span class="fu">which.max</span>(duration_min)]) </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>shortest_longest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 29 × 3
+   album                                 shortest_song              longest_song
+   &lt;chr&gt;                                 &lt;chr&gt;                      &lt;chr&gt;       
+ 1 1989                                  All You Had To Do Was Stay Clean       
+ 2 1989 (Deluxe)                         I Wish You Would - Voice … Clean       
+ 3 1989 (Taylor's Version)               Now That We Don't Talk (T… Say Don't G…
+ 4 1989 (Taylor's Version) [Deluxe]      Now That We Don't Talk (T… Say Don't G…
+ 5 Fearless (International Version)      Teardrops On My Guitar - … Fifteen     
+ 6 Fearless (Platinum Edition)           Tell Me Why                Untouchable 
+ 7 Fearless (Taylor's Version)           That’s When (feat. Keith … Untouchable…
+ 8 Live From Clear Channel Stripped 2008 Picture To Burn - Live Fr… Change - Li…
+ 9 Lover                                 It’s Nice To Have A Friend Daylight    
+10 Midnights                             Vigilante Shit             Snow On The…
+# ℹ 19 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>taylor_all <span class="sc">|&gt;</span> <span class="fu">group_by</span>(album) <span class="sc">|&gt;</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_min</span>(duration_min) <span class="co"># doing the same thing as above in a different way</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 29 × 16
+# Groups:   album [29]
+   name   album release_date track_number uri   acousticness danceability energy
+   &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;              &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+ 1 All Y… 1989  2014-01-01              5 spot…      0.00196        0.602  0.735
+ 2 I Wis… 1989… 2014-01-01             18 spot…      0.717          0.781  0.357
+ 3 Now T… 1989… 2023-10-26             19 spot…      0.16           0.8    0.509
+ 4 Now T… 1989… 2023-10-27             19 spot…      0.16           0.8    0.509
+ 5 Teard… Fear… 2008-11-11             15 spot…      0.0178         0.514  0.557
+ 6 Tell … Fear… 2008-11-11             14 spot…      0.0606         0.601  0.852
+ 7 That’… Fear… 2021-04-09             24 spot…      0.225          0.588  0.608
+ 8 Pictu… Live… 2008-06-28              6 spot…      0.266          0.647  0.872
+ 9 It’s … Lover 2019-08-23             17 spot…      0.971          0.737  0.175
+10 Vigil… Midn… 2022-10-21              8 spot…      0.166          0.872  0.267
+# ℹ 19 more rows
+# ℹ 8 more variables: instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, loudness &lt;dbl&gt;,
+#   speechiness &lt;dbl&gt;, tempo &lt;dbl&gt;, valence &lt;dbl&gt;, popularity &lt;dbl&gt;,
+#   duration_min &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="which-release-year-had-the-highest-popularity" class="level2">
+<h2 class="anchored" data-anchor-id="which-release-year-had-the-highest-popularity">Which release year had the highest popularity?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>year_popularity <span class="ot">&lt;-</span> taylor_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (<span class="fu">year</span>(release_date)) <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_popularity =</span> <span class="fu">mean</span>(popularity),</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">song_count =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_popularity <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>year_popularity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 3
+   `year(release_date)` avg_popularity song_count
+                  &lt;dbl&gt;          &lt;dbl&gt;      &lt;int&gt;
+ 1                 2024           78.2         47
+ 2                 2019           75.9         18
+ 3                 2022           67.3         33
+ 4                 2023           66.7         88
+ 5                 2021           65.8         73
+ 6                 2020           60.4         82
+ 7                 2006           56.7         15
+ 8                 2014           50.5         32
+ 9                 2010           46.8         52
+10                 2012           45.0         38
+11                 2017           42.4         61
+12                 2008           37.0         43</code></pre>
+</div>
+</div>
+</section>
+<section id="are-shorter-or-longer-songs-more-popular" class="level2">
+<h2 class="anchored" data-anchor-id="are-shorter-or-longer-songs-more-popular">Are shorter or longer songs more popular?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_all, <span class="fu">aes</span>(<span class="at">x =</span> duration_min, <span class="at">y =</span> popularity)) <span class="sc">+</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02-tayanalysis_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="tempo-vs-popularity" class="level2">
+<h2 class="anchored" data-anchor-id="tempo-vs-popularity">Tempo vs popularity</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_all, <span class="fu">aes</span>(<span class="at">x =</span> tempo, <span class="at">y =</span> popularity)) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02-tayanalysis_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="tempo-vs-danceability" class="level2">
+<h2 class="anchored" data-anchor-id="tempo-vs-danceability">Tempo vs danceability</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_all, <span class="fu">aes</span>(<span class="at">x =</span> tempo, <span class="at">y =</span> danceability)) <span class="sc">+</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02-tayanalysis_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="energy-vs-danceability" class="level2">
+<h2 class="anchored" data-anchor-id="energy-vs-danceability">Energy vs danceability</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_all, <span class="fu">aes</span>(<span class="at">x =</span> energy, <span class="at">y =</span> danceability)) <span class="sc">+</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02-tayanalysis_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="energy-vs-popularity" class="level2">
+<h2 class="anchored" data-anchor-id="energy-vs-popularity">Energy vs popularity</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_all, <span class="fu">aes</span>(<span class="at">x =</span> energy, <span class="at">y =</span> popularity)) <span class="sc">+</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02-tayanalysis_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="danceability-vs-popularity" class="level2">
+<h2 class="anchored" data-anchor-id="danceability-vs-popularity">Danceability vs popularity</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_all, <span class="fu">aes</span>(<span class="at">x =</span> danceability, <span class="at">y =</span> popularity)) <span class="sc">+</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02-tayanalysis_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

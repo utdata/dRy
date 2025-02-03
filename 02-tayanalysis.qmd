@@ -117,6 +117,12 @@ shortest_longest
 
 ```
 
+```{r}
+taylor_all |> group_by(album) |> 
+  slice_min(duration_min) # doing the same thing as above in a different way
+```
+
+
 ## Which release year had the highest popularity?
 
 ```{r}

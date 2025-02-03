@@ -39,10 +39,10 @@ Creating a list of file names
 ```{r}
 #| label: import
 
-taylor_files_list <- list.files(
-  "data-processed-taylor",
-  pattern = ".csv",
-  full.names = T   
+taylor_files_list <- list.files( # <1>
+  "data-processed-taylor", # <2>
+  pattern = ".csv", # <3>
+  full.names = T   #<4>
 )
 
 taylor_files_list
@@ -57,10 +57,11 @@ taylor_files_list
 #| label: combine-files 
 
 # add set_names(basename) to create a column that has the file name
+# add message and warning false 
 
 taylor_songs <- taylor_files_list |> map(
   read_csv,
-  col_types = cols(album = col_character())
+  col_types = cols(album = col_character())   # comment this out to see what happens 
 ) |> list_rbind() |> 
   clean_names()
 
@@ -76,7 +77,7 @@ taylor_songs |> glimpse()
 # OYO: Importing multiple files at once - Power Outages
 
 ```{r}
-#| label: import
+#| label: import-oyo
 
 #data-processed-power
 
@@ -85,14 +86,16 @@ power_files_list <-
 ```
 
 ```{r}
-#| label: combine-files
+#| label: combine-files-oyo
 
-power_outages <-  
+#power_outages <-  NA
 
-power_outages |> glimpse()
+#power_outages |> glimpse()
 ```
 
-# Creating your own function
+How did we get to the chart...? 
+
+# Creating your own function - Do a chart
 
 ```{r}
 

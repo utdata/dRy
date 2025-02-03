@@ -33,10 +33,10 @@ Let's import our data into our notebook.
 
 taylor <- read.csv("data-raw-taylor/taylor_swift_spotify.csv") |> clean_names()
 
-taylor
+taylor |> glimpse()
 ```
 
-## Remove unnedded columns
+## Remove unneeded columns
 
 ```{r}
 

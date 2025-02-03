@@ -27,6 +27,9 @@ library(sf)
 
 ```{r}
 #| label: import
+#| message: false
+#| warning: false
+
 
 power_files_list <- list.files(
   "data-processed-power",
@@ -38,6 +41,9 @@ power_files_list
 
 ```{r}
 #| label: combine-files
+#| message: false
+#| warning: false
+
 
 power_all <- map(
   power_files_list,
@@ -72,26 +78,26 @@ Need to create a new column for event_type categories that are similar
 
 power_cat <- power_all |>
   mutate(event_category = case_when(
-    str_detect(power_all$event_type, "Weather") == TRUE ~ "Weather",
-    str_detect(power_all$event_type, "System Operations") == TRUE ~ "System Operations",
-    str_detect(power_all$event_type, "Suspicious Activity") == TRUE ~ "Suspiciour Activity",
-    str_detect(power_all$event_type, "Transmission") == TRUE ~ "Equipment Issue",
-    str_detect(power_all$event_type, "Fuel") == TRUE ~ "Fuel Supply Issue",
-    str_detect(power_all$event_type, "Cyber") == TRUE ~ "Cyber Issue",
-    str_detect(power_all$event_type, "Physical") == TRUE ~ "Potential or Actual Physical Interference",
-    str_detect(power_all$event_type, "Vandalism") == TRUE ~ "Potential or Actual Physical Interference",
-    str_detect(power_all$event_type, "Generation") == TRUE ~ "Generation Inedequacy",
-    str_detect(power_all$event_type, "Sabotage") == TRUE ~ "Potential or Actual Physical Interference",
-    str_detect(power_all$event_type, "Natural Disaster") == TRUE ~ "Natural Disaster",
-    str_detect(power_all$event_type, "Suspicious") == TRUE ~ "Potential or Actual Physical Interference",
-    str_detect(power_all$event_type, "Distribution Interruption") == TRUE ~ "Distribution Interruption",
-    str_detect(power_all$event_type, "Islanding") == TRUE ~ "Islanding",    
-    str_detect(power_all$event_type, "Theft") == TRUE ~ "Theft",
-    str_detect(power_all$event_type, "Public Appeal") == TRUE ~ "Public Appeal",
-    str_detect(power_all$event_type, "Failure at high voltage substation or switchyard") == TRUE ~ "Failure at high voltage substation or switchyard",
-        str_detect(power_all$event_type, "physical") == TRUE ~ "Potential or Actual Physical Interference",
-    str_detect(power_all$event_type, "Unknown") == TRUE ~ "Unkown", #second to last
-    str_detect(power_all$event_type, "Other") == TRUE ~ "Unkown" #make this last, so something-other is not affected
+    str_detect(event_type, "Weather") == TRUE ~ "Weather",
+    str_detect(event_type, "System Operations") == TRUE ~ "System Operations",
+    str_detect(event_type, "Suspicious Activity") == TRUE ~ "Suspiciour Activity",
+    str_detect(event_type, "Transmission") == TRUE ~ "Equipment Issue",
+    str_detect(event_type, "Fuel") == TRUE ~ "Fuel Supply Issue",
+    str_detect(event_type, "Cyber") == TRUE ~ "Cyber Issue",
+    str_detect(event_type, "Physical") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(event_type, "Vandalism") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(event_type, "Generation") == TRUE ~ "Generation Inedequacy",
+    str_detect(event_type, "Sabotage") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(event_type, "Natural Disaster") == TRUE ~ "Natural Disaster",
+    str_detect(event_type, "Suspicious") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(event_type, "Distribution Interruption") == TRUE ~ "Distribution Interruption",
+    str_detect(event_type, "Islanding") == TRUE ~ "Islanding",    
+    str_detect(event_type, "Theft") == TRUE ~ "Theft",
+    str_detect(event_type, "Public Appeal") == TRUE ~ "Public Appeal",
+    str_detect(event_type, "Failure at high voltage substation or switchyard") == TRUE ~ "Failure at high voltage substation or switchyard",
+    str_detect(event_type, "physical") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(event_type, "Unknown") == TRUE ~ "Unknown", #second to last
+    str_detect(event_type, "Other") == TRUE ~ "Unknown" #make this last, so something-other is not affected
     ))
 
 ```
@@ -140,10 +146,10 @@ power_cat |> group_by (state_event) |>
   arrange(total_outages)
 ```
 
-## Chloropleth graph
+## Choropleth graph
 
 ```{r}
-states <- states(cb = TRUE, class = "sf")
+states <- states(cb = TRUE, class = "sf") # what does cb mean?
 ```
 
 ```{r}
@@ -163,7 +169,7 @@ power_state_graph <- states |>
 
 ```{r}
 ggplot(power_state_graph) +
-  geom_sf(aes(fill = total_events), color = "white", size = 0.2) +
-  scale_fill_viridis_c(option = "plasma", na.value = "gray")
+  geom_sf(aes(fill = total_events), color = "white", size = 0.2)
+  # reverse coloring 
 ```
 
