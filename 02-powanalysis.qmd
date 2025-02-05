@@ -7,7 +7,7 @@ title: "Power Analysis"
 - What is the most common cause of power outages?
 - What cause leads to the longest power outages?
 - What state resolves issues the quickest? Longest?
-- What state has the most outages? Least? -> Chloropleth map, can do Texas and counties too
+- What state has the most outages? Least? -> Choropleth map, can do Texas and counties too
 
 ## Setup
 
@@ -18,6 +18,8 @@ title: "Power Analysis"
 
 library(tidyverse)
 library(janitor)
+library(tigris)
+library(sf)
 ```
 
 ## Import multiple files
@@ -38,7 +40,8 @@ power_files_list
 
 power_all <- map(
   power_files_list,
-  read_csv
+  read_csv,
+  col_type = cols(fips = col_character())
 ) |>
   list_rbind() |>
   clean_names()
@@ -130,9 +133,59 @@ power_cat |> group_by (state_event) |>
 ```
 
 ```{r}
-power_cat |> group_by (state_event) |> 
-  summarize(total_outages = n()) |> 
-  arrange(total_outages)
+power_totals <- power_cat |> 
+  group_by (fips) |> 
+  summarize(total_outages = n()) |>
+  mutate(fips = as.character(fips),
+         fips = str_pad(fips, 5, pad = "0"))
+
+power_totals
+```
+
+```{r}
+power_totals |>
+  filter(str_detect())
 ```
 
 ## Chloropleth graph
+
+```{r}
+counties <- counties(cb = TRUE, class = "sf")
+```
+```{r}
+power_graph <- counties |>
+  left_join(power_totals, by = c("GEOID" = "fips"))
+```
+
+```{r}
+ggplot(power_graph) +
+  geom_sf(aes(fill = total_outages), color = "black")
+```
+
+```{r}
+states <- states(cb = TRUE, class ="sf")
+```
+
+
+```{r}
+power_states <- power_cat |>
+  group_by(state_event) |>
+  summarize(total_events = n())
+
+power_states
+```
+
+```{r}
+power_state_graph <- states |>
+  left_join(power_states, by = c("NAME" = "state_event")) |>
+  filter(!(NAME %in% c("Alaska", "Hawaii", "Guam", "American Samoa", "United States Virgin Islands", "Puerto Rico", "Commonwealth of the Northern Mariana Islands")))
+
+power_state_graph$NAME
+```
+
+```{r}
+ggplot(power_state_graph) +
+  geom_sf(aes(fill = total_events), color = "white", size = 0.2) +
+  scale_fill_viridis_c(option = "plasma", na.value = "gray90")
+```
+

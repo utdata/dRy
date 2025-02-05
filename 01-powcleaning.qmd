@@ -46,7 +46,8 @@ power_files_list
 
 power_all <- map(
   power_files_list,
-  read_csv
+  read_csv,
+  col_type = cols(fips = col_character())
 ) |>
   list_rbind() |>
   clean_names()
