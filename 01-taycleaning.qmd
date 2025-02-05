@@ -75,7 +75,8 @@ taylor_split <- split(taylor_clean, taylor_clean$album)
 folder_path <- "data-processed-taylor"
 
 for(album in names(taylor_split)){
-  file_name <- paste0(album, ".csv")
+  file_name <- paste0(
+    album |> str_replace(":", "-"), ".csv")
   file_path <- file.path(folder_path, file_name)
   write.csv(taylor_split[[album]], file_path, row.names =FALSE)
   
