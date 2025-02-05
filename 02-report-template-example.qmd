@@ -1,5 +1,57 @@
 ---
 title: "02-report-template-example"
-format: html
+params:
+  album: "1989"
+echo: false
+
 ---
+
+## Set up
+
+```{r}
+
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+
+```
+
+```{r}
+#| label: import
+
+taylor_files_list <- list.files(
+  "data-processed-taylor",
+  pattern = ".csv",
+  full.names = T
+)
+
+taylor_files_list
+```
+
+```{r}
+#| label: combine-files 
+
+taylor_songs <- taylor_files_list |> map(
+  read_csv,
+  col_types = cols(album = col_character())
+) |> list_rbind() |> 
+  clean_names()
+
+taylor_songs |> glimpse()
+```
+
+```{r}
+albums <- str_split_1(params$album, ",")
+```
+
+Album Names: `r params$album` 
+Use this to check your work ^
+
+```{r}
+songs <- taylor_songs |> filter(album %in% albums)
+
+```
 

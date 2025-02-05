@@ -3,8 +3,6 @@ title: "01-dRy-importing-and-functions"
 format: html
 ---
 
-this is ella changing something
-
 # Don't Repeat Yourself in R
 By Ella Barnes and Karina Kumar - Data Fellows of the Media Innovation Group at University of Texas at Austin.
 
@@ -41,10 +39,10 @@ Creating a list of file names
 ```{r}
 #| label: import
 
-taylor_files_list <- list.files( # <1>
-  "data-processed-taylor", # <2>
-  pattern = ".csv", # <3>
-  full.names = T   #<4>
+taylor_files_list <- list.files(  #<1>
+  "data-processed-taylor",        #<2>
+  pattern = ".csv",               #<3>
+  full.names = T                  #<4>
 )
 
 taylor_files_list
@@ -61,11 +59,11 @@ taylor_files_list
 # add set_names(basename) to create a column that has the file name
 # add message and warning false 
 
-taylor_songs <- taylor_files_list |> map(
-  read_csv,
-  col_types = cols(album = col_character())   # comment this out to see what happens 
-) |> list_rbind() |> 
-  clean_names()
+taylor_songs <- taylor_files_list |> map( #<1>
+  read_csv, #<2>
+  col_types = cols(album = col_character())   # comment this out to see what happens #<3>
+) |> list_rbind() |> #<4>
+  clean_names() #<5>
 
 taylor_songs |> glimpse()
 ```
@@ -83,7 +81,7 @@ taylor_songs |> glimpse()
 
 #data-processed-power
 
-power_files_list <- 
+#power_files_list <- 
 
 ```
 
@@ -97,17 +95,60 @@ power_files_list <-
 
 How did we get to the chart...? 
 
-# Creating your own function - Do a chart
+# Creating your own function
+
+We want to create a function that creates a graph we can change over and over again.
+
+This is what the Taylor Swift song data looks like:
 
 ```{r}
+taylor_songs |> head(50)
+```
+What do each of these columns mean?
+
+Let's compare some of these columns in a graph.
+
+```{r}
+ggplot(taylor_songs, aes( #<1>
+  x = duration_min, #<2>
+  y = popularity)) + #<3>
+  geom_point() #<4>
+```
+
+1. ggplot and aes
+2. x value
+3. y value
+4. geom_point
+
+All too well (10 minutes is an obvious outlier)
+
+What if we wanted to make the same graph for multiple albums? Create our own function
+
+```{r}
+graphing_taylor <- function(song_data){
+  ggplot(song_data, aes(x= duration_min, y = popularity)) +
+    geom_point() +
+    labs(x = "Length of song in minutes", y = "Popularity") +
+    scale_x_continuous(n.breaks = 10) +
+    scale_y_continuous(limits = c(0,100))}
 
 ```
 
+```{r}
+graphing_taylor(taylor_songs)
+```
 
 # OYO: Creating your own function
 
-```{r}
+Let's look at the power outage data.
 
+```{r}
+#power_outages |> head(50)
 ```
 
+Now make your own function that creates a bar chart for any state comparing BLANK AND BLANK
+
+```{r}
+# graphing_power <- 
+```
 
