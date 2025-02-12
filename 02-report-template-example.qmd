@@ -2,9 +2,10 @@
 title: "02-report-template-example"
 params:
   album: "1989"
-echo: false
-
+echo: true
 ---
+Can add echo: false to exclude code
+
 
 ## Set up
 
@@ -13,6 +14,7 @@ echo: false
 #| label: setup
 #| message: false
 #| warning: false
+#| echo: true
 
 library(tidyverse)
 library(janitor)
@@ -45,6 +47,7 @@ taylor_songs |> glimpse()
 
 ```{r}
 albums <- str_split_1(params$album, ",")
+albums
 ```
 
 Album Names: `r params$album` 
@@ -53,5 +56,19 @@ Use this to check your work ^
 ```{r}
 songs <- taylor_songs |> filter(album %in% albums)
 
+songs
+
 ```
+
+Let's look at acousticness.
+
+```{r}
+acousticness <- songs |> arrange(acousticness) |> 
+  select(
+    name, album, acousticness
+  )
+
+acousticness
+```
+
 

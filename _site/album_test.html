@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -129,9 +163,16 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Can add echo: false to exclude code</p>
 <section id="set-up" class="level2">
 <h2 class="anchored" data-anchor-id="set-up">Set up</h2>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.2     ✔ readr     2.1.4
@@ -142,10 +183,12 @@ ul.task-list li input[type="checkbox"] {
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
-
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
 Attaching package: 'janitor'
-
 
 The following objects are masked from 'package:stats':
 
@@ -153,6 +196,13 @@ The following objects are masked from 'package:stats':
 </div>
 </div>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>taylor_files_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data-processed-taylor"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">".csv"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">full.names =</span> T</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>taylor_files_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "data-processed-taylor/1989 (Deluxe).csv"                                                                      
  [2] "data-processed-taylor/1989 (Taylor's Version) [Deluxe].csv"                                                   
@@ -186,6 +236,13 @@ The following objects are masked from 'package:stats':
 </div>
 </div>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="ot">&lt;-</span> taylor_files_list <span class="sc">|&gt;</span> <span class="fu">map</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  read_csv,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">album =</span> <span class="fu">col_character</span>())</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">list_rbind</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 582
 Columns: 16
@@ -207,7 +264,67 @@ $ popularity       &lt;dbl&gt; 48, 81, 79, 59, 47, 80, 51, 52, 52, 55, 50, 50, 5
 $ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550, 3.6…</code></pre>
 </div>
 </div>
-<p>Album Names: 1989, 1989(Deluxe)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>albums <span class="ot">&lt;-</span> <span class="fu">str_split_1</span>(params<span class="sc">$</span>album, <span class="st">","</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>albums</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "1989"          " 1989(Deluxe)"</code></pre>
+</div>
+</div>
+<p>Album Names: 1989, 1989(Deluxe) Use this to check your work ^</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>songs <span class="ot">&lt;-</span> taylor_songs <span class="sc">|&gt;</span> <span class="fu">filter</span>(album <span class="sc">%in%</span> albums)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>songs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 13 × 16
+   name   album release_date track_number uri   acousticness danceability energy
+   &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;              &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+ 1 Welco… 1989  2014-01-01              1 spot…      0.038          0.793  0.634
+ 2 Blank… 1989  2014-01-01              2 spot…      0.085          0.752  0.678
+ 3 Style  1989  2014-01-01              3 spot…      0.00256        0.598  0.786
+ 4 Out O… 1989  2014-01-01              4 spot…      0.00103        0.552  0.841
+ 5 All Y… 1989  2014-01-01              5 spot…      0.00196        0.602  0.735
+ 6 Shake… 1989  2014-01-01              6 spot…      0.0561         0.648  0.785
+ 7 I Wis… 1989  2014-01-01              7 spot…      0.016          0.649  0.898
+ 8 Bad B… 1989  2014-01-01              8 spot…      0.0871         0.652  0.802
+ 9 Wilde… 1989  2014-01-01              9 spot…      0.0709         0.553  0.664
+10 How Y… 1989  2014-01-01             10 spot…      0.00463        0.764  0.659
+11 This … 1989  2014-01-01             11 spot…      0.635          0.485  0.459
+12 I Kno… 1989  2014-01-01             12 spot…      0.231          0.595  0.763
+13 Clean  1989  2014-01-01             13 spot…      0.242          0.81   0.38 
+# ℹ 8 more variables: instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, loudness &lt;dbl&gt;,
+#   speechiness &lt;dbl&gt;, tempo &lt;dbl&gt;, valence &lt;dbl&gt;, popularity &lt;dbl&gt;,
+#   duration_min &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Let’s look at acousticness.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>acousticness <span class="ot">&lt;-</span> songs <span class="sc">|&gt;</span> <span class="fu">arrange</span>(acousticness) <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    name, album, acousticness</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>acousticness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 13 × 3
+   name                       album acousticness
+   &lt;chr&gt;                      &lt;chr&gt;        &lt;dbl&gt;
+ 1 Out Of The Woods           1989       0.00103
+ 2 All You Had To Do Was Stay 1989       0.00196
+ 3 Style                      1989       0.00256
+ 4 How You Get The Girl       1989       0.00463
+ 5 I Wish You Would           1989       0.016  
+ 6 Welcome To New York        1989       0.038  
+ 7 Shake It Off               1989       0.0561 
+ 8 Wildest Dreams             1989       0.0709 
+ 9 Blank Space                1989       0.085  
+10 Bad Blood                  1989       0.0871 
+11 I Know Places              1989       0.231  
+12 Clean                      1989       0.242  
+13 This Love                  1989       0.635  </code></pre>
+</div>
+</div>
 
 
 </section>
