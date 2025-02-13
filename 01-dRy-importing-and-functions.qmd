@@ -1,9 +1,8 @@
 ---
-title: "01-dRy-importing-and-functions"
+title: "Don't Repeat Yourself in R"
 format: html
 ---
 
-# Don't Repeat Yourself in R
 By Ella Barnes and Karina Kumar - Data Fellows of the Media Innovation Group at University of Texas at Austin.
 
 ## Goals of this session
@@ -11,30 +10,46 @@ By Ella Barnes and Karina Kumar - Data Fellows of the Media Innovation Group at 
 - Create your own function
 - Generate parameterized reports quickly
 
-Why dRy? Our coding often requires repetitive processes. These tools can help you unnecessary repetition and maximize your efficiency. 
+Why dRy? Data analysis often requires repetitive processes. These tools can help you maximize efficiency and stop repeating the same code over and over again. 
 
 ## The data
 
+We will be working with two datasets: one about Taylor Swift songs and one about event-correlated power outages across the United States. 
+
+The Taylor data came from [Kaggle](https://www.kaggle.com/code/jarredpriester/taylor-swift-spotify-notebook). 
+
+The power outages data came from [data.gov](https://catalog.data.gov/dataset/event-correlated-outage-dataset-in-america).
+
+Since this lesson is not about cleaning or analysis, we have already done those things for you. But we will be importing the data as if it was in multiple files (which wouldn't be the case after cleaning usually).
+
 ## How this lesson works
+
+For each part of the lesson, we will provide an example using the Taylor Swift dataset. Then we will give you an opportunity to try the concept on your own (OYO) using the power outages dataset. Most code chunks are numbered and correlate to number markdown lists afterwards. You can also view this lesson as a Quarto site if you want to come back at a later date to review what we do today. 
 
 # Importing multiple files at once
 
+First, we are going to look at how to import multiple files at once using the map() function. The Taylor Swift song data is divided into one csv for each album, and we want to bring it all into one object. 
+
 ## Set up
 
-Importing our libraries
+Importing our needed libraries. We use tidyverse for almost everything.
 
 ```{r}
 
-#| label: setup
-#| message: false
-#| warning: false
+#| label: setup   #<1>
+#| message: false #<2>
+#| warning: false #<3>
 
 library(tidyverse)
 library(janitor)
 
 ```
 
-Creating a list of file names
+1. This sets the chunk label. Using `setup` specifically will run this code chunk first every time you render or run the page. 
+2. `#| message: false`  hides the output messages that usually appear when you import libraries. We will show it again later.
+3. Sometimes you do something that creates a warning in R, but you don't always care. `#| warning: false` hides those warnings. We will talk about this more later too. 
+
+## Creating a list of file names
 
 ```{r}
 #| label: import
@@ -42,37 +57,44 @@ Creating a list of file names
 taylor_files_list <- list.files(  #<1>
   "data-processed-taylor",        #<2>
   pattern = ".csv",               #<3>
-  full.names = T                  #<4>
-)
+  full.names = TRUE               #<4>   
+  # Try changing full.names to FALSE and see what happens to the output
+  )
 
 taylor_files_list
 ```
 
-1. list.files()
-2. where to get the file
-3. pattern = how to find the files
-4. full.names = T gets the full path name rather than just the file name
+1. `list.files()` creates a character vector of the names of files
+2. The first argument is the path to find the files. In this case, we want to go into the directory (folder) called `data-proccessed-taylor`.
+3. `pattern` is an optional argument that takes a regular expression to define which specific files you want. In this case we want all files that contain `.csv`.
+4. `full.names = TRUE` gets the full path name rather than just the files name. Let's change this and see what happens...
+
+## Reading in and combining the files
 
 ```{r}
 #| label: combine-files 
 
-# add set_names(basename) to create a column that has the file name
-# add message and warning false 
+taylor_songs <- taylor_files_list |>  #set_names(basename) |> 
+  map(                                        #<1>
+  read_csv,                                   #<2>
+  col_types = cols(album = col_character())   #<3>    
+) |> list_rbind() |>                          #<4>
+  clean_names()                               #<5>
 
-taylor_songs <- taylor_files_list |> map( #<1>
-  read_csv, #<2>
-  col_types = cols(album = col_character())   # comment this out to see what happens #<3>
-) |> list_rbind() |> #<4>
-  clean_names() #<5>
+taylor_songs |> head(15)
 
-taylor_songs |> glimpse()
+# comment out the above line and the comma to see what happens      b. #<6>
+# uncomment set_names(basename) and add names_to = "source" inside list_rbind() #<7>
+# add message and warning false                                     #<8>
 ```
 
-1. map
-2. read_csv
-3. col_types
-4. list_rbind()
-5. clean_names()
+1. First we create a new object called `talyor_songs` which is where all our data will end up. Then we take our list of files names `taylor_files_list` and put it in the `map()` function. `map()` applies a method (in this case `read_csv()`) to every item in a list and returns a list as a result.
+2. Our first argument is the function we want to apply which is `read_csv()` which returns a dataframe of the csv. 
+3. After the comma is `col_types =` which is an argument in `read_csv()`. This argument can set any or all of the column types as you import the data.  
+4. Once we use map to create a list of our newly created object from read_csv, we want to combine them all into one single object which already called `taylor_songs`, so we use `list_rbind()`. 
+5. And then just to make everything look nice and uniform we use `clean_names()` to change the column names. 
+6. What happens when you comment out the `col_types = ` line? Taylor's album 1989 shows up as a number while the other album names show up as strings so get an error and can't join the columns when we use list_rbind().
+7. Let's add `set_names(basename)` by uncommenting it and add `names_to = "source"` inside `list_rbind()`. Look at the output. It creates a column that shows which file each row came from. This can be really helpful when you maybe don't have a column that has the date or year, but the file name does contain it. You can then extract it from that column. 
 
 # OYO: Importing multiple files at once - Power Outages
 
