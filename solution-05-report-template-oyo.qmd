@@ -1,0 +1,53 @@
+---
+title: "04-report-template-oyo"
+params:
+  state: "Texas"
+echo: true
+---
+
+```{r}
+#| label: setup
+#| mesage: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+```
+
+```{r}
+#| label: import
+
+power_cleaned_list <- list.files(
+  "data-processed-power",
+  full.names = T
+)
+
+power_cleaned_list
+```
+
+```{r}
+#| label: combine
+
+all_outages <- map(
+  power_cleaned_list,
+  read_csv,
+  col_type = cols(fips = col_character())
+) |>
+  list_rbind() |>
+  clean_names()
+
+all_outages
+```
+
+```{r}
+state_list <- str_split_1(params$state, ",")
+```
+
+States: `r params$state`
+
+```{r}
+outages <- all_outages |>
+  filter(state_event %in% state_list)
+
+outages
+```

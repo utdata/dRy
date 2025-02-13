@@ -1,5 +1,0 @@
----
-title: "05-render-file-oyo"
-output: html_document
----
-
