@@ -211,15 +211,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-annotation="1" data-code-lines="1">This sets the chunk label. Using <code>setup</code> specifically will run this code chunk first every time you render or run the page.</span>
+<span data-code-lines="1" data-code-cell="annotated-cell-1" data-code-annotation="1">This sets the chunk label. Using <code>setup</code> specifically will run this code chunk first every time you render or run the page.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-annotation="2" data-code-lines="2"><code>#| message: false</code> hides the output messages that usually appear when you import libraries. We will show it again later.</span>
+<span data-code-lines="2" data-code-cell="annotated-cell-1" data-code-annotation="2"><code>#| message: false</code> hides the output messages that usually appear when you import libraries. We will show it again later.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-annotation="3" data-code-lines="3">Sometimes you do something that creates a warning in R, but you don’t always care. <code>#| warning: false</code> hides those warnings. We will talk about this more later too.</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-1" data-code-annotation="3">Sometimes you do something that creates a warning in R, but you don’t always care. <code>#| warning: false</code> hides those warnings. We will talk about this more later too.</span>
 </dd>
 </dl>
 </div>
@@ -261,19 +261,19 @@ The following objects are masked from 'package:stats':
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-annotation="1" data-code-lines="1"><code>list.files()</code> creates a character vector of the names of files</span>
+<span data-code-lines="1" data-code-cell="annotated-cell-3" data-code-annotation="1"><code>list.files()</code> creates a character vector of the names of files</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-annotation="2" data-code-lines="2">The first argument is the path to find the files. In this case, we want to go into the directory (folder) called <code>data-proccessed-taylor</code>.</span>
+<span data-code-lines="2" data-code-cell="annotated-cell-3" data-code-annotation="2">The first argument is the path to find the files. In this case, we want to go into the directory (folder) called <code>data-proccessed-taylor</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-annotation="3" data-code-lines="3"><code>pattern</code> is an optional argument that takes a regular expression to define which specific files you want. In this case we want all files that contain <code>.csv</code>.</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-3" data-code-annotation="3"><code>pattern</code> is an optional argument that takes a regular expression to define which specific files you want. In this case we want all files that contain <code>.csv</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-annotation="4" data-code-lines="4"><code>full.names = TRUE</code> gets the full path name rather than just the files name. Let’s change this and see what happens…</span>
+<span data-code-lines="4" data-code-cell="annotated-cell-3" data-code-annotation="4"><code>full.names = TRUE</code> gets the full path name rather than just the files name. Let’s change this and see what happens…</span>
 </dd>
 </dl>
 </div>
@@ -313,89 +313,93 @@ The following objects are masked from 'package:stats':
 <section id="reading-in-and-combining-the-files" class="level2">
 <h2 class="anchored" data-anchor-id="reading-in-and-combining-the-files">Reading in and combining the files</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="ot">&lt;-</span> taylor_files_list <span class="sc">|&gt;</span> <span class="fu">map</span>(</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a>  read_csv,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">album =</span> <span class="fu">col_character</span>())</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">list_rbind</span>() <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-4-5" class="code-annotation-target"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
-<span id="annotated-cell-4-6"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span>
-<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-4-9" class="code-annotation-target"><a href="#annotated-cell-4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># comment out the above line and the comma to see what happens</span></span>
-<span id="annotated-cell-4-10"><a href="#annotated-cell-4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># add set_names(basename) to create a column that has the file name</span></span>
-<span id="annotated-cell-4-11"><a href="#annotated-cell-4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># add message and warning false </span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="ot">&lt;-</span> taylor_files_list <span class="sc">|&gt;</span>  <span class="co">#set_names(basename) |&gt; </span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a>  read_csv,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">album =</span> <span class="fu">col_character</span>())</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-4-5" class="code-annotation-target"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">list_rbind</span>() <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">15</span>)</span>
+<span id="annotated-cell-4-9"><a href="#annotated-cell-4-9" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-4-10" class="code-annotation-target"><a href="#annotated-cell-4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># comment out the above line and the comma to see what happens      b.</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-4-11" class="code-annotation-target"><a href="#annotated-cell-4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># uncomment set_names(basename) and add names_to = "source" inside list_rbind()</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="1" data-code-lines="1">First we create a new object called <code>talyor_songs</code> which is where all our data will end up. Then we take our list of files names <code>taylor_files_list</code> and put it in the <code>map()</code> function. <code>map()</code> applies a method (in this case <code>read_csv()</code>) to every item in a list and returns a list as a result.</span>
+<span data-code-lines="2" data-code-cell="annotated-cell-4" data-code-annotation="1">First we create a new object called <code>talyor_songs</code> which is where all our data will end up. Then we take our list of files names <code>taylor_files_list</code> and put it in the <code>map()</code> function. <code>map()</code> applies a method (in this case <code>read_csv()</code>) to every item in a list and returns a list as a result.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="2" data-code-lines="2">Our first argument is the function we want to apply which is <code>read_csv()</code> which returns a dataframe of the csv.</span>
+<span data-code-lines="3" data-code-cell="annotated-cell-4" data-code-annotation="2">Our first argument is the function we want to apply which is <code>read_csv()</code> which returns a dataframe of the csv.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="3" data-code-lines="3">After the comma is <code>col_types =</code> which is an argument in <code>read_csv()</code>. This argument can set any or all of the column types as you import the data.<br>
+<span data-code-lines="4" data-code-cell="annotated-cell-4" data-code-annotation="3">After the comma is <code>col_types =</code> which is an argument in <code>read_csv()</code>. This argument can set any or all of the column types as you import the data.<br>
 </span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="4" data-code-lines="4">Once we use map to create a list of our newly created object from read_csv, we want to combine them all into one single object which already called <code>taylor_songs</code>, so we use <code>list_rbind()</code>.</span>
+<span data-code-lines="5" data-code-cell="annotated-cell-4" data-code-annotation="4">Once we use map to create a list of our newly created object from read_csv, we want to combine them all into one single object which already called <code>taylor_songs</code>, so we use <code>list_rbind()</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="5" data-code-lines="5">And then just to make everything look nice and uniform we use <code>clean_names()</code> to change the column names.</span>
+<span data-code-lines="6" data-code-cell="annotated-cell-4" data-code-annotation="5">And then just to make everything look nice and uniform we use <code>clean_names()</code> to change the column names.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-annotation="6" data-code-lines="9">What happens when you comment out the <code>col_types =</code> line? Taylor’s album 1989 shows up as a number while the other album names show up as strings so get an error and can’t join the columns when we use list_rbind().</span>
+<span data-code-lines="10" data-code-cell="annotated-cell-4" data-code-annotation="6">What happens when you comment out the <code>col_types =</code> line? Taylor’s album 1989 shows up as a number while the other album names show up as strings so get an error and can’t join the columns when we use list_rbind().</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-lines="11" data-code-cell="annotated-cell-4" data-code-annotation="7">Let’s add <code>set_names(basename)</code> by uncommenting it and add <code>names_to = "source"</code> inside <code>list_rbind()</code>. Look at the output. It creates a column that shows which file each row came from. This can be really helpful when you maybe don’t have a column that has the date or year, but the file name does contain it. You can then extract it from that column.</span>
 </dd>
 </dl>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Rows: 582
-Columns: 16
-$ name             &lt;chr&gt; "Welcome To New York", "Blank Space", "Style", "Out O…
-$ album            &lt;chr&gt; "1989 (Deluxe)", "1989 (Deluxe)", "1989 (Deluxe)", "1…
-$ release_date     &lt;date&gt; 2014-01-01, 2014-01-01, 2014-01-01, 2014-01-01, 2014…
-$ track_number     &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16…
-$ uri              &lt;chr&gt; "spotify:track:3nRmDz7qGCvsMS30rGGY0x", "spotify:trac…
-$ acousticness     &lt;dbl&gt; 0.034800, 0.103000, 0.002450, 0.000743, 0.002010, 0.0…
-$ danceability     &lt;dbl&gt; 0.789, 0.760, 0.588, 0.553, 0.605, 0.647, 0.653, 0.64…
-$ energy           &lt;dbl&gt; 0.634, 0.703, 0.791, 0.841, 0.725, 0.800, 0.893, 0.79…
-$ instrumentalness &lt;dbl&gt; 1.64e-06, 0.00e+00, 2.58e-03, 1.19e-05, 2.02e-05, 0.0…
-$ liveness         &lt;dbl&gt; 0.3020, 0.0913, 0.1180, 0.3410, 0.1010, 0.3340, 0.102…
-$ loudness         &lt;dbl&gt; -4.762, -5.412, -5.595, -6.937, -5.729, -5.384, -5.96…
-$ speechiness      &lt;dbl&gt; 0.0323, 0.0540, 0.0402, 0.0396, 0.0323, 0.1650, 0.053…
-$ tempo            &lt;dbl&gt; 116.992, 95.997, 94.933, 92.008, 96.970, 160.078, 118…
-$ valence          &lt;dbl&gt; 0.658, 0.570, 0.487, 0.338, 0.539, 0.942, 0.513, 0.28…
-$ popularity       &lt;dbl&gt; 48, 81, 79, 59, 47, 80, 51, 52, 52, 55, 50, 50, 55, 5…
-$ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550, 3.6…</code></pre>
+<pre><code># A tibble: 15 × 16
+   name   album release_date track_number uri   acousticness danceability energy
+   &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;              &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+ 1 Welco… 1989… 2014-01-01              1 spot…     0.0348          0.789  0.634
+ 2 Blank… 1989… 2014-01-01              2 spot…     0.103           0.76   0.703
+ 3 Style  1989… 2014-01-01              3 spot…     0.00245         0.588  0.791
+ 4 Out O… 1989… 2014-01-01              4 spot…     0.000743        0.553  0.841
+ 5 All Y… 1989… 2014-01-01              5 spot…     0.00201         0.605  0.725
+ 6 Shake… 1989… 2014-01-01              6 spot…     0.0647          0.647  0.8  
+ 7 I Wis… 1989… 2014-01-01              7 spot…     0.0158          0.653  0.893
+ 8 Bad B… 1989… 2014-01-01              8 spot…     0.0885          0.646  0.794
+ 9 Wilde… 1989… 2014-01-01              9 spot…     0.0692          0.55   0.688
+10 How Y… 1989… 2014-01-01             10 spot…     0.00364         0.765  0.656
+11 This … 1989… 2014-01-01             11 spot…     0.678           0.481  0.435
+12 I Kno… 1989… 2014-01-01             12 spot…     0.245           0.602  0.755
+13 Clean  1989… 2014-01-01             13 spot…     0.232           0.815  0.377
+14 Wonde… 1989… 2014-01-01             14 spot…     0.0493          0.422  0.692
+15 You A… 1989… 2014-01-01             15 spot…     0.707           0.474  0.48 
+# ℹ 8 more variables: instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, loudness &lt;dbl&gt;,
+#   speechiness &lt;dbl&gt;, tempo &lt;dbl&gt;, valence &lt;dbl&gt;, popularity &lt;dbl&gt;,
+#   duration_min &lt;dbl&gt;</code></pre>
 </div>
 </div>
 </section>
 </section>
 <section id="oyo-importing-multiple-files-at-once---power-outages" class="level1">
 <h1>OYO: Importing multiple files at once - Power Outages</h1>
+<p>Now, try this on your own with the power outage data.</p>
+<p>Instructions: The files you want to import are all in a folder called <code>data-processed-power</code>. We have already given you the object names to put your code in to help with consistency and preventing repetition across files. Uncomment each of the lines and input code to read in the csv’s.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># output: false</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#data-processed-power</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#power_files_list &lt;- </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#power_files_list &lt;- </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#power_outages &lt;-  NA</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#power_outages &lt;-  </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#power_outages |&gt; glimpse()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>How did we get to the chart…?</p>
 </section>
 <section id="creating-your-own-function" class="level1">
 <h1>Creating your own function</h1>
 <p>We want to create a function that creates a graph we can change over and over again.</p>
-<p>This is what the Taylor Swift song data looks like:</p>
+<p>First, let’s take a look at the Taylor Swift song data…</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -418,63 +422,79 @@ $ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550,
 #   duration_min &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<p>What do each of these columns mean?</p>
-<p>Let’s compare some of these columns in a graph.</p>
+<p>There are a lot of columns that describe different aspects of the music, but two that are obvious and stand our are popularity and song length. Do Taylor’s songs have any sort of correlation in popularity to length of the song? Let’s graph it to find out. The data creator has told us that popularity is on a scale of 1-100.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-8-1" class="code-annotation-target"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_songs, <span class="fu">aes</span>(</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-8-2" class="code-annotation-target"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> duration_min,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-8-3" class="code-annotation-target"><a href="#annotated-cell-8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> popularity)) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-8-4" class="code-annotation-target"><a href="#annotated-cell-8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-8" data-code-annotation="1" data-code-lines="1">ggplot and aes</span>
-</dd>
-<dt data-target-cell="annotated-cell-8" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-8" data-code-annotation="2" data-code-lines="2">x value</span>
-</dd>
-<dt data-target-cell="annotated-cell-8" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-8" data-code-annotation="3" data-code-lines="3">y value</span>
-</dd>
-<dt data-target-cell="annotated-cell-8" data-target-annotation="4">4</dt>
-<dd>
-<span data-code-cell="annotated-cell-8" data-code-annotation="4" data-code-lines="4">geom_point</span>
-</dd>
-</dl>
-</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_songs, <span class="fu">aes</span>( </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> duration_min,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> popularity)) <span class="sc">+</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="01-dRy-importing-and-functions_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>All too well (10 minutes is an obvious outlier)</p>
-<p>What if we wanted to make the same graph for multiple albums? Create our own function</p>
+<p><em>For our Taylor Swift fans, can you tell which song is all the way on the right?</em></p>
+<p>What if we want to add labels and scale the axes differently? And what if we wanted to make the same graph for multiple albums? That would require a lot of recoding things we’ve already typed out before (or a lot of copy and pasting). Rather than rewriting this the same methods over and over again, we can make a function that does it for us.</p>
+<p>We are going to call our function <code>graphing_taylor</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>graphing_taylor <span class="ot">&lt;-</span> <span class="cf">function</span>(song_data){</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(song_data, <span class="fu">aes</span>(<span class="at">x=</span> duration_min, <span class="at">y =</span> popularity)) <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Length of song in minutes"</span>, <span class="at">y =</span> <span class="st">"Popularity"</span>) <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">n.breaks =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>))}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-9-1" class="code-annotation-target"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a>graphing_taylor <span class="ot">&lt;-</span> <span class="cf">function</span>(song_data) {</span>
+<span id="annotated-cell-9-2"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(song_data, <span class="fu">aes</span>(<span class="at">x=</span> duration_min, <span class="at">y =</span> popularity)) <span class="sc">+</span></span>
+<span id="annotated-cell-9-3"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="annotated-cell-9-4"><a href="#annotated-cell-9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Length of song in minutes"</span>, <span class="at">y =</span> <span class="st">"Popularity"</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-9-5"><a href="#annotated-cell-9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">n.breaks =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-9-6"><a href="#annotated-cell-9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>))}</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-lines="1" data-code-cell="annotated-cell-9" data-code-annotation="1">Here we use the <code>function</code> method with one argument: <code>song_data</code> and then we define the function using the curly braces <code>{}</code>. This is extremely similar to JavaScript.</span>
+</dd>
+</dl>
 </div>
+</div>
+<p>Now that we’ve built our function we can apply it to whatever album(s) we want. So let’s look at all the versions of the Red album first.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">graphing_taylor</span>(taylor_songs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>red <span class="ot">&lt;-</span> taylor_songs <span class="sc">|&gt;</span> <span class="fu">filter</span>(album <span class="sc">|&gt;</span> <span class="fu">str_detect</span>(<span class="st">"Red"</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>red</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 68 × 16
+   name   album release_date track_number uri   acousticness danceability energy
+   &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;              &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+ 1 State… Red … 2012-10-22              1 spot…     0.000197        0.588  0.825
+ 2 Red    Red … 2012-10-22              2 spot…     0.0773          0.602  0.896
+ 3 Treac… Red … 2012-10-22              3 spot…     0.101           0.704  0.621
+ 4 I Kne… Red … 2012-10-22              4 spot…     0.00454         0.622  0.469
+ 5 All T… Red … 2012-10-22              5 spot…     0.0382          0.602  0.609
+ 6 22     Red … 2012-10-22              6 spot…     0.00215         0.661  0.729
+ 7 I Alm… Red … 2012-10-22              7 spot…     0.0173          0.567  0.481
+ 8 We Ar… Red … 2012-10-22              8 spot…     0.00957         0.628  0.676
+ 9 Stay … Red … 2012-10-22              9 spot…     0.307           0.729  0.748
+10 The L… Red … 2012-10-22             10 spot…     0.035           0.505  0.443
+# ℹ 58 more rows
+# ℹ 8 more variables: instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, loudness &lt;dbl&gt;,
+#   speechiness &lt;dbl&gt;, tempo &lt;dbl&gt;, valence &lt;dbl&gt;, popularity &lt;dbl&gt;,
+#   duration_min &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Now we can apply our graphing function to the <code>red</code> object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">graphing_taylor</span>(red)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="01-dRy-importing-and-functions_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<p><img src="01-dRy-importing-and-functions_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p><em>And again we see our “All Too Well (10 minute version)” as a big outlier.</em></p>
+<p>Now try it on your own.</p>
 </section>
 <section id="oyo-creating-your-own-function" class="level1">
 <h1>OYO: Creating your own function</h1>
 <p>Let’s look at the power outage data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#power_outages |&gt; head(50)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#power_outages |&gt; head(50)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now make your own function that creates a bar chart for any state comparing BLANK AND BLANK</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># graphing_power &lt;- </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># graphing_power &lt;- </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

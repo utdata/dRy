@@ -85,7 +85,6 @@ taylor_songs |> head(15)
 
 # comment out the above line and the comma to see what happens      b. #<6>
 # uncomment set_names(basename) and add names_to = "source" inside list_rbind() #<7>
-# add message and warning false                                     #<8>
 ```
 
 1. First we create a new object called `talyor_songs` which is where all our data will end up. Then we take our list of files names `taylor_files_list` and put it in the `map()` function. `map()` applies a method (in this case `read_csv()`) to every item in a list and returns a list as a result.
@@ -94,15 +93,17 @@ taylor_songs |> head(15)
 4. Once we use map to create a list of our newly created object from read_csv, we want to combine them all into one single object which already called `taylor_songs`, so we use `list_rbind()`. 
 5. And then just to make everything look nice and uniform we use `clean_names()` to change the column names. 
 6. What happens when you comment out the `col_types = ` line? Taylor's album 1989 shows up as a number while the other album names show up as strings so get an error and can't join the columns when we use list_rbind().
-7. Let's add `set_names(basename)` by uncommenting it and add `names_to = "source"` inside `list_rbind()`. Look at the output. It creates a column that shows which file each row came from. This can be really helpful when you maybe don't have a column that has the date or year, but the file name does contain it. You can then extract it from that column. 
+7. Let's add `set_names(basename)` by uncommenting it and add `names_to = "source"` inside `list_rbind()`. Look at the output. It creates a column that shows which file each row came from. This can be really helpful when you maybe don't have a column that has the date or year, but the file name does contain it. You can then extract it from that column.
+8. This 
 
 # OYO: Importing multiple files at once - Power Outages
 
+Now, try this on your own with the power outage data.
+
+Instructions: The files you want to import are all in a folder called `data-processed-power`. We have already given you the object names to put your code in to help with consistency and preventing repetition across files. Uncomment each of the lines and input code to read in the csv's. 
+
 ```{r}
 #| label: import-oyo
-# output: false
-
-#data-processed-power
 
 #power_files_list <- 
 
@@ -111,44 +112,37 @@ taylor_songs |> head(15)
 ```{r}
 #| label: combine-files-oyo
 
-#power_outages <-  NA
+#power_outages <-  
 
 #power_outages |> glimpse()
 ```
-
-How did we get to the chart...? 
 
 # Creating your own function
 
 We want to create a function that creates a graph we can change over and over again.
 
-This is what the Taylor Swift song data looks like:
+First, let's take a look at the Taylor Swift song data...
 
 ```{r}
 taylor_songs |> head(50)
 ```
-What do each of these columns mean?
 
-Let's compare some of these columns in a graph.
+There are a lot of columns that describe different aspects of the music, but two that are obvious and stand our are popularity and song length. Do Taylor's songs have any sort of correlation in popularity to length of the song? Let's graph it to find out. The data creator has told us that popularity is on a scale of 1-100. 
 
 ```{r}
-ggplot(taylor_songs, aes( #<1>
-  x = duration_min, #<2>
-  y = popularity)) + #<3>
-  geom_point() #<4>
+ggplot(taylor_songs, aes( 
+  x = duration_min,
+  y = popularity)) + 
+  geom_point() 
 ```
+*For our Taylor Swift fans, can you tell which song is all the way on the right?*
 
-1. ggplot and aes
-2. x value
-3. y value
-4. geom_point
+What if we want to add labels and scale the axes differently? And what if we wanted to make the same graph for multiple albums? That would require a lot of recoding things we've already typed out before (or a lot of copy and pasting). Rather than rewriting this the same methods over and over again, we can make a function that does it for us. 
 
-All too well (10 minutes is an obvious outlier)
-
-What if we wanted to make the same graph for multiple albums? Create our own function
+We are going to call our function `graphing_taylor`.
 
 ```{r}
-graphing_taylor <- function(song_data){
+graphing_taylor <- function(song_data) {                       #<1>  
   ggplot(song_data, aes(x= duration_min, y = popularity)) +
     geom_point() +
     labs(x = "Length of song in minutes", y = "Popularity") +
@@ -157,9 +151,26 @@ graphing_taylor <- function(song_data){
 
 ```
 
+1. Here we use the `function` method with one argument: `song_data` and then we define the function using the curly braces `{}`. This is extremely similar to JavaScript. 
+
+Now that we've built our function we can apply it to whatever album(s) we want. So let's look at all the versions of the Red album first. 
+
 ```{r}
-graphing_taylor(taylor_songs)
+red <- taylor_songs |> filter(album |> str_detect("Red"))
+
+red
+                      
 ```
+
+Now we can apply our graphing function to the `red` object. 
+
+```{r}
+graphing_taylor(red)
+```
+
+*And again we see our "All Too Well (10 minute version)" as a big outlier.*
+
+Now try it on your own.
 
 # OYO: Creating your own function
 
