@@ -4,8 +4,10 @@ params:
   album: "1989"
 echo: true
 ---
-Can add echo: false to exclude code
 
+title: title of file.
+params: what we're filtering for.
+echo: 'true' repeats all code chunks in render file, 'false' excludes them.
 
 ## Set up
 
@@ -21,6 +23,9 @@ library(janitor)
 
 ```
 
+
+### Importing our files 
+
 ```{r}
 #| label: import
 
@@ -33,6 +38,8 @@ taylor_files_list <- list.files(
 taylor_files_list
 ```
 
+### Combining our files
+
 ```{r}
 #| label: combine-files 
 
@@ -44,6 +51,9 @@ taylor_songs <- taylor_files_list |> map(
 
 taylor_songs |> glimpse()
 ```
+# Defining paramater(s)
+
+Here we'll create our parameter
 
 ```{r}
 albums <- str_split_1( #<1>
@@ -51,19 +61,26 @@ albums <- str_split_1( #<1>
 
 albums
 ```
-1. str_split_1
-2. params$album and ","
+1. Use str_split_1 to split a single string into pieces to return a single character vector.
+2.  We use 'params$album' to create the string that will be read through str_split_1 . In this case, that will be the single parameter '1989'. The comma is used to determine when one value stops and the other begins; this is useful when you are looking for mulitples of one type of parameter.
+
 
 Album Names: `r params$album` 
 Use this to check your work ^
 
+
+# All 1989 songs
+
+OK, now we can look for all occurrence of '1989' in our data.
+
 ```{r}
-songs <- taylor_songs |> filter(album %in% albums)
+songs <- taylor_songs |> 
+  filter(album %in% albums) <#2>
 
 songs
 ```
 
-!EXPLAINATION!
+2. Filtering for every instance that album (the column) is equal to albums (the parameter.)
 
 ## Let's do some analysis!
 

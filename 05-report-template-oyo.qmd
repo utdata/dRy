@@ -5,6 +5,8 @@ params:
 echo: true
 ---
 
+## Set up
+
 ```{r}
 #| label: setup
 #| mesage: false
@@ -13,6 +15,8 @@ echo: true
 library(tidyverse)
 library(janitor)
 ```
+
+### Import your files
 
 ```{r}
 #| label: import
@@ -25,6 +29,8 @@ power_cleaned_list <- list.files(
 
 power_cleaned_list
 ```
+
+### Combine all your files
 
 ```{r}
 #| label: combine
@@ -41,9 +47,9 @@ all_outages <- map(
 all_outages
 ```
 
-## OYO: create parameter list and filter for parameters
+## OYO: 
 
-
+### Create parameter list and filter for parameters
 
 ```{r}
 #state_list <- 
@@ -56,3 +62,23 @@ States: (check your work)
 
 #outages
 ```
+
+### Do some analysis for your state
+
+- What is the most common cause of power outages?
+- What cause leads to the longest power outages?
+
+tip: use event_category instead of event_type
+
+#### Common causes of outages
+ 
+```{r}
+#outages |>
+```
+
+#### Cause of longest outages
+
+```{r}
+#outages |>
+```
+

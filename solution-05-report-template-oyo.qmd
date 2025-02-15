@@ -51,3 +51,28 @@ outages <- all_outages |>
 
 outages
 ```
+
+### Do some analysis for your state
+
+- What is the most common cause of power outages?
+- What cause leads to the longest power outages?
+
+
+#### Common cause of outages
+
+```{r}
+#| label: common-cause
+ 
+outages |> group_by (event_category) |> 
+  summarize(total_events = n()) |> 
+  arrange(total_events |> desc())
+```
+
+#### Cause of longest outages
+
+```{r}
+outages |> group_by (event_category) |> 
+  summarize(avg_outage_length = mean(duration), total_occurences = n()) |> 
+  arrange(avg_outage_length |> desc(), total_occurences)
+```
+

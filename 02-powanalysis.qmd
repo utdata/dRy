@@ -65,41 +65,9 @@ power_all |> arrange(duration |> desc())
 ## What is the most common cause of power outages?
 
 ```{r}
-power_all |> group_by (event_type) |> 
+power_all |> group_by (event_category) |> 
   summarize(total_events = n()) |> 
   arrange(total_events |> desc())
-```
-
-Need to create a new column for event_type categories that are similar
-
-## Creating new column for event_type (categories that are similar)
-
-```{r}
-
-power_cat <- power_all |>
-  mutate(event_category = case_when(
-    str_detect(event_type, "Weather") == TRUE ~ "Weather",
-    str_detect(event_type, "System Operations") == TRUE ~ "System Operations",
-    str_detect(event_type, "Suspicious Activity") == TRUE ~ "Suspiciour Activity",
-    str_detect(event_type, "Transmission") == TRUE ~ "Equipment Issue",
-    str_detect(event_type, "Fuel") == TRUE ~ "Fuel Supply Issue",
-    str_detect(event_type, "Cyber") == TRUE ~ "Cyber Issue",
-    str_detect(event_type, "Physical") == TRUE ~ "Potential or Actual Physical Interference",
-    str_detect(event_type, "Vandalism") == TRUE ~ "Potential or Actual Physical Interference",
-    str_detect(event_type, "Generation") == TRUE ~ "Generation Inedequacy",
-    str_detect(event_type, "Sabotage") == TRUE ~ "Potential or Actual Physical Interference",
-    str_detect(event_type, "Natural Disaster") == TRUE ~ "Natural Disaster",
-    str_detect(event_type, "Suspicious") == TRUE ~ "Potential or Actual Physical Interference",
-    str_detect(event_type, "Distribution Interruption") == TRUE ~ "Distribution Interruption",
-    str_detect(event_type, "Islanding") == TRUE ~ "Islanding",    
-    str_detect(event_type, "Theft") == TRUE ~ "Theft",
-    str_detect(event_type, "Public Appeal") == TRUE ~ "Public Appeal",
-    str_detect(event_type, "Failure at high voltage substation or switchyard") == TRUE ~ "Failure at high voltage substation or switchyard",
-    str_detect(event_type, "physical") == TRUE ~ "Potential or Actual Physical Interference",
-    str_detect(event_type, "Unknown") == TRUE ~ "Unknown", #second to last
-    str_detect(event_type, "Other") == TRUE ~ "Unknown" #make this last, so something-other is not affected
-    ))
-
 ```
 
 ```{r}
