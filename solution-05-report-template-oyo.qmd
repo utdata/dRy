@@ -57,22 +57,33 @@ outages
 - What is the most common cause of power outages?
 - What cause leads to the longest power outages?
 
-
 #### Common cause of outages
 
 ```{r}
 #| label: common-cause
  
-outages |> group_by (event_category) |> 
-  summarize(total_events = n()) |> 
-  arrange(total_events |> desc())
+outages |> 
+  group_by (event_category) |> #<1>
+  summarize(total_events = n()) |> #<2>
+  arrange(total_events |> desc()) #<3>
+
 ```
+
+1. Exclusively looking at event_category.
+2. Counting how many times each event_category has occurred.
+3. Ordering from most to least occurrences.
 
 #### Cause of longest outages
 
 ```{r}
-outages |> group_by (event_category) |> 
-  summarize(avg_outage_length = mean(duration), total_occurences = n()) |> 
-  arrange(avg_outage_length |> desc(), total_occurences)
+#| label: cause-longest
+
+outages |> 
+  group_by (event_category) |> #<1>
+  summarize(avg_outage_length = mean(duration), total_occurences = n()) |> #<2>
+  arrange(avg_outage_length |> desc(), total_occurences) #<3>
 ```
 
+1. Exclusively looking at event_category.
+2. Finding average duration (mean), and including occurrences for comparison.
+3. Ordering from longest to shortest average outage length.

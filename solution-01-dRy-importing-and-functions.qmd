@@ -1,0 +1,52 @@
+---
+title: "Importing and function solutions"
+format: html
+---
+
+## Set up
+
+Importing our needed libraries. We use tidyverse for almost everything.
+
+```{r}
+
+#| label: setup   #<1>
+#| message: false #<2>
+#| warning: false #<3>
+
+library(tidyverse)
+library(janitor)
+
+```
+
+# Importing multiple files at once
+
+```{r}
+#| label: import-oyo
+
+power_files_list <- list.files(
+  "data-processed-power",
+  full.names = T
+)
+
+power_files_list
+
+```
+
+```{r}
+#| label: combine-files-oyo
+
+power_all <- map(
+  power_files_list,
+  read_csv
+) |>
+  list_rbind() |>
+  clean_names()
+
+power_all |> glimpse()
+```
+
+```{r}
+#| lable: function
+
+```
+
