@@ -48,5 +48,21 @@ power_all |> glimpse()
 ```{r}
 #| lable: function
 
+# do i need to pivot this, or am i doing something else completely wrong.
+
+graphing_function <- function(power_data) {
+  ggplot(power_data, aes(x = total_events, y = state_event) +
+        geom_bar() +
+        labs(x = "Outage cause", y = "Occurances"))
+}
+
+texas <- power_all |> filter(state_event |> str_detect("Texas")) |> 
+  group_by (event_category) |> #<1>
+  summarize(total_events = n()) |> #<2>
+  arrange(total_events |> desc()) 
+
+texas
+
+graphing_function(texas)
 ```
 
