@@ -71,7 +71,7 @@ power_all |> group_by (event_category) |>
 ```
 
 ```{r}
-power_cat |> group_by (event_category) |> 
+power_all |> group_by (event_category) |> 
   summarize(total_events = n()) |> 
   arrange(total_events |> desc())
 ```
@@ -80,7 +80,7 @@ power_cat |> group_by (event_category) |>
 ## What cause leads to the longest power outages?
 
 ```{r}
-power_cat |> group_by (event_category) |> 
+power_all |> group_by (event_category) |> 
   summarize(avg_outage_length = mean(duration), total_occurences = n()) |> 
   arrange(avg_outage_length |> desc(), total_occurences)
 ```
@@ -88,14 +88,14 @@ power_cat |> group_by (event_category) |>
 ## What state resolves issues the quickest? slowest?
 
 ```{r}
-power_cat |> group_by (state_event) |> 
+power_all |> group_by (state_event) |> 
   summarize(avg_event_length = mean(duration), total_occurences = n()) |> 
   arrange(avg_event_length)
 ```
 
 ```{r}
 
-power_cat |> group_by (state_event) |> 
+power_all |> group_by (state_event) |> 
   summarize(avg_event_length = mean(duration), total_occurences = n()) |> 
   arrange(avg_event_length |> desc())
 ```
@@ -103,13 +103,13 @@ power_cat |> group_by (state_event) |>
 ## What state has the most outages? Least?
 
 ```{r}
-power_cat |> group_by (state_event) |> 
+power_all |> group_by (state_event) |> 
   summarize(total_outages = n()) |> 
   arrange(total_outages |> desc())
 ```
 
 ```{r}
-power_cat |> group_by (state_event) |> 
+power_all |> group_by (state_event) |> 
   summarize(total_outages = n()) |> 
   arrange(total_outages)
 ```
@@ -121,7 +121,7 @@ states <- states(cb = TRUE, class = "sf") # what does cb mean?
 ```
 
 ```{r}
-power_states <- power_cat |> group_by(state_event) |> 
+power_states <- power_all |> group_by(state_event) |> 
   summarize(total_events = n())
 
 power_states
