@@ -75,7 +75,7 @@ OK, now we can look for all occurrence of '1989' in our data.
 
 ```{r}
 songs <- taylor_songs |> 
-  filter(album %in% albums) <#2>
+  filter(album %in% albums) #<2>
 
 songs
 ```
@@ -84,10 +84,10 @@ songs
 
 ## Let's do some analysis!
 
-Let's look at acousticness.
+Let's look at acousticness first. On Kaggle, where we got the data, the author defines acousticness like this: "A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic."
 
 ```{r}
-acousticness <- songs |> arrange(acousticness) |> 
+acousticness <- songs |> arrange(acousticness |> desc()) |> 
   select(
     name, album, acousticness
   )
@@ -95,4 +95,36 @@ acousticness <- songs |> arrange(acousticness) |>
 acousticness
 ```
 
-!DO MORE ANALYSIS HERE!
+Now I want to look at the most danceable songs. Our data author tells us: "Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable." 
+
+```{r}
+danceability <- songs |> arrange(danceability |> desc()) |> 
+  select(
+    name, album, danceability
+  )
+
+danceability
+```
+
+What about popularity? It's unclear how popularity is calculated, but it is on a scale from 0 to 100. 
+
+```{r}
+popularity <- songs |> arrange(popularity |> desc()) |> 
+  select(
+    name, album, popularity
+  )
+
+popularity
+```
+
+Now, I want to look at tempo vs danceability. We already saw the definition of danceability but the tempo is in beats per minute (BPM). Let's make a chart. 
+
+```{r}
+ggplot(songs, aes(x = tempo, y = danceability)) +
+  geom_point() +
+  scale_x_continuous(name = "Tempo (BPM)", n.breaks = 10) +
+  scale_y_continuous(name = "Danceability", limits = c(0,1)) +
+  labs(title = str_glue("How does the tempo affect danceability of Taylor Swift songs from album(s): {album_names}", album_names = params$album))  
+```
+
+Note above, we used our `r params$album` variable so that our chart title will change based on what we input in our render file for which albums. 
