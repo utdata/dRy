@@ -74,11 +74,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -98,48 +98,126 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">dRy</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-report-template-oyo.html">04-report-template-oyo</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">dRy</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Don’t Repeat Yourself in R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-report-template-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02-report-template-example</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-report-template-oyo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">04-report-template-oyo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./powanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./powcleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power outage cleaning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solution-01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Importing and function solutions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solution-05-report-template-oyo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04-report-template-oyo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tayanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taycleaning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./taycleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taycleaning</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#oyo-create-parameter-list-and-filter-for-parameters" id="toc-oyo-create-parameter-list-and-filter-for-parameters" class="nav-link active" data-scroll-target="#oyo-create-parameter-list-and-filter-for-parameters">OYO: create parameter list and filter for parameters</a></li>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set up</a>
+  <ul class="collapse">
+  <li><a href="#import-your-files" id="toc-import-your-files" class="nav-link" data-scroll-target="#import-your-files">Import your files</a></li>
+  <li><a href="#combine-all-your-files" id="toc-combine-all-your-files" class="nav-link" data-scroll-target="#combine-all-your-files">Combine all your files</a></li>
+  </ul></li>
+  <li><a href="#oyo" id="toc-oyo" class="nav-link" data-scroll-target="#oyo">OYO:</a>
+  <ul class="collapse">
+  <li><a href="#create-parameter-list-and-filter-for-parameters" id="toc-create-parameter-list-and-filter-for-parameters" class="nav-link" data-scroll-target="#create-parameter-list-and-filter-for-parameters">Create parameter list and filter for parameters</a></li>
+  <li><a href="#do-some-analysis-for-your-state" id="toc-do-some-analysis-for-your-state" class="nav-link" data-scroll-target="#do-some-analysis-for-your-state">Do some analysis for your state</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -163,10 +241,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="set-up" class="level2">
+<h2 class="anchored" data-anchor-id="set-up">Set up</h2>
 <div class="cell" data-mesage="false">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="import-your-files" class="level3">
+<h3 class="anchored" data-anchor-id="import-your-files">Import your files</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#copy from analysis</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>power_cleaned_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
@@ -226,6 +308,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [48] "data-processed-power/Wyoming.csv"       </code></pre>
 </div>
 </div>
+</section>
+<section id="combine-all-your-files" class="level3">
+<h3 class="anchored" data-anchor-id="combine-all-your-files">Combine all your files</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#copy from analysis</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>all_outages <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
@@ -238,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>all_outages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 526,165 × 13
+<pre><code># A tibble: 526,165 × 14
    state_event datetime_event_began datetime_restoration event_type  fips  state
    &lt;chr&gt;       &lt;dttm&gt;               &lt;dttm&gt;               &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;
  1 Alabama     2015-01-07 17:00:00  2015-01-08 08:35:00  Severe Wea… 1039  Alab…
@@ -252,13 +337,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  9 Alabama     2015-07-14 20:00:00  2015-07-15 09:23:00  Severe Wea… 1021  Alab…
 10 Alabama     2015-07-14 20:00:00  2015-07-15 09:23:00  Severe Wea… 1039  Alab…
 # ℹ 526,155 more rows
-# ℹ 7 more variables: county &lt;chr&gt;, start_time &lt;dttm&gt;, duration &lt;dbl&gt;,
+# ℹ 8 more variables: county &lt;chr&gt;, start_time &lt;dttm&gt;, duration &lt;dbl&gt;,
 #   end_time &lt;dttm&gt;, min_customers &lt;dbl&gt;, max_customers &lt;dbl&gt;,
-#   mean_customers &lt;dbl&gt;</code></pre>
+#   mean_customers &lt;dbl&gt;, event_category &lt;chr&gt;</code></pre>
 </div>
 </div>
-<section id="oyo-create-parameter-list-and-filter-for-parameters" class="level2">
-<h2 class="anchored" data-anchor-id="oyo-create-parameter-list-and-filter-for-parameters">OYO: create parameter list and filter for parameters</h2>
+</section>
+</section>
+<section id="oyo" class="level2">
+<h2 class="anchored" data-anchor-id="oyo">OYO:</h2>
+<section id="create-parameter-list-and-filter-for-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="create-parameter-list-and-filter-for-parameters">Create parameter list and filter for parameters</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#state_list &lt;- </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -268,8 +357,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#outages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="do-some-analysis-for-your-state" class="level3">
+<h3 class="anchored" data-anchor-id="do-some-analysis-for-your-state">Do some analysis for your state</h3>
+<ul>
+<li>What is the most common cause of power outages?</li>
+<li>What cause leads to the longest power outages?</li>
+</ul>
+<p>tip: use event_category instead of event_type</p>
+<section id="common-causes-of-outages" class="level4">
+<h4 class="anchored" data-anchor-id="common-causes-of-outages">Common causes of outages</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#outages |&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="cause-of-longest-outages" class="level4">
+<h4 class="anchored" data-anchor-id="cause-of-longest-outages">Cause of longest outages</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#outages |&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

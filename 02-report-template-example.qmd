@@ -5,9 +5,16 @@ params:
 echo: true
 ---
 
-title: title of file.
-params: what we're filtering for.
-echo: 'true' repeats all code chunks in render file, 'false' excludes them.
+``` yaml
+title: "02-report-template-example"
+params:
+  album: "1989"
+echo: true
+```
+
+title: title of file. \
+params: what we're filtering for. \
+echo: 'true' repeats all code chunks in render file, 'false' excludes them. \
 
 ## Set up
 
@@ -124,7 +131,7 @@ ggplot(songs, aes(x = tempo, y = danceability)) +
   geom_point() +
   scale_x_continuous(name = "Tempo (BPM)", n.breaks = 10) +
   scale_y_continuous(name = "Danceability", limits = c(0,1)) +
-  labs(title = str_glue("How does the tempo affect danceability of Taylor Swift songs from album(s): {album_names}", album_names = params$album))  
+  labs(title = str_wrap(str_glue("How does the tempo affect danceability of Taylor Swift songs from album(s): {album_names}", album_names = params$album)))  
 ```
 
 Note above, we used our `r params$album` variable so that our chart title will change based on what we input in our render file for which albums. 

@@ -180,9 +180,49 @@ Let's look at the power outage data.
 #power_outages |> head(50)
 ```
 
-Now make your own function that creates a bar chart for any state comparing BLANK AND BLANK
+We want to see what the top 10 causes of power outages are for each state and how many outages there have been for each category.
+To do this for Texas, we would filter for our state,  group_by the event_category, count the number of occurances for each category, arrange it in descending order and then take the top ten. 
 
 ```{r}
-# graphing_power <- 
+filtered_data <- power_all |> filter(state_event |> str_detect("Texas")) |>
+  group_by (event_category) |> 
+  summarize(total_events = n()) |> 
+  arrange(total_events |> desc()) |> 
+  head(10)
 ```
+
+Now we want to create a bar chart. 
+
+```{r}
+ggplot(filtered_data, 
+         aes(x = total_events, 
+             y = reorder(event_category, total_events))) +
+         geom_col() +
+         labs(x = "Occurances", y = "Outage Cause")  +
+        scale_x_continuous(labels = comma)
+```
+
+Now, your turn. We want to put these two steps into a single function so we can do it all at once for any state we want. Try it below and test if it matches the graph output above for Texas. You can copy and paste the filtering and graphing code but will need to adjust a few things for the funciton to work. 
+
+```{r}
+#| label: function
+
+filter_graph_function <- function (state) {
+  
+}
+
+```
+
+Test it with Texas. 
+
+```{r}
+filter_graph_function("Texas")
+```
+
+Try it with your home state or another state if you're from Texas too.  
+
+```{r}
+filter_graph_function("YOUR STATE HERE")
+```
+
 

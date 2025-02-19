@@ -1,19 +1,23 @@
 project:
   type: website
+  render:
+  - "01*.qmd"
+  - "*.qmd"
 
 website:
   title: "dRy"
-  navbar:
-    left:
+  sidebar:
+    contents:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - auto: "*.qmd"
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-
+    df-print: paged
+    code-overflow: wrap
 
 

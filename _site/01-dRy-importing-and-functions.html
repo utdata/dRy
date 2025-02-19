@@ -74,11 +74,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -94,45 +94,117 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">dRy</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-dRy-importing-and-functions.html">Don’t Repeat Yourself in R</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">dRy</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Don’t Repeat Yourself in R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-report-template-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02-report-template-example</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-report-template-oyo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04-report-template-oyo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./powanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./powcleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power outage cleaning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solution-01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Importing and function solutions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solution-05-report-template-oyo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04-report-template-oyo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tayanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taycleaning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./taycleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taycleaning</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -211,15 +283,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-1" data-code-annotation="1">This sets the chunk label. Using <code>setup</code> specifically will run this code chunk first every time you render or run the page.</span>
+<span data-code-cell="annotated-cell-1" data-code-annotation="1" data-code-lines="1">This sets the chunk label. Using <code>setup</code> specifically will run this code chunk first every time you render or run the page.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-1" data-code-annotation="2"><code>#| message: false</code> hides the output messages that usually appear when you import libraries. We will show it again later.</span>
+<span data-code-cell="annotated-cell-1" data-code-annotation="2" data-code-lines="2"><code>#| message: false</code> hides the output messages that usually appear when you import libraries. We will show it again later.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-1" data-code-annotation="3">Sometimes you do something that creates a warning in R, but you don’t always care. <code>#| warning: false</code> hides those warnings. We will talk about this more later too.</span>
+<span data-code-cell="annotated-cell-1" data-code-annotation="3" data-code-lines="3">Sometimes you do something that creates a warning in R, but you don’t always care. <code>#| warning: false</code> hides those warnings. We will talk about this more later too.</span>
 </dd>
 </dl>
 </div>
@@ -261,19 +333,19 @@ The following objects are masked from 'package:stats':
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-3" data-code-annotation="1"><code>list.files()</code> creates a character vector of the names of files</span>
+<span data-code-cell="annotated-cell-3" data-code-annotation="1" data-code-lines="1"><code>list.files()</code> creates a character vector of the names of files</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-3" data-code-annotation="2">The first argument is the path to find the files. In this case, we want to go into the directory (folder) called <code>data-proccessed-taylor</code>.</span>
+<span data-code-cell="annotated-cell-3" data-code-annotation="2" data-code-lines="2">The first argument is the path to find the files. In this case, we want to go into the directory (folder) called <code>data-proccessed-taylor</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-3" data-code-annotation="3"><code>pattern</code> is an optional argument that takes a regular expression to define which specific files you want. In this case we want all files that contain <code>.csv</code>.</span>
+<span data-code-cell="annotated-cell-3" data-code-annotation="3" data-code-lines="3"><code>pattern</code> is an optional argument that takes a regular expression to define which specific files you want. In this case we want all files that contain <code>.csv</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-3" data-code-annotation="4"><code>full.names = TRUE</code> gets the full path name rather than just the files name. Let’s change this and see what happens…</span>
+<span data-code-cell="annotated-cell-3" data-code-annotation="4" data-code-lines="4"><code>full.names = TRUE</code> gets the full path name rather than just the files name. Let’s change this and see what happens…</span>
 </dd>
 </dl>
 </div>
@@ -328,57 +400,42 @@ The following objects are masked from 'package:stats':
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-4" data-code-annotation="1">First we create a new object called <code>talyor_songs</code> which is where all our data will end up. Then we take our list of files names <code>taylor_files_list</code> and put it in the <code>map()</code> function. <code>map()</code> applies a method (in this case <code>read_csv()</code>) to every item in a list and returns a list as a result.</span>
+<span data-code-cell="annotated-cell-4" data-code-annotation="1" data-code-lines="2">First we create a new object called <code>talyor_songs</code> which is where all our data will end up. Then we take our list of files names <code>taylor_files_list</code> and put it in the <code>map()</code> function. <code>map()</code> applies a method (in this case <code>read_csv()</code>) to every item in a list and returns a list as a result.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-4" data-code-annotation="2">Our first argument is the function we want to apply which is <code>read_csv()</code> which returns a dataframe of the csv.</span>
+<span data-code-cell="annotated-cell-4" data-code-annotation="2" data-code-lines="3">Our first argument is the function we want to apply which is <code>read_csv()</code> which returns a dataframe of the csv.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-4" data-code-annotation="3">After the comma is <code>col_types =</code> which is an argument in <code>read_csv()</code>. This argument can set any or all of the column types as you import the data.<br>
+<span data-code-cell="annotated-cell-4" data-code-annotation="3" data-code-lines="4">After the comma is <code>col_types =</code> which is an argument in <code>read_csv()</code>. This argument can set any or all of the column types as you import the data.<br>
 </span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="5" data-code-cell="annotated-cell-4" data-code-annotation="4">Once we use map to create a list of our newly created object from read_csv, we want to combine them all into one single object which already called <code>taylor_songs</code>, so we use <code>list_rbind()</code>.</span>
+<span data-code-cell="annotated-cell-4" data-code-annotation="4" data-code-lines="5">Once we use map to create a list of our newly created object from read_csv, we want to combine them all into one single object which already called <code>taylor_songs</code>, so we use <code>list_rbind()</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="6" data-code-cell="annotated-cell-4" data-code-annotation="5">And then just to make everything look nice and uniform we use <code>clean_names()</code> to change the column names.</span>
+<span data-code-cell="annotated-cell-4" data-code-annotation="5" data-code-lines="6">And then just to make everything look nice and uniform we use <code>clean_names()</code> to change the column names.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="10" data-code-cell="annotated-cell-4" data-code-annotation="6">What happens when you comment out the <code>col_types =</code> line? Taylor’s album 1989 shows up as a number while the other album names show up as strings so get an error and can’t join the columns when we use list_rbind().</span>
+<span data-code-cell="annotated-cell-4" data-code-annotation="6" data-code-lines="10">What happens when you comment out the <code>col_types =</code> line? Taylor’s album 1989 shows up as a number while the other album names show up as strings so get an error and can’t join the columns when we use list_rbind().</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-lines="11" data-code-cell="annotated-cell-4" data-code-annotation="7">Let’s add <code>set_names(basename)</code> by uncommenting it and add <code>names_to = "source"</code> inside <code>list_rbind()</code>. Look at the output. It creates a column that shows which file each row came from. This can be really helpful when you maybe don’t have a column that has the date or year, but the file name does contain it. You can then extract it from that column.</span>
+<span data-code-cell="annotated-cell-4" data-code-annotation="7" data-code-lines="11">Let’s add <code>set_names(basename)</code> by uncommenting it and add <code>names_to = "source"</code> inside <code>list_rbind()</code>. Look at the output. It creates a column that shows which file each row came from. This can be really helpful when you maybe don’t have a column that has the date or year, but the file name does contain it. You can then extract it from that column.</span>
 </dd>
 </dl>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 15 × 16
-   name   album release_date track_number uri   acousticness danceability energy
-   &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;              &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
- 1 Welco… 1989… 2014-01-01              1 spot…     0.0348          0.789  0.634
- 2 Blank… 1989… 2014-01-01              2 spot…     0.103           0.76   0.703
- 3 Style  1989… 2014-01-01              3 spot…     0.00245         0.588  0.791
- 4 Out O… 1989… 2014-01-01              4 spot…     0.000743        0.553  0.841
- 5 All Y… 1989… 2014-01-01              5 spot…     0.00201         0.605  0.725
- 6 Shake… 1989… 2014-01-01              6 spot…     0.0647          0.647  0.8  
- 7 I Wis… 1989… 2014-01-01              7 spot…     0.0158          0.653  0.893
- 8 Bad B… 1989… 2014-01-01              8 spot…     0.0885          0.646  0.794
- 9 Wilde… 1989… 2014-01-01              9 spot…     0.0692          0.55   0.688
-10 How Y… 1989… 2014-01-01             10 spot…     0.00364         0.765  0.656
-11 This … 1989… 2014-01-01             11 spot…     0.678           0.481  0.435
-12 I Kno… 1989… 2014-01-01             12 spot…     0.245           0.602  0.755
-13 Clean  1989… 2014-01-01             13 spot…     0.232           0.815  0.377
-14 Wonde… 1989… 2014-01-01             14 spot…     0.0493          0.422  0.692
-15 You A… 1989… 2014-01-01             15 spot…     0.707           0.474  0.48 
-# ℹ 8 more variables: instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, loudness &lt;dbl&gt;,
-#   speechiness &lt;dbl&gt;, tempo &lt;dbl&gt;, valence &lt;dbl&gt;, popularity &lt;dbl&gt;,
-#   duration_min &lt;dbl&gt;</code></pre>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["album"],"name":[2],"type":["chr"],"align":["left"]},{"label":["release_date"],"name":[3],"type":["date"],"align":["right"]},{"label":["track_number"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["uri"],"name":[5],"type":["chr"],"align":["left"]},{"label":["acousticness"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["danceability"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["energy"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["instrumentalness"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["liveness"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["loudness"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["speechiness"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["tempo"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["valence"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["popularity"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["duration_min"],"name":[16],"type":["dbl"],"align":["right"]}],"data":[{"1":"Welcome To New York","2":"1989 (Deluxe)","3":"2014-01-01","4":"1","5":"spotify:track:3nRmDz7qGCvsMS30rGGY0x","6":"0.034800","7":"0.789","8":"0.634","9":"1.64e-06","10":"0.3020","11":"-4.762","12":"0.0323","13":"116.992","14":"0.658","15":"48","16":"3.543333"},{"1":"Blank Space","2":"1989 (Deluxe)","3":"2014-01-01","4":"2","5":"spotify:track:1u8c2t2Cy7UBoG4ArRcF5g","6":"0.103000","7":"0.760","8":"0.703","9":"0.00e+00","10":"0.0913","11":"-5.412","12":"0.0540","13":"95.997","14":"0.570","15":"81","16":"3.863767"},{"1":"Style","2":"1989 (Deluxe)","3":"2014-01-01","4":"3","5":"spotify:track:0ug5NqcwcFR2xrfTkc7k8e","6":"0.002450","7":"0.588","8":"0.791","9":"2.58e-03","10":"0.1180","11":"-5.595","12":"0.0402","13":"94.933","14":"0.487","15":"79","16":"3.850000"},{"1":"Out Of The Woods","2":"1989 (Deluxe)","3":"2014-01-01","4":"4","5":"spotify:track:0qUnBLZ8bJqUNEeQgayL9t","6":"0.000743","7":"0.553","8":"0.841","9":"1.19e-05","10":"0.3410","11":"-6.937","12":"0.0396","13":"92.008","14":"0.338","15":"59","16":"3.930000"},{"1":"All You Had To Do Was Stay","2":"1989 (Deluxe)","3":"2014-01-01","4":"5","5":"spotify:track:6aLOekfwbytwWvQftxTEF0","6":"0.002010","7":"0.605","8":"0.725","9":"2.02e-05","10":"0.1010","11":"-5.729","12":"0.0323","13":"96.970","14":"0.539","15":"47","16":"3.221550"},{"1":"Shake It Off","2":"1989 (Deluxe)","3":"2014-01-01","4":"6","5":"spotify:track:0cqRj7pUJDkTCEsJkx8snD","6":"0.064700","7":"0.647","8":"0.800","9":"0.00e+00","10":"0.3340","11":"-5.384","12":"0.1650","13":"160.078","14":"0.942","15":"80","16":"3.653333"},{"1":"I Wish You Would","2":"1989 (Deluxe)","3":"2014-01-01","4":"7","5":"spotify:track:5gRYrtvyVyaCRvLt56OfuV","6":"0.015800","7":"0.653","8":"0.893","9":"4.95e-05","10":"0.1020","11":"-5.966","12":"0.0538","13":"118.035","14":"0.513","15":"51","16":"3.457333"},{"1":"Bad Blood","2":"1989 (Deluxe)","3":"2014-01-01","4":"8","5":"spotify:track:2NlmmAjGYrrjAp0MED5rGx","6":"0.088500","7":"0.646","8":"0.794","9":"6.16e-06","10":"0.2010","11":"-6.104","12":"0.1900","13":"170.216","14":"0.287","15":"52","16":"3.532217"},{"1":"Wildest Dreams","2":"1989 (Deluxe)","3":"2014-01-01","4":"9","5":"spotify:track:4A4A6dwl5DqdqrZaEtKGPR","6":"0.069200","7":"0.550","8":"0.688","9":"1.44e-03","10":"0.1060","11":"-7.416","12":"0.0897","13":"139.997","14":"0.465","15":"52","16":"3.674000"},{"1":"How You Get The Girl","2":"1989 (Deluxe)","3":"2014-01-01","4":"10","5":"spotify:track:0fM9dEhUFV4MHDuJgrcfOv","6":"0.003640","7":"0.765","8":"0.656","9":"8.68e-03","10":"0.0918","11":"-6.112","12":"0.0504","13":"119.997","14":"0.545","15":"55","16":"4.125550"},{"1":"This Love","2":"1989 (Deluxe)","3":"2014-01-01","4":"11","5":"spotify:track:4L560fic5PaTuCFm6CviKa","6":"0.678000","7":"0.481","8":"0.435","9":"0.00e+00","10":"0.0928","11":"-8.795","12":"0.0321","13":"143.950","14":"0.107","15":"50","16":"4.168217"},{"1":"I Know Places","2":"1989 (Deluxe)","3":"2014-01-01","4":"12","5":"spotify:track:6EwNJz8CuVsrsLvXprJ20Q","6":"0.245000","7":"0.602","8":"0.755","9":"0.00e+00","10":"0.1780","11":"-4.991","12":"0.0710","13":"159.965","14":"0.495","15":"50","16":"3.261767"},{"1":"Clean","2":"1989 (Deluxe)","3":"2014-01-01","4":"13","5":"spotify:track:1NmVZsG18CzCAtw7rnV3yA","6":"0.232000","7":"0.815","8":"0.377","9":"0.00e+00","10":"0.1000","11":"-7.754","12":"0.0346","13":"103.970","14":"0.211","15":"55","16":"4.516667"},{"1":"Wonderland","2":"1989 (Deluxe)","3":"2014-01-01","4":"14","5":"spotify:track:6RvRzl1YJTDnUvdOtV21IK","6":"0.049300","7":"0.422","8":"0.692","9":"2.57e-05","10":"0.1770","11":"-5.447","12":"0.0549","13":"184.014","14":"0.197","15":"55","16":"4.092667"},{"1":"You Are In Love","2":"1989 (Deluxe)","3":"2014-01-01","4":"15","5":"spotify:track:2KrOAg6FftbjgSKdd2a4rS","6":"0.707000","7":"0.474","8":"0.480","9":"1.08e-04","10":"0.0903","11":"-8.894","12":"0.0622","13":"170.109","14":"0.319","15":"55","16":"4.451767"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 </section>
@@ -388,12 +445,12 @@ The following objects are masked from 'package:stats':
 <p>Now, try this on your own with the power outage data.</p>
 <p>Instructions: The files you want to import are all in a folder called <code>data-processed-power</code>. We have already given you the object names to put your code in to help with consistency and preventing repetition across files. Uncomment each of the lines and input code to read in the csv’s.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#power_files_list &lt;- </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#power_files_list &lt;- </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#power_outages &lt;-  </span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#power_outages |&gt; glimpse()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#power_outages &lt;-  </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#power_outages |&gt; glimpse()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="creating-your-own-function" class="level1">
@@ -401,33 +458,22 @@ The following objects are masked from 'package:stats':
 <p>We want to create a function that creates a graph we can change over and over again.</p>
 <p>First, let’s take a look at the Taylor Swift song data…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 50 × 16
-   name   album release_date track_number uri   acousticness danceability energy
-   &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;              &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
- 1 Welco… 1989… 2014-01-01              1 spot…     0.0348          0.789  0.634
- 2 Blank… 1989… 2014-01-01              2 spot…     0.103           0.76   0.703
- 3 Style  1989… 2014-01-01              3 spot…     0.00245         0.588  0.791
- 4 Out O… 1989… 2014-01-01              4 spot…     0.000743        0.553  0.841
- 5 All Y… 1989… 2014-01-01              5 spot…     0.00201         0.605  0.725
- 6 Shake… 1989… 2014-01-01              6 spot…     0.0647          0.647  0.8  
- 7 I Wis… 1989… 2014-01-01              7 spot…     0.0158          0.653  0.893
- 8 Bad B… 1989… 2014-01-01              8 spot…     0.0885          0.646  0.794
- 9 Wilde… 1989… 2014-01-01              9 spot…     0.0692          0.55   0.688
-10 How Y… 1989… 2014-01-01             10 spot…     0.00364         0.765  0.656
-# ℹ 40 more rows
-# ℹ 8 more variables: instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, loudness &lt;dbl&gt;,
-#   speechiness &lt;dbl&gt;, tempo &lt;dbl&gt;, valence &lt;dbl&gt;, popularity &lt;dbl&gt;,
-#   duration_min &lt;dbl&gt;</code></pre>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["album"],"name":[2],"type":["chr"],"align":["left"]},{"label":["release_date"],"name":[3],"type":["date"],"align":["right"]},{"label":["track_number"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["uri"],"name":[5],"type":["chr"],"align":["left"]},{"label":["acousticness"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["danceability"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["energy"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["instrumentalness"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["liveness"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["loudness"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["speechiness"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["tempo"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["valence"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["popularity"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["duration_min"],"name":[16],"type":["dbl"],"align":["right"]}],"data":[{"1":"Welcome To New York","2":"1989 (Deluxe)","3":"2014-01-01","4":"1","5":"spotify:track:3nRmDz7qGCvsMS30rGGY0x","6":"0.034800","7":"0.789","8":"0.634","9":"1.64e-06","10":"0.3020","11":"-4.762","12":"0.0323","13":"116.992","14":"0.6580","15":"48","16":"3.543333"},{"1":"Blank Space","2":"1989 (Deluxe)","3":"2014-01-01","4":"2","5":"spotify:track:1u8c2t2Cy7UBoG4ArRcF5g","6":"0.103000","7":"0.760","8":"0.703","9":"0.00e+00","10":"0.0913","11":"-5.412","12":"0.0540","13":"95.997","14":"0.5700","15":"81","16":"3.863767"},{"1":"Style","2":"1989 (Deluxe)","3":"2014-01-01","4":"3","5":"spotify:track:0ug5NqcwcFR2xrfTkc7k8e","6":"0.002450","7":"0.588","8":"0.791","9":"2.58e-03","10":"0.1180","11":"-5.595","12":"0.0402","13":"94.933","14":"0.4870","15":"79","16":"3.850000"},{"1":"Out Of The Woods","2":"1989 (Deluxe)","3":"2014-01-01","4":"4","5":"spotify:track:0qUnBLZ8bJqUNEeQgayL9t","6":"0.000743","7":"0.553","8":"0.841","9":"1.19e-05","10":"0.3410","11":"-6.937","12":"0.0396","13":"92.008","14":"0.3380","15":"59","16":"3.930000"},{"1":"All You Had To Do Was Stay","2":"1989 (Deluxe)","3":"2014-01-01","4":"5","5":"spotify:track:6aLOekfwbytwWvQftxTEF0","6":"0.002010","7":"0.605","8":"0.725","9":"2.02e-05","10":"0.1010","11":"-5.729","12":"0.0323","13":"96.970","14":"0.5390","15":"47","16":"3.221550"},{"1":"Shake It Off","2":"1989 (Deluxe)","3":"2014-01-01","4":"6","5":"spotify:track:0cqRj7pUJDkTCEsJkx8snD","6":"0.064700","7":"0.647","8":"0.800","9":"0.00e+00","10":"0.3340","11":"-5.384","12":"0.1650","13":"160.078","14":"0.9420","15":"80","16":"3.653333"},{"1":"I Wish You Would","2":"1989 (Deluxe)","3":"2014-01-01","4":"7","5":"spotify:track:5gRYrtvyVyaCRvLt56OfuV","6":"0.015800","7":"0.653","8":"0.893","9":"4.95e-05","10":"0.1020","11":"-5.966","12":"0.0538","13":"118.035","14":"0.5130","15":"51","16":"3.457333"},{"1":"Bad Blood","2":"1989 (Deluxe)","3":"2014-01-01","4":"8","5":"spotify:track:2NlmmAjGYrrjAp0MED5rGx","6":"0.088500","7":"0.646","8":"0.794","9":"6.16e-06","10":"0.2010","11":"-6.104","12":"0.1900","13":"170.216","14":"0.2870","15":"52","16":"3.532217"},{"1":"Wildest Dreams","2":"1989 (Deluxe)","3":"2014-01-01","4":"9","5":"spotify:track:4A4A6dwl5DqdqrZaEtKGPR","6":"0.069200","7":"0.550","8":"0.688","9":"1.44e-03","10":"0.1060","11":"-7.416","12":"0.0897","13":"139.997","14":"0.4650","15":"52","16":"3.674000"},{"1":"How You Get The Girl","2":"1989 (Deluxe)","3":"2014-01-01","4":"10","5":"spotify:track:0fM9dEhUFV4MHDuJgrcfOv","6":"0.003640","7":"0.765","8":"0.656","9":"8.68e-03","10":"0.0918","11":"-6.112","12":"0.0504","13":"119.997","14":"0.5450","15":"55","16":"4.125550"},{"1":"This Love","2":"1989 (Deluxe)","3":"2014-01-01","4":"11","5":"spotify:track:4L560fic5PaTuCFm6CviKa","6":"0.678000","7":"0.481","8":"0.435","9":"0.00e+00","10":"0.0928","11":"-8.795","12":"0.0321","13":"143.950","14":"0.1070","15":"50","16":"4.168217"},{"1":"I Know Places","2":"1989 (Deluxe)","3":"2014-01-01","4":"12","5":"spotify:track:6EwNJz8CuVsrsLvXprJ20Q","6":"0.245000","7":"0.602","8":"0.755","9":"0.00e+00","10":"0.1780","11":"-4.991","12":"0.0710","13":"159.965","14":"0.4950","15":"50","16":"3.261767"},{"1":"Clean","2":"1989 (Deluxe)","3":"2014-01-01","4":"13","5":"spotify:track:1NmVZsG18CzCAtw7rnV3yA","6":"0.232000","7":"0.815","8":"0.377","9":"0.00e+00","10":"0.1000","11":"-7.754","12":"0.0346","13":"103.970","14":"0.2110","15":"55","16":"4.516667"},{"1":"Wonderland","2":"1989 (Deluxe)","3":"2014-01-01","4":"14","5":"spotify:track:6RvRzl1YJTDnUvdOtV21IK","6":"0.049300","7":"0.422","8":"0.692","9":"2.57e-05","10":"0.1770","11":"-5.447","12":"0.0549","13":"184.014","14":"0.1970","15":"55","16":"4.092667"},{"1":"You Are In Love","2":"1989 (Deluxe)","3":"2014-01-01","4":"15","5":"spotify:track:2KrOAg6FftbjgSKdd2a4rS","6":"0.707000","7":"0.474","8":"0.480","9":"1.08e-04","10":"0.0903","11":"-8.894","12":"0.0622","13":"170.109","14":"0.3190","15":"55","16":"4.451767"},{"1":"New Romantics","2":"1989 (Deluxe)","3":"2014-01-01","4":"16","5":"spotify:track:0qAIiGFKLdV1xpNlEhjpq8","6":"0.004630","7":"0.633","8":"0.889","9":"4.58e-04","10":"0.0658","11":"-5.870","12":"0.0715","13":"121.956","14":"0.5840","15":"62","16":"3.841100"},{"1":"I Know Places - Voice Memo","2":"1989 (Deluxe)","3":"2014-01-01","4":"17","5":"spotify:track:4FoV729rw7IhoKlMZW5K5V","6":"0.829000","7":"0.592","8":"0.128","9":"0.00e+00","10":"0.5270","11":"-17.932","12":"0.5890","13":"78.828","14":"0.1500","15":"0","16":"3.605550"},{"1":"I Wish You Would - Voice Memo","2":"1989 (Deluxe)","3":"2014-01-01","4":"18","5":"spotify:track:4eTXfpHxhxVofrBUjAhPMg","6":"0.717000","7":"0.781","8":"0.357","9":"0.00e+00","10":"0.1850","11":"-16.394","12":"0.9120","13":"118.317","14":"0.6450","15":"0","16":"1.785550"},{"1":"Blank Space - Voice Memo","2":"1989 (Deluxe)","3":"2014-01-01","4":"19","5":"spotify:track:4e6QU4gpfZj9xxcK856RgG","6":"0.801000","7":"0.675","8":"0.234","9":"0.00e+00","10":"0.6570","11":"-15.064","12":"0.7210","13":"127.296","14":"0.5780","15":"0","16":"2.186433"},{"1":"Welcome To New York (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"1","5":"spotify:track:4WUepByoeqcedHoYhSNHRt","6":"0.006610","7":"0.760","8":"0.602","9":"1.33e-04","10":"0.3250","11":"-4.871","12":"0.0316","13":"116.989","14":"0.6850","15":"62","16":"3.543333"},{"1":"Blank Space (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"2","5":"spotify:track:0108kcWLnn2HlH2kedi1gn","6":"0.090100","7":"0.732","8":"0.719","9":"0.00e+00","10":"0.3310","11":"-5.469","12":"0.0645","13":"96.035","14":"0.7100","15":"64","16":"3.863883"},{"1":"Style (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"3","5":"spotify:track:3Vpk1hfMAQme8VJ0SNRSkd","6":"0.000456","7":"0.514","8":"0.821","9":"2.32e-02","10":"0.0946","11":"-4.803","12":"0.0444","13":"94.884","14":"0.2980","15":"65","16":"3.850000"},{"1":"Out Of The Woods (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"4","5":"spotify:track:1OcSfkeCg9hRC2sFKB4IMJ","6":"0.000466","7":"0.544","8":"0.884","9":"1.34e-04","10":"0.3810","11":"-5.973","12":"0.0383","13":"91.981","14":"0.1840","15":"63","16":"3.930000"},{"1":"All You Had To Do Was Stay (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"5","5":"spotify:track:2k0ZEeAqzvYMcx9Qt5aClQ","6":"0.000778","7":"0.589","8":"0.713","9":"0.00e+00","10":"0.1880","11":"-5.614","12":"0.0308","13":"97.069","14":"0.5400","15":"62","16":"3.221483"},{"1":"Shake It Off (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"6","5":"spotify:track:50yNTF0Od55qnHLxYsA5Pw","6":"0.011200","7":"0.632","8":"0.805","9":"2.51e-05","10":"0.1560","11":"-5.707","12":"0.0690","13":"160.052","14":"0.9030","15":"62","16":"3.653483"},{"1":"I Wish You Would (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"7","5":"spotify:track:3FxJDucHWdw6caWTKO5b23","6":"0.003880","7":"0.671","8":"0.853","9":"9.48e-06","10":"0.0812","11":"-6.568","12":"0.0417","13":"118.032","14":"0.5230","15":"61","16":"3.460833"},{"1":"Bad Blood (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"8","5":"spotify:track:7oZONwFiFIErZcXAtTu7FY","6":"0.036900","7":"0.624","8":"0.711","9":"3.13e-06","10":"0.1900","11":"-6.347","12":"0.1590","13":"169.999","14":"0.3470","15":"61","16":"3.518383"},{"1":"Wildest Dreams (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"9","5":"spotify:track:27exgla7YBw9DUNNcTIpjy","6":"0.034800","7":"0.587","8":"0.663","9":"9.95e-05","10":"0.0971","11":"-7.439","12":"0.0598","13":"139.993","14":"0.5390","15":"63","16":"3.673883"},{"1":"How You Get The Girl (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"10","5":"spotify:track:733OhaXQIHY7BKtY3vnSkn","6":"0.001980","7":"0.761","8":"0.670","9":"1.08e-05","10":"0.0873","11":"-5.956","12":"0.0537","13":"120.014","14":"0.5190","15":"61","16":"4.125550"},{"1":"This Love (Taylor’s Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"11","5":"spotify:track:4WBEj8TeGtRPNJdOmT3WJW","6":"0.302000","7":"0.470","8":"0.494","9":"0.00e+00","10":"0.0672","11":"-8.672","12":"0.0349","13":"144.039","14":"0.0524","15":"60","16":"4.168333"},{"1":"I Know Places (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"12","5":"spotify:track:1ULabO0PEsdJekqVH6G10G","6":"0.084600","7":"0.572","8":"0.807","9":"0.00e+00","10":"0.0710","11":"-5.348","12":"0.0574","13":"160.015","14":"0.6260","15":"61","16":"3.261667"},{"1":"Clean (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"13","5":"spotify:track:0lKUBmEyQfzsQHozyeXzES","6":"0.297000","7":"0.782","8":"0.379","9":"2.98e-05","10":"0.1030","11":"-8.964","12":"0.0303","13":"103.990","14":"0.2670","15":"62","16":"4.516667"},{"1":"Wonderland (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"14","5":"spotify:track:6HRsJu8vcnzYDN4t0570FY","6":"0.010500","7":"0.387","8":"0.703","9":"1.10e-05","10":"0.1280","11":"-5.956","12":"0.0545","13":"123.180","14":"0.3200","15":"61","16":"4.092767"},{"1":"You Are In Love (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"15","5":"spotify:track:0TyGh27YQ5LknmiDhCzJiT","6":"0.572000","7":"0.554","8":"0.509","9":"2.08e-06","10":"0.1130","11":"-9.403","12":"0.0455","13":"85.079","14":"0.4010","15":"62","16":"4.456483"},{"1":"New Romantics (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"16","5":"spotify:track:5M787RexsAiVYjQusM98CV","6":"0.005160","7":"0.653","8":"0.848","9":"4.24e-06","10":"0.0798","11":"-5.936","12":"0.0583","13":"122.017","14":"0.7240","15":"63","16":"3.836283"},{"1":"\"Slut!\" (Taylor's Version) (From The Vault)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"17","5":"spotify:track:0CD7DzeCsuPJygddqlUVYa","6":"0.330000","7":"0.621","8":"0.415","9":"1.12e-04","10":"0.0634","11":"-13.187","12":"0.0543","13":"77.978","14":"0.3130","15":"64","16":"3.006350"},{"1":"Say Don't Go (Taylor's Version) (From The Vault)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"18","5":"spotify:track:3CCRVu4F91Qp2mnGjmWBrf","6":"0.068400","7":"0.632","8":"0.539","9":"5.82e-06","10":"0.1320","11":"-8.375","12":"0.0342","13":"109.962","14":"0.1860","15":"63","16":"4.663883"},{"1":"Now That We Don't Talk (Taylor's Version) (From The Vault)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"19","5":"spotify:track:5QUIK7ZtziW8kGWo8RqopF","6":"0.160000","7":"0.800","8":"0.509","9":"3.05e-05","10":"0.0834","11":"-9.386","12":"0.0340","13":"109.994","14":"0.0768","15":"65","16":"2.440600"},{"1":"Suburban Legends (Taylor's Version) (From The Vault)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"20","5":"spotify:track:6M9ppdfFjR1AbpUl3Y8DcV","6":"0.212000","7":"0.695","8":"0.607","9":"0.00e+00","10":"0.1020","11":"-8.840","12":"0.0357","13":"118.043","14":"0.3940","15":"61","16":"2.863633"},{"1":"Is It Over Now? (Taylor's Version) (From The Vault)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"21","5":"spotify:track:6IG3sQ8s9nfk6TUlVzRhbN","6":"0.048600","7":"0.599","8":"0.651","9":"0.00e+00","10":"0.1260","11":"-7.343","12":"0.0350","13":"100.001","14":"0.1530","15":"66","16":"3.824617"},{"1":"Bad Blood (feat. Kendrick Lamar) (Taylor's Version)","2":"1989 (Taylor's Version) [Deluxe]","3":"2023-10-27","4":"22","5":"spotify:track:6qAcApH8obo8eqatCKUHd9","6":"0.014300","7":"0.604","8":"0.644","9":"0.00e+00","10":"0.2370","11":"-6.931","12":"0.0889","13":"170.088","14":"0.1970","15":"74","16":"3.329550"},{"1":"Welcome To New York (Taylor's Version)","2":"1989 (Taylor's Version)","3":"2023-10-26","4":"1","5":"spotify:track:1hR8BSuEqPCCZfv93zzzz9","6":"0.006610","7":"0.760","8":"0.602","9":"1.33e-04","10":"0.3250","11":"-4.871","12":"0.0316","13":"116.989","14":"0.6850","15":"71","16":"3.543333"},{"1":"Blank Space (Taylor's Version)","2":"1989 (Taylor's Version)","3":"2023-10-26","4":"2","5":"spotify:track:45wMBGri1PORPjM9PwFfrS","6":"0.090100","7":"0.732","8":"0.719","9":"0.00e+00","10":"0.3310","11":"-5.469","12":"0.0645","13":"96.035","14":"0.7100","15":"80","16":"3.863883"},{"1":"Style (Taylor's Version)","2":"1989 (Taylor's Version)","3":"2023-10-26","4":"3","5":"spotify:track:1hjRhYpWyqDpPahmSlUTlc","6":"0.000456","7":"0.514","8":"0.821","9":"2.32e-02","10":"0.0946","11":"-4.803","12":"0.0444","13":"94.884","14":"0.2980","15":"79","16":"3.850000"},{"1":"Out Of The Woods (Taylor's Version)","2":"1989 (Taylor's Version)","3":"2023-10-26","4":"4","5":"spotify:track:045ZeOHPIzhxxsm8bq5kyE","6":"0.000466","7":"0.544","8":"0.884","9":"1.34e-04","10":"0.3810","11":"-5.973","12":"0.0383","13":"91.981","14":"0.1840","15":"73","16":"3.930000"},{"1":"All You Had To Do Was Stay (Taylor's Version)","2":"1989 (Taylor's Version)","3":"2023-10-26","4":"5","5":"spotify:track:6GXgd1BPD9bUpqw5AntGV5","6":"0.000778","7":"0.589","8":"0.713","9":"0.00e+00","10":"0.1880","11":"-5.614","12":"0.0308","13":"97.069","14":"0.5400","15":"69","16":"3.221483"},{"1":"Shake It Off (Taylor's Version)","2":"1989 (Taylor's Version)","3":"2023-10-26","4":"6","5":"spotify:track:3pv7Q5v2dpdefwdWIvE7yH","6":"0.011200","7":"0.632","8":"0.805","9":"2.51e-05","10":"0.1560","11":"-5.707","12":"0.0690","13":"160.052","14":"0.9030","15":"75","16":"3.653483"},{"1":"I Wish You Would (Taylor's Version)","2":"1989 (Taylor's Version)","3":"2023-10-26","4":"7","5":"spotify:track:43y1WpBdnEy5TR9aZoSQL9","6":"0.003880","7":"0.671","8":"0.853","9":"9.48e-06","10":"0.0812","11":"-6.568","12":"0.0417","13":"118.032","14":"0.5230","15":"68","16":"3.460833"},{"1":"Bad Blood (Taylor's Version)","2":"1989 (Taylor's Version)","3":"2023-10-26","4":"8","5":"spotify:track:64FzgoLZ3oXu2SriZblHic","6":"0.036900","7":"0.624","8":"0.711","9":"3.13e-06","10":"0.1900","11":"-6.347","12":"0.1590","13":"169.999","14":"0.3470","15":"71","16":"3.518383"},{"1":"Wildest Dreams (Taylor's Version)","2":"1989 (Taylor's Version)","3":"2023-10-26","4":"9","5":"spotify:track:1K39ty6o1sHwwlZwO6a7wK","6":"0.034800","7":"0.587","8":"0.663","9":"9.95e-05","10":"0.0971","11":"-7.439","12":"0.0598","13":"139.993","14":"0.5390","15":"77","16":"3.673883"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 <p>There are a lot of columns that describe different aspects of the music, but two that are obvious and stand our are popularity and song length. Do Taylor’s songs have any sort of correlation in popularity to length of the song? Let’s graph it to find out. The data creator has told us that popularity is on a scale of 1-100.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_songs, <span class="fu">aes</span>( </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> duration_min,</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> popularity)) <span class="sc">+</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_songs, <span class="fu">aes</span>( </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> duration_min,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> popularity)) <span class="sc">+</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="01-dRy-importing-and-functions_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -446,39 +492,28 @@ The following objects are masked from 'package:stats':
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-9" data-code-annotation="1">Here we use the <code>function</code> method with one argument: <code>song_data</code> and then we define the function using the curly braces <code>{}</code>. This is extremely similar to JavaScript.</span>
+<span data-code-cell="annotated-cell-9" data-code-annotation="1" data-code-lines="1">Here we use the <code>function</code> method with one argument: <code>song_data</code> and then we define the function using the curly braces <code>{}</code>. This is extremely similar to JavaScript.</span>
 </dd>
 </dl>
 </div>
 </div>
 <p>Now that we’ve built our function we can apply it to whatever album(s) we want. So let’s look at all the versions of the Red album first.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>red <span class="ot">&lt;-</span> taylor_songs <span class="sc">|&gt;</span> <span class="fu">filter</span>(album <span class="sc">|&gt;</span> <span class="fu">str_detect</span>(<span class="st">"Red"</span>))</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>red</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 68 × 16
-   name   album release_date track_number uri   acousticness danceability energy
-   &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;              &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
- 1 State… Red … 2012-10-22              1 spot…     0.000197        0.588  0.825
- 2 Red    Red … 2012-10-22              2 spot…     0.0773          0.602  0.896
- 3 Treac… Red … 2012-10-22              3 spot…     0.101           0.704  0.621
- 4 I Kne… Red … 2012-10-22              4 spot…     0.00454         0.622  0.469
- 5 All T… Red … 2012-10-22              5 spot…     0.0382          0.602  0.609
- 6 22     Red … 2012-10-22              6 spot…     0.00215         0.661  0.729
- 7 I Alm… Red … 2012-10-22              7 spot…     0.0173          0.567  0.481
- 8 We Ar… Red … 2012-10-22              8 spot…     0.00957         0.628  0.676
- 9 Stay … Red … 2012-10-22              9 spot…     0.307           0.729  0.748
-10 The L… Red … 2012-10-22             10 spot…     0.035           0.505  0.443
-# ℹ 58 more rows
-# ℹ 8 more variables: instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, loudness &lt;dbl&gt;,
-#   speechiness &lt;dbl&gt;, tempo &lt;dbl&gt;, valence &lt;dbl&gt;, popularity &lt;dbl&gt;,
-#   duration_min &lt;dbl&gt;</code></pre>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>red <span class="ot">&lt;-</span> taylor_songs <span class="sc">|&gt;</span> <span class="fu">filter</span>(album <span class="sc">|&gt;</span> <span class="fu">str_detect</span>(<span class="st">"Red"</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>red</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["album"],"name":[2],"type":["chr"],"align":["left"]},{"label":["release_date"],"name":[3],"type":["date"],"align":["right"]},{"label":["track_number"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["uri"],"name":[5],"type":["chr"],"align":["left"]},{"label":["acousticness"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["danceability"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["energy"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["instrumentalness"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["liveness"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["loudness"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["speechiness"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["tempo"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["valence"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["popularity"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["duration_min"],"name":[16],"type":["dbl"],"align":["right"]}],"data":[{"1":"State Of Grace","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"1","5":"spotify:track:0b16LTzby1YRVd2nq2Z0fw","6":"0.000197","7":"0.588","8":"0.825","9":"1.38e-03","10":"0.0884","11":"-5.882","12":"0.0328","13":"129.968","14":"0.3970","15":"43","16":"4.928667"},{"1":"Red","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"2","5":"spotify:track:7gJtmLyPTwKzhGzMBXtuXH","6":"0.077300","7":"0.602","8":"0.896","9":"8.87e-05","10":"0.0911","11":"-4.267","12":"0.0437","13":"124.978","14":"0.6410","15":"54","16":"3.718217"},{"1":"Treacherous","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"3","5":"spotify:track:7nECwCDHS1JvQbrmuorZIH","6":"0.101000","7":"0.704","8":"0.621","9":"4.30e-06","10":"0.1400","11":"-8.086","12":"0.0334","13":"109.995","14":"0.3950","15":"41","16":"4.046000"},{"1":"I Knew You Were Trouble.","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"4","5":"spotify:track:3lKZf71jeNi14udIFPJ29V","6":"0.004540","7":"0.622","8":"0.469","9":"2.25e-06","10":"0.0335","11":"-6.798","12":"0.0363","13":"77.019","14":"0.6790","15":"59","16":"3.662000"},{"1":"All Too Well","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"5","5":"spotify:track:6GNRkaWUB0Lwc19SdkTgx8","6":"0.038200","7":"0.602","8":"0.609","9":"2.00e-04","10":"0.1280","11":"-7.803","12":"0.0243","13":"93.060","14":"0.3370","15":"59","16":"5.486000"},{"1":"22","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"6","5":"spotify:track:3WC5CVAahvn98hiseoIvbw","6":"0.002150","7":"0.661","8":"0.729","9":"1.30e-03","10":"0.0477","11":"-6.561","12":"0.0376","13":"103.987","14":"0.6680","15":"59","16":"3.868667"},{"1":"I Almost Do","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"7","5":"spotify:track:1eyqSYBCTane4rl4vc6PWJ","6":"0.017300","7":"0.567","8":"0.481","9":"4.13e-05","10":"0.1820","11":"-7.357","12":"0.0270","13":"145.865","14":"0.2330","15":"43","16":"4.076000"},{"1":"We Are Never Ever Getting Back Together","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"8","5":"spotify:track:6kISMRfweKSvgHR0urMQFG","6":"0.009570","7":"0.628","8":"0.676","9":"2.65e-05","10":"0.1210","11":"-5.911","12":"0.0916","13":"85.984","14":"0.7500","15":"59","16":"3.219100"},{"1":"Stay Stay Stay","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"9","5":"spotify:track:0F2S1QlnMaOfmNHIgmES3k","6":"0.307000","7":"0.729","8":"0.748","9":"1.29e-06","10":"0.0962","11":"-6.670","12":"0.0245","13":"99.981","14":"0.9280","15":"43","16":"3.430883"},{"1":"The Last Time","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"10","5":"spotify:track:2Tz4JnXZOcjcp8fWfMjBBk","6":"0.035000","7":"0.505","8":"0.443","9":"3.15e-06","10":"0.0906","11":"-7.039","12":"0.0276","13":"94.069","14":"0.1230","15":"45","16":"4.983550"},{"1":"Holy Ground","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"11","5":"spotify:track:3KmYVOuK2eG7LGP7qQ8DLR","6":"0.016200","7":"0.627","8":"0.816","9":"2.08e-03","10":"0.0965","11":"-6.698","12":"0.0774","13":"157.043","14":"0.6480","15":"41","16":"3.382667"},{"1":"Sad Beautiful Tragic","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"12","5":"spotify:track:70e9zuv2pJc7ON1OUAJ1zl","6":"0.632000","7":"0.624","8":"0.340","9":"3.37e-02","10":"0.0805","11":"-12.411","12":"0.0290","13":"129.987","14":"0.2610","15":"40","16":"4.747767"},{"1":"The Lucky One","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"13","5":"spotify:track:5VQLMrWhailAhErKNUSnv1","6":"0.037100","7":"0.706","8":"0.499","9":"0.00e+00","10":"0.1320","11":"-7.675","12":"0.0369","13":"117.937","14":"0.5450","15":"40","16":"4.004433"},{"1":"Everything Has Changed","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"14","5":"spotify:track:5PjfMmF06QtxTPZBZHdhoZ","6":"0.360000","7":"0.624","8":"0.458","9":"3.89e-06","10":"0.3110","11":"-6.755","12":"0.0287","13":"80.016","14":"0.4360","15":"52","16":"4.090217"},{"1":"Starlight","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"15","5":"spotify:track:1gL4vMhDV3RgJQmDuY5HK1","6":"0.021300","7":"0.649","8":"0.777","9":"3.35e-04","10":"0.2100","11":"-5.804","12":"0.0406","13":"126.018","14":"0.5870","15":"41","16":"3.676667"},{"1":"Begin Again","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"16","5":"spotify:track:1yG491M3fRfowMdGN5pey4","6":"0.199000","7":"0.530","8":"0.526","9":"3.52e-06","10":"0.1400","11":"-8.349","12":"0.0263","13":"79.025","14":"0.3230","15":"45","16":"3.990433"},{"1":"The Moment I Knew","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"17","5":"spotify:track:4qTAwKJQ68gmnrnfPD3vlO","6":"0.187000","7":"0.619","8":"0.506","9":"1.47e-05","10":"0.1010","11":"-7.327","12":"0.0315","13":"126.030","14":"0.2740","15":"38","16":"4.776883"},{"1":"Come Back...Be Here","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"18","5":"spotify:track:1n8rB9AhxiAvVP1E2c3yOd","6":"0.004710","7":"0.483","8":"0.548","9":"2.01e-06","10":"0.0997","11":"-6.291","12":"0.0254","13":"79.926","14":"0.2170","15":"43","16":"3.732000"},{"1":"Girl At Home","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"19","5":"spotify:track:6VFpuI0DDmbC5UyWZQ4IRY","6":"0.272000","7":"0.733","8":"0.590","9":"0.00e+00","10":"0.1340","11":"-5.860","12":"0.0284","13":"125.048","14":"0.6330","15":"37","16":"3.680667"},{"1":"Treacherous - Original Demo Recording","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"20","5":"spotify:track:7skiELMb9SiQCcBpsExIJf","6":"0.175000","7":"0.828","8":"0.640","9":"6.14e-05","10":"0.0991","11":"-8.248","12":"0.0355","13":"109.993","14":"0.5190","15":"34","16":"4.004433"},{"1":"Red - Original Demo Recording","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"21","5":"spotify:track:2OghnlGqZZsFzHjG0CSE9l","6":"0.113000","7":"0.678","8":"0.902","9":"2.35e-04","10":"0.0705","11":"-4.659","12":"0.0358","13":"124.998","14":"0.6370","15":"36","16":"3.784667"},{"1":"State Of Grace - Acoustic","2":"Red (Deluxe Edition)","3":"2012-10-22","4":"22","5":"spotify:track:5mfDBWY7ncZFm7ykmFTG4i","6":"0.664000","7":"0.626","8":"0.118","9":"1.69e-04","10":"0.1270","11":"-15.910","12":"0.0305","13":"105.597","14":"0.0682","15":"37","16":"5.384667"},{"1":"State Of Grace (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"1","5":"spotify:track:6lzc0Al0zfZOIFsFvBS1ki","6":"0.000328","7":"0.594","8":"0.713","9":"0.00e+00","10":"0.1140","11":"-5.314","12":"0.0503","13":"129.958","14":"0.3280","15":"65","16":"4.923550"},{"1":"Red (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"2","5":"spotify:track:4OAuvHryIVv4kMDNSLuPt6","6":"0.001080","7":"0.516","8":"0.777","9":"1.62e-06","10":"0.0761","11":"-4.908","12":"0.0375","13":"125.047","14":"0.4080","15":"73","16":"3.718217"},{"1":"Treacherous (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"3","5":"spotify:track:3S7HNKPakdwNEBFIVTL6dZ","6":"0.034400","7":"0.645","8":"0.593","9":"1.27e-04","10":"0.1300","11":"-6.506","12":"0.0288","13":"109.984","14":"0.2990","15":"65","16":"4.045333"},{"1":"I Knew You Were Trouble (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"4","5":"spotify:track:6AtZLIzUINvExIUy4QhdjP","6":"0.012900","7":"0.584","8":"0.557","9":"0.00e+00","10":"0.0576","11":"-6.371","12":"0.0342","13":"154.008","14":"0.7670","15":"76","16":"3.662667"},{"1":"All Too Well (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"5","5":"spotify:track:3nsfB1vus2qaloUdcBZvDu","6":"0.017100","7":"0.440","8":"0.528","9":"2.03e-03","10":"0.2340","11":"-7.809","12":"0.0317","13":"185.972","14":"0.1320","15":"71","16":"5.486000"},{"1":"22 (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"6","5":"spotify:track:3yII7UwgLF6K5zW3xad3MP","6":"0.000443","7":"0.642","8":"0.695","9":"1.02e-05","10":"0.0753","11":"-5.620","12":"0.0281","13":"103.984","14":"0.6420","15":"76","16":"3.849333"},{"1":"I Almost Do (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"7","5":"spotify:track:2r9CbjYgFhtAmcFv1cSquB","6":"0.016700","7":"0.511","8":"0.559","9":"0.00e+00","10":"0.1130","11":"-6.587","12":"0.0264","13":"145.880","14":"0.2480","15":"64","16":"4.076433"},{"1":"We Are Never Ever Getting Back Together (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"8","5":"spotify:track:5YqltLsjdqFtvqE7Nrysvs","6":"0.031700","7":"0.567","8":"0.686","9":"1.86e-06","10":"0.0732","11":"-6.139","12":"0.1750","13":"172.014","14":"0.7160","15":"76","16":"3.219100"},{"1":"Stay Stay Stay (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"9","5":"spotify:track:7eQj6r5PIdYKEIZjucBMcq","6":"0.084800","7":"0.693","8":"0.681","9":"0.00e+00","10":"0.0768","11":"-7.039","12":"0.0250","13":"100.020","14":"0.6630","15":"64","16":"3.429767"},{"1":"The Last Time (feat. Gary Lightbody of Snow Patrol) (Taylor’s Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"10","5":"spotify:track:0y6kdSRCVQhSsHSpWvTUm7","6":"0.039900","7":"0.502","8":"0.534","9":"0.00e+00","10":"0.0977","11":"-5.954","12":"0.0278","13":"94.050","14":"0.1550","15":"67","16":"4.984667"},{"1":"Holy Ground (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"11","5":"spotify:track:7J4b3LVCIGO4CMBDFLPoP6","6":"0.028800","7":"0.622","8":"0.809","9":"2.18e-03","10":"0.1090","11":"-5.623","12":"0.0638","13":"156.894","14":"0.5110","15":"64","16":"3.382667"},{"1":"Sad Beautiful Tragic (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"12","5":"spotify:track:73qMN9bXy7MSPwwGfH3wQr","6":"0.622000","7":"0.601","8":"0.406","9":"9.19e-05","10":"0.1330","11":"-11.827","12":"0.0275","13":"130.059","14":"0.2320","15":"65","16":"4.746217"},{"1":"The Lucky One (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"13","5":"spotify:track:4e5ayHsOLJNLTGfjau2mEw","6":"0.066000","7":"0.686","8":"0.571","9":"0.00e+00","10":"0.0608","11":"-7.138","12":"0.0500","13":"117.889","14":"0.5380","15":"63","16":"4.007767"},{"1":"Everything Has Changed (feat. Ed Sheeran) (Taylor’s Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"14","5":"spotify:track:7qEUFOVcxRI19tbT68JcYK","6":"0.271000","7":"0.498","8":"0.610","9":"0.00e+00","10":"0.2230","11":"-5.098","12":"0.0363","13":"79.918","14":"0.4740","15":"70","16":"4.090433"},{"1":"Starlight (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"15","5":"spotify:track:7A2cNLRT0YJc1yjxHlKihs","6":"0.003240","7":"0.628","8":"0.685","9":"0.00e+00","10":"0.1800","11":"-5.864","12":"0.0358","13":"126.014","14":"0.6050","15":"63","16":"3.673550"},{"1":"Begin Again (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"16","5":"spotify:track:05GsNucq8Bngd9fnd4fRa0","6":"0.075000","7":"0.519","8":"0.527","9":"0.00e+00","10":"0.1320","11":"-7.673","12":"0.0274","13":"78.915","14":"0.2670","15":"66","16":"3.981100"},{"1":"The Moment I Knew (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"17","5":"spotify:track:0NRHj8hDwwmSPaA41o379r","6":"0.049400","7":"0.636","8":"0.402","9":"0.00e+00","10":"0.1070","11":"-7.855","12":"0.0310","13":"125.952","14":"0.2080","15":"63","16":"4.754667"},{"1":"Come Back...Be Here (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"18","5":"spotify:track:4pNApnaUWAL2J4KO2eqokq","6":"0.015800","7":"0.460","8":"0.632","9":"0.00e+00","10":"0.0822","11":"-6.031","12":"0.0302","13":"79.846","14":"0.3990","15":"66","16":"3.722217"},{"1":"Girl At Home (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"19","5":"spotify:track:0DMVrlMUn01M0IcpDbwgu7","6":"0.009550","7":"0.691","8":"0.736","9":"1.88e-05","10":"0.1010","11":"-6.974","12":"0.0326","13":"125.089","14":"0.6120","15":"61","16":"3.675333"},{"1":"State Of Grace (Acoustic Version) (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"20","5":"spotify:track:5jAIouBES8LWMiriuNq170","6":"0.663000","7":"0.445","8":"0.131","9":"1.57e-06","10":"0.1080","11":"-13.778","12":"0.0564","13":"208.918","14":"0.1010","15":"61","16":"5.360667"},{"1":"Ronan (Taylor's Version)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"21","5":"spotify:track:7nWui6jiMM2m9qFmET1Mtj","6":"0.661000","7":"0.623","8":"0.279","9":"0.00e+00","10":"0.1930","11":"-10.802","12":"0.0310","13":"116.040","14":"0.3800","15":"58","16":"4.404217"},{"1":"Better Man (Taylor's Version) (From The Vault)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"22","5":"spotify:track:4OmFmE0fzcMG6g0Y8p4eSD","6":"0.214000","7":"0.473","8":"0.579","9":"0.00e+00","10":"0.0877","11":"-5.824","12":"0.0384","13":"73.942","14":"0.2550","15":"67","16":"4.950217"},{"1":"Nothing New (feat. Phoebe Bridgers) (Taylor’s Version) (From The Vault)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"23","5":"spotify:track:01K4zKU104LyJ8gMb7227B","6":"0.817000","7":"0.606","8":"0.377","9":"0.00e+00","10":"0.1540","11":"-9.455","12":"0.0275","13":"101.960","14":"0.4460","15":"70","16":"4.313533"},{"1":"Babe (Taylor's Version) (From The Vault)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"24","5":"spotify:track:0v4z1tuZvn6LGknom9Qx7d","6":"0.053800","7":"0.584","8":"0.743","9":"2.83e-06","10":"0.1210","11":"-7.075","12":"0.0931","13":"167.844","14":"0.7460","15":"67","16":"3.737333"},{"1":"Message In A Bottle (Taylor's Version) (From The Vault)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"25","5":"spotify:track:3z6XUommYDWPHeFhmhhT6j","6":"0.001880","7":"0.622","8":"0.791","9":"3.72e-06","10":"0.0830","11":"-6.106","12":"0.0535","13":"115.915","14":"0.4940","15":"70","16":"3.766000"},{"1":"I Bet You Think About Me (feat. Chris Stapleton) (Taylor’s Version) (From The Vault)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"26","5":"spotify:track:4CkgMiMqZ5JzW9iYXSTMTL","6":"0.167000","7":"0.391","8":"0.715","9":"0.00e+00","10":"0.1830","11":"-4.516","12":"0.0495","13":"149.654","14":"0.4730","15":"70","16":"4.751767"},{"1":"Forever Winter (Taylor's Version) (From The Vault)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"27","5":"spotify:track:3oGVx9RBmiYGv5ZCecWLkx","6":"0.256000","7":"0.611","8":"0.552","9":"0.00e+00","10":"0.1340","11":"-5.828","12":"0.0310","13":"116.012","14":"0.4100","15":"63","16":"4.392217"},{"1":"Run (feat. Ed Sheeran) (Taylor’s Version) (From The Vault)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"28","5":"spotify:track:4IQkfUsrwXol38VV3U7t7T","6":"0.817000","7":"0.610","8":"0.488","9":"0.00e+00","10":"0.3120","11":"-6.918","12":"0.0293","13":"125.039","14":"0.4430","15":"64","16":"4.003767"},{"1":"The Very First Night (Taylor's Version) (From The Vault)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"29","5":"spotify:track:6pYNq0ZwpPVazKzsqpf0G8","6":"0.001150","7":"0.678","8":"0.733","9":"0.00e+00","10":"0.1040","11":"-5.025","12":"0.0281","13":"121.009","14":"0.5810","15":"69","16":"3.338000"},{"1":"All Too Well (10 Minute Version) (Taylor's Version) (From The Vault)","2":"Red (Taylor's Version)","3":"2021-11-12","4":"30","5":"spotify:track:5enxwA8aAbwZbf5qCHORXi","6":"0.274000","7":"0.631","8":"0.518","9":"0.00e+00","10":"0.0880","11":"-8.771","12":"0.0303","13":"93.023","14":"0.2050","15":"80","16":"10.217100"},{"1":"State Of Grace","2":"Red","3":"2012-10-22","4":"1","5":"spotify:track:786NsUYn4GGUf8AOt0SQhP","6":"0.000197","7":"0.588","8":"0.825","9":"1.38e-03","10":"0.0885","11":"-5.882","12":"0.0328","13":"129.968","14":"0.3970","15":"40","16":"4.919767"},{"1":"Red","2":"Red","3":"2012-10-22","4":"2","5":"spotify:track:0cITLOYn1Sv4q27zZPqlNK","6":"0.077300","7":"0.602","8":"0.896","9":"8.87e-05","10":"0.0910","11":"-4.267","12":"0.0437","13":"124.978","14":"0.6410","15":"58","16":"3.680433"},{"1":"Treacherous","2":"Red","3":"2012-10-22","4":"3","5":"spotify:track:5kYFVSQoPu7yRpfiHBwMUk","6":"0.101000","7":"0.705","8":"0.621","9":"4.30e-06","10":"0.1470","11":"-8.086","12":"0.0334","13":"109.993","14":"0.3950","15":"38","16":"4.012883"},{"1":"I Knew You Were Trouble.","2":"Red","3":"2012-10-22","4":"4","5":"spotify:track:72jCZdH0Lhg93z6Z4hBjgj","6":"0.004540","7":"0.622","8":"0.469","9":"2.25e-06","10":"0.0398","11":"-6.798","12":"0.0363","13":"77.019","14":"0.6790","15":"61","16":"3.632883"},{"1":"All Too Well","2":"Red","3":"2012-10-22","4":"5","5":"spotify:track:4XMP3zVxrnr58T0tjIHvpR","6":"0.038200","7":"0.602","8":"0.609","9":"2.00e-04","10":"0.1270","11":"-7.803","12":"0.0243","13":"93.060","14":"0.3370","15":"44","16":"5.464883"},{"1":"22","2":"Red","3":"2012-10-22","4":"6","5":"spotify:track:2ULNeSomDxVNmdDy8VxEBU","6":"0.002150","7":"0.658","8":"0.729","9":"1.30e-03","10":"0.0752","11":"-6.561","12":"0.0378","13":"104.007","14":"0.6680","15":"53","16":"3.835550"},{"1":"I Almost Do","2":"Red","3":"2012-10-22","4":"7","5":"spotify:track:5VwFkx7JOimOGTYfha5rs1","6":"0.017300","7":"0.567","8":"0.481","9":"4.13e-05","10":"0.1820","11":"-7.357","12":"0.0270","13":"145.865","14":"0.2330","15":"39","16":"4.042883"},{"1":"We Are Never Ever Getting Back Together","2":"Red","3":"2012-10-22","4":"8","5":"spotify:track:7AEAGTc8cReDqcbPoY9gwo","6":"0.009570","7":"0.628","8":"0.676","9":"2.65e-05","10":"0.1020","11":"-5.911","12":"0.0916","13":"85.984","14":"0.7500","15":"59","16":"3.198000"},{"1":"Stay Stay Stay","2":"Red","3":"2012-10-22","4":"9","5":"spotify:track:1qLeEu4iXEclkLwoBlMiou","6":"0.307000","7":"0.729","8":"0.748","9":"1.29e-06","10":"0.0900","11":"-6.670","12":"0.0245","13":"99.981","14":"0.9280","15":"39","16":"3.413767"},{"1":"The Last Time","2":"Red","3":"2012-10-22","4":"10","5":"spotify:track:3n9mzjgAzjyKawvbHzciXF","6":"0.035000","7":"0.505","8":"0.443","9":"3.15e-06","10":"0.0921","11":"-7.039","12":"0.0276","13":"94.069","14":"0.1230","15":"38","16":"4.971550"},{"1":"Holy Ground","2":"Red","3":"2012-10-22","4":"11","5":"spotify:track:1fGsZsIkQkOspfsT24nQP6","6":"0.016200","7":"0.627","8":"0.816","9":"2.08e-03","10":"0.0966","11":"-6.698","12":"0.0774","13":"157.043","14":"0.6480","15":"37","16":"3.364217"},{"1":"Sad Beautiful Tragic","2":"Red","3":"2012-10-22","4":"12","5":"spotify:track:6LKjHhOW1az75pCQ9XJJtF","6":"0.632000","7":"0.624","8":"0.340","9":"3.37e-02","10":"0.1210","11":"-12.411","12":"0.0290","13":"129.987","14":"0.2610","15":"35","16":"4.728000"},{"1":"The Lucky One","2":"Red","3":"2012-10-22","4":"13","5":"spotify:track:2X2J0BhxaLTmnxO4pPUhSd","6":"0.037100","7":"0.706","8":"0.499","9":"0.00e+00","10":"0.1320","11":"-7.675","12":"0.0369","13":"117.937","14":"0.5450","15":"36","16":"4.002217"},{"1":"Everything Has Changed","2":"Red","3":"2012-10-22","4":"14","5":"spotify:track:4NAmRvqSITAAzKWnC8yRq3","6":"0.360000","7":"0.624","8":"0.458","9":"3.89e-06","10":"0.3030","11":"-6.755","12":"0.0287","13":"80.017","14":"0.4360","15":"50","16":"4.065550"},{"1":"Starlight","2":"Red","3":"2012-10-22","4":"15","5":"spotify:track:7MecVsMj22MneZt7kVFaCr","6":"0.021300","7":"0.649","8":"0.777","9":"3.35e-04","10":"0.2210","11":"-5.804","12":"0.0406","13":"126.018","14":"0.5870","15":"37","16":"3.630433"},{"1":"Begin Again","2":"Red","3":"2012-10-22","4":"16","5":"spotify:track:0L4YCNRfXAoTvdpWeH2RGj","6":"0.199000","7":"0.530","8":"0.526","9":"3.52e-06","10":"0.2320","11":"-8.349","12":"0.0263","13":"79.025","14":"0.3230","15":"56","16":"3.960217"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 <p>Now we can apply our graphing function to the <code>red</code> object.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">graphing_taylor</span>(red)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">graphing_taylor</span>(red)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="01-dRy-importing-and-functions_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -490,11 +525,11 @@ The following objects are masked from 'package:stats':
 <h1>OYO: Creating your own function</h1>
 <p>Let’s look at the power outage data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#power_outages |&gt; head(50)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#power_outages |&gt; head(50)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now make your own function that creates a bar chart for any state comparing BLANK AND BLANK</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># graphing_power &lt;- </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># graphing_power &lt;- </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

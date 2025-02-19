@@ -135,7 +135,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#do-some-analysis-for-your-state" id="toc-do-some-analysis-for-your-state" class="nav-link active" data-scroll-target="#do-some-analysis-for-your-state">Do some analysis for your state</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -230,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>all_outages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 526,165 × 13
+<pre><code># A tibble: 526,165 × 14
    state_event datetime_event_began datetime_restoration event_type  fips  state
    &lt;chr&gt;       &lt;dttm&gt;               &lt;dttm&gt;               &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;
  1 Alabama     2015-01-07 17:00:00  2015-01-08 08:35:00  Severe Wea… 1039  Alab…
@@ -244,9 +250,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  9 Alabama     2015-07-14 20:00:00  2015-07-15 09:23:00  Severe Wea… 1021  Alab…
 10 Alabama     2015-07-14 20:00:00  2015-07-15 09:23:00  Severe Wea… 1039  Alab…
 # ℹ 526,155 more rows
-# ℹ 7 more variables: county &lt;chr&gt;, start_time &lt;dttm&gt;, duration &lt;dbl&gt;,
+# ℹ 8 more variables: county &lt;chr&gt;, start_time &lt;dttm&gt;, duration &lt;dbl&gt;,
 #   end_time &lt;dttm&gt;, min_customers &lt;dbl&gt;, max_customers &lt;dbl&gt;,
-#   mean_customers &lt;dbl&gt;</code></pre>
+#   mean_customers &lt;dbl&gt;, event_category &lt;chr&gt;</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -259,7 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>outages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 196,347 × 13
+<pre><code># A tibble: 196,347 × 14
    state_event datetime_event_began datetime_restoration event_type  fips  state
    &lt;chr&gt;       &lt;dttm&gt;               &lt;dttm&gt;               &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;
  1 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48015 Texas
@@ -273,13 +279,104 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  9 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48029 Texas
 10 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48029 Texas
 # ℹ 196,337 more rows
-# ℹ 7 more variables: county &lt;chr&gt;, start_time &lt;dttm&gt;, duration &lt;dbl&gt;,
+# ℹ 8 more variables: county &lt;chr&gt;, start_time &lt;dttm&gt;, duration &lt;dbl&gt;,
 #   end_time &lt;dttm&gt;, min_customers &lt;dbl&gt;, max_customers &lt;dbl&gt;,
-#   mean_customers &lt;dbl&gt;</code></pre>
+#   mean_customers &lt;dbl&gt;, event_category &lt;chr&gt;</code></pre>
+</div>
+</div>
+<section id="do-some-analysis-for-your-state" class="level3">
+<h3 class="anchored" data-anchor-id="do-some-analysis-for-your-state">Do some analysis for your state</h3>
+<ul>
+<li>What is the most common cause of power outages?</li>
+<li>What cause leads to the longest power outages?</li>
+</ul>
+<section id="common-cause-of-outages" class="level4">
+<h4 class="anchored" data-anchor-id="common-cause-of-outages">Common cause of outages</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>outages <span class="sc">|&gt;</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_events =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-4" class="code-annotation-target"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(total_events <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-lines="2" data-code-cell="annotated-cell-6" data-code-annotation="1">Exclusively looking at event_category.</span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-lines="3" data-code-cell="annotated-cell-6" data-code-annotation="2">Counting how many times each event_category has occurred.</span>
+</dd>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-lines="4" data-code-cell="annotated-cell-6" data-code-annotation="3">Ordering from most to least occurrences.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 2
+   event_category                                   total_events
+   &lt;chr&gt;                                                   &lt;int&gt;
+ 1 Weather                                                162921
+ 2 System Operations                                        9551
+ 3 Potential or Actual Physical Interference                8257
+ 4 Equipment Issue                                          5110
+ 5 Suspiciour Activity                                      5099
+ 6 Fuel Supply Issue                                        2119
+ 7 Cyber Issue                                              1467
+ 8 Generation Inedequacy                                     699
+ 9 Unknown                                                   661
+10 Failure at high voltage substation or switchyard          229
+11 Distribution Interruption                                 186
+12 Public Appeal                                              48</code></pre>
+</div>
+</div>
+</section>
+<section id="cause-of-longest-outages" class="level4">
+<h4 class="anchored" data-anchor-id="cause-of-longest-outages">Cause of longest outages</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a>outages <span class="sc">|&gt;</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-7-3" class="code-annotation-target"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_outage_length =</span> <span class="fu">mean</span>(duration), <span class="at">total_occurences =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_outage_length <span class="sc">|&gt;</span> <span class="fu">desc</span>(), total_occurences)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-lines="2" data-code-cell="annotated-cell-7" data-code-annotation="1">Exclusively looking at event_category.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-lines="3" data-code-cell="annotated-cell-7" data-code-annotation="2">Finding average duration (mean), and including occurrences for comparison.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-lines="4" data-code-cell="annotated-cell-7" data-code-annotation="3">Ordering from longest to shortest average outage length.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 3
+   event_category                             avg_outage_length total_occurences
+   &lt;chr&gt;                                                  &lt;dbl&gt;            &lt;int&gt;
+ 1 Fuel Supply Issue                                       9.73             2119
+ 2 Weather                                                 5.48           162921
+ 3 Cyber Issue                                             2.72             1467
+ 4 System Operations                                       2.62             9551
+ 5 Equipment Issue                                         2.23             5110
+ 6 Potential or Actual Physical Interference               2.16             8257
+ 7 Generation Inedequacy                                   2.03              699
+ 8 Failure at high voltage substation or swi…              2.01              229
+ 9 Public Appeal                                           1.98               48
+10 Suspiciour Activity                                     1.98             5099
+11 Unknown                                                 1.78              661
+12 Distribution Interruption                               1.33              186</code></pre>
 </div>
 </div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

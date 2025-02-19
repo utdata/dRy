@@ -15,6 +15,7 @@ Importing our needed libraries. We use tidyverse for almost everything.
 
 library(tidyverse)
 library(janitor)
+library(scales)
 
 ```
 
@@ -46,23 +47,31 @@ power_all |> glimpse()
 ```
 
 ```{r}
-#| lable: function
+#| label: function
 
-# do i need to pivot this, or am i doing something else completely wrong.
-
-graphing_function <- function(power_data) {
-  ggplot(power_data, aes(x = total_events, y = state_event) +
-        geom_bar() +
-        labs(x = "Outage cause", y = "Occurances"))
+filter_graph_function <- function (state) {
+  filtered_data <- power_all |> filter(state_event |> str_detect(state)) |>
+    group_by (event_category) |> 
+    summarize(total_events = n()) |> 
+    arrange(total_events |> desc()) |> 
+    head(10)
+  
+  ggplot(filtered_data, 
+         aes(x = total_events, 
+             y = reorder(event_category, total_events))) +
+         geom_col() +
+         labs(x = "Occurances", y = "Outage Cause")  +
+        scale_x_continuous(labels = comma)
+        
 }
 
-texas <- power_all |> filter(state_event |> str_detect("Texas")) |> 
-  group_by (event_category) |> #<1>
-  summarize(total_events = n()) |> #<2>
-  arrange(total_events |> desc()) 
-
-texas
-
-graphing_function(texas)
 ```
+
+
+```{r}
+filter_graph_function("Texas")
+```
+
+
+
 

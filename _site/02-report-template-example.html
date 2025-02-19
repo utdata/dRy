@@ -74,11 +74,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -94,53 +94,133 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">dRy</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-report-template-example.html">02-report-template-example</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">dRy</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Don’t Repeat Yourself in R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-report-template-example.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">02-report-template-example</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-report-template-oyo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04-report-template-oyo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./powanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./powcleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power outage cleaning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solution-01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Importing and function solutions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solution-05-report-template-oyo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04-report-template-oyo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tayanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taycleaning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./taycleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taycleaning</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set up</a></li>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set up</a>
+  <ul class="collapse">
+  <li><a href="#importing-our-files" id="toc-importing-our-files" class="nav-link" data-scroll-target="#importing-our-files">Importing our files</a></li>
+  <li><a href="#combining-our-files" id="toc-combining-our-files" class="nav-link" data-scroll-target="#combining-our-files">Combining our files</a></li>
+  </ul></li>
+  <li><a href="#defining-paramaters" id="toc-defining-paramaters" class="nav-link" data-scroll-target="#defining-paramaters">Defining paramater(s)</a></li>
+  <li><a href="#all-1989-songs" id="toc-all-1989-songs" class="nav-link" data-scroll-target="#all-1989-songs">All 1989 songs</a>
+  <ul class="collapse">
   <li><a href="#lets-do-some-analysis" id="toc-lets-do-some-analysis" class="nav-link" data-scroll-target="#lets-do-some-analysis">Let’s do some analysis!</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -164,16 +244,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Can add echo: false to exclude code</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"02-report-template-example"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">album</span><span class="kw">:</span><span class="at"> </span><span class="st">"1989"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>title: title of file.<br>
+params: what we’re filtering for.<br>
+echo: ‘true’ repeats all code chunks in render file, ‘false’ excludes them.<br>
+</p>
 <section id="set-up" class="level2">
 <h2 class="anchored" data-anchor-id="set-up">Set up</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.2     ✔ readr     2.1.4
@@ -186,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'janitor'
@@ -196,14 +283,16 @@ The following objects are masked from 'package:stats':
     chisq.test, fisher.test</code></pre>
 </div>
 </div>
+<section id="importing-our-files" class="level3">
+<h3 class="anchored" data-anchor-id="importing-our-files">Importing our files</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>taylor_files_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data-processed-taylor"</span>,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">".csv"</span>,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">full.names =</span> T</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>taylor_files_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>taylor_files_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data-processed-taylor"</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">".csv"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">full.names =</span> T</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>taylor_files_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "data-processed-taylor/1989 (Deluxe).csv"                                                                      
  [2] "data-processed-taylor/1989 (Taylor's Version) [Deluxe].csv"                                                   
@@ -236,14 +325,17 @@ The following objects are masked from 'package:stats':
 [29] "data-processed-taylor/THE TORTURED POETS DEPARTMENT.csv"                                                      </code></pre>
 </div>
 </div>
+</section>
+<section id="combining-our-files" class="level3">
+<h3 class="anchored" data-anchor-id="combining-our-files">Combining our files</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="ot">&lt;-</span> taylor_files_list <span class="sc">|&gt;</span> <span class="fu">map</span>(</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  read_csv,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">album =</span> <span class="fu">col_character</span>())</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">list_rbind</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="ot">&lt;-</span> taylor_files_list <span class="sc">|&gt;</span> <span class="fu">map</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  read_csv,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">album =</span> <span class="fu">col_character</span>())</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">list_rbind</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 582
 Columns: 16
@@ -265,20 +357,25 @@ $ popularity       &lt;dbl&gt; 48, 81, 79, 59, 47, 80, 51, 52, 52, 55, 50, 50, 5
 $ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550, 3.6…</code></pre>
 </div>
 </div>
+</section>
+</section>
+<section id="defining-paramaters" class="level1">
+<h1>Defining paramater(s)</h1>
+<p>Here we’ll create our parameter</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-5-1" class="code-annotation-target"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a>albums <span class="ot">&lt;-</span> <span class="fu">str_split_1</span>(</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-5-2" class="code-annotation-target"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a>  params<span class="sc">$</span>album, <span class="st">","</span>)</span>
-<span id="annotated-cell-5-3"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a>albums</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-1" class="code-annotation-target"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>albums <span class="ot">&lt;-</span> <span class="fu">str_split_1</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a>  params<span class="sc">$</span>album, <span class="st">","</span>)</span>
+<span id="annotated-cell-6-3"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-6-4"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>albums</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-annotation="1" data-code-lines="1">str_split_1</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="1" data-code-annotation="1">Use str_split_1 to split a single string into pieces to return a single character vector.</span>
 </dd>
-<dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-annotation="2" data-code-lines="2">params$album and “,”</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="2" data-code-annotation="2">We use ‘params$album’ to create the string that will be read through str_split_1 . In this case, that will be the single parameter ‘1989’. The comma is used to determine when one value stops and the other begins; this is useful when you are looking for mulitples of one type of parameter.</span>
 </dd>
 </dl>
 </div>
@@ -287,66 +384,100 @@ $ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550,
 </div>
 </div>
 <p>Album Names: 1989 Use this to check your work ^</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>songs <span class="ot">&lt;-</span> taylor_songs <span class="sc">|&gt;</span> <span class="fu">filter</span>(album <span class="sc">%in%</span> albums)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>songs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 13 × 16
-   name   album release_date track_number uri   acousticness danceability energy
-   &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;              &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;
- 1 Welco… 1989  2014-01-01              1 spot…      0.038          0.793  0.634
- 2 Blank… 1989  2014-01-01              2 spot…      0.085          0.752  0.678
- 3 Style  1989  2014-01-01              3 spot…      0.00256        0.598  0.786
- 4 Out O… 1989  2014-01-01              4 spot…      0.00103        0.552  0.841
- 5 All Y… 1989  2014-01-01              5 spot…      0.00196        0.602  0.735
- 6 Shake… 1989  2014-01-01              6 spot…      0.0561         0.648  0.785
- 7 I Wis… 1989  2014-01-01              7 spot…      0.016          0.649  0.898
- 8 Bad B… 1989  2014-01-01              8 spot…      0.0871         0.652  0.802
- 9 Wilde… 1989  2014-01-01              9 spot…      0.0709         0.553  0.664
-10 How Y… 1989  2014-01-01             10 spot…      0.00463        0.764  0.659
-11 This … 1989  2014-01-01             11 spot…      0.635          0.485  0.459
-12 I Kno… 1989  2014-01-01             12 spot…      0.231          0.595  0.763
-13 Clean  1989  2014-01-01             13 spot…      0.242          0.81   0.38 
-# ℹ 8 more variables: instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, loudness &lt;dbl&gt;,
-#   speechiness &lt;dbl&gt;, tempo &lt;dbl&gt;, valence &lt;dbl&gt;, popularity &lt;dbl&gt;,
-#   duration_min &lt;dbl&gt;</code></pre>
-</div>
-</div>
-<p>!EXPLAINATION!</p>
 </section>
+<section id="all-1989-songs" class="level1">
+<h1>All 1989 songs</h1>
+<p>OK, now we can look for all occurrence of ‘1989’ in our data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a>songs <span class="ot">&lt;-</span> taylor_songs <span class="sc">|&gt;</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(album <span class="sc">%in%</span> albums)</span>
+<span id="annotated-cell-7-3"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-7-4"><a href="#annotated-cell-7-4" aria-hidden="true" tabindex="-1"></a>songs</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="2" data-code-annotation="2">Filtering for every instance that album (the column) is equal to albums (the parameter.)</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["album"],"name":[2],"type":["chr"],"align":["left"]},{"label":["release_date"],"name":[3],"type":["date"],"align":["right"]},{"label":["track_number"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["uri"],"name":[5],"type":["chr"],"align":["left"]},{"label":["acousticness"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["danceability"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["energy"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["instrumentalness"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["liveness"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["loudness"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["speechiness"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["tempo"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["valence"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["popularity"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["duration_min"],"name":[16],"type":["dbl"],"align":["right"]}],"data":[{"1":"Welcome To New York","2":"1989","3":"2014-01-01","4":"1","5":"spotify:track:10nqz67NQWWa7XPq7ycihi","6":"0.03800","7":"0.793","8":"0.634","9":"1.76e-06","10":"0.3040","11":"-4.807","12":"0.0324","13":"117.023","14":"0.6150","15":"59","16":"3.543333"},{"1":"Blank Space","2":"1989","3":"2014-01-01","4":"2","5":"spotify:track:2ls70nUDfjzm1lSRDuKxmw","6":"0.08500","7":"0.752","8":"0.678","9":"1.64e-06","10":"0.1300","11":"-5.421","12":"0.0646","13":"96.009","14":"0.5830","15":"60","16":"3.863767"},{"1":"Style","2":"1989","3":"2014-01-01","4":"3","5":"spotify:track:71PmZqBXH0RUETqxpwlV0w","6":"0.00256","7":"0.598","8":"0.786","9":"1.43e-03","10":"0.1170","11":"-5.572","12":"0.0382","13":"95.021","14":"0.4560","15":"56","16":"3.850000"},{"1":"Out Of The Woods","2":"1989","3":"2014-01-01","4":"4","5":"spotify:track:7EpVQjqtKygiwJIASxMWNg","6":"0.00103","7":"0.552","8":"0.841","9":"1.23e-05","10":"0.3370","11":"-6.938","12":"0.0372","13":"91.993","14":"0.3420","15":"46","16":"3.930000"},{"1":"All You Had To Do Was Stay","2":"1989","3":"2014-01-01","4":"5","5":"spotify:track:4NNolUeL5m2ju7kf8pdg6H","6":"0.00196","7":"0.602","8":"0.735","9":"4.77e-05","10":"0.1050","11":"-5.778","12":"0.0337","13":"96.969","14":"0.4720","15":"53","16":"3.221550"},{"1":"Shake It Off","2":"1989","3":"2014-01-01","4":"6","5":"spotify:track:1kKlhuQE0HXp1IwBRpaH2P","6":"0.05610","7":"0.648","8":"0.785","9":"0.00e+00","10":"0.1480","11":"-5.414","12":"0.1650","13":"160.020","14":"0.9430","15":"53","16":"3.653333"},{"1":"I Wish You Would","2":"1989","3":"2014-01-01","4":"7","5":"spotify:track:5RVJ6VKfwtosA5Q1qeHdjF","6":"0.01600","7":"0.649","8":"0.898","9":"9.90e-05","10":"0.1090","11":"-5.963","12":"0.0511","13":"118.027","14":"0.5030","15":"42","16":"3.457333"},{"1":"Bad Blood","2":"1989","3":"2014-01-01","4":"8","5":"spotify:track:0TvQLMecTE8utzoNmvXRbK","6":"0.08710","7":"0.652","8":"0.802","9":"6.45e-06","10":"0.1480","11":"-6.114","12":"0.1810","13":"170.157","14":"0.2950","15":"71","16":"3.532217"},{"1":"Wildest Dreams","2":"1989","3":"2014-01-01","4":"9","5":"spotify:track:3fVnlF4pGqWI9flVENcT28","6":"0.07090","7":"0.553","8":"0.664","9":"5.60e-03","10":"0.1060","11":"-7.417","12":"0.0741","13":"140.060","14":"0.4670","15":"75","16":"3.674000"},{"1":"How You Get The Girl","2":"1989","3":"2014-01-01","4":"10","5":"spotify:track:5Z9ocF6ng0m2haHnKtHwTp","6":"0.00463","7":"0.764","8":"0.659","9":"4.58e-03","10":"0.0915","11":"-6.136","12":"0.0492","13":"119.982","14":"0.5250","15":"43","16":"4.125550"},{"1":"This Love","2":"1989","3":"2014-01-01","4":"11","5":"spotify:track:7lTxQZVXlvIX7Z3szSy8Sh","6":"0.63500","7":"0.485","8":"0.459","9":"0.00e+00","10":"0.1010","11":"-8.768","12":"0.0337","13":"71.981","14":"0.0858","15":"42","16":"4.168217"},{"1":"I Know Places","2":"1989","3":"2014-01-01","4":"12","5":"spotify:track:6Ck9WerfsyvC4v4AylUoDp","6":"0.23100","7":"0.595","8":"0.763","9":"0.00e+00","10":"0.2000","11":"-4.991","12":"0.0661","13":"159.959","14":"0.5070","15":"43","16":"3.261767"},{"1":"Clean","2":"1989","3":"2014-01-01","4":"13","5":"spotify:track:2k43eySbfpDVx0PrO99UI8","6":"0.24200","7":"0.810","8":"0.380","9":"0.00e+00","10":"0.1130","11":"-7.755","12":"0.0350","13":"103.981","14":"0.2110","15":"42","16":"4.516667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
 <section id="lets-do-some-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="lets-do-some-analysis">Let’s do some analysis!</h2>
-<p>Let’s look at acousticness.</p>
+<p>Let’s look at acousticness first. On Kaggle, where we got the data, the author defines acousticness like this: “A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.”</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>acousticness <span class="ot">&lt;-</span> songs <span class="sc">|&gt;</span> <span class="fu">arrange</span>(acousticness) <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>acousticness <span class="ot">&lt;-</span> songs <span class="sc">|&gt;</span> <span class="fu">arrange</span>(acousticness <span class="sc">|&gt;</span> <span class="fu">desc</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    name, album, acousticness</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>acousticness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["album"],"name":[2],"type":["chr"],"align":["left"]},{"label":["acousticness"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"This Love","2":"1989","3":"0.63500"},{"1":"Clean","2":"1989","3":"0.24200"},{"1":"I Know Places","2":"1989","3":"0.23100"},{"1":"Bad Blood","2":"1989","3":"0.08710"},{"1":"Blank Space","2":"1989","3":"0.08500"},{"1":"Wildest Dreams","2":"1989","3":"0.07090"},{"1":"Shake It Off","2":"1989","3":"0.05610"},{"1":"Welcome To New York","2":"1989","3":"0.03800"},{"1":"I Wish You Would","2":"1989","3":"0.01600"},{"1":"How You Get The Girl","2":"1989","3":"0.00463"},{"1":"Style","2":"1989","3":"0.00256"},{"1":"All You Had To Do Was Stay","2":"1989","3":"0.00196"},{"1":"Out Of The Woods","2":"1989","3":"0.00103"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>Now I want to look at the most danceable songs. Our data author tells us: “Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>danceability <span class="ot">&lt;-</span> songs <span class="sc">|&gt;</span> <span class="fu">arrange</span>(danceability <span class="sc">|&gt;</span> <span class="fu">desc</span>()) <span class="sc">|&gt;</span> </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    name, album, acousticness</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    name, album, danceability</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>acousticness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 13 × 3
-   name                       album acousticness
-   &lt;chr&gt;                      &lt;chr&gt;        &lt;dbl&gt;
- 1 Out Of The Woods           1989       0.00103
- 2 All You Had To Do Was Stay 1989       0.00196
- 3 Style                      1989       0.00256
- 4 How You Get The Girl       1989       0.00463
- 5 I Wish You Would           1989       0.016  
- 6 Welcome To New York        1989       0.038  
- 7 Shake It Off               1989       0.0561 
- 8 Wildest Dreams             1989       0.0709 
- 9 Blank Space                1989       0.085  
-10 Bad Blood                  1989       0.0871 
-11 I Know Places              1989       0.231  
-12 Clean                      1989       0.242  
-13 This Love                  1989       0.635  </code></pre>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>danceability</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["album"],"name":[2],"type":["chr"],"align":["left"]},{"label":["danceability"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Clean","2":"1989","3":"0.810"},{"1":"Welcome To New York","2":"1989","3":"0.793"},{"1":"How You Get The Girl","2":"1989","3":"0.764"},{"1":"Blank Space","2":"1989","3":"0.752"},{"1":"Bad Blood","2":"1989","3":"0.652"},{"1":"I Wish You Would","2":"1989","3":"0.649"},{"1":"Shake It Off","2":"1989","3":"0.648"},{"1":"All You Had To Do Was Stay","2":"1989","3":"0.602"},{"1":"Style","2":"1989","3":"0.598"},{"1":"I Know Places","2":"1989","3":"0.595"},{"1":"Wildest Dreams","2":"1989","3":"0.553"},{"1":"Out Of The Woods","2":"1989","3":"0.552"},{"1":"This Love","2":"1989","3":"0.485"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
 </div>
 </div>
-<p>!DO MORE ANALYSIS HERE!</p>
+</div>
+<p>What about popularity? It’s unclear how popularity is calculated, but it is on a scale from 0 to 100.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>popularity <span class="ot">&lt;-</span> songs <span class="sc">|&gt;</span> <span class="fu">arrange</span>(popularity <span class="sc">|&gt;</span> <span class="fu">desc</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    name, album, popularity</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>popularity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["album"],"name":[2],"type":["chr"],"align":["left"]},{"label":["popularity"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Wildest Dreams","2":"1989","3":"75"},{"1":"Bad Blood","2":"1989","3":"71"},{"1":"Blank Space","2":"1989","3":"60"},{"1":"Welcome To New York","2":"1989","3":"59"},{"1":"Style","2":"1989","3":"56"},{"1":"All You Had To Do Was Stay","2":"1989","3":"53"},{"1":"Shake It Off","2":"1989","3":"53"},{"1":"Out Of The Woods","2":"1989","3":"46"},{"1":"How You Get The Girl","2":"1989","3":"43"},{"1":"I Know Places","2":"1989","3":"43"},{"1":"I Wish You Would","2":"1989","3":"42"},{"1":"This Love","2":"1989","3":"42"},{"1":"Clean","2":"1989","3":"42"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+<p>Now, I want to look at tempo vs danceability. We already saw the definition of danceability but the tempo is in beats per minute (BPM). Let’s make a chart.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(songs, <span class="fu">aes</span>(<span class="at">x =</span> tempo, <span class="at">y =</span> danceability)) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Tempo (BPM)"</span>, <span class="at">n.breaks =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Danceability"</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">str_wrap</span>(<span class="fu">str_glue</span>(<span class="st">"How does the tempo affect danceability of Taylor Swift songs from album(s): {album_names}"</span>, <span class="at">album_names =</span> params<span class="sc">$</span>album)))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="02-report-template-example_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Note above, we used our 1989 variable so that our chart title will change based on what we input in our render file for which albums.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

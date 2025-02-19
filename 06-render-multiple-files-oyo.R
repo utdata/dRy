@@ -1,7 +1,7 @@
 library(quarto)
 library(tidyverse)
 
-state <- c()
+state_inputs <- c()
 
 outage_reports <- tibble(
   input = 

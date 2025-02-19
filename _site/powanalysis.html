@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>dRy - Power Analysis</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">dRy</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#initial-questions" id="toc-initial-questions" class="nav-link active" data-scroll-target="#initial-questions">Initial Questions</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#import-multiple-files" id="toc-import-multiple-files" class="nav-link" data-scroll-target="#import-multiple-files">Import multiple files</a></li>
+  <li><a href="#longest-outage-events" id="toc-longest-outage-events" class="nav-link" data-scroll-target="#longest-outage-events">Longest Outage Events</a></li>
+  <li><a href="#what-is-the-most-common-cause-of-power-outages" id="toc-what-is-the-most-common-cause-of-power-outages" class="nav-link" data-scroll-target="#what-is-the-most-common-cause-of-power-outages">What is the most common cause of power outages?</a></li>
+  <li><a href="#what-cause-leads-to-the-longest-power-outages" id="toc-what-cause-leads-to-the-longest-power-outages" class="nav-link" data-scroll-target="#what-cause-leads-to-the-longest-power-outages">What cause leads to the longest power outages?</a></li>
+  <li><a href="#what-state-resolves-issues-the-quickest-slowest" id="toc-what-state-resolves-issues-the-quickest-slowest" class="nav-link" data-scroll-target="#what-state-resolves-issues-the-quickest-slowest">What state resolves issues the quickest? slowest?</a></li>
+  <li><a href="#what-state-has-the-most-outages-least" id="toc-what-state-has-the-most-outages-least" class="nav-link" data-scroll-target="#what-state-has-the-most-outages-least">What state has the most outages? Least?</a></li>
+  <li><a href="#choropleth-graph" id="toc-choropleth-graph" class="nav-link" data-scroll-target="#choropleth-graph">Choropleth graph</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Power Analysis</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="initial-questions" class="level2">
+<h2 class="anchored" data-anchor-id="initial-questions">Initial Questions</h2>
+<ul>
+<li>What is the most common cause of power outages?</li>
+<li>What cause leads to the longest power outages?</li>
+<li>What state resolves issues the quickest? Longest?</li>
+<li>What state has the most outages? Least? -&gt; Choropleth map, can do Texas and counties too</li>
+</ul>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tigris)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="import-multiple-files" class="level2">
+<h2 class="anchored" data-anchor-id="import-multiple-files">Import multiple files</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>power_files_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data-processed-power"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">full.names =</span> T</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>power_files_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "data-processed-power/Alabama.csv"       
+ [2] "data-processed-power/Arizona.csv"       
+ [3] "data-processed-power/Arkansas.csv"      
+ [4] "data-processed-power/California.csv"    
+ [5] "data-processed-power/Colorado.csv"      
+ [6] "data-processed-power/Connecticut.csv"   
+ [7] "data-processed-power/Delaware.csv"      
+ [8] "data-processed-power/Florida.csv"       
+ [9] "data-processed-power/Georgia.csv"       
+[10] "data-processed-power/Idaho.csv"         
+[11] "data-processed-power/Illinois.csv"      
+[12] "data-processed-power/Indiana.csv"       
+[13] "data-processed-power/Iowa.csv"          
+[14] "data-processed-power/Kansas.csv"        
+[15] "data-processed-power/Kentucky.csv"      
+[16] "data-processed-power/Louisiana.csv"     
+[17] "data-processed-power/Maine.csv"         
+[18] "data-processed-power/Maryland.csv"      
+[19] "data-processed-power/Massachusetts.csv" 
+[20] "data-processed-power/Michigan.csv"      
+[21] "data-processed-power/Minnesota.csv"     
+[22] "data-processed-power/Mississippi.csv"   
+[23] "data-processed-power/Missouri.csv"      
+[24] "data-processed-power/Montana.csv"       
+[25] "data-processed-power/Nebraska.csv"      
+[26] "data-processed-power/Nevada.csv"        
+[27] "data-processed-power/New Hampshire.csv" 
+[28] "data-processed-power/New Jersey.csv"    
+[29] "data-processed-power/New Mexico.csv"    
+[30] "data-processed-power/New York.csv"      
+[31] "data-processed-power/North Carolina.csv"
+[32] "data-processed-power/North Dakota.csv"  
+[33] "data-processed-power/Ohio.csv"          
+[34] "data-processed-power/Oklahoma.csv"      
+[35] "data-processed-power/Oregon.csv"        
+[36] "data-processed-power/Pennsylvania.csv"  
+[37] "data-processed-power/Rhode Island.csv"  
+[38] "data-processed-power/South Carolina.csv"
+[39] "data-processed-power/South Dakota.csv"  
+[40] "data-processed-power/Tennessee.csv"     
+[41] "data-processed-power/Texas.csv"         
+[42] "data-processed-power/Utah.csv"          
+[43] "data-processed-power/Vermont.csv"       
+[44] "data-processed-power/Virginia.csv"      
+[45] "data-processed-power/Washington.csv"    
+[46] "data-processed-power/West Virginia.csv" 
+[47] "data-processed-power/Wisconsin.csv"     
+[48] "data-processed-power/Wyoming.csv"       </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  power_files_list,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  read_csv</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list_rbind</span>() <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>power_all <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 526,165
+Columns: 14
+$ state_event          &lt;chr&gt; "Alabama", "Alabama", "Alabama", "Alabama", "Alab…
+$ datetime_event_began &lt;dttm&gt; 2015-01-07 17:00:00, 2015-02-16 21:00:00, 2015-0…
+$ datetime_restoration &lt;dttm&gt; 2015-01-08 08:35:00, 2015-02-18 14:00:00, 2015-0…
+$ event_type           &lt;chr&gt; "Severe Weather - Winter", "Severe Weather - Wint…
+$ fips                 &lt;dbl&gt; 1039, 1003, 1085, 1003, 1003, 1085, 1001, 1021, 1…
+$ state                &lt;chr&gt; "Alabama", "Alabama", "Alabama", "Alabama", "Alab…
+$ county               &lt;chr&gt; "Covington", "Baldwin", "Lowndes", "Baldwin", "Ba…
+$ start_time           &lt;dttm&gt; 2015-01-08 05:00:00, 2015-02-19 22:15:00, 2015-0…
+$ duration             &lt;dbl&gt; 2.00, 1.00, 1.25, 1.00, 0.75, 1.25, 2.25, 2.50, 1…
+$ end_time             &lt;dttm&gt; 2015-01-08 07:00:00, 2015-02-19 23:15:00, 2015-0…
+$ min_customers        &lt;dbl&gt; 723, 368, 405, 368, 312, 405, 381, 289, 203, 352,…
+$ max_customers        &lt;dbl&gt; 723, 567, 414, 567, 315, 414, 1607, 540, 224, 352…
+$ mean_customers       &lt;dbl&gt; 723.0000, 417.7500, 410.4000, 417.7500, 313.3333,…
+$ event_category       &lt;chr&gt; "Weather", "Weather", "Weather", "Weather", "Weat…</code></pre>
+</div>
+</div>
+</section>
+<section id="longest-outage-events" class="level2">
+<h2 class="anchored" data-anchor-id="longest-outage-events">Longest Outage Events</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="sc">|&gt;</span> <span class="fu">arrange</span>(duration <span class="sc">|&gt;</span> <span class="fu">desc</span>()) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 526,165 × 14
+   state_event datetime_event_began datetime_restoration event_type   fips state
+   &lt;chr&gt;       &lt;dttm&gt;               &lt;dttm&gt;               &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;
+ 1 Texas       2017-08-26 06:26:00  2017-09-08 00:00:00  Severe Wea… 48245 Texas
+ 2 Texas       2017-08-27 05:10:00  2017-09-08 00:00:00  Severe Wea… 48245 Texas
+ 3 Texas       2017-08-26 06:26:00  2017-09-08 00:00:00  Severe Wea… 48361 Texas
+ 4 Texas       2017-08-27 05:10:00  2017-09-08 00:00:00  Severe Wea… 48361 Texas
+ 5 Texas       2017-08-26 06:26:00  2017-09-08 00:00:00  Severe Wea… 48199 Texas
+ 6 Texas       2017-08-27 05:10:00  2017-09-08 00:00:00  Severe Wea… 48199 Texas
+ 7 Louisiana   2020-08-27 05:00:00  2020-09-03 12:00:00  Severe Wea… 22073 Loui…
+ 8 Texas       2017-08-25 18:30:00  2017-09-05 17:00:00  Severe Wea… 48291 Texas
+ 9 Texas       2017-08-26 06:26:00  2017-09-08 00:00:00  Severe Wea… 48291 Texas
+10 Texas       2017-08-27 05:10:00  2017-09-08 00:00:00  Severe Wea… 48291 Texas
+# ℹ 526,155 more rows
+# ℹ 8 more variables: county &lt;chr&gt;, start_time &lt;dttm&gt;, duration &lt;dbl&gt;,
+#   end_time &lt;dttm&gt;, min_customers &lt;dbl&gt;, max_customers &lt;dbl&gt;,
+#   mean_customers &lt;dbl&gt;, event_category &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="what-is-the-most-common-cause-of-power-outages" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-most-common-cause-of-power-outages">What is the most common cause of power outages?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_events =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(total_events <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 2
+   event_category                                   total_events
+   &lt;chr&gt;                                                   &lt;int&gt;
+ 1 Weather                                                418499
+ 2 System Operations                                       33086
+ 3 Potential or Actual Physical Interference               32730
+ 4 Equipment Issue                                         13037
+ 5 Suspiciour Activity                                     12763
+ 6 Fuel Supply Issue                                        7278
+ 7 Cyber Issue                                              3252
+ 8 Unknown                                                  1909
+ 9 Generation Inedequacy                                    1288
+10 Natural Disaster                                         1052
+11 Distribution Interruption                                 567
+12 Failure at high voltage substation or switchyard          307
+13 Theft                                                     204
+14 Islanding                                                 145
+15 Public Appeal                                              48</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_events =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(total_events <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 2
+   event_category                                   total_events
+   &lt;chr&gt;                                                   &lt;int&gt;
+ 1 Weather                                                418499
+ 2 System Operations                                       33086
+ 3 Potential or Actual Physical Interference               32730
+ 4 Equipment Issue                                         13037
+ 5 Suspiciour Activity                                     12763
+ 6 Fuel Supply Issue                                        7278
+ 7 Cyber Issue                                              3252
+ 8 Unknown                                                  1909
+ 9 Generation Inedequacy                                    1288
+10 Natural Disaster                                         1052
+11 Distribution Interruption                                 567
+12 Failure at high voltage substation or switchyard          307
+13 Theft                                                     204
+14 Islanding                                                 145
+15 Public Appeal                                              48</code></pre>
+</div>
+</div>
+</section>
+<section id="what-cause-leads-to-the-longest-power-outages" class="level2">
+<h2 class="anchored" data-anchor-id="what-cause-leads-to-the-longest-power-outages">What cause leads to the longest power outages?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_outage_length =</span> <span class="fu">mean</span>(duration), <span class="at">total_occurences =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_outage_length <span class="sc">|&gt;</span> <span class="fu">desc</span>(), total_occurences)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 3
+   event_category                             avg_outage_length total_occurences
+   &lt;chr&gt;                                                  &lt;dbl&gt;            &lt;int&gt;
+ 1 Weather                                                 6.99           418499
+ 2 Fuel Supply Issue                                       5.05             7278
+ 3 Natural Disaster                                        3.80             1052
+ 4 Islanding                                               3.16              145
+ 5 Distribution Interruption                               3.14              567
+ 6 System Operations                                       2.92            33086
+ 7 Potential or Actual Physical Interference               2.80            32730
+ 8 Cyber Issue                                             2.62             3252
+ 9 Theft                                                   2.58              204
+10 Equipment Issue                                         2.56            13037
+11 Generation Inedequacy                                   2.49             1288
+12 Suspiciour Activity                                     2.32            12763
+13 Unknown                                                 2.26             1909
+14 Failure at high voltage substation or swi…              2.02              307
+15 Public Appeal                                           1.98               48</code></pre>
+</div>
+</div>
+</section>
+<section id="what-state-resolves-issues-the-quickest-slowest" class="level2">
+<h2 class="anchored" data-anchor-id="what-state-resolves-issues-the-quickest-slowest">What state resolves issues the quickest? slowest?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (state_event) <span class="sc">|&gt;</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_event_length =</span> <span class="fu">mean</span>(duration), <span class="at">total_occurences =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_event_length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 48 × 3
+   state_event avg_event_length total_occurences
+   &lt;chr&gt;                  &lt;dbl&gt;            &lt;int&gt;
+ 1 Maryland               0.827             6976
+ 2 Wyoming                1.10                18
+ 3 Nevada                 2.05               483
+ 4 New Mexico             2.06               258
+ 5 Arizona                2.15               274
+ 6 Utah                   2.21               294
+ 7 Nebraska               2.37               870
+ 8 Idaho                  2.38               645
+ 9 Montana                3.40                84
+10 Colorado               3.52               771
+# ℹ 38 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (state_event) <span class="sc">|&gt;</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_event_length =</span> <span class="fu">mean</span>(duration), <span class="at">total_occurences =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_event_length <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 48 × 3
+   state_event    avg_event_length total_occurences
+   &lt;chr&gt;                     &lt;dbl&gt;            &lt;int&gt;
+ 1 Kentucky                  14.9             10689
+ 2 Oregon                    10.7              1935
+ 3 Michigan                  10.4             72764
+ 4 West Virginia             10.2              1548
+ 5 Alabama                    9.67             6822
+ 6 Rhode Island               9.21              410
+ 7 Oklahoma                   9.12             3637
+ 8 New Jersey                 7.78             2108
+ 9 New Hampshire              7.07             1072
+10 North Carolina             6.81            11470
+# ℹ 38 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="what-state-has-the-most-outages-least" class="level2">
+<h2 class="anchored" data-anchor-id="what-state-has-the-most-outages-least">What state has the most outages? Least?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (state_event) <span class="sc">|&gt;</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_outages =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(total_outages <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 48 × 2
+   state_event    total_outages
+   &lt;chr&gt;                  &lt;int&gt;
+ 1 Texas                 196347
+ 2 Michigan               72764
+ 3 California             61499
+ 4 Florida                39338
+ 5 New York               13222
+ 6 North Carolina         11470
+ 7 Pennsylvania           10766
+ 8 Kentucky               10689
+ 9 Louisiana               9326
+10 Washington              7838
+# ℹ 38 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="sc">|&gt;</span> <span class="fu">group_by</span> (state_event) <span class="sc">|&gt;</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_outages =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(total_outages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 48 × 2
+   state_event  total_outages
+   &lt;chr&gt;                &lt;int&gt;
+ 1 Wyoming                 18
+ 2 Delaware                74
+ 3 Montana                 84
+ 4 South Dakota           123
+ 5 New Mexico             258
+ 6 Arizona                274
+ 7 Utah                   294
+ 8 Rhode Island           410
+ 9 Nevada                 483
+10 Idaho                  645
+# ℹ 38 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="choropleth-graph" class="level2">
+<h2 class="anchored" data-anchor-id="choropleth-graph">Choropleth graph</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>states <span class="ot">&lt;-</span> <span class="fu">states</span>(<span class="at">cb =</span> <span class="cn">TRUE</span>, <span class="at">class =</span> <span class="st">"sf"</span>) <span class="co"># what does cb mean?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Retrieving data for the year 2021</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |=                                                                     |   1%
+  |                                                                            
+  |=                                                                     |   2%
+  |                                                                            
+  |==                                                                    |   2%
+  |                                                                            
+  |==                                                                    |   3%
+  |                                                                            
+  |===                                                                   |   4%
+  |                                                                            
+  |===                                                                   |   5%
+  |                                                                            
+  |====                                                                  |   5%
+  |                                                                            
+  |====                                                                  |   6%
+  |                                                                            
+  |=====                                                                 |   6%
+  |                                                                            
+  |=====                                                                 |   7%
+  |                                                                            
+  |=====                                                                 |   8%
+  |                                                                            
+  |======                                                                |   8%
+  |                                                                            
+  |======                                                                |   9%
+  |                                                                            
+  |=======                                                               |   9%
+  |                                                                            
+  |=======                                                               |  10%
+  |                                                                            
+  |========                                                              |  11%
+  |                                                                            
+  |========                                                              |  12%
+  |                                                                            
+  |=========                                                             |  12%
+  |                                                                            
+  |=========                                                             |  13%
+  |                                                                            
+  |==========                                                            |  14%
+  |                                                                            
+  |==========                                                            |  15%
+  |                                                                            
+  |===========                                                           |  15%
+  |                                                                            
+  |===========                                                           |  16%
+  |                                                                            
+  |============                                                          |  17%
+  |                                                                            
+  |============                                                          |  18%
+  |                                                                            
+  |=============                                                         |  18%
+  |                                                                            
+  |=============                                                         |  19%
+  |                                                                            
+  |==============                                                        |  20%
+  |                                                                            
+  |==============                                                        |  21%
+  |                                                                            
+  |===============                                                       |  21%
+  |                                                                            
+  |===============                                                       |  22%
+  |                                                                            
+  |================                                                      |  23%
+  |                                                                            
+  |================                                                      |  24%
+  |                                                                            
+  |=================                                                     |  24%
+  |                                                                            
+  |=================                                                     |  25%
+  |                                                                            
+  |==================                                                    |  25%
+  |                                                                            
+  |==================                                                    |  26%
+  |                                                                            
+  |===================                                                   |  27%
+  |                                                                            
+  |===================                                                   |  28%
+  |                                                                            
+  |====================                                                  |  28%
+  |                                                                            
+  |====================                                                  |  29%
+  |                                                                            
+  |=====================                                                 |  29%
+  |                                                                            
+  |=====================                                                 |  30%
+  |                                                                            
+  |======================                                                |  31%
+  |                                                                            
+  |======================                                                |  32%
+  |                                                                            
+  |=======================                                               |  32%
+  |                                                                            
+  |=======================                                               |  33%
+  |                                                                            
+  |========================                                              |  34%
+  |                                                                            
+  |========================                                              |  35%
+  |                                                                            
+  |=========================                                             |  35%
+  |                                                                            
+  |=========================                                             |  36%
+  |                                                                            
+  |==========================                                            |  37%
+  |                                                                            
+  |==========================                                            |  38%
+  |                                                                            
+  |===========================                                           |  38%
+  |                                                                            
+  |===========================                                           |  39%
+  |                                                                            
+  |============================                                          |  40%
+  |                                                                            
+  |=============================                                         |  41%
+  |                                                                            
+  |=============================                                         |  42%
+  |                                                                            
+  |==============================                                        |  42%
+  |                                                                            
+  |==============================                                        |  43%
+  |                                                                            
+  |===============================                                       |  44%
+  |                                                                            
+  |===============================                                       |  45%
+  |                                                                            
+  |================================                                      |  45%
+  |                                                                            
+  |================================                                      |  46%
+  |                                                                            
+  |=================================                                     |  47%
+  |                                                                            
+  |=================================                                     |  48%
+  |                                                                            
+  |==================================                                    |  48%
+  |                                                                            
+  |==================================                                    |  49%
+  |                                                                            
+  |===================================                                   |  50%
+  |                                                                            
+  |===================================                                   |  51%
+  |                                                                            
+  |====================================                                  |  51%
+  |                                                                            
+  |====================================                                  |  52%
+  |                                                                            
+  |=====================================                                 |  53%
+  |                                                                            
+  |======================================                                |  54%
+  |                                                                            
+  |======================================                                |  55%
+  |                                                                            
+  |=======================================                               |  56%
+  |                                                                            
+  |========================================                              |  56%
+  |                                                                            
+  |========================================                              |  57%
+  |                                                                            
+  |=========================================                             |  58%
+  |                                                                            
+  |=========================================                             |  59%
+  |                                                                            
+  |==========================================                            |  59%
+  |                                                                            
+  |==========================================                            |  60%
+  |                                                                            
+  |===========================================                           |  61%
+  |                                                                            
+  |===========================================                           |  62%
+  |                                                                            
+  |============================================                          |  62%
+  |                                                                            
+  |============================================                          |  63%
+  |                                                                            
+  |=============================================                         |  64%
+  |                                                                            
+  |=============================================                         |  65%
+  |                                                                            
+  |==============================================                        |  65%
+  |                                                                            
+  |==============================================                        |  66%
+  |                                                                            
+  |===============================================                       |  67%
+  |                                                                            
+  |===============================================                       |  68%
+  |                                                                            
+  |================================================                      |  68%
+  |                                                                            
+  |================================================                      |  69%
+  |                                                                            
+  |=================================================                     |  69%
+  |                                                                            
+  |=================================================                     |  70%
+  |                                                                            
+  |==================================================                    |  71%
+  |                                                                            
+  |==================================================                    |  72%
+  |                                                                            
+  |===================================================                   |  72%
+  |                                                                            
+  |===================================================                   |  73%
+  |                                                                            
+  |====================================================                  |  74%
+  |                                                                            
+  |====================================================                  |  75%
+  |                                                                            
+  |=====================================================                 |  75%
+  |                                                                            
+  |=====================================================                 |  76%
+  |                                                                            
+  |======================================================                |  77%
+  |                                                                            
+  |======================================================                |  78%
+  |                                                                            
+  |=======================================================               |  78%
+  |                                                                            
+  |=======================================================               |  79%
+  |                                                                            
+  |========================================================              |  80%
+  |                                                                            
+  |========================================================              |  81%
+  |                                                                            
+  |=========================================================             |  81%
+  |                                                                            
+  |=========================================================             |  82%
+  |                                                                            
+  |==========================================================            |  83%
+  |                                                                            
+  |==========================================================            |  84%
+  |                                                                            
+  |===========================================================           |  84%
+  |                                                                            
+  |===========================================================           |  85%
+  |                                                                            
+  |============================================================          |  85%
+  |                                                                            
+  |============================================================          |  86%
+  |                                                                            
+  |=============================================================         |  86%
+  |                                                                            
+  |=============================================================         |  87%
+  |                                                                            
+  |==============================================================        |  88%
+  |                                                                            
+  |==============================================================        |  89%
+  |                                                                            
+  |===============================================================       |  89%
+  |                                                                            
+  |===============================================================       |  90%
+  |                                                                            
+  |================================================================      |  91%
+  |                                                                            
+  |================================================================      |  92%
+  |                                                                            
+  |=================================================================     |  92%
+  |                                                                            
+  |=================================================================     |  93%
+  |                                                                            
+  |==================================================================    |  94%
+  |                                                                            
+  |==================================================================    |  95%
+  |                                                                            
+  |===================================================================   |  95%
+  |                                                                            
+  |===================================================================   |  96%
+  |                                                                            
+  |====================================================================  |  97%
+  |                                                                            
+  |====================================================================  |  98%
+  |                                                                            
+  |===================================================================== |  98%
+  |                                                                            
+  |===================================================================== |  99%
+  |                                                                            
+  |======================================================================|  99%
+  |                                                                            
+  |======================================================================| 100%</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>power_states <span class="ot">&lt;-</span> power_all <span class="sc">|&gt;</span> <span class="fu">group_by</span>(state_event) <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_events =</span> <span class="fu">n</span>())</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>power_states</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 48 × 2
+   state_event total_events
+   &lt;chr&gt;              &lt;int&gt;
+ 1 Alabama             6822
+ 2 Arizona              274
+ 3 Arkansas            3304
+ 4 California         61499
+ 5 Colorado             771
+ 6 Connecticut         1120
+ 7 Delaware              74
+ 8 Florida            39338
+ 9 Georgia             7374
+10 Idaho                645
+# ℹ 38 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>power_state_graph <span class="ot">&lt;-</span> states <span class="sc">|&gt;</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(power_states, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"NAME"</span> <span class="ot">=</span> <span class="st">"state_event"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>(NAME <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Alaska"</span>, <span class="st">"Hawaii"</span>, <span class="st">"Guam"</span>, <span class="st">"American Samoa"</span>, <span class="st">"United States Virgin Islands"</span>, <span class="st">"Puerto Rico"</span>, <span class="st">"Commonwealth of the Northern Mariana Islands"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(power_state_graph) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> total_events), <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">size =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="powanalysis_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># reverse coloring </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
