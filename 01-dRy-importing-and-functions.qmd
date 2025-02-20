@@ -46,8 +46,8 @@ library(janitor)
 ```
 
 1. This sets the chunk label. Using `setup` specifically will run this code chunk first every time you render or run the page. 
-2. `#| message: false`  hides the output messages that usually appear when you import libraries. We will show it again later.
-3. Sometimes you do something that creates a warning in R, but you don't always care. `#| warning: false` hides those warnings. We will talk about this more later too. 
+2. `#| message: false`  hides the output messages that usually appear when you import libraries.
+3. Sometimes you do something that creates a warning in R, but you don't always care. `#| warning: false` hides those warnings. We will talk about this more later.
 
 ## Creating a list of file names
 
@@ -83,7 +83,7 @@ taylor_songs <- taylor_files_list |>  #set_names(basename) |>
 
 taylor_songs |> head(15)
 
-# comment out the above line and the comma to see what happens      b. #<6>
+# comment out the col_types line and the comma to see what happens       #<6>
 # uncomment set_names(basename) and add names_to = "source" inside list_rbind() #<7>
 ```
 
@@ -94,13 +94,12 @@ taylor_songs |> head(15)
 5. And then just to make everything look nice and uniform we use `clean_names()` to change the column names. 
 6. What happens when you comment out the `col_types = ` line? Taylor's album 1989 shows up as a number while the other album names show up as strings so get an error and can't join the columns when we use list_rbind().
 7. Let's add `set_names(basename)` by uncommenting it and add `names_to = "source"` inside `list_rbind()`. Look at the output. It creates a column that shows which file each row came from. This can be really helpful when you maybe don't have a column that has the date or year, but the file name does contain it. You can then extract it from that column.
-8. This 
 
 # OYO: Importing multiple files at once - Power Outages
 
 Now, try this on your own with the power outage data.
 
-Instructions: The files you want to import are all in a folder called `data-processed-power`. We have already given you the object names to put your code in to help with consistency and preventing repetition across files. Uncomment each of the lines and input code to read in the csv's. 
+Instructions: The files you want to import are all in a folder called `"data-processed-power"`. We have already given you the object names to put your code in to help with consistency and preventing repetition across files. Uncomment each of the lines and input code to read in the csv's. 
 
 ```{r}
 #| label: import-oyo
@@ -219,7 +218,7 @@ Test it with Texas.
 filter_graph_function("Texas")
 ```
 
-Try it with your home state or another state if you're from Texas too.  
+Try it with your home state or another state if you're from Texas too. 
 
 ```{r}
 filter_graph_function("YOUR STATE HERE")
