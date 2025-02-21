@@ -52,25 +52,25 @@ albums <- str_split_1( #<1>
 albums
 ```
 1. Use str_split_1 to split a single string into pieces to return a single character vector.
-2.  We use 'params$album' to create the string that will be read through str_split_1 . In this case, that will be the single parameter '1989'. The comma is used to determine when one value stops and the other begins; this is useful when you are looking for mulitples of one type of parameter.
+2.  We use 'params$album' to create the string that will be read through str_split_1 . In this case, that will be the single parameter '1989'. The comma is used to determine when one value stops and the other begins; this is useful when you are looking for multiples of one type of parameter.
 
 
-Album Names: `r params$album` 
+Album Names: `r params$album` \
 Use this to check your work ^
 
 
-# All 1989 songs
+# Songs from `r params$album`
 
-OK, now we can look for all occurrence of '1989' in our data.
+Now let's filter our data for the album(s) we are looking at.
 
 ```{r}
 songs <- taylor_songs |> 
-  filter(album %in% albums) #<2>
+  filter(album %in% albums) #<1>
 
 songs
 ```
 
-2. Filtering for every instance that album (the column) is equal to albums (the parameter.)
+1. Filtering for every instance that album (the column) is equal to albums (the parameter.)
 
 ## Let's do some analysis!
 

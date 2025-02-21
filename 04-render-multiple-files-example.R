@@ -5,7 +5,7 @@ album_inputs <- c("evermore","1989","Lover","Speak Now (Taylor's Version)", "Red
 # This is a vector of all the albums or album groupings we want to create an individual report for. 
 # Notice the lack of spaces in the last element of our vector. This is required for rendering a group of albums. 
 
-taylor_reports <- tibble(                    # creating a dataframe
+taylor_reports <- tibble(                    # creating a data frame
   input = "02-report-template-example.qmd",  # column called input with our input file
   output_file = str_glue("{album_inputs}.html"),    # column called output_file that is named based on the album we create the report for
   execute_params = map(album_inputs, ~list(album = .))
