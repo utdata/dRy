@@ -82,3 +82,8 @@ for(album in names(taylor_split)){
   
 }
 ```
+
+```{r}
+taylor_clean |> write_rds("data-processed-taylor/taylor_disco.rds")
+```
+

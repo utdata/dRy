@@ -36,27 +36,10 @@ library(janitor)
 ```{r}
 #| label: import
 
-taylor_files_list <- list.files(
-  "data-processed-taylor",
-  pattern = ".csv",
-  full.names = T
-)
-
-taylor_files_list
-```
-
-### Combining our files
-
-```{r}
-#| label: combine-files 
-
-taylor_songs <- taylor_files_list |> map(
-  read_csv,
-  col_types = cols(album = col_character())
-) |> list_rbind() |> 
-  clean_names()
+taylor_songs <- read_rds("data-processed-taylor/taylor_disco.rds")
 
 taylor_songs |> glimpse()
+
 ```
 # Defining paramater(s)
 

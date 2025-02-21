@@ -115,3 +115,7 @@ for(state_events in names(power_split)){
 }
 ```
 
+```{r}
+power_clean |> write_rds("data-processed-power/power_outages.rds")
+```
+

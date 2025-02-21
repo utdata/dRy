@@ -21,30 +21,9 @@ library(janitor)
 ```{r}
 #| label: import
 
-#copy from analysis
-power_cleaned_list <- list.files(
-  "data-processed-power",
-  full.names = T
-)
+all_outages <- read_rds("data-processed-power/power_outages.rds")
 
-power_cleaned_list
-```
-
-### Combine all your files
-
-```{r}
-#| label: combine
-
-#copy from analysis
-all_outages <- map(
-  power_cleaned_list,
-  read_csv,
-  col_type = cols(fips = col_character())
-) |>
-  list_rbind() |>
-  clean_names()
-
-all_outages
+all_outages |> glimpse()
 ```
 
 ## OYO: 

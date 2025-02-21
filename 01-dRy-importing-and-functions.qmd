@@ -87,8 +87,8 @@ taylor_songs |> head(15)
 # uncomment set_names(basename) and add names_to = "source" inside list_rbind() #<7>
 ```
 
-1. First we create a new object called `talyor_songs` which is where all our data will end up. Then we take our list of files names `taylor_files_list` and put it in the `map()` function. `map()` applies a method (in this case `read_csv()`) to every item in a list and returns a list as a result.
-2. Our first argument is the function we want to apply which is `read_csv()` which returns a dataframe of the csv. 
+1. First we create a new object called `taylor_songs` which is where all our data will end up. Then we take our list of files names `taylor_files_list` and put it in the `map()` function. `map()` applies a method (in this case `read_csv()`) to every item in a list and returns a list as a result.
+2. Our first argument is the function we want to apply which is `read_csv()` which returns a data frame of the csv. 
 3. After the comma is `col_types =` which is an argument in `read_csv()`. This argument can set any or all of the column types as you import the data.  
 4. Once we use map to create a list of our newly created object from read_csv, we want to combine them all into one single object which already called `taylor_songs`, so we use `list_rbind()`. 
 5. And then just to make everything look nice and uniform we use `clean_names()` to change the column names. 
@@ -136,7 +136,7 @@ ggplot(taylor_songs, aes(
 ```
 *For our Taylor Swift fans, can you tell which song is all the way on the right?*
 
-What if we want to add labels and scale the axes differently? And what if we wanted to make the same graph for multiple albums? That would require a lot of recoding things we've already typed out before (or a lot of copy and pasting). Rather than rewriting this the same methods over and over again, we can make a function that does it for us. 
+What if we want to add labels and scale the axes differently? And what if we wanted to make the same graph for multiple albums? That would require a lot of re-coding things we've already typed out before (or a lot of copy and pasting). Rather than rewriting this the same methods over and over again, we can make a function that does it for us. 
 
 We are going to call our function `graphing_taylor`.
 
@@ -180,7 +180,7 @@ Let's look at the power outage data.
 ```
 
 We want to see what the top 10 causes of power outages are for each state and how many outages there have been for each category.
-To do this for Texas, we would filter for our state,  group_by the event_category, count the number of occurances for each category, arrange it in descending order and then take the top ten. 
+To do this for Texas, we would filter for our state,  group_by the event_category, count the number of occurrences for each category, arrange it in descending order and then take the top ten. 
 
 ```{r}
 filtered_data <- power_all |> filter(state_event |> str_detect("Texas")) |>
@@ -197,11 +197,11 @@ ggplot(filtered_data,
          aes(x = total_events, 
              y = reorder(event_category, total_events))) +
          geom_col() +
-         labs(x = "Occurances", y = "Outage Cause")  +
+         labs(x = "Occurrences", y = "Outage Cause")  +
         scale_x_continuous(labels = comma)
 ```
 
-Now, your turn. We want to put these two steps into a single function so we can do it all at once for any state we want. Try it below and test if it matches the graph output above for Texas. You can copy and paste the filtering and graphing code but will need to adjust a few things for the funciton to work. 
+Now, your turn. We want to put these two steps into a single function so we can do it all at once for any state we want. Try it below and test if it matches the graph output above for Texas. You can copy and paste the filtering and graphing code but will need to adjust a few things for the function to work. 
 
 ```{r}
 #| label: function
