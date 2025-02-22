@@ -94,6 +94,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -107,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-report-template-oyo.html">04-report-template-oyo</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-report-template-oyo.html">05: Report Template - OYO</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -134,68 +137,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Don’t Repeat Yourself in R</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./02-report-template-example.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-report-template-example</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./05-report-template-oyo.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">04-report-template-oyo</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./powanalysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Power Analysis</span></a>
+  <a href="./01-importing-and-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01: Importing Multiple Files and Creating a Function</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./powcleaning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Power outage cleaning</span></a>
+  <a href="./02-report-template-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02: Report Template - Example</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./solution-01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Importing and function solutions</span></a>
+  <a href="./03-render-one-file-example.R" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03: Render One File - Example</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./solution-05-report-template-oyo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">04-report-template-oyo</span></a>
+  <a href="./04-render-multiple-files-example.R" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04: Render Multiple Files - Example</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tayanalysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Taycleaning</span></a>
+  <a href="./05-report-template-oyo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">05: Report Template - OYO</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./taycleaning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Taycleaning</span></a>
+  <a href="./06-render-multiple-files-oyo.R" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06: Render Multiple Files - OYO</span></a>
   </div>
 </li>
     </ul>
@@ -211,7 +190,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set up</a>
   <ul class="collapse">
   <li><a href="#import-your-files" id="toc-import-your-files" class="nav-link" data-scroll-target="#import-your-files">Import your files</a></li>
-  <li><a href="#combine-all-your-files" id="toc-combine-all-your-files" class="nav-link" data-scroll-target="#combine-all-your-files">Combine all your files</a></li>
   </ul></li>
   <li><a href="#oyo" id="toc-oyo" class="nav-link" data-scroll-target="#oyo">OYO:</a>
   <ul class="collapse">
@@ -250,96 +228,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="import-your-files" class="level3">
 <h3 class="anchored" data-anchor-id="import-your-files">Import your files</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#copy from analysis</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>power_cleaned_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data-processed-power"</span>,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">full.names =</span> T</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>power_cleaned_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>all_outages <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"data-processed-power/power_outages.rds"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>all_outages <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "data-processed-power/Alabama.csv"       
- [2] "data-processed-power/Arizona.csv"       
- [3] "data-processed-power/Arkansas.csv"      
- [4] "data-processed-power/California.csv"    
- [5] "data-processed-power/Colorado.csv"      
- [6] "data-processed-power/Connecticut.csv"   
- [7] "data-processed-power/Delaware.csv"      
- [8] "data-processed-power/Florida.csv"       
- [9] "data-processed-power/Georgia.csv"       
-[10] "data-processed-power/Idaho.csv"         
-[11] "data-processed-power/Illinois.csv"      
-[12] "data-processed-power/Indiana.csv"       
-[13] "data-processed-power/Iowa.csv"          
-[14] "data-processed-power/Kansas.csv"        
-[15] "data-processed-power/Kentucky.csv"      
-[16] "data-processed-power/Louisiana.csv"     
-[17] "data-processed-power/Maine.csv"         
-[18] "data-processed-power/Maryland.csv"      
-[19] "data-processed-power/Massachusetts.csv" 
-[20] "data-processed-power/Michigan.csv"      
-[21] "data-processed-power/Minnesota.csv"     
-[22] "data-processed-power/Mississippi.csv"   
-[23] "data-processed-power/Missouri.csv"      
-[24] "data-processed-power/Montana.csv"       
-[25] "data-processed-power/Nebraska.csv"      
-[26] "data-processed-power/Nevada.csv"        
-[27] "data-processed-power/New Hampshire.csv" 
-[28] "data-processed-power/New Jersey.csv"    
-[29] "data-processed-power/New Mexico.csv"    
-[30] "data-processed-power/New York.csv"      
-[31] "data-processed-power/North Carolina.csv"
-[32] "data-processed-power/North Dakota.csv"  
-[33] "data-processed-power/Ohio.csv"          
-[34] "data-processed-power/Oklahoma.csv"      
-[35] "data-processed-power/Oregon.csv"        
-[36] "data-processed-power/Pennsylvania.csv"  
-[37] "data-processed-power/Rhode Island.csv"  
-[38] "data-processed-power/South Carolina.csv"
-[39] "data-processed-power/South Dakota.csv"  
-[40] "data-processed-power/Tennessee.csv"     
-[41] "data-processed-power/Texas.csv"         
-[42] "data-processed-power/Utah.csv"          
-[43] "data-processed-power/Vermont.csv"       
-[44] "data-processed-power/Virginia.csv"      
-[45] "data-processed-power/Washington.csv"    
-[46] "data-processed-power/West Virginia.csv" 
-[47] "data-processed-power/Wisconsin.csv"     
-[48] "data-processed-power/Wyoming.csv"       </code></pre>
-</div>
-</div>
-</section>
-<section id="combine-all-your-files" class="level3">
-<h3 class="anchored" data-anchor-id="combine-all-your-files">Combine all your files</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#copy from analysis</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>all_outages <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  power_cleaned_list,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  read_csv,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_type =</span> <span class="fu">cols</span>(<span class="at">fips =</span> <span class="fu">col_character</span>())</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list_rbind</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>all_outages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 526,165 × 14
-   state_event datetime_event_began datetime_restoration event_type  fips  state
-   &lt;chr&gt;       &lt;dttm&gt;               &lt;dttm&gt;               &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;
- 1 Alabama     2015-01-07 17:00:00  2015-01-08 08:35:00  Severe Wea… 1039  Alab…
- 2 Alabama     2015-02-16 21:00:00  2015-02-18 14:00:00  Severe Wea… 1003  Alab…
- 3 Alabama     2015-02-16 21:00:00  2015-02-18 14:00:00  Severe Wea… 1085  Alab…
- 4 Alabama     2015-02-18 15:00:00  2015-02-20 09:00:00  Severe Wea… 1003  Alab…
- 5 Alabama     2015-02-18 15:00:00  2015-02-20 09:00:00  Severe Wea… 1003  Alab…
- 6 Alabama     2015-02-18 15:00:00  2015-02-20 09:00:00  Severe Wea… 1085  Alab…
- 7 Alabama     2015-07-14 20:00:00  2015-07-15 09:23:00  Severe Wea… 1001  Alab…
- 8 Alabama     2015-07-14 20:00:00  2015-07-15 09:23:00  Severe Wea… 1021  Alab…
- 9 Alabama     2015-07-14 20:00:00  2015-07-15 09:23:00  Severe Wea… 1021  Alab…
-10 Alabama     2015-07-14 20:00:00  2015-07-15 09:23:00  Severe Wea… 1039  Alab…
-# ℹ 526,155 more rows
-# ℹ 8 more variables: county &lt;chr&gt;, start_time &lt;dttm&gt;, duration &lt;dbl&gt;,
-#   end_time &lt;dttm&gt;, min_customers &lt;dbl&gt;, max_customers &lt;dbl&gt;,
-#   mean_customers &lt;dbl&gt;, event_category &lt;chr&gt;</code></pre>
+<pre><code>Rows: 526,165
+Columns: 14
+$ state_event          &lt;chr&gt; "Arkansas", "Arkansas", "Arkansas", "Arkansas", "…
+$ datetime_event_began &lt;dttm&gt; 2014-11-24 00:00:00, 2014-11-24 00:00:00, 2014-1…
+$ datetime_restoration &lt;dttm&gt; 2014-11-24 00:00:00, 2014-11-24 00:00:00, 2014-1…
+$ event_type           &lt;chr&gt; "Fuel Supply Emergency - Coal", "Fuel Supply Emer…
+$ fips                 &lt;dbl&gt; 5021, 5035, 5051, 5069, 5093, 5119, 5121, 5121, 5…
+$ state                &lt;chr&gt; "Arkansas", "Arkansas", "Arkansas", "Arkansas", "…
+$ county               &lt;chr&gt; "Clay", "Crittenden", "Garland", "Jefferson", "Mi…
+$ start_time           &lt;dttm&gt; 2014-11-24 09:30:00, 2014-11-24 09:30:00, 2014-1…
+$ duration             &lt;dbl&gt; 5.75, 1.25, 0.75, 1.25, 0.75, 1.25, 5.25, 0.75, 6…
+$ end_time             &lt;dttm&gt; 2014-11-24 15:15:00, 2014-11-24 10:45:00, 2014-1…
+$ min_customers        &lt;dbl&gt; 456, 755, 279, 252, 301, 523, 223, 229, 588, 287,…
+$ max_customers        &lt;dbl&gt; 1803, 755, 293, 256, 301, 523, 401, 229, 700, 287…
+$ mean_customers       &lt;dbl&gt; 1301.4783, 755.0000, 287.3333, 254.0000, 301.0000…
+$ event_category       &lt;chr&gt; "Fuel Supply Issue", "Fuel Supply Issue", "Fuel S…</code></pre>
 </div>
 </div>
 </section>
@@ -349,13 +257,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="create-parameter-list-and-filter-for-parameters" class="level3">
 <h3 class="anchored" data-anchor-id="create-parameter-list-and-filter-for-parameters">Create parameter list and filter for parameters</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#state_list &lt;- </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#state_list &lt;- </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>States: (check your work)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#outages &lt;- all_outages |&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#outages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#outages &lt;- all_outages |&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#outages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="do-some-analysis-for-your-state" class="level3">
@@ -368,13 +276,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="common-causes-of-outages" class="level4">
 <h4 class="anchored" data-anchor-id="common-causes-of-outages">Common causes of outages</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#outages |&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#outages |&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="cause-of-longest-outages" class="level4">
 <h4 class="anchored" data-anchor-id="cause-of-longest-outages">Cause of longest outages</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#outages |&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#outages |&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

@@ -1,9 +1,26 @@
 ---
-title: "About"
+title: "Don't Repeat Yourself in R"
 ---
 
-About this site
+By Ella Barnes and Karina Kumar, Data Fellows of the Media Innovation Group at University of Texas at Austin.
 
-```{r}
-1 + 1
-```
+## Goals of this session
+- Import multiple files at once
+- Create your own function
+- Generate parameterized reports quickly
+
+Why dRy? Data analysis often requires repetitive processes. These tools can help you maximize efficiency and stop repeating the same code over and over again. 
+
+## The data
+
+We will be working with two datasets: one about Taylor Swift songs and one about event-correlated power outages across the United States. 
+
+The Taylor data came from [Kaggle](https://www.kaggle.com/code/jarredpriester/taylor-swift-spotify-notebook). 
+
+The power outages data came from [data.gov](https://catalog.data.gov/dataset/event-correlated-outage-dataset-in-america).
+
+Since this lesson is not about cleaning or analysis, we have already done those things for you. But we will be importing the data from multiple files (which is usually done in the cleaning stage).
+
+## How this lesson works
+
+For each part of the lesson, we will provide an example using the Taylor Swift dataset. Then we will give you an opportunity to try the concept on your own (OYO) using the power outages dataset. Most code chunks are numbered and correlate to numbered markdown lists following the code chunk. You can also view this lesson as a Quarto site if you want to come back at a later date to review what we do today. 

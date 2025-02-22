@@ -1,7 +1,7 @@
 library(quarto)
 library(tidyverse)
 
-state_inputs <- c()
+state_inputs <- c(state.name)   # state.name gives a vector of strings all 50 states
 
 outage_reports <- tibble(
   input = 

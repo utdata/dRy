@@ -11,10 +11,13 @@ params:
   album: "1989"
 echo: true
 ```
+If you are looking at this code in RStudio you might see it twice, this is so we can the YAML when we render it on the Quarto website. 
 
-title: title of file. \
-params: what we're filtering for. \
-echo: 'true' repeats all code chunks in render file, 'false' excludes them. \
+What does all of this YAML mean? \
+
+* **title**: title of file. 
+* **params**: what we're filtering for. 
+* **echo**: 'true' repeats all code chunks in render file, 'false' excludes them. 
 
 ## Set up
 

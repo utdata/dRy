@@ -5,3 +5,5 @@ quarto_render(
   output_file = "album_test.html", # Name of rendered file.
   execute_params = list(album = "1989,1989 (Deluxe)") # All of the parameters you are hoping to filter for.
 )
+
+# make sure to run the entire file, not just one line. 

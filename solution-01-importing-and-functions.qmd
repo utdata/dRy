@@ -1,0 +1,117 @@
+---
+title: "Importing and function solutions"
+format: html
+---
+
+## Set up
+
+Importing our needed libraries. We use tidyverse for almost everything.
+
+```{r}
+
+#| label: setup   #<1>
+#| message: false #<2>
+#| warning: false #<3>
+
+library(tidyverse)
+library(janitor)
+library(scales)
+
+```
+
+# OYO: Importing multiple files at once - Power Outages
+
+Now, try this on your own with the power outage data.
+
+Instructions: The files you want to import are all in a folder called `"data-processed-power"`. We have already given you the object names to put your code in to help with consistency and preventing repetition across files. Uncomment each of the lines and input code to read in the csv's. 
+
+# Solution
+
+```{r}
+#| label: import-oyo
+
+power_files_list <- list.files(
+  "data-processed-power",
+  full.names = T
+)
+
+power_files_list
+
+```
+
+```{r}
+#| label: combine-files-oyo
+
+power_all <- map(
+  power_files_list,
+  read_csv
+) |>
+  list_rbind() |>
+  clean_names()
+
+power_all |> glimpse()
+```
+
+# OYO: Creating your own function
+
+Let's look at the power outage data.
+
+```{r}
+#power_outages |> head(50)
+```
+
+We want to see what the top 10 causes of power outages are for each state and how many outages there have been for each category.
+To do this for Texas, we would filter for our state,  group_by the event_category, count the number of occurrences for each category, arrange it in descending order and then take the top ten. 
+
+```{r}
+filtered_data <- power_all |> filter(state_event |> str_detect("Texas")) |>
+  group_by (event_category) |> 
+  summarize(total_events = n()) |> 
+  arrange(total_events |> desc()) |> 
+  head(10)
+```
+
+Now we want to create a bar chart. 
+
+```{r}
+ggplot(filtered_data, 
+         aes(x = total_events, 
+             y = reorder(event_category, total_events))) +
+         geom_col() +
+         labs(x = "Occurrences", y = "Outage Cause")  +
+        scale_x_continuous(labels = comma)
+```
+
+Now, your turn. We want to put these two steps into a single function so we can do it all at once for any state we want. Try it below and test if it matches the graph output above for Texas. You can copy and paste the filtering and graphing code but will need to adjust a few things for the function to work. 
+
+# Solution
+
+```{r}
+#| label: function
+
+filter_graph_function <- function (state) {
+  filtered_data <- power_all |> filter(state_event |> str_detect(state)) |>
+    group_by (event_category) |> 
+    summarize(total_events = n()) |> 
+    arrange(total_events |> desc()) |> 
+    head(10)
+  
+  ggplot(filtered_data, 
+         aes(x = total_events, 
+             y = reorder(event_category, total_events))) +
+         geom_col() +
+         labs(x = "Occurances", y = "Outage Cause")  +
+        scale_x_continuous(labels = comma)
+        
+}
+
+```
+
+
+```{r}
+filter_graph_function("Texas")
+```
+
+
+
+

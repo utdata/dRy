@@ -74,11 +74,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -94,45 +94,117 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">dRy</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./solution-01-dRy-importing-and-functions.html">Importing and function solutions</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">dRy</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Don’t Repeat Yourself in R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-report-template-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02-report-template-example</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-report-template-oyo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04-report-template-oyo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./powanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./powcleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power outage cleaning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solution-01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Importing and function solutions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solution-05-report-template-oyo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04-report-template-oyo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tayanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taycleaning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./taycleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taycleaning</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -140,7 +212,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set up</a></li>
-  <li><a href="#importing-multiple-files-at-once" id="toc-importing-multiple-files-at-once" class="nav-link" data-scroll-target="#importing-multiple-files-at-once">Importing multiple files at once</a></li>
+  <li><a href="#oyo-importing-multiple-files-at-once---power-outages" id="toc-oyo-importing-multiple-files-at-once---power-outages" class="nav-link" data-scroll-target="#oyo-importing-multiple-files-at-once---power-outages">OYO: Importing multiple files at once - Power Outages</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  <li><a href="#oyo-creating-your-own-function" id="toc-oyo-creating-your-own-function" class="nav-link" data-scroll-target="#oyo-creating-your-own-function">OYO: Creating your own function</a></li>
+  <li><a href="#solution-1" id="toc-solution-1" class="nav-link" data-scroll-target="#solution-1">Solution</a></li>
   </ul>
 </nav>
     </div>
@@ -194,17 +269,35 @@ The following objects are masked from 'package:stats':
 
     chisq.test, fisher.test</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'scales'
+
+The following object is masked from 'package:purrr':
+
+    discard
+
+The following object is masked from 'package:readr':
+
+    col_factor</code></pre>
+</div>
 </div>
 </section>
-<section id="importing-multiple-files-at-once" class="level1">
-<h1>Importing multiple files at once</h1>
+<section id="oyo-importing-multiple-files-at-once---power-outages" class="level1">
+<h1>OYO: Importing multiple files at once - Power Outages</h1>
+<p>Now, try this on your own with the power outage data.</p>
+<p>Instructions: The files you want to import are all in a folder called <code>"data-processed-power"</code>. We have already given you the object names to put your code in to help with consistency and preventing repetition across files. Uncomment each of the lines and input code to read in the csv’s.</p>
+</section>
+<section id="solution" class="level1">
+<h1>Solution</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>power_files_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data-processed-power"</span>,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">full.names =</span> T</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>power_files_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>power_files_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data-processed-power"</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">full.names =</span> T</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>power_files_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "data-processed-power/Alabama.csv"       
  [2] "data-processed-power/Arizona.csv"       
@@ -242,27 +335,28 @@ The following objects are masked from 'package:stats':
 [34] "data-processed-power/Oklahoma.csv"      
 [35] "data-processed-power/Oregon.csv"        
 [36] "data-processed-power/Pennsylvania.csv"  
-[37] "data-processed-power/Rhode Island.csv"  
-[38] "data-processed-power/South Carolina.csv"
-[39] "data-processed-power/South Dakota.csv"  
-[40] "data-processed-power/Tennessee.csv"     
-[41] "data-processed-power/Texas.csv"         
-[42] "data-processed-power/Utah.csv"          
-[43] "data-processed-power/Vermont.csv"       
-[44] "data-processed-power/Virginia.csv"      
-[45] "data-processed-power/Washington.csv"    
-[46] "data-processed-power/West Virginia.csv" 
-[47] "data-processed-power/Wisconsin.csv"     
-[48] "data-processed-power/Wyoming.csv"       </code></pre>
+[37] "data-processed-power/power_outages.rds" 
+[38] "data-processed-power/Rhode Island.csv"  
+[39] "data-processed-power/South Carolina.csv"
+[40] "data-processed-power/South Dakota.csv"  
+[41] "data-processed-power/Tennessee.csv"     
+[42] "data-processed-power/Texas.csv"         
+[43] "data-processed-power/Utah.csv"          
+[44] "data-processed-power/Vermont.csv"       
+[45] "data-processed-power/Virginia.csv"      
+[46] "data-processed-power/Washington.csv"    
+[47] "data-processed-power/West Virginia.csv" 
+[48] "data-processed-power/Wisconsin.csv"     
+[49] "data-processed-power/Wyoming.csv"       </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  power_files_list,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  read_csv</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list_rbind</span>() <span class="sc">|&gt;</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  power_files_list,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  read_csv</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list_rbind</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 6822 Columns: 14
 ── Column specification ────────────────────────────────────────────────────────
@@ -587,6 +681,21 @@ dbl  (5): fips, duration, min_customers, max_customers, mean_customers
 dttm (4): datetime_event_began, datetime_restoration, start_time, end_time
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 304341 Columns: 1
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): X
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 Rows: 410 Columns: 14
 ── Column specification ────────────────────────────────────────────────────────
@@ -697,10 +806,10 @@ dttm (4): datetime_event_began, datetime_restoration, start_time, end_time
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>power_all <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Rows: 526,165
-Columns: 14
+<pre><code>Rows: 830,506
+Columns: 15
 $ state_event          &lt;chr&gt; "Alabama", "Alabama", "Alabama", "Alabama", "Alab…
 $ datetime_event_began &lt;dttm&gt; 2015-01-07 17:00:00, 2015-02-16 21:00:00, 2015-0…
 $ datetime_restoration &lt;dttm&gt; 2015-01-08 08:35:00, 2015-02-18 14:00:00, 2015-0…
@@ -714,26 +823,63 @@ $ end_time             &lt;dttm&gt; 2015-01-08 07:00:00, 2015-02-19 23:15:00, 20
 $ min_customers        &lt;dbl&gt; 723, 368, 405, 368, 312, 405, 381, 289, 203, 352,…
 $ max_customers        &lt;dbl&gt; 723, 567, 414, 567, 315, 414, 1607, 540, 224, 352…
 $ mean_customers       &lt;dbl&gt; 723.0000, 417.7500, 410.4000, 417.7500, 313.3333,…
-$ event_category       &lt;chr&gt; "Weather", "Weather", "Weather", "Weather", "Weat…</code></pre>
+$ event_category       &lt;chr&gt; "Weather", "Weather", "Weather", "Weather", "Weat…
+$ x                    &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…</code></pre>
 </div>
 </div>
-<div class="cell" data-lable="function">
-<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># do i need to pivot this, or am i doing something else completely wrong.</span></span>
-<span id="annotated-cell-6-2"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-6-3"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># graphing_function &lt;- function(power_data) {</span></span>
-<span id="annotated-cell-6-4"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   ggplot(power_data, aes(x = total_events, y = state_event) +</span></span>
-<span id="annotated-cell-6-5"><a href="#annotated-cell-6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#         geom_bar() +</span></span>
-<span id="annotated-cell-6-6"><a href="#annotated-cell-6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#         labs(x = "Outage cause", y = "Occurances"))</span></span>
-<span id="annotated-cell-6-7"><a href="#annotated-cell-6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
-<span id="annotated-cell-6-8"><a href="#annotated-cell-6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="annotated-cell-6-9"><a href="#annotated-cell-6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># texas &lt;- power_all |&gt; filter(state_event |&gt; str_detect("Texas")) |&gt; </span></span>
-<span id="annotated-cell-6-10"><a href="#annotated-cell-6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by (event_category) |&gt;</span></span>
-<span id="annotated-cell-6-11"><a href="#annotated-cell-6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarize(total_events = n()) |&gt;</span></span>
-<span id="annotated-cell-6-12"><a href="#annotated-cell-6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#   arrange(total_events |&gt; desc()) </span></span>
-<span id="annotated-cell-6-13"><a href="#annotated-cell-6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="annotated-cell-6-14"><a href="#annotated-cell-6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># texas</span></span>
-<span id="annotated-cell-6-15"><a href="#annotated-cell-6-15" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="annotated-cell-6-16"><a href="#annotated-cell-6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># graphing_function(texas)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="oyo-creating-your-own-function" class="level1">
+<h1>OYO: Creating your own function</h1>
+<p>Let’s look at the power outage data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#power_outages |&gt; head(50)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We want to see what the top 10 causes of power outages are for each state and how many outages there have been for each category. To do this for Texas, we would filter for our state, group_by the event_category, count the number of occurrences for each category, arrange it in descending order and then take the top ten.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> power_all <span class="sc">|&gt;</span> <span class="fu">filter</span>(state_event <span class="sc">|&gt;</span> <span class="fu">str_detect</span>(<span class="st">"Texas"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_events =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(total_events <span class="sc">|&gt;</span> <span class="fu">desc</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we want to create a bar chart.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(filtered_data, </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">aes</span>(<span class="at">x =</span> total_events, </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="fu">reorder</span>(event_category, total_events))) <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>         <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Occurrences"</span>, <span class="at">y =</span> <span class="st">"Outage Cause"</span>)  <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> comma)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="solution-01-dRy-importing-and-functions_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Now, your turn. We want to put these two steps into a single function so we can do it all at once for any state we want. Try it below and test if it matches the graph output above for Texas. You can copy and paste the filtering and graphing code but will need to adjust a few things for the function to work.</p>
+</section>
+<section id="solution-1" class="level1">
+<h1>Solution</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>filter_graph_function <span class="ot">&lt;-</span> <span class="cf">function</span> (state) {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  filtered_data <span class="ot">&lt;-</span> power_all <span class="sc">|&gt;</span> <span class="fu">filter</span>(state_event <span class="sc">|&gt;</span> <span class="fu">str_detect</span>(state)) <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">total_events =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(total_events <span class="sc">|&gt;</span> <span class="fu">desc</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(filtered_data, </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>         <span class="fu">aes</span>(<span class="at">x =</span> total_events, </span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="fu">reorder</span>(event_category, total_events))) <span class="sc">+</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>         <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>         <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Occurances"</span>, <span class="at">y =</span> <span class="st">"Outage Cause"</span>)  <span class="sc">+</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> comma)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter_graph_function</span>(<span class="st">"Texas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="solution-01-dRy-importing-and-functions_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
 </div>
 
 

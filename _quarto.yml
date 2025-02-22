@@ -1,17 +1,26 @@
 project:
   type: website
-  render:
-  - "01*.qmd"
-  - "*.qmd"
 
 website:
   title: "dRy"
   sidebar:
     contents:
-      - href: index.qmd
-        text: Home
-      - auto: "*.qmd"
-
+      - href: "about.qmd"
+        text: About
+      - href: "01-importing-and-functions.qmd"
+        text: "01: Importing Multiple Files and Creating a Function"
+      - href: "02-report-template-example.qmd"
+        text: "02: Report Template - Example"
+      - href: "03-render-one-file-example.R"
+        text: "03: Render One File - Example"
+      - href: "04-render-multiple-files-example.R"
+        text: "04: Render Multiple Files - Example"
+      - href: "05-report-template-oyo.qmd"
+        text: "05: Report Template - OYO"
+      - href: "06-render-multiple-files-oyo.R"
+        text: "06: Render Multiple Files - OYO"
+        
+      
 format:
   html:
     theme: cosmo

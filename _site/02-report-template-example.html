@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-report-template-example.html">02-report-template-example</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-report-template-example.html">02: Report Template - Example</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -137,68 +137,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Don’t Repeat Yourself in R</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./02-report-template-example.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">02-report-template-example</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./05-report-template-oyo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">04-report-template-oyo</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./powanalysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Power Analysis</span></a>
+  <a href="./01-importing-and-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01: Importing Multiple Files and Creating a Function</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./powcleaning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Power outage cleaning</span></a>
+  <a href="./02-report-template-example.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">02: Report Template - Example</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./solution-01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Importing and function solutions</span></a>
+  <a href="./03-render-one-file-example.R" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03: Render One File - Example</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./solution-05-report-template-oyo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">04-report-template-oyo</span></a>
+  <a href="./04-render-multiple-files-example.R" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04: Render Multiple Files - Example</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tayanalysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Taycleaning</span></a>
+  <a href="./05-report-template-oyo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05: Report Template - OYO</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./taycleaning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Taycleaning</span></a>
+  <a href="./06-render-multiple-files-oyo.R" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06: Render Multiple Files - OYO</span></a>
   </div>
 </li>
     </ul>
@@ -214,10 +190,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set up</a>
   <ul class="collapse">
   <li><a href="#importing-our-files" id="toc-importing-our-files" class="nav-link" data-scroll-target="#importing-our-files">Importing our files</a></li>
-  <li><a href="#combining-our-files" id="toc-combining-our-files" class="nav-link" data-scroll-target="#combining-our-files">Combining our files</a></li>
   </ul></li>
   <li><a href="#defining-paramaters" id="toc-defining-paramaters" class="nav-link" data-scroll-target="#defining-paramaters">Defining paramater(s)</a></li>
-  <li><a href="#all-1989-songs" id="toc-all-1989-songs" class="nav-link" data-scroll-target="#all-1989-songs">All 1989 songs</a>
+  <li><a href="#songs-from-1989" id="toc-songs-from-1989" class="nav-link" data-scroll-target="#songs-from-1989">Songs from 1989</a>
   <ul class="collapse">
   <li><a href="#lets-do-some-analysis" id="toc-lets-do-some-analysis" class="nav-link" data-scroll-target="#lets-do-some-analysis">Let’s do some analysis!</a></li>
   </ul></li>
@@ -248,10 +223,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">params</span><span class="kw">:</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">album</span><span class="kw">:</span><span class="at"> </span><span class="st">"1989"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>title: title of file.<br>
-params: what we’re filtering for.<br>
-echo: ‘true’ repeats all code chunks in render file, ‘false’ excludes them.<br>
+<p>If you are looking at this code in RStudio you might see it twice, this is so we can the YAML when we render it on the Quarto website.</p>
+<p>What does all of this YAML mean?<br>
 </p>
+<ul>
+<li><strong>title</strong>: title of file.</li>
+<li><strong>params</strong>: what we’re filtering for.</li>
+<li><strong>echo</strong>: ‘true’ repeats all code chunks in render file, ‘false’ excludes them.</li>
+</ul>
 <section id="set-up" class="level2">
 <h2 class="anchored" data-anchor-id="set-up">Set up</h2>
 <div class="cell">
@@ -286,75 +265,28 @@ The following objects are masked from 'package:stats':
 <section id="importing-our-files" class="level3">
 <h3 class="anchored" data-anchor-id="importing-our-files">Importing our files</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>taylor_files_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data-processed-taylor"</span>,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">".csv"</span>,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">full.names =</span> T</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>taylor_files_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] "data-processed-taylor/1989 (Deluxe).csv"                                                                      
- [2] "data-processed-taylor/1989 (Taylor's Version) [Deluxe].csv"                                                   
- [3] "data-processed-taylor/1989 (Taylor's Version).csv"                                                            
- [4] "data-processed-taylor/1989.csv"                                                                               
- [5] "data-processed-taylor/evermore (deluxe version).csv"                                                          
- [6] "data-processed-taylor/evermore.csv"                                                                           
- [7] "data-processed-taylor/Fearless (International Version).csv"                                                   
- [8] "data-processed-taylor/Fearless (Platinum Edition).csv"                                                        
- [9] "data-processed-taylor/Fearless (Taylor's Version).csv"                                                        
-[10] "data-processed-taylor/folklore (deluxe version).csv"                                                          
-[11] "data-processed-taylor/folklore- the long pond studio sessions (from the Disney+ special) [deluxe edition].csv"
-[12] "data-processed-taylor/folklore.csv"                                                                           
-[13] "data-processed-taylor/Live From Clear Channel Stripped 2008.csv"                                              
-[14] "data-processed-taylor/Lover.csv"                                                                              
-[15] "data-processed-taylor/Midnights (3am Edition).csv"                                                            
-[16] "data-processed-taylor/Midnights (The Til Dawn Edition).csv"                                                   
-[17] "data-processed-taylor/Midnights.csv"                                                                          
-[18] "data-processed-taylor/Red (Deluxe Edition).csv"                                                               
-[19] "data-processed-taylor/Red (Taylor's Version).csv"                                                             
-[20] "data-processed-taylor/Red.csv"                                                                                
-[21] "data-processed-taylor/reputation Stadium Tour Surprise Song Playlist.csv"                                     
-[22] "data-processed-taylor/reputation.csv"                                                                         
-[23] "data-processed-taylor/Speak Now (Deluxe Package).csv"                                                         
-[24] "data-processed-taylor/Speak Now (Taylor's Version).csv"                                                       
-[25] "data-processed-taylor/Speak Now World Tour Live.csv"                                                          
-[26] "data-processed-taylor/Speak Now.csv"                                                                          
-[27] "data-processed-taylor/Taylor Swift (Deluxe Edition).csv"                                                      
-[28] "data-processed-taylor/THE TORTURED POETS DEPARTMENT- THE ANTHOLOGY.csv"                                       
-[29] "data-processed-taylor/THE TORTURED POETS DEPARTMENT.csv"                                                      </code></pre>
-</div>
-</div>
-</section>
-<section id="combining-our-files" class="level3">
-<h3 class="anchored" data-anchor-id="combining-our-files">Combining our files</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="ot">&lt;-</span> taylor_files_list <span class="sc">|&gt;</span> <span class="fu">map</span>(</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  read_csv,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">album =</span> <span class="fu">col_character</span>())</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">list_rbind</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"data-processed-taylor/taylor_disco.rds"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>taylor_songs <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 582
 Columns: 16
-$ name             &lt;chr&gt; "Welcome To New York", "Blank Space", "Style", "Out O…
-$ album            &lt;chr&gt; "1989 (Deluxe)", "1989 (Deluxe)", "1989 (Deluxe)", "1…
-$ release_date     &lt;date&gt; 2014-01-01, 2014-01-01, 2014-01-01, 2014-01-01, 2014…
-$ track_number     &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16…
-$ uri              &lt;chr&gt; "spotify:track:3nRmDz7qGCvsMS30rGGY0x", "spotify:trac…
-$ acousticness     &lt;dbl&gt; 0.034800, 0.103000, 0.002450, 0.000743, 0.002010, 0.0…
-$ danceability     &lt;dbl&gt; 0.789, 0.760, 0.588, 0.553, 0.605, 0.647, 0.653, 0.64…
-$ energy           &lt;dbl&gt; 0.634, 0.703, 0.791, 0.841, 0.725, 0.800, 0.893, 0.79…
-$ instrumentalness &lt;dbl&gt; 1.64e-06, 0.00e+00, 2.58e-03, 1.19e-05, 2.02e-05, 0.0…
-$ liveness         &lt;dbl&gt; 0.3020, 0.0913, 0.1180, 0.3410, 0.1010, 0.3340, 0.102…
-$ loudness         &lt;dbl&gt; -4.762, -5.412, -5.595, -6.937, -5.729, -5.384, -5.96…
-$ speechiness      &lt;dbl&gt; 0.0323, 0.0540, 0.0402, 0.0396, 0.0323, 0.1650, 0.053…
-$ tempo            &lt;dbl&gt; 116.992, 95.997, 94.933, 92.008, 96.970, 160.078, 118…
-$ valence          &lt;dbl&gt; 0.658, 0.570, 0.487, 0.338, 0.539, 0.942, 0.513, 0.28…
-$ popularity       &lt;dbl&gt; 48, 81, 79, 59, 47, 80, 51, 52, 52, 55, 50, 50, 55, 5…
-$ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550, 3.6…</code></pre>
+$ name             &lt;chr&gt; "Fortnight (feat. Post Malone)", "The Tortured Poets …
+$ album            &lt;chr&gt; "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY", "THE …
+$ release_date     &lt;chr&gt; "2024-04-19", "2024-04-19", "2024-04-19", "2024-04-19…
+$ track_number     &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16…
+$ uri              &lt;chr&gt; "spotify:track:6dODwocEuGzHAavXqTbwHv", "spotify:trac…
+$ acousticness     &lt;dbl&gt; 0.5020, 0.0483, 0.1370, 0.5600, 0.7300, 0.3840, 0.624…
+$ danceability     &lt;dbl&gt; 0.504, 0.604, 0.596, 0.541, 0.423, 0.521, 0.330, 0.53…
+$ energy           &lt;dbl&gt; 0.386, 0.428, 0.563, 0.366, 0.533, 0.720, 0.483, 0.57…
+$ instrumentalness &lt;dbl&gt; 1.53e-05, 0.00e+00, 0.00e+00, 1.00e-06, 2.64e-03, 0.0…
+$ liveness         &lt;dbl&gt; 0.0961, 0.1260, 0.3020, 0.0946, 0.0816, 0.1350, 0.111…
+$ loudness         &lt;dbl&gt; -10.976, -8.441, -7.362, -10.412, -11.388, -7.684, -9…
+$ speechiness      &lt;dbl&gt; 0.0308, 0.0255, 0.0269, 0.0748, 0.3220, 0.1040, 0.039…
+$ tempo            &lt;dbl&gt; 192.004, 110.259, 97.073, 159.707, 160.218, 79.943, 8…
+$ valence          &lt;dbl&gt; 0.281, 0.292, 0.481, 0.168, 0.248, 0.438, 0.340, 0.39…
+$ popularity       &lt;int&gt; 82, 79, 80, 82, 80, 81, 78, 79, 82, 81, 77, 80, 82, 8…
+$ duration_min     &lt;dbl&gt; 3.816083, 4.884133, 3.396683, 4.353800, 4.382900, 5.6…</code></pre>
 </div>
 </div>
 </section>
@@ -363,19 +295,19 @@ $ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550,
 <h1>Defining paramater(s)</h1>
 <p>Here we’ll create our parameter</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-1" class="code-annotation-target"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>albums <span class="ot">&lt;-</span> <span class="fu">str_split_1</span>(</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a>  params<span class="sc">$</span>album, <span class="st">","</span>)</span>
-<span id="annotated-cell-6-3"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-6-4"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>albums</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-5-1" class="code-annotation-target"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a>albums <span class="ot">&lt;-</span> <span class="fu">str_split_1</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-5-2" class="code-annotation-target"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a>  params<span class="sc">$</span>album, <span class="st">","</span>)</span>
+<span id="annotated-cell-5-3"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a>albums</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="1" data-code-annotation="1">Use str_split_1 to split a single string into pieces to return a single character vector.</span>
+<span data-code-annotation="1" data-code-cell="annotated-cell-5" data-code-lines="1">Use str_split_1 to split a single string into pieces to return a single character vector.</span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="2" data-code-annotation="2">We use ‘params$album’ to create the string that will be read through str_split_1 . In this case, that will be the single parameter ‘1989’. The comma is used to determine when one value stops and the other begins; this is useful when you are looking for mulitples of one type of parameter.</span>
+<span data-code-annotation="2" data-code-cell="annotated-cell-5" data-code-lines="2">We use ‘params$album’ to create the string that will be read through str_split_1 . In this case, that will be the single parameter ‘1989’. The comma is used to determine when one value stops and the other begins; this is useful when you are looking for multiples of one type of parameter.</span>
 </dd>
 </dl>
 </div>
@@ -383,21 +315,22 @@ $ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550,
 <pre><code>[1] "1989"</code></pre>
 </div>
 </div>
-<p>Album Names: 1989 Use this to check your work ^</p>
+<p>Album Names: 1989<br>
+Use this to check your work ^</p>
 </section>
-<section id="all-1989-songs" class="level1">
-<h1>All 1989 songs</h1>
-<p>OK, now we can look for all occurrence of ‘1989’ in our data.</p>
+<section id="songs-from-1989" class="level1">
+<h1>Songs from 1989</h1>
+<p>Now let’s filter our data for the album(s) we are looking at.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a>songs <span class="ot">&lt;-</span> taylor_songs <span class="sc">|&gt;</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(album <span class="sc">%in%</span> albums)</span>
-<span id="annotated-cell-7-3"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-7-4"><a href="#annotated-cell-7-4" aria-hidden="true" tabindex="-1"></a>songs</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>songs <span class="ot">&lt;-</span> taylor_songs <span class="sc">|&gt;</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(album <span class="sc">%in%</span> albums)</span>
+<span id="annotated-cell-6-3"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-6-4"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>songs</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="2" data-code-annotation="2">Filtering for every instance that album (the column) is equal to albums (the parameter.)</span>
+<span data-code-annotation="1" data-code-cell="annotated-cell-6" data-code-lines="2">Filtering for every instance that album (the column) is equal to albums (the parameter.)</span>
 </dd>
 </dl>
 </div>
@@ -405,7 +338,7 @@ $ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550,
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["album"],"name":[2],"type":["chr"],"align":["left"]},{"label":["release_date"],"name":[3],"type":["date"],"align":["right"]},{"label":["track_number"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["uri"],"name":[5],"type":["chr"],"align":["left"]},{"label":["acousticness"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["danceability"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["energy"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["instrumentalness"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["liveness"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["loudness"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["speechiness"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["tempo"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["valence"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["popularity"],"name":[15],"type":["dbl"],"align":["right"]},{"label":["duration_min"],"name":[16],"type":["dbl"],"align":["right"]}],"data":[{"1":"Welcome To New York","2":"1989","3":"2014-01-01","4":"1","5":"spotify:track:10nqz67NQWWa7XPq7ycihi","6":"0.03800","7":"0.793","8":"0.634","9":"1.76e-06","10":"0.3040","11":"-4.807","12":"0.0324","13":"117.023","14":"0.6150","15":"59","16":"3.543333"},{"1":"Blank Space","2":"1989","3":"2014-01-01","4":"2","5":"spotify:track:2ls70nUDfjzm1lSRDuKxmw","6":"0.08500","7":"0.752","8":"0.678","9":"1.64e-06","10":"0.1300","11":"-5.421","12":"0.0646","13":"96.009","14":"0.5830","15":"60","16":"3.863767"},{"1":"Style","2":"1989","3":"2014-01-01","4":"3","5":"spotify:track:71PmZqBXH0RUETqxpwlV0w","6":"0.00256","7":"0.598","8":"0.786","9":"1.43e-03","10":"0.1170","11":"-5.572","12":"0.0382","13":"95.021","14":"0.4560","15":"56","16":"3.850000"},{"1":"Out Of The Woods","2":"1989","3":"2014-01-01","4":"4","5":"spotify:track:7EpVQjqtKygiwJIASxMWNg","6":"0.00103","7":"0.552","8":"0.841","9":"1.23e-05","10":"0.3370","11":"-6.938","12":"0.0372","13":"91.993","14":"0.3420","15":"46","16":"3.930000"},{"1":"All You Had To Do Was Stay","2":"1989","3":"2014-01-01","4":"5","5":"spotify:track:4NNolUeL5m2ju7kf8pdg6H","6":"0.00196","7":"0.602","8":"0.735","9":"4.77e-05","10":"0.1050","11":"-5.778","12":"0.0337","13":"96.969","14":"0.4720","15":"53","16":"3.221550"},{"1":"Shake It Off","2":"1989","3":"2014-01-01","4":"6","5":"spotify:track:1kKlhuQE0HXp1IwBRpaH2P","6":"0.05610","7":"0.648","8":"0.785","9":"0.00e+00","10":"0.1480","11":"-5.414","12":"0.1650","13":"160.020","14":"0.9430","15":"53","16":"3.653333"},{"1":"I Wish You Would","2":"1989","3":"2014-01-01","4":"7","5":"spotify:track:5RVJ6VKfwtosA5Q1qeHdjF","6":"0.01600","7":"0.649","8":"0.898","9":"9.90e-05","10":"0.1090","11":"-5.963","12":"0.0511","13":"118.027","14":"0.5030","15":"42","16":"3.457333"},{"1":"Bad Blood","2":"1989","3":"2014-01-01","4":"8","5":"spotify:track:0TvQLMecTE8utzoNmvXRbK","6":"0.08710","7":"0.652","8":"0.802","9":"6.45e-06","10":"0.1480","11":"-6.114","12":"0.1810","13":"170.157","14":"0.2950","15":"71","16":"3.532217"},{"1":"Wildest Dreams","2":"1989","3":"2014-01-01","4":"9","5":"spotify:track:3fVnlF4pGqWI9flVENcT28","6":"0.07090","7":"0.553","8":"0.664","9":"5.60e-03","10":"0.1060","11":"-7.417","12":"0.0741","13":"140.060","14":"0.4670","15":"75","16":"3.674000"},{"1":"How You Get The Girl","2":"1989","3":"2014-01-01","4":"10","5":"spotify:track:5Z9ocF6ng0m2haHnKtHwTp","6":"0.00463","7":"0.764","8":"0.659","9":"4.58e-03","10":"0.0915","11":"-6.136","12":"0.0492","13":"119.982","14":"0.5250","15":"43","16":"4.125550"},{"1":"This Love","2":"1989","3":"2014-01-01","4":"11","5":"spotify:track:7lTxQZVXlvIX7Z3szSy8Sh","6":"0.63500","7":"0.485","8":"0.459","9":"0.00e+00","10":"0.1010","11":"-8.768","12":"0.0337","13":"71.981","14":"0.0858","15":"42","16":"4.168217"},{"1":"I Know Places","2":"1989","3":"2014-01-01","4":"12","5":"spotify:track:6Ck9WerfsyvC4v4AylUoDp","6":"0.23100","7":"0.595","8":"0.763","9":"0.00e+00","10":"0.2000","11":"-4.991","12":"0.0661","13":"159.959","14":"0.5070","15":"43","16":"3.261767"},{"1":"Clean","2":"1989","3":"2014-01-01","4":"13","5":"spotify:track:2k43eySbfpDVx0PrO99UI8","6":"0.24200","7":"0.810","8":"0.380","9":"0.00e+00","10":"0.1130","11":"-7.755","12":"0.0350","13":"103.981","14":"0.2110","15":"42","16":"4.516667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["album"],"name":[2],"type":["chr"],"align":["left"]},{"label":["release_date"],"name":[3],"type":["chr"],"align":["left"]},{"label":["track_number"],"name":[4],"type":["int"],"align":["right"]},{"label":["uri"],"name":[5],"type":["chr"],"align":["left"]},{"label":["acousticness"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["danceability"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["energy"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["instrumentalness"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["liveness"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["loudness"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["speechiness"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["tempo"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["valence"],"name":[14],"type":["dbl"],"align":["right"]},{"label":["popularity"],"name":[15],"type":["int"],"align":["right"]},{"label":["duration_min"],"name":[16],"type":["dbl"],"align":["right"]}],"data":[{"1":"Welcome To New York","2":"1989","3":"2014-01-01","4":"1","5":"spotify:track:10nqz67NQWWa7XPq7ycihi","6":"0.03800","7":"0.793","8":"0.634","9":"1.76e-06","10":"0.3040","11":"-4.807","12":"0.0324","13":"117.023","14":"0.6150","15":"59","16":"3.543333"},{"1":"Blank Space","2":"1989","3":"2014-01-01","4":"2","5":"spotify:track:2ls70nUDfjzm1lSRDuKxmw","6":"0.08500","7":"0.752","8":"0.678","9":"1.64e-06","10":"0.1300","11":"-5.421","12":"0.0646","13":"96.009","14":"0.5830","15":"60","16":"3.863767"},{"1":"Style","2":"1989","3":"2014-01-01","4":"3","5":"spotify:track:71PmZqBXH0RUETqxpwlV0w","6":"0.00256","7":"0.598","8":"0.786","9":"1.43e-03","10":"0.1170","11":"-5.572","12":"0.0382","13":"95.021","14":"0.4560","15":"56","16":"3.850000"},{"1":"Out Of The Woods","2":"1989","3":"2014-01-01","4":"4","5":"spotify:track:7EpVQjqtKygiwJIASxMWNg","6":"0.00103","7":"0.552","8":"0.841","9":"1.23e-05","10":"0.3370","11":"-6.938","12":"0.0372","13":"91.993","14":"0.3420","15":"46","16":"3.930000"},{"1":"All You Had To Do Was Stay","2":"1989","3":"2014-01-01","4":"5","5":"spotify:track:4NNolUeL5m2ju7kf8pdg6H","6":"0.00196","7":"0.602","8":"0.735","9":"4.77e-05","10":"0.1050","11":"-5.778","12":"0.0337","13":"96.969","14":"0.4720","15":"53","16":"3.221550"},{"1":"Shake It Off","2":"1989","3":"2014-01-01","4":"6","5":"spotify:track:1kKlhuQE0HXp1IwBRpaH2P","6":"0.05610","7":"0.648","8":"0.785","9":"0.00e+00","10":"0.1480","11":"-5.414","12":"0.1650","13":"160.020","14":"0.9430","15":"53","16":"3.653333"},{"1":"I Wish You Would","2":"1989","3":"2014-01-01","4":"7","5":"spotify:track:5RVJ6VKfwtosA5Q1qeHdjF","6":"0.01600","7":"0.649","8":"0.898","9":"9.90e-05","10":"0.1090","11":"-5.963","12":"0.0511","13":"118.027","14":"0.5030","15":"42","16":"3.457333"},{"1":"Bad Blood","2":"1989","3":"2014-01-01","4":"8","5":"spotify:track:0TvQLMecTE8utzoNmvXRbK","6":"0.08710","7":"0.652","8":"0.802","9":"6.45e-06","10":"0.1480","11":"-6.114","12":"0.1810","13":"170.157","14":"0.2950","15":"71","16":"3.532217"},{"1":"Wildest Dreams","2":"1989","3":"2014-01-01","4":"9","5":"spotify:track:3fVnlF4pGqWI9flVENcT28","6":"0.07090","7":"0.553","8":"0.664","9":"5.60e-03","10":"0.1060","11":"-7.417","12":"0.0741","13":"140.060","14":"0.4670","15":"75","16":"3.674000"},{"1":"How You Get The Girl","2":"1989","3":"2014-01-01","4":"10","5":"spotify:track:5Z9ocF6ng0m2haHnKtHwTp","6":"0.00463","7":"0.764","8":"0.659","9":"4.58e-03","10":"0.0915","11":"-6.136","12":"0.0492","13":"119.982","14":"0.5250","15":"43","16":"4.125550"},{"1":"This Love","2":"1989","3":"2014-01-01","4":"11","5":"spotify:track:7lTxQZVXlvIX7Z3szSy8Sh","6":"0.63500","7":"0.485","8":"0.459","9":"0.00e+00","10":"0.1010","11":"-8.768","12":"0.0337","13":"71.981","14":"0.0858","15":"42","16":"4.168217"},{"1":"I Know Places","2":"1989","3":"2014-01-01","4":"12","5":"spotify:track:6Ck9WerfsyvC4v4AylUoDp","6":"0.23100","7":"0.595","8":"0.763","9":"0.00e+00","10":"0.2000","11":"-4.991","12":"0.0661","13":"159.959","14":"0.5070","15":"43","16":"3.261767"},{"1":"Clean","2":"1989","3":"2014-01-01","4":"13","5":"spotify:track:2k43eySbfpDVx0PrO99UI8","6":"0.24200","7":"0.810","8":"0.380","9":"0.00e+00","10":"0.1130","11":"-7.755","12":"0.0350","13":"103.981","14":"0.2110","15":"42","16":"4.516667"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -414,12 +347,12 @@ $ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550,
 <h2 class="anchored" data-anchor-id="lets-do-some-analysis">Let’s do some analysis!</h2>
 <p>Let’s look at acousticness first. On Kaggle, where we got the data, the author defines acousticness like this: “A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.”</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>acousticness <span class="ot">&lt;-</span> songs <span class="sc">|&gt;</span> <span class="fu">arrange</span>(acousticness <span class="sc">|&gt;</span> <span class="fu">desc</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    name, album, acousticness</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>acousticness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>acousticness <span class="ot">&lt;-</span> songs <span class="sc">|&gt;</span> <span class="fu">arrange</span>(acousticness <span class="sc">|&gt;</span> <span class="fu">desc</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    name, album, acousticness</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>acousticness</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -431,12 +364,12 @@ $ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550,
 </div>
 <p>Now I want to look at the most danceable songs. Our data author tells us: “Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.”</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>danceability <span class="ot">&lt;-</span> songs <span class="sc">|&gt;</span> <span class="fu">arrange</span>(danceability <span class="sc">|&gt;</span> <span class="fu">desc</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    name, album, danceability</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>danceability</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>danceability <span class="ot">&lt;-</span> songs <span class="sc">|&gt;</span> <span class="fu">arrange</span>(danceability <span class="sc">|&gt;</span> <span class="fu">desc</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    name, album, danceability</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>danceability</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -448,30 +381,30 @@ $ duration_min     &lt;dbl&gt; 3.543333, 3.863767, 3.850000, 3.930000, 3.221550,
 </div>
 <p>What about popularity? It’s unclear how popularity is calculated, but it is on a scale from 0 to 100.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>popularity <span class="ot">&lt;-</span> songs <span class="sc">|&gt;</span> <span class="fu">arrange</span>(popularity <span class="sc">|&gt;</span> <span class="fu">desc</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    name, album, popularity</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>popularity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>popularity <span class="ot">&lt;-</span> songs <span class="sc">|&gt;</span> <span class="fu">arrange</span>(popularity <span class="sc">|&gt;</span> <span class="fu">desc</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    name, album, popularity</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>popularity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["album"],"name":[2],"type":["chr"],"align":["left"]},{"label":["popularity"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Wildest Dreams","2":"1989","3":"75"},{"1":"Bad Blood","2":"1989","3":"71"},{"1":"Blank Space","2":"1989","3":"60"},{"1":"Welcome To New York","2":"1989","3":"59"},{"1":"Style","2":"1989","3":"56"},{"1":"All You Had To Do Was Stay","2":"1989","3":"53"},{"1":"Shake It Off","2":"1989","3":"53"},{"1":"Out Of The Woods","2":"1989","3":"46"},{"1":"How You Get The Girl","2":"1989","3":"43"},{"1":"I Know Places","2":"1989","3":"43"},{"1":"I Wish You Would","2":"1989","3":"42"},{"1":"This Love","2":"1989","3":"42"},{"1":"Clean","2":"1989","3":"42"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["album"],"name":[2],"type":["chr"],"align":["left"]},{"label":["popularity"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"Wildest Dreams","2":"1989","3":"75"},{"1":"Bad Blood","2":"1989","3":"71"},{"1":"Blank Space","2":"1989","3":"60"},{"1":"Welcome To New York","2":"1989","3":"59"},{"1":"Style","2":"1989","3":"56"},{"1":"All You Had To Do Was Stay","2":"1989","3":"53"},{"1":"Shake It Off","2":"1989","3":"53"},{"1":"Out Of The Woods","2":"1989","3":"46"},{"1":"How You Get The Girl","2":"1989","3":"43"},{"1":"I Know Places","2":"1989","3":"43"},{"1":"I Wish You Would","2":"1989","3":"42"},{"1":"This Love","2":"1989","3":"42"},{"1":"Clean","2":"1989","3":"42"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
 </div>
 <p>Now, I want to look at tempo vs danceability. We already saw the definition of danceability but the tempo is in beats per minute (BPM). Let’s make a chart.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(songs, <span class="fu">aes</span>(<span class="at">x =</span> tempo, <span class="at">y =</span> danceability)) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Tempo (BPM)"</span>, <span class="at">n.breaks =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Danceability"</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">str_wrap</span>(<span class="fu">str_glue</span>(<span class="st">"How does the tempo affect danceability of Taylor Swift songs from album(s): {album_names}"</span>, <span class="at">album_names =</span> params<span class="sc">$</span>album)))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(songs, <span class="fu">aes</span>(<span class="at">x =</span> tempo, <span class="at">y =</span> danceability)) <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Tempo (BPM)"</span>, <span class="at">n.breaks =</span> <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Danceability"</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">str_wrap</span>(<span class="fu">str_glue</span>(<span class="st">"How does the tempo affect danceability of Taylor Swift songs from album(s): {album_names}"</span>, <span class="at">album_names =</span> params<span class="sc">$</span>album)))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-report-template-example_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<p><img src="02-report-template-example_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Note above, we used our 1989 variable so that our chart title will change based on what we input in our render file for which albums.</p>

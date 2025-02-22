@@ -14,29 +14,14 @@ library(tidyverse)
 library(janitor)
 ```
 
+### Import your files
+
 ```{r}
 #| label: import
 
-power_cleaned_list <- list.files(
-  "data-processed-power",
-  full.names = T
-)
+all_outages <- read_rds("data-processed-power/power_outages.rds")
 
-power_cleaned_list
-```
-
-```{r}
-#| label: combine
-
-all_outages <- map(
-  power_cleaned_list,
-  read_csv,
-  col_type = cols(fips = col_character())
-) |>
-  list_rbind() |>
-  clean_names()
-
-all_outages
+all_outages |> glimpse()
 ```
 
 ```{r}

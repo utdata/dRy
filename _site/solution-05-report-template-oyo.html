@@ -74,11 +74,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -94,52 +94,125 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">dRy</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./solution-05-report-template-oyo.html">04-report-template-oyo</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">dRy</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Don’t Repeat Yourself in R</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-report-template-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02-report-template-example</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-report-template-oyo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04-report-template-oyo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./powanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./powcleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Power outage cleaning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solution-01-dRy-importing-and-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Importing and function solutions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./solution-05-report-template-oyo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">04-report-template-oyo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tayanalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taycleaning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./taycleaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taycleaning</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#do-some-analysis-for-your-state" id="toc-do-some-analysis-for-your-state" class="nav-link active" data-scroll-target="#do-some-analysis-for-your-state">Do some analysis for your state</a></li>
+  <li><a href="#import-your-files" id="toc-import-your-files" class="nav-link active" data-scroll-target="#import-your-files">Import your files</a></li>
+  <li><a href="#do-some-analysis-for-your-state" id="toc-do-some-analysis-for-your-state" class="nav-link" data-scroll-target="#do-some-analysis-for-your-state">Do some analysis for your state</a></li>
   </ul>
 </nav>
     </div>
@@ -167,123 +240,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="import-your-files" class="level3">
+<h3 class="anchored" data-anchor-id="import-your-files">Import your files</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>power_cleaned_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data-processed-power"</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">full.names =</span> T</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>power_cleaned_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>all_outages <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"data-processed-power/power_outages.rds"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>all_outages <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "data-processed-power/Alabama.csv"       
- [2] "data-processed-power/Arizona.csv"       
- [3] "data-processed-power/Arkansas.csv"      
- [4] "data-processed-power/California.csv"    
- [5] "data-processed-power/Colorado.csv"      
- [6] "data-processed-power/Connecticut.csv"   
- [7] "data-processed-power/Delaware.csv"      
- [8] "data-processed-power/Florida.csv"       
- [9] "data-processed-power/Georgia.csv"       
-[10] "data-processed-power/Idaho.csv"         
-[11] "data-processed-power/Illinois.csv"      
-[12] "data-processed-power/Indiana.csv"       
-[13] "data-processed-power/Iowa.csv"          
-[14] "data-processed-power/Kansas.csv"        
-[15] "data-processed-power/Kentucky.csv"      
-[16] "data-processed-power/Louisiana.csv"     
-[17] "data-processed-power/Maine.csv"         
-[18] "data-processed-power/Maryland.csv"      
-[19] "data-processed-power/Massachusetts.csv" 
-[20] "data-processed-power/Michigan.csv"      
-[21] "data-processed-power/Minnesota.csv"     
-[22] "data-processed-power/Mississippi.csv"   
-[23] "data-processed-power/Missouri.csv"      
-[24] "data-processed-power/Montana.csv"       
-[25] "data-processed-power/Nebraska.csv"      
-[26] "data-processed-power/Nevada.csv"        
-[27] "data-processed-power/New Hampshire.csv" 
-[28] "data-processed-power/New Jersey.csv"    
-[29] "data-processed-power/New Mexico.csv"    
-[30] "data-processed-power/New York.csv"      
-[31] "data-processed-power/North Carolina.csv"
-[32] "data-processed-power/North Dakota.csv"  
-[33] "data-processed-power/Ohio.csv"          
-[34] "data-processed-power/Oklahoma.csv"      
-[35] "data-processed-power/Oregon.csv"        
-[36] "data-processed-power/Pennsylvania.csv"  
-[37] "data-processed-power/Rhode Island.csv"  
-[38] "data-processed-power/South Carolina.csv"
-[39] "data-processed-power/South Dakota.csv"  
-[40] "data-processed-power/Tennessee.csv"     
-[41] "data-processed-power/Texas.csv"         
-[42] "data-processed-power/Utah.csv"          
-[43] "data-processed-power/Vermont.csv"       
-[44] "data-processed-power/Virginia.csv"      
-[45] "data-processed-power/Washington.csv"    
-[46] "data-processed-power/West Virginia.csv" 
-[47] "data-processed-power/Wisconsin.csv"     
-[48] "data-processed-power/Wyoming.csv"       </code></pre>
+<pre><code>Rows: 526,165
+Columns: 14
+$ state_event          &lt;chr&gt; "Arkansas", "Arkansas", "Arkansas", "Arkansas", "…
+$ datetime_event_began &lt;dttm&gt; 2014-11-24 00:00:00, 2014-11-24 00:00:00, 2014-1…
+$ datetime_restoration &lt;dttm&gt; 2014-11-24 00:00:00, 2014-11-24 00:00:00, 2014-1…
+$ event_type           &lt;chr&gt; "Fuel Supply Emergency - Coal", "Fuel Supply Emer…
+$ fips                 &lt;dbl&gt; 5021, 5035, 5051, 5069, 5093, 5119, 5121, 5121, 5…
+$ state                &lt;chr&gt; "Arkansas", "Arkansas", "Arkansas", "Arkansas", "…
+$ county               &lt;chr&gt; "Clay", "Crittenden", "Garland", "Jefferson", "Mi…
+$ start_time           &lt;dttm&gt; 2014-11-24 09:30:00, 2014-11-24 09:30:00, 2014-1…
+$ duration             &lt;dbl&gt; 5.75, 1.25, 0.75, 1.25, 0.75, 1.25, 5.25, 0.75, 6…
+$ end_time             &lt;dttm&gt; 2014-11-24 15:15:00, 2014-11-24 10:45:00, 2014-1…
+$ min_customers        &lt;dbl&gt; 456, 755, 279, 252, 301, 523, 223, 229, 588, 287,…
+$ max_customers        &lt;dbl&gt; 1803, 755, 293, 256, 301, 523, 401, 229, 700, 287…
+$ mean_customers       &lt;dbl&gt; 1301.4783, 755.0000, 287.3333, 254.0000, 301.0000…
+$ event_category       &lt;chr&gt; "Fuel Supply Issue", "Fuel Supply Issue", "Fuel S…</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>all_outages <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  power_cleaned_list,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  read_csv,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_type =</span> <span class="fu">cols</span>(<span class="at">fips =</span> <span class="fu">col_character</span>())</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list_rbind</span>() <span class="sc">|&gt;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>all_outages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 526,165 × 14
-   state_event datetime_event_began datetime_restoration event_type  fips  state
-   &lt;chr&gt;       &lt;dttm&gt;               &lt;dttm&gt;               &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;
- 1 Alabama     2015-01-07 17:00:00  2015-01-08 08:35:00  Severe Wea… 1039  Alab…
- 2 Alabama     2015-02-16 21:00:00  2015-02-18 14:00:00  Severe Wea… 1003  Alab…
- 3 Alabama     2015-02-16 21:00:00  2015-02-18 14:00:00  Severe Wea… 1085  Alab…
- 4 Alabama     2015-02-18 15:00:00  2015-02-20 09:00:00  Severe Wea… 1003  Alab…
- 5 Alabama     2015-02-18 15:00:00  2015-02-20 09:00:00  Severe Wea… 1003  Alab…
- 6 Alabama     2015-02-18 15:00:00  2015-02-20 09:00:00  Severe Wea… 1085  Alab…
- 7 Alabama     2015-07-14 20:00:00  2015-07-15 09:23:00  Severe Wea… 1001  Alab…
- 8 Alabama     2015-07-14 20:00:00  2015-07-15 09:23:00  Severe Wea… 1021  Alab…
- 9 Alabama     2015-07-14 20:00:00  2015-07-15 09:23:00  Severe Wea… 1021  Alab…
-10 Alabama     2015-07-14 20:00:00  2015-07-15 09:23:00  Severe Wea… 1039  Alab…
-# ℹ 526,155 more rows
-# ℹ 8 more variables: county &lt;chr&gt;, start_time &lt;dttm&gt;, duration &lt;dbl&gt;,
-#   end_time &lt;dttm&gt;, min_customers &lt;dbl&gt;, max_customers &lt;dbl&gt;,
-#   mean_customers &lt;dbl&gt;, event_category &lt;chr&gt;</code></pre>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>state_list <span class="ot">&lt;-</span> <span class="fu">str_split_1</span>(params<span class="sc">$</span>state, <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+<p>States: Alaska</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>state_list <span class="ot">&lt;-</span> <span class="fu">str_split_1</span>(params<span class="sc">$</span>state, <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>States: Texas</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>outages <span class="ot">&lt;-</span> all_outages <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state_event <span class="sc">%in%</span> state_list)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>outages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 196,347 × 14
-   state_event datetime_event_began datetime_restoration event_type  fips  state
-   &lt;chr&gt;       &lt;dttm&gt;               &lt;dttm&gt;               &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;
- 1 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48015 Texas
- 2 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48015 Texas
- 3 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48021 Texas
- 4 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48021 Texas
- 5 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48021 Texas
- 6 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48029 Texas
- 7 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48029 Texas
- 8 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48029 Texas
- 9 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48029 Texas
-10 Texas       2014-11-24 00:00:00  2014-11-24 00:00:00  Fuel Suppl… 48029 Texas
-# ℹ 196,337 more rows
-# ℹ 8 more variables: county &lt;chr&gt;, start_time &lt;dttm&gt;, duration &lt;dbl&gt;,
-#   end_time &lt;dttm&gt;, min_customers &lt;dbl&gt;, max_customers &lt;dbl&gt;,
-#   mean_customers &lt;dbl&gt;, event_category &lt;chr&gt;</code></pre>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>outages <span class="ot">&lt;-</span> all_outages <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state_event <span class="sc">%in%</span> state_list)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>outages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["state_event"],"name":[1],"type":["chr"],"align":["left"]},{"label":["datetime_event_began"],"name":[2],"type":["dttm"],"align":["right"]},{"label":["datetime_restoration"],"name":[3],"type":["dttm"],"align":["right"]},{"label":["event_type"],"name":[4],"type":["chr"],"align":["left"]},{"label":["fips"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["state"],"name":[6],"type":["chr"],"align":["left"]},{"label":["county"],"name":[7],"type":["chr"],"align":["left"]},{"label":["start_time"],"name":[8],"type":["dttm"],"align":["right"]},{"label":["duration"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["end_time"],"name":[10],"type":["dttm"],"align":["right"]},{"label":["min_customers"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["max_customers"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["mean_customers"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["event_category"],"name":[14],"type":["chr"],"align":["left"]}],"data":[],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
 </div>
 </div>
+</div>
+</section>
 <section id="do-some-analysis-for-your-state" class="level3">
 <h3 class="anchored" data-anchor-id="do-some-analysis-for-your-state">Do some analysis for your state</h3>
 <ul>
@@ -293,84 +293,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="common-cause-of-outages" class="level4">
 <h4 class="anchored" data-anchor-id="common-cause-of-outages">Common cause of outages</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>outages <span class="sc">|&gt;</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_events =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-4" class="code-annotation-target"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(total_events <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a>outages <span class="sc">|&gt;</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-5-2" class="code-annotation-target"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-5-3" class="code-annotation-target"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_events =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-5-4" class="code-annotation-target"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(total_events <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-6" data-code-annotation="1">Exclusively looking at event_category.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="2" data-code-annotation="1">Exclusively looking at event_category.</span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-6" data-code-annotation="2">Counting how many times each event_category has occurred.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="3" data-code-annotation="2">Counting how many times each event_category has occurred.</span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-6" data-code-annotation="3">Ordering from most to least occurrences.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="4" data-code-annotation="3">Ordering from most to least occurrences.</span>
 </dd>
 </dl>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 12 × 2
-   event_category                                   total_events
-   &lt;chr&gt;                                                   &lt;int&gt;
- 1 Weather                                                162921
- 2 System Operations                                        9551
- 3 Potential or Actual Physical Interference                8257
- 4 Equipment Issue                                          5110
- 5 Suspiciour Activity                                      5099
- 6 Fuel Supply Issue                                        2119
- 7 Cyber Issue                                              1467
- 8 Generation Inedequacy                                     699
- 9 Unknown                                                   661
-10 Failure at high voltage substation or switchyard          229
-11 Distribution Interruption                                 186
-12 Public Appeal                                              48</code></pre>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["event_category"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total_events"],"name":[2],"type":["int"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 </section>
 <section id="cause-of-longest-outages" class="level4">
 <h4 class="anchored" data-anchor-id="cause-of-longest-outages">Cause of longest outages</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a>outages <span class="sc">|&gt;</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-7-3" class="code-annotation-target"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_outage_length =</span> <span class="fu">mean</span>(duration), <span class="at">total_occurences =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_outage_length <span class="sc">|&gt;</span> <span class="fu">desc</span>(), total_occurences)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>outages <span class="sc">|&gt;</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_outage_length =</span> <span class="fu">mean</span>(duration), <span class="at">total_occurences =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-6-4" class="code-annotation-target"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_outage_length <span class="sc">|&gt;</span> <span class="fu">desc</span>(), total_occurences)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-7" data-code-annotation="1">Exclusively looking at event_category.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="2" data-code-annotation="1">Exclusively looking at event_category.</span>
 </dd>
-<dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-7" data-code-annotation="2">Finding average duration (mean), and including occurrences for comparison.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="3" data-code-annotation="2">Finding average duration (mean), and including occurrences for comparison.</span>
 </dd>
-<dt data-target-cell="annotated-cell-7" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-7" data-code-annotation="3">Ordering from longest to shortest average outage length.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="4" data-code-annotation="3">Ordering from longest to shortest average outage length.</span>
 </dd>
 </dl>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 12 × 3
-   event_category                             avg_outage_length total_occurences
-   &lt;chr&gt;                                                  &lt;dbl&gt;            &lt;int&gt;
- 1 Fuel Supply Issue                                       9.73             2119
- 2 Weather                                                 5.48           162921
- 3 Cyber Issue                                             2.72             1467
- 4 System Operations                                       2.62             9551
- 5 Equipment Issue                                         2.23             5110
- 6 Potential or Actual Physical Interference               2.16             8257
- 7 Generation Inedequacy                                   2.03              699
- 8 Failure at high voltage substation or swi…              2.01              229
- 9 Public Appeal                                           1.98               48
-10 Suspiciour Activity                                     1.98             5099
-11 Unknown                                                 1.78              661
-12 Distribution Interruption                               1.33              186</code></pre>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["event_category"],"name":[1],"type":["chr"],"align":["left"]},{"label":["avg_outage_length"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["total_occurences"],"name":[3],"type":["int"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 
