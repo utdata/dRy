@@ -44,6 +44,7 @@ taylor_songs <- read_rds("data-processed-taylor/taylor_disco.rds")
 taylor_songs |> glimpse()
 
 ```
+
 # Defining paramater(s)
 
 Here we'll create our parameter
@@ -55,7 +56,7 @@ albums <- str_split_1( #<1>
 albums
 ```
 1. Use str_split_1 to split a single string into pieces to return a single character vector.
-2.  We use 'params$album' to create the string that will be read through str_split_1 . In this case, that will be the single parameter '1989'. The comma is used to determine when one value stops and the other begins; this is useful when you are looking for multiples of one type of parameter.
+2. We use 'params$album' to create the string that will be read through str_split_1 . In the initial template, that will be the single parameter '1989'. The comma is used to determine when one value stops and the other begins; this is useful when you are looking for multiples of one type of parameter.
 
 
 Album Names: `r params$album` \

@@ -32,6 +32,7 @@ Instructions: The files you want to import are all in a folder called `"data-pro
 
 power_files_list <- list.files(
   "data-processed-power",
+  pattern = ".csv",
   full.names = T
 )
 
