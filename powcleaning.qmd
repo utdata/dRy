@@ -1,0 +1,121 @@
+---
+title: "Power outage cleaning"
+---
+
+## Goals for this notebook
+
+We will set up our data following these steps:
+
+- Download and import our data
+- Clean up data types and columns
+- Export data by album/playlist
+
+## Set up
+
+```{r}
+
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(janitor)
+
+```
+
+## Import
+
+```{r}
+
+#|label: import
+
+power_files_list <- list.files(
+  "data-raw-power",
+  full.names =T
+)
+
+power_files_list
+
+```
+
+```{r}
+
+#| label: combine
+#| message: false
+#| warning: false
+
+power_all <- map(
+  power_files_list,
+  read_csv
+) |>
+  list_rbind() |>
+  clean_names()
+
+power_all |> glimpse()
+
+```
+
+## Remove unneeded columns
+
+```{r}
+
+#| label: remove
+
+power_remove <- power_all |>
+  select(-event_id)
+
+power_remove
+
+```
+
+## Adding event_category
+
+```{r}
+power_clean <- power_remove |>
+  mutate(event_category = case_when(
+    str_detect(event_type, "Weather") == TRUE ~ "Weather",
+    str_detect(event_type, "System Operations") == TRUE ~ "System Operations",
+    str_detect(event_type, "Suspicious Activity") == TRUE ~ "Suspiciour Activity",
+    str_detect(event_type, "Transmission") == TRUE ~ "Equipment Issue",
+    str_detect(event_type, "Fuel") == TRUE ~ "Fuel Supply Issue",
+    str_detect(event_type, "Cyber") == TRUE ~ "Cyber Issue",
+    str_detect(event_type, "Physical") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(event_type, "Vandalism") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(event_type, "Generation") == TRUE ~ "Generation Inedequacy",
+    str_detect(event_type, "Sabotage") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(event_type, "Natural Disaster") == TRUE ~ "Natural Disaster",
+    str_detect(event_type, "Suspicious") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(event_type, "Distribution Interruption") == TRUE ~ "Distribution Interruption",
+    str_detect(event_type, "Islanding") == TRUE ~ "Islanding",    
+    str_detect(event_type, "Theft") == TRUE ~ "Theft",
+    str_detect(event_type, "Public Appeal") == TRUE ~ "Public Appeal",
+    str_detect(event_type, "Failure at high voltage substation or switchyard") == TRUE ~ "Failure at high voltage substation or switchyard",
+    str_detect(event_type, "physical") == TRUE ~ "Potential or Actual Physical Interference",
+    str_detect(event_type, "Unknown") == TRUE ~ "Unknown", #second to last
+    str_detect(event_type, "Other") == TRUE ~ "Unknown" #make this last, so something-other is not affected
+    ))
+```
+
+
+## Dividing by state
+
+```{r}
+
+#| label: export
+
+power_split <- split(power_clean, power_clean$state_event)
+
+folder_path <- "data-processed-power"
+
+for(state_events in names(power_split)){
+  file_name <- paste0(state_events, ".csv")
+  file_path <- file.path(folder_path, file_name)
+  write.csv(power_split[[state_events]], file_path, row.names =FALSE)
+  
+}
+```
+
+```{r}
+power_clean |> write_rds("data-processed-power/power_outages.rds")
+```
+
