@@ -42,22 +42,28 @@ States: (check your work)
 #outages
 ```
 
-### Do some analysis for your state
+## Some analysis:
 
-- What is the most common cause of power outages?
-- What cause leads to the longest power outages?
+#### Common cause of outages
 
-tip: use event_category instead of event_type
-
-#### Common causes of outages
- 
 ```{r}
-#outages |>
+#| label: common-cause
+ 
+outages |> 
+  group_by (event_category) |> #<1>
+  summarize(total_events = n()) |> #<2>
+  arrange(total_events |> desc()) #<3>
+
 ```
 
 #### Cause of longest outages
 
 ```{r}
-#outages |>
+#| label: cause-longest
+
+outages |> 
+  group_by (event_category) |> #<1>
+  summarize(avg_outage_length = mean(duration), total_occurences = n()) |> #<2>
+  arrange(avg_outage_length |> desc(), total_occurences) #<3>
 ```
 
