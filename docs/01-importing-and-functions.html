@@ -240,15 +240,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-1" data-code-annotation="1"><code>#| label:</code> sets the chunk label. Using <code>setup</code> specifically will run this code chunk first every time you render or run the page.</span>
+<span data-code-lines="1" data-code-annotation="1" data-code-cell="annotated-cell-1"><code>#| label:</code> sets the chunk label. Using <code>setup</code> specifically will run this code chunk first every time you render or run the page.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-1" data-code-annotation="2"><code>#| message: false</code> hides the output messages that usually appear when you import libraries.</span>
+<span data-code-lines="2" data-code-annotation="2" data-code-cell="annotated-cell-1"><code>#| message: false</code> hides the output messages that usually appear when you import libraries.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-1" data-code-annotation="3">Sometimes you do something that creates a warning in R, but it doesn’t always affect the output of the code. <code>#| warning: false</code> hides those warnings. We will talk about this more later.</span>
+<span data-code-lines="3" data-code-annotation="3" data-code-cell="annotated-cell-1">Sometimes you do something that creates a warning in R, but it doesn’t always affect the output of the code. <code>#| warning: false</code> hides those warnings. We will talk about this more later.</span>
 </dd>
 </dl>
 </div>
@@ -290,19 +290,19 @@ The following objects are masked from 'package:stats':
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-3" data-code-annotation="1"><code>list.files()</code> creates a character vector of the names of files</span>
+<span data-code-lines="1" data-code-annotation="1" data-code-cell="annotated-cell-3"><code>list.files()</code> creates a character vector of the names of files</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-3" data-code-annotation="2">The first argument is the path to find the files. In this case, we want to go into the directory (folder) called <code>data-proccessed-taylor</code>.</span>
+<span data-code-lines="2" data-code-annotation="2" data-code-cell="annotated-cell-3">The first argument is the path to find the files. In this case, we want to go into the directory (folder) called <code>data-proccessed-taylor</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-3" data-code-annotation="3"><code>pattern</code> is an optional argument that takes a regular expression to define which specific files you want. In this case we want all files that contain <code>.csv</code>.</span>
+<span data-code-lines="3" data-code-annotation="3" data-code-cell="annotated-cell-3"><code>pattern</code> is an optional argument that takes a regular expression to define which specific files you want. In this case we want all files that contain <code>.csv</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-3" data-code-annotation="4"><code>full.names = TRUE</code> gets the full path name rather than just the files name. Let’s change this and see what happens…</span>
+<span data-code-lines="4" data-code-annotation="4" data-code-cell="annotated-cell-3"><code>full.names = TRUE</code> gets the full path name rather than just the files name. Let’s change this and see what happens…</span>
 </dd>
 </dl>
 </div>
@@ -354,24 +354,24 @@ The following objects are masked from 'package:stats':
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-4" data-code-annotation="1">First we create a new object called <code>taylor_songs</code> which is where all our data will end up. Then we take our list of files names <code>taylor_files_list</code> and put it in the <code>map()</code> function. <code>map()</code> applies a method (in this case <code>read_csv()</code>) to every item in a list and returns a list as a result.</span>
+<span data-code-lines="2" data-code-annotation="1" data-code-cell="annotated-cell-4">First we create a new object called <code>taylor_songs</code> which is where all our data will end up. Then we take our list of files names <code>taylor_files_list</code> and put it in the <code>map()</code> function. <code>map()</code> applies a method (in this case <code>read_csv()</code>) to every item in a list and returns a list as a result.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="3" data-code-cell="annotated-cell-4" data-code-annotation="2">Our first argument is the function we want to apply which is <code>read_csv()</code> which returns a data frame of the csv.</span>
+<span data-code-lines="3" data-code-annotation="2" data-code-cell="annotated-cell-4">Our first argument is the function we want to apply which is <code>read_csv()</code> which returns a data frame of the csv.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="4" data-code-cell="annotated-cell-4" data-code-annotation="3">After the comma is <code>col_types =</code> which is an argument in <code>read_csv()</code>. This argument can set any or all of the column types as you import the data.<br>
+<span data-code-lines="4" data-code-annotation="3" data-code-cell="annotated-cell-4">After the comma is <code>col_types =</code> which is an argument in <code>read_csv()</code>. This argument can set any or all of the column types as you import the data.<br>
 </span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="5" data-code-cell="annotated-cell-4" data-code-annotation="4">Once we use map to create a list of our newly created object from read_csv, we want to combine them all into one single object which already called <code>taylor_songs</code>, so we use <code>list_rbind()</code>.</span>
+<span data-code-lines="5" data-code-annotation="4" data-code-cell="annotated-cell-4">Once we use map to create a list of our newly created object from read_csv, we want to combine them all into one single object which already called <code>taylor_songs</code>, so we use <code>list_rbind()</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="6" data-code-cell="annotated-cell-4" data-code-annotation="5">And then just to make everything look nice and uniform we use <code>clean_names()</code> to change the column names.</span>
+<span data-code-lines="6" data-code-annotation="5" data-code-cell="annotated-cell-4">And then just to make everything look nice and uniform we use <code>clean_names()</code> to change the column names.</span>
 </dd>
 </dl>
 </div>
@@ -449,7 +449,7 @@ The following objects are masked from 'package:stats':
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="1" data-code-cell="annotated-cell-9" data-code-annotation="1">Here we use the <code>function</code> method with one argument: <code>song_data</code> and then we define the function using the curly braces <code>{}</code>. This is extremely similar to JavaScript.</span>
+<span data-code-lines="1" data-code-annotation="1" data-code-cell="annotated-cell-9">Here we use the <code>function</code> method with one argument: <code>song_data</code> and then we define the function using the curly braces <code>{}</code>. This is extremely similar to JavaScript.</span>
 </dd>
 </dl>
 </div>
