@@ -49,10 +49,10 @@ States: (check your work)
 ```{r}
 #| label: common-cause
  
-outages |> 
-  group_by (event_category) |> #<1>
-  summarize(total_events = n()) |> #<2>
-  arrange(total_events |> desc()) #<3>
+# outages |> 
+#   group_by (event_category) |> #<1>
+#   summarize(total_events = n()) |> #<2>
+#   arrange(total_events |> desc()) #<3>
 
 ```
 
@@ -61,9 +61,9 @@ outages |>
 ```{r}
 #| label: cause-longest
 
-outages |> 
-  group_by (event_category) |> #<1>
-  summarize(avg_outage_length = mean(duration), total_occurences = n()) |> #<2>
-  arrange(avg_outage_length |> desc(), total_occurences) #<3>
+# outages |> 
+#   group_by (event_category) |> #<1>
+#   summarize(avg_outage_length = mean(duration), total_occurences = n()) |> #<2>
+#   arrange(avg_outage_length |> desc(), total_occurences) #<3>
 ```
 

@@ -9,4 +9,4 @@ outage_reports <- tibble(
   execute_params = 
 )
 
-pwalk ()
+pwalk (outage_reports, #something else goes here...)

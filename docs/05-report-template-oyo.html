@@ -137,8 +137,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -194,8 +194,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#oyo" id="toc-oyo" class="nav-link" data-scroll-target="#oyo">OYO:</a>
   <ul class="collapse">
   <li><a href="#create-parameter-list-and-filter-for-parameters" id="toc-create-parameter-list-and-filter-for-parameters" class="nav-link" data-scroll-target="#create-parameter-list-and-filter-for-parameters">Create parameter list and filter for parameters</a></li>
-  <li><a href="#do-some-analysis-for-your-state" id="toc-do-some-analysis-for-your-state" class="nav-link" data-scroll-target="#do-some-analysis-for-your-state">Do some analysis for your state</a></li>
   </ul></li>
+  <li><a href="#some-analysis" id="toc-some-analysis" class="nav-link" data-scroll-target="#some-analysis">Some analysis:</a></li>
   </ul>
 </nav>
     </div>
@@ -266,27 +266,28 @@ $ event_category       &lt;chr&gt; "Fuel Supply Issue", "Fuel Supply Issue", "Fu
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#outages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="do-some-analysis-for-your-state" class="level3">
-<h3 class="anchored" data-anchor-id="do-some-analysis-for-your-state">Do some analysis for your state</h3>
-<ul>
-<li>What is the most common cause of power outages?</li>
-<li>What cause leads to the longest power outages?</li>
-</ul>
-<p>tip: use event_category instead of event_type</p>
-<section id="common-causes-of-outages" class="level4">
-<h4 class="anchored" data-anchor-id="common-causes-of-outages">Common causes of outages</h4>
+</section>
+<section id="some-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="some-analysis">Some analysis:</h2>
+<section id="common-cause-of-outages" class="level4">
+<h4 class="anchored" data-anchor-id="common-cause-of-outages">Common cause of outages</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#outages |&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode r code-annotation-code code-with-copy"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># outages |&gt; </span></span>
+<span id="annotated-cell-5-2"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by (event_category) |&gt;</span></span>
+<span id="annotated-cell-5-3"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarize(total_events = n()) |&gt;</span></span>
+<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   arrange(total_events |&gt; desc())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="cause-of-longest-outages" class="level4">
 <h4 class="anchored" data-anchor-id="cause-of-longest-outages">Cause of longest outages</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#outages |&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># outages |&gt; </span></span>
+<span id="annotated-cell-6-2"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by (event_category) |&gt;</span></span>
+<span id="annotated-cell-6-3"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarize(avg_outage_length = mean(duration), total_occurences = n()) |&gt;</span></span>
+<span id="annotated-cell-6-4"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   arrange(avg_outage_length |&gt; desc(), total_occurences)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
-</section>
 </section>
 </section>
 
