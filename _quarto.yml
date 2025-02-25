@@ -1,13 +1,17 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!resources/"
+    
 
 website:
   title: "dRy"
   sidebar:
     contents:
-      - href: "about.qmd"
-        text: About
+      - href: "index.qmd"
+        text: Home
       - href: "01-importing-and-functions.qmd"
         text: "01: Importing Multiple Files and Creating a Function"
       - href: "02-report-template-example.qmd"
