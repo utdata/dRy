@@ -1,4 +1,5 @@
 # Libraries Needed
-tidyverse
-janitor
-quarto
+
+* tidyverse
+* janitor
+* quarto
