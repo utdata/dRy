@@ -3,3 +3,4 @@
 * tidyverse
 * janitor
 * quarto
+* scales
