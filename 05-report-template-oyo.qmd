@@ -31,15 +31,17 @@ all_outages |> glimpse()
 ### Create parameter list and filter for parameters
 
 ```{r}
-#state_list <- 
+# state_list <- 
+# 
+# state_list
 ```
 
-States: (check your work)
+States: `r params$state`
 
 ```{r}
-#outages <- all_outages |>
-
-#outages
+# outages <- all_outages |> 
+# 
+# outages
 ```
 
 ## Some analysis:
@@ -49,7 +51,7 @@ States: (check your work)
 ```{r}
 #| label: common-cause
  
-# outages |> 
+# outages |>
 #   group_by (event_category) |> #<1>
 #   summarize(total_events = n()) |> #<2>
 #   arrange(total_events |> desc()) #<3>
@@ -61,9 +63,10 @@ States: (check your work)
 ```{r}
 #| label: cause-longest
 
-# outages |> 
+# outages |>
 #   group_by (event_category) |> #<1>
 #   summarize(avg_outage_length = mean(duration), total_occurences = n()) |> #<2>
 #   arrange(avg_outage_length |> desc(), total_occurences) #<3>
+
 ```
 

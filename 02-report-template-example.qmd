@@ -26,7 +26,7 @@ What does all of this YAML mean? \
 #| label: setup
 #| message: false
 #| warning: false
-#| echo: true
+#| echo: false
 
 library(tidyverse)
 library(janitor)

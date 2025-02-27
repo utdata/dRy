@@ -18,6 +18,7 @@ Importing our needed libraries. We use tidyverse for almost everything.
 
 library(tidyverse)
 library(janitor)
+library(scales)
 
 ```
 
@@ -50,24 +51,23 @@ taylor_files_list
 ```{r}
 #| label: combine-files 
 
-taylor_songs <- taylor_files_list |>  #set_names(basename) |> 
+taylor_songs <- taylor_files_list |>  #set_names(basename) |> #<6>
   map(                                        #<1>
   read_csv,                                   #<2>
   col_types = cols(album = col_character())   #<3>    
 ) |> list_rbind() |>                          #<4>
   clean_names()                               #<5>
 
-taylor_songs 
+taylor_songs                    
 
 ```
 
 1. First we create a new object called `taylor_songs` which is where all our data will end up. Then we take our list of files names `taylor_files_list` and put it in the `map()` function. `map()` applies a method (in this case `read_csv()`) to every item in a list and returns a list as a result.
 2. Our first argument is the function we want to apply which is `read_csv()` which returns a data frame of the csv. 
-3. After the comma is `col_types =` which is an argument in `read_csv()`. This argument can set any or all of the column types as you import the data.  
+3. After the comma is `col_types =` which is an argument in `read_csv()`. This argument can set any or all of the column types as you import the data. What happens when you comment out the `col_types = ` line? Taylor's album 1989 shows up as a number while the other album names show up as strings so get an error and can't join the columns when we use list_rbind().   
 4. Once we use map to create a list of our newly created object from read_csv, we want to combine them all into one single object which already called `taylor_songs`, so we use `list_rbind()`. 
 5. And then just to make everything look nice and uniform we use `clean_names()` to change the column names. 
-6. What happens when you comment out the `col_types = ` line? Taylor's album 1989 shows up as a number while the other album names show up as strings so get an error and can't join the columns when we use list_rbind().
-7. Let's add `set_names(basename)` by uncommenting it and add `names_to = "source"` inside `list_rbind()`. Look at the output. It creates a column that shows which file each row came from. This can be really helpful when you maybe don't have a column that has the date or year, but the file name does contain it. You can then extract it from that column.
+6. Let's add `set_names(basename)` by uncommenting it and add `names_to = "source"` inside `list_rbind()`. Look at the output. It creates a column that shows which file each row came from. This can be really helpful when you maybe don't have a column that has the date or year, but the file name does contain it. You can then extract it from that column.
 
 ## OYO: Importing multiple files at once - Power Outages
 
@@ -78,18 +78,27 @@ Instructions: The files you want to import are all in a folder called `"data-pro
 ```{r}
 #| label: import-oyo
 
-#power_files_list <-
+power_files_list <- list.files(
+  "data-processed-power",
+  pattern = ".csv",
+  full.names = TRUE
+)
 
-#power_files_list
+power_files_list
 ```
 
 ```{r}
 #| label: combine-files-oyo
+#| message: false
 
-#power_outages <-  power_files_list 
+power_outages <-  power_files_list |> 
+  map(
+    read_csv
+  ) |> list_rbind() |> 
+  clean_names()
 
 
-#power_outages |> glimpse()
+power_outages |> glimpse()
 ```
 
 # Section 2: Creating your own function
@@ -120,7 +129,7 @@ What if we want to add labels and scale the axes differently? And what if we wan
 
 ## Make our own function
 
-We are going to call our function `graphing_taylor`.
+We are going to call our function `graphing_taylor` and add some extra details to the graph.
 
 ```{r}
 graphing_taylor <- function(song_data) {                       #<1>  
@@ -128,7 +137,8 @@ graphing_taylor <- function(song_data) {                       #<1>
     geom_point() +
     labs(x = "Length of song in minutes", y = "Popularity") +
     scale_x_continuous(n.breaks = 10) +
-    scale_y_continuous(limits = c(0,100))}
+    scale_y_continuous(limits = c(0,100))
+  }
 
 ```
 
@@ -158,7 +168,7 @@ Now try it on your own.
 Let's look at the power outage data.
 
 ```{r}
-# power_outages |> head(50)
+#power_outages |> head(50)
 ```
 
 We want to see what the top 10 causes of power outages are for each state and how many outages there have been for each category.
@@ -166,21 +176,24 @@ To do this for Texas, we would filter for our state,  group_by the event_categor
 
 ```{r}
 # filtered_data <- power_outages |> filter(state_event |> str_detect("Texas")) |>
-#   group_by (event_category) |> 
-#   summarize(total_events = n()) |> 
-#   arrange(total_events |> desc()) |> 
+#   group_by (event_category) |>
+#   summarize(total_events = n()) |>
+#   arrange(total_events |> desc()) |>
 #   head(10)
+# 
+# filtered_data
 ```
 
 Now we want to create a bar chart. 
 
 ```{r}
-# ggplot(filtered_data, 
-#          aes(x = total_events, 
+# ggplot(filtered_data,
+#          aes(x = total_events,
 #              y = reorder(event_category, total_events))) +
 #          geom_col() +
 #          labs(x = "Occurrences", y = "Outage Cause")  +
 #         scale_x_continuous(labels = comma)
+
 ```
 
 Now, your turn. We want to put these two steps into a single function so we can do it all at once for any state we want. Try it below and test if it matches the graph output above for Texas. You can copy and paste the filtering and graphing code but will need to adjust a few things for the function to work. 
@@ -188,7 +201,7 @@ Now, your turn. We want to put these two steps into a single function so we can 
 ```{r}
 #| label: function
 
-filter_graph_function <- function (state) {
+filter_graph_function <- function (state_string) {
   
 }
 
@@ -203,7 +216,7 @@ Test it with Texas.
 Try it with your home state or another state if you're from Texas too. 
 
 ```{r}
-#filter_graph_function("YOUR STATE HERE")
+#filter_graph_function(YOUR STATE HERE)
 ```
 
 
