@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>dRy - 04-report-template-oyo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-report-template-oyo.html">05: Report Template - OYO</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">dRy</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-importing-and-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01: Importing Multiple Files and Creating a Function</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-report-template-example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02: Report Template - Example</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-render-one-file-example.R" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03: Render One File - Example</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-render-multiple-files-example.R" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04: Render Multiple Files - Example</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-report-template-oyo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">05: Report Template - OYO</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-render-multiple-files-oyo.R" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06: Render Multiple Files - OYO</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set up</a>
+  <ul class="collapse">
+  <li><a href="#import-your-files" id="toc-import-your-files" class="nav-link" data-scroll-target="#import-your-files">Import your files</a></li>
+  </ul></li>
+  <li><a href="#oyo" id="toc-oyo" class="nav-link" data-scroll-target="#oyo">OYO:</a>
+  <ul class="collapse">
+  <li><a href="#create-parameter-list-and-filter-for-parameters" id="toc-create-parameter-list-and-filter-for-parameters" class="nav-link" data-scroll-target="#create-parameter-list-and-filter-for-parameters">Create parameter list and filter for parameters</a></li>
+  </ul></li>
+  <li><a href="#some-analysis" id="toc-some-analysis" class="nav-link" data-scroll-target="#some-analysis">Some analysis:</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">04-report-template-oyo</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="set-up" class="level2">
+<h2 class="anchored" data-anchor-id="set-up">Set up</h2>
+<div class="cell" data-mesage="false">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="import-your-files" class="level3">
+<h3 class="anchored" data-anchor-id="import-your-files">Import your files</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>all_outages <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"data-processed-power/power_outages.rds"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>all_outages <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 526,165
+Columns: 14
+$ state_event          &lt;chr&gt; "Arkansas", "Arkansas", "Arkansas", "Arkansas", "…
+$ datetime_event_began &lt;dttm&gt; 2014-11-24 00:00:00, 2014-11-24 00:00:00, 2014-1…
+$ datetime_restoration &lt;dttm&gt; 2014-11-24 00:00:00, 2014-11-24 00:00:00, 2014-1…
+$ event_type           &lt;chr&gt; "Fuel Supply Emergency - Coal", "Fuel Supply Emer…
+$ fips                 &lt;dbl&gt; 5021, 5035, 5051, 5069, 5093, 5119, 5121, 5121, 5…
+$ state                &lt;chr&gt; "Arkansas", "Arkansas", "Arkansas", "Arkansas", "…
+$ county               &lt;chr&gt; "Clay", "Crittenden", "Garland", "Jefferson", "Mi…
+$ start_time           &lt;dttm&gt; 2014-11-24 09:30:00, 2014-11-24 09:30:00, 2014-1…
+$ duration             &lt;dbl&gt; 5.75, 1.25, 0.75, 1.25, 0.75, 1.25, 5.25, 0.75, 6…
+$ end_time             &lt;dttm&gt; 2014-11-24 15:15:00, 2014-11-24 10:45:00, 2014-1…
+$ min_customers        &lt;dbl&gt; 456, 755, 279, 252, 301, 523, 223, 229, 588, 287,…
+$ max_customers        &lt;dbl&gt; 1803, 755, 293, 256, 301, 523, 401, 229, 700, 287…
+$ mean_customers       &lt;dbl&gt; 1301.4783, 755.0000, 287.3333, 254.0000, 301.0000…
+$ event_category       &lt;chr&gt; "Fuel Supply Issue", "Fuel Supply Issue", "Fuel S…</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="oyo" class="level2">
+<h2 class="anchored" data-anchor-id="oyo">OYO:</h2>
+<section id="create-parameter-list-and-filter-for-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="create-parameter-list-and-filter-for-parameters">Create parameter list and filter for parameters</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>state_list <span class="ot">&lt;-</span> <span class="fu">str_split_1</span> (</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  params<span class="sc">$</span>state, <span class="st">","</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>state_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Arizona"</code></pre>
+</div>
+</div>
+<p>States: Arizona</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>outages <span class="ot">&lt;-</span> all_outages <span class="sc">|&gt;</span> <span class="fu">filter</span> (</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  state_event <span class="sc">%in%</span> state_list</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>outages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["state_event"],"name":[1],"type":["chr"],"align":["left"]},{"label":["datetime_event_began"],"name":[2],"type":["dttm"],"align":["right"]},{"label":["datetime_restoration"],"name":[3],"type":["dttm"],"align":["right"]},{"label":["event_type"],"name":[4],"type":["chr"],"align":["left"]},{"label":["fips"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["state"],"name":[6],"type":["chr"],"align":["left"]},{"label":["county"],"name":[7],"type":["chr"],"align":["left"]},{"label":["start_time"],"name":[8],"type":["dttm"],"align":["right"]},{"label":["duration"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["end_time"],"name":[10],"type":["dttm"],"align":["right"]},{"label":["min_customers"],"name":[11],"type":["dbl"],"align":["right"]},{"label":["max_customers"],"name":[12],"type":["dbl"],"align":["right"]},{"label":["mean_customers"],"name":[13],"type":["dbl"],"align":["right"]},{"label":["event_category"],"name":[14],"type":["chr"],"align":["left"]}],"data":[{"1":"Arizona","2":"2015-08-03 08:27:00","3":"2015-08-04 01:18:00","4":"Sabotage","5":"4013","6":"Arizona","7":"Maricopa","8":"2015-08-05 22:30:00","9":"0.50","10":"2015-08-05 23:00:00","11":"2341","12":"2341","13":"2341.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2015-08-03 08:27:00","3":"2015-08-04 01:18:00","4":"Sabotage","5":"4013","6":"Arizona","7":"Maricopa","8":"2015-08-06 03:30:00","9":"1.25","10":"2015-08-06 04:45:00","11":"272","12":"291","13":"275.8000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-09-26 17:15:00","9":"1.50","10":"2016-09-26 18:45:00","11":"799","12":"853","13":"820.8333","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-09-27 00:45:00","9":"1.00","10":"2016-09-27 01:45:00","11":"1170","12":"1170","13":"1170.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-09-27 16:15:00","9":"2.00","10":"2016-09-27 18:15:00","11":"455","12":"497","13":"475.1250","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-09-28 01:45:00","9":"0.25","10":"2016-09-28 02:00:00","11":"511","12":"511","13":"511.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-09-28 06:15:00","9":"1.75","10":"2016-09-28 08:00:00","11":"655","12":"655","13":"655.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4019","6":"Arizona","7":"Pima","8":"2016-09-26 20:30:00","9":"2.00","10":"2016-09-26 22:30:00","11":"471","12":"1657","13":"782.8750","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4019","6":"Arizona","7":"Pima","8":"2016-09-28 15:00:00","9":"1.25","10":"2016-09-28 16:15:00","11":"218","12":"218","13":"218.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4021","6":"Arizona","7":"Pinal","8":"2016-09-25 18:00:00","9":"0.25","10":"2016-09-25 18:15:00","11":"370","12":"370","13":"370.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-02-26 16:35:00","3":"2016-02-26 20:22:00","4":"Sabotage - Operator Action(s)","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-02-26 17:00:00","9":"0.25","10":"2016-02-26 17:15:00","11":"203","12":"203","13":"203.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-02-26 16:35:00","3":"2016-02-26 20:22:00","4":"Sabotage - Operator Action(s)","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-02-26 17:30:00","9":"0.25","10":"2016-02-26 17:45:00","11":"212","12":"212","13":"212.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-02-26 16:35:00","3":"2016-02-26 20:22:00","4":"Sabotage - Operator Action(s)","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-02-26 18:00:00","9":"1.00","10":"2016-02-26 19:00:00","11":"220","12":"242","13":"228.2500","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-02-26 16:35:00","3":"2016-02-26 20:22:00","4":"Sabotage - Operator Action(s)","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-02-26 20:30:00","9":"0.75","10":"2016-02-26 21:15:00","11":"200","12":"200","13":"200.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-02-26 16:35:00","3":"2016-02-26 20:22:00","4":"Sabotage - Operator Action(s)","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-02-29 00:30:00","9":"1.25","10":"2016-02-29 01:45:00","11":"864","12":"864","13":"864.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-02-26 16:35:00","3":"2016-02-26 20:22:00","4":"Sabotage - Operator Action(s)","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-02-29 16:30:00","9":"2.25","10":"2016-02-29 18:45:00","11":"228","12":"318","13":"259.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-02-26 16:35:00","3":"2016-02-26 20:22:00","4":"Sabotage - Operator Action(s)","5":"4019","6":"Arizona","7":"Pima","8":"2016-02-27 03:00:00","9":"0.75","10":"2016-02-27 03:45:00","11":"2197","12":"2197","13":"2197.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-02-26 16:35:00","3":"2016-02-26 20:22:00","4":"Sabotage - Operator Action(s)","5":"4019","6":"Arizona","7":"Pima","8":"2016-02-28 22:00:00","9":"2.25","10":"2016-02-29 00:15:00","11":"639","12":"1947","13":"1332.4444","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-09-26 17:15:00","9":"1.50","10":"2016-09-26 18:45:00","11":"799","12":"853","13":"820.8333","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-09-27 00:45:00","9":"1.00","10":"2016-09-27 01:45:00","11":"1170","12":"1170","13":"1170.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-09-27 16:15:00","9":"2.00","10":"2016-09-27 18:15:00","11":"455","12":"497","13":"475.1250","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-09-28 01:45:00","9":"0.25","10":"2016-09-28 02:00:00","11":"511","12":"511","13":"511.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4013","6":"Arizona","7":"Maricopa","8":"2016-09-28 06:15:00","9":"1.75","10":"2016-09-28 08:00:00","11":"655","12":"655","13":"655.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4019","6":"Arizona","7":"Pima","8":"2016-09-26 20:30:00","9":"2.00","10":"2016-09-26 22:30:00","11":"471","12":"1657","13":"782.8750","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4019","6":"Arizona","7":"Pima","8":"2016-09-28 15:00:00","9":"1.25","10":"2016-09-28 16:15:00","11":"218","12":"218","13":"218.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2016-09-25 12:49:00","3":"2016-09-25 18:20:00","4":"Vandalism","5":"4021","6":"Arizona","7":"Pinal","8":"2016-09-25 18:00:00","9":"0.25","10":"2016-09-25 18:15:00","11":"370","12":"370","13":"370.0000","14":"Potential or Actual Physical Interference"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4003","6":"Arizona","7":"Cochise","8":"2018-07-31 01:00:00","9":"2.00","10":"2018-07-31 03:00:00","11":"503","12":"634","13":"584.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2018-07-30 14:00:00","9":"2.25","10":"2018-07-30 16:15:00","11":"541","12":"575","13":"559.1111","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2018-07-30 18:00:00","9":"0.25","10":"2018-07-30 18:15:00","11":"888","12":"888","13":"888.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2018-07-30 22:15:00","9":"0.75","10":"2018-07-30 23:00:00","11":"1110","12":"1116","13":"1114.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2018-07-31 02:15:00","9":"13.00","10":"2018-07-31 15:15:00","11":"1480","12":"38908","13":"19948.5000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2018-07-31 18:15:00","9":"12.50","10":"2018-08-01 06:45:00","11":"333","12":"4602","13":"2568.4000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2018-08-01 08:45:00","9":"0.75","10":"2018-08-01 09:30:00","11":"574","12":"1310","13":"833.3333","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2018-08-01 10:00:00","9":"21.25","10":"2018-08-02 07:15:00","11":"368","12":"3564","13":"865.1529","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2018-08-02 15:30:00","9":"1.50","10":"2018-08-02 17:00:00","11":"207","12":"1493","13":"455.3333","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2018-08-02 17:15:00","9":"0.25","10":"2018-08-02 17:30:00","11":"214","12":"214","13":"214.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2018-08-02 20:45:00","9":"0.50","10":"2018-08-02 21:15:00","11":"1187","12":"1187","13":"1187.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4015","6":"Arizona","7":"Mohave","8":"2018-07-31 02:45:00","9":"0.50","10":"2018-07-31 03:15:00","11":"203","12":"203","13":"203.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4015","6":"Arizona","7":"Mohave","8":"2018-07-31 05:45:00","9":"0.25","10":"2018-07-31 06:00:00","11":"238","12":"238","13":"238.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4015","6":"Arizona","7":"Mohave","8":"2018-08-02 21:45:00","9":"0.50","10":"2018-08-02 22:15:00","11":"266","12":"266","13":"266.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4019","6":"Arizona","7":"Pima","8":"2018-07-30 07:45:00","9":"2.50","10":"2018-07-30 10:15:00","11":"1286","12":"3350","13":"2297.4000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4019","6":"Arizona","7":"Pima","8":"2018-07-31 03:30:00","9":"5.25","10":"2018-07-31 08:45:00","11":"216","12":"500","13":"316.9524","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4019","6":"Arizona","7":"Pima","8":"2018-08-02 00:00:00","9":"0.50","10":"2018-08-02 00:30:00","11":"239","12":"239","13":"239.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4019","6":"Arizona","7":"Pima","8":"2018-08-02 01:45:00","9":"3.00","10":"2018-08-02 04:45:00","11":"242","12":"735","13":"432.6667","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4019","6":"Arizona","7":"Pima","8":"2018-08-02 16:15:00","9":"1.00","10":"2018-08-02 17:15:00","11":"1529","12":"1529","13":"1529.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4021","6":"Arizona","7":"Pinal","8":"2018-07-31 01:45:00","9":"6.25","10":"2018-07-31 08:00:00","11":"310","12":"12044","13":"3891.5200","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4021","6":"Arizona","7":"Pinal","8":"2018-07-31 11:15:00","9":"3.50","10":"2018-07-31 14:45:00","11":"236","12":"241","13":"238.7143","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4023","6":"Arizona","7":"Santa Cruz","8":"2018-07-31 04:45:00","9":"1.00","10":"2018-07-31 05:45:00","11":"534","12":"534","13":"534.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4023","6":"Arizona","7":"Santa Cruz","8":"2018-08-02 01:15:00","9":"4.75","10":"2018-08-02 06:00:00","11":"472","12":"2010","13":"879.1053","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4025","6":"Arizona","7":"Yavapai","8":"2018-07-30 22:00:00","9":"0.25","10":"2018-07-30 22:15:00","11":"276","12":"276","13":"276.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4025","6":"Arizona","7":"Yavapai","8":"2018-08-02 09:45:00","9":"2.00","10":"2018-08-02 11:45:00","11":"268","12":"279","13":"276.2500","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4025","6":"Arizona","7":"Yavapai","8":"2018-08-02 20:45:00","9":"1.50","10":"2018-08-02 22:15:00","11":"223","12":"3023","13":"1047.1667","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4027","6":"Arizona","7":"Yuma","8":"2018-08-01 01:30:00","9":"2.50","10":"2018-08-01 04:00:00","11":"1827","12":"3663","13":"3479.4000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4027","6":"Arizona","7":"Yuma","8":"2018-08-01 04:15:00","9":"2.50","10":"2018-08-01 06:45:00","11":"762","12":"1088","13":"1055.4000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4027","6":"Arizona","7":"Yuma","8":"2018-08-01 08:15:00","9":"1.25","10":"2018-08-01 09:30:00","11":"1088","12":"1088","13":"1088.0000","14":"Weather"},{"1":"Arizona","2":"2018-07-30 06:30:00","3":"2018-07-30 23:00:00","4":"Severe Weather","5":"4027","6":"Arizona","7":"Yuma","8":"2018-08-01 10:00:00","9":"0.75","10":"2018-08-01 10:45:00","11":"1088","12":"1088","13":"1088.0000","14":"Weather"},{"1":"Arizona","2":"2019-04-17 19:38:00","3":"2019-04-17 23:52:00","4":"System Operations","5":"4007","6":"Arizona","7":"Gila","8":"2019-04-19 22:30:00","9":"1.75","10":"2019-04-20 00:15:00","11":"5508","12":"8922","13":"8434.2857","14":"System Operations"},{"1":"Arizona","2":"2019-04-17 19:38:00","3":"2019-04-17 23:52:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-17 20:45:00","9":"1.25","10":"2019-04-17 22:00:00","11":"572","12":"584","13":"581.6000","14":"System Operations"},{"1":"Arizona","2":"2019-04-17 19:38:00","3":"2019-04-17 23:52:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-18 06:15:00","9":"25.25","10":"2019-04-19 07:30:00","11":"292","12":"1412","13":"450.3960","14":"System Operations"},{"1":"Arizona","2":"2019-04-17 19:38:00","3":"2019-04-17 23:52:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-19 16:30:00","9":"1.50","10":"2019-04-19 18:00:00","11":"205","12":"236","13":"215.6667","14":"System Operations"},{"1":"Arizona","2":"2019-04-17 19:38:00","3":"2019-04-17 23:52:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-19 22:00:00","9":"0.25","10":"2019-04-19 22:15:00","11":"216","12":"216","13":"216.0000","14":"System Operations"},{"1":"Arizona","2":"2019-04-17 19:38:00","3":"2019-04-17 23:52:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-20 00:45:00","9":"0.75","10":"2019-04-20 01:30:00","11":"205","12":"223","13":"217.0000","14":"System Operations"},{"1":"Arizona","2":"2019-04-17 19:38:00","3":"2019-04-17 23:52:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-20 10:15:00","9":"1.25","10":"2019-04-20 11:30:00","11":"1282","12":"1282","13":"1282.0000","14":"System Operations"},{"1":"Arizona","2":"2019-04-17 19:38:00","3":"2019-04-17 23:52:00","4":"System Operations","5":"4015","6":"Arizona","7":"Mohave","8":"2019-04-19 20:45:00","9":"1.75","10":"2019-04-19 22:30:00","11":"2262","12":"6972","13":"4633.5714","14":"System Operations"},{"1":"Arizona","2":"2019-04-17 19:38:00","3":"2019-04-17 23:52:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2019-04-19 18:45:00","9":"0.25","10":"2019-04-19 19:00:00","11":"483","12":"483","13":"483.0000","14":"System Operations"},{"1":"Arizona","2":"2019-04-17 19:38:00","3":"2019-04-17 23:52:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2019-04-19 23:30:00","9":"3.00","10":"2019-04-20 02:30:00","11":"341","12":"734","13":"680.3333","14":"System Operations"},{"1":"Arizona","2":"2019-04-17 19:38:00","3":"2019-04-17 23:52:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2019-04-20 22:15:00","9":"1.50","10":"2019-04-20 23:45:00","11":"750","12":"750","13":"750.0000","14":"System Operations"},{"1":"Arizona","2":"2019-04-25 18:03:00","3":"2019-04-25 18:32:00","4":"Generation Inadequacy","5":"4007","6":"Arizona","7":"Gila","8":"2019-04-26 01:45:00","9":"0.75","10":"2019-04-26 02:30:00","11":"235","12":"235","13":"235.0000","14":"Generation Inedequacy"},{"1":"Arizona","2":"2019-04-25 18:03:00","3":"2019-04-25 18:32:00","4":"Generation Inadequacy","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-25 22:30:00","9":"1.00","10":"2019-04-25 23:30:00","11":"225","12":"280","13":"238.7500","14":"Generation Inedequacy"},{"1":"Arizona","2":"2019-04-25 18:03:00","3":"2019-04-25 18:32:00","4":"Generation Inadequacy","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-26 00:15:00","9":"1.00","10":"2019-04-26 01:15:00","11":"220","12":"269","13":"256.7500","14":"Generation Inedequacy"},{"1":"Arizona","2":"2019-04-25 18:03:00","3":"2019-04-25 18:32:00","4":"Generation Inadequacy","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-26 01:45:00","9":"11.25","10":"2019-04-26 13:00:00","11":"200","12":"44798","13":"2621.6667","14":"Generation Inedequacy"},{"1":"Arizona","2":"2019-04-25 18:03:00","3":"2019-04-25 18:32:00","4":"Generation Inadequacy","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-26 14:45:00","9":"5.00","10":"2019-04-26 19:45:00","11":"200","12":"379","13":"307.4000","14":"Generation Inedequacy"},{"1":"Arizona","2":"2019-04-25 18:03:00","3":"2019-04-25 18:32:00","4":"Generation Inadequacy","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-27 21:00:00","9":"1.75","10":"2019-04-27 22:45:00","11":"244","12":"551","13":"419.4286","14":"Generation Inedequacy"},{"1":"Arizona","2":"2019-04-25 18:03:00","3":"2019-04-25 18:32:00","4":"Generation Inadequacy","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-27 23:45:00","9":"1.00","10":"2019-04-28 00:45:00","11":"284","12":"297","13":"290.0000","14":"Generation Inedequacy"},{"1":"Arizona","2":"2019-04-25 18:03:00","3":"2019-04-25 18:32:00","4":"Generation Inadequacy","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-28 13:15:00","9":"0.50","10":"2019-04-28 13:45:00","11":"484","12":"484","13":"484.0000","14":"Generation Inedequacy"},{"1":"Arizona","2":"2019-04-25 18:03:00","3":"2019-04-25 18:32:00","4":"Generation Inadequacy","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-04-28 14:30:00","9":"1.00","10":"2019-04-28 15:30:00","11":"482","12":"529","13":"507.0000","14":"Generation Inedequacy"},{"1":"Arizona","2":"2019-04-25 18:03:00","3":"2019-04-25 18:32:00","4":"Generation Inadequacy","5":"4015","6":"Arizona","7":"Mohave","8":"2019-04-28 03:30:00","9":"0.75","10":"2019-04-28 04:15:00","11":"1330","12":"1330","13":"1330.0000","14":"Generation Inedequacy"},{"1":"Arizona","2":"2019-04-25 18:03:00","3":"2019-04-25 18:32:00","4":"Generation Inadequacy","5":"4021","6":"Arizona","7":"Pinal","8":"2019-04-26 01:45:00","9":"0.75","10":"2019-04-26 02:30:00","11":"4354","12":"7599","13":"6189.0000","14":"Generation Inedequacy"},{"1":"Arizona","2":"2019-09-19 05:55:00","3":"2019-09-19 14:30:00","4":"Fuel Supply Deficiency","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-09-19 15:30:00","9":"0.75","10":"2019-09-19 16:15:00","11":"248","12":"268","13":"256.3333","14":"Fuel Supply Issue"},{"1":"Arizona","2":"2019-09-19 05:55:00","3":"2019-09-19 14:30:00","4":"Fuel Supply Deficiency","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-09-19 22:15:00","9":"2.50","10":"2019-09-20 00:45:00","11":"518","12":"1082","13":"616.4000","14":"Fuel Supply Issue"},{"1":"Arizona","2":"2019-09-19 05:55:00","3":"2019-09-19 14:30:00","4":"Fuel Supply Deficiency","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-09-21 05:45:00","9":"0.25","10":"2019-09-21 06:00:00","11":"647","12":"647","13":"647.0000","14":"Fuel Supply Issue"},{"1":"Arizona","2":"2019-09-19 05:55:00","3":"2019-09-19 14:30:00","4":"Fuel Supply Deficiency","5":"4013","6":"Arizona","7":"Maricopa","8":"2019-09-22 08:30:00","9":"1.25","10":"2019-09-22 09:45:00","11":"657","12":"657","13":"657.0000","14":"Fuel Supply Issue"},{"1":"Arizona","2":"2019-09-19 05:55:00","3":"2019-09-19 14:30:00","4":"Fuel Supply Deficiency","5":"4027","6":"Arizona","7":"Yuma","8":"2019-09-19 13:45:00","9":"0.75","10":"2019-09-19 14:30:00","11":"1198","12":"1198","13":"1198.0000","14":"Fuel Supply Issue"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4005","6":"Arizona","7":"Coconino","8":"2020-08-20 20:30:00","9":"0.75","10":"2020-08-20 21:15:00","11":"313","12":"1000","13":"771.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4005","6":"Arizona","7":"Coconino","8":"2020-08-20 21:30:00","9":"0.25","10":"2020-08-20 21:45:00","11":"867","12":"867","13":"867.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4005","6":"Arizona","7":"Coconino","8":"2020-08-21 01:00:00","9":"3.50","10":"2020-08-21 04:30:00","11":"508","12":"551","13":"519.7857","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4007","6":"Arizona","7":"Gila","8":"2020-08-19 04:00:00","9":"0.25","10":"2020-08-19 04:15:00","11":"3982","12":"3982","13":"3982.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4007","6":"Arizona","7":"Gila","8":"2020-08-19 04:30:00","9":"3.75","10":"2020-08-19 08:15:00","11":"222","12":"3985","13":"2977.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4007","6":"Arizona","7":"Gila","8":"2020-08-19 22:45:00","9":"0.50","10":"2020-08-19 23:15:00","11":"3984","12":"3984","13":"3984.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4007","6":"Arizona","7":"Gila","8":"2020-08-20 00:45:00","9":"3.25","10":"2020-08-20 04:00:00","11":"296","12":"297","13":"296.6923","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-18 23:15:00","9":"3.50","10":"2020-08-19 02:45:00","11":"487","12":"2099","13":"1544.4286","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-19 03:00:00","9":"1.25","10":"2020-08-19 04:15:00","11":"208","12":"427","13":"324.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-19 04:45:00","9":"1.75","10":"2020-08-19 06:30:00","11":"1525","12":"4326","13":"2735.5714","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-19 08:30:00","9":"3.00","10":"2020-08-19 11:30:00","11":"625","12":"751","13":"687.9167","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-19 15:30:00","9":"0.25","10":"2020-08-19 15:45:00","11":"1564","12":"1564","13":"1564.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-20 00:45:00","9":"7.50","10":"2020-08-20 08:15:00","11":"203","12":"2503","13":"415.8333","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-20 09:15:00","9":"2.75","10":"2020-08-20 12:00:00","11":"986","12":"1172","13":"1025.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-20 15:00:00","9":"1.25","10":"2020-08-20 16:15:00","11":"237","12":"263","13":"255.4000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-20 17:30:00","9":"3.00","10":"2020-08-20 20:30:00","11":"204","12":"1098","13":"580.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-20 23:45:00","9":"0.50","10":"2020-08-21 00:15:00","11":"6762","12":"6774","13":"6768.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4015","6":"Arizona","7":"Mohave","8":"2020-08-19 01:00:00","9":"4.25","10":"2020-08-19 05:15:00","11":"374","12":"1267","13":"885.4706","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4017","6":"Arizona","7":"Navajo","8":"2020-08-20 20:30:00","9":"0.25","10":"2020-08-20 20:45:00","11":"255","12":"255","13":"255.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4019","6":"Arizona","7":"Pima","8":"2020-08-18 18:15:00","9":"0.25","10":"2020-08-18 18:30:00","11":"10527","12":"10527","13":"10527.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4019","6":"Arizona","7":"Pima","8":"2020-08-18 19:00:00","9":"0.75","10":"2020-08-18 19:45:00","11":"328","12":"872","13":"690.6667","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4019","6":"Arizona","7":"Pima","8":"2020-08-20 10:30:00","9":"1.75","10":"2020-08-20 12:15:00","11":"1015","12":"1840","13":"1479.7143","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4021","6":"Arizona","7":"Pinal","8":"2020-08-19 09:15:00","9":"0.25","10":"2020-08-19 09:30:00","11":"573","12":"573","13":"573.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4021","6":"Arizona","7":"Pinal","8":"2020-08-19 11:45:00","9":"0.25","10":"2020-08-19 12:00:00","11":"573","12":"573","13":"573.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4021","6":"Arizona","7":"Pinal","8":"2020-08-19 19:15:00","9":"1.25","10":"2020-08-19 20:30:00","11":"1031","12":"1031","13":"1031.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4021","6":"Arizona","7":"Pinal","8":"2020-08-20 09:30:00","9":"1.00","10":"2020-08-20 10:30:00","11":"1400","12":"1586","13":"1539.5000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4021","6":"Arizona","7":"Pinal","8":"2020-08-20 11:00:00","9":"0.25","10":"2020-08-20 11:15:00","11":"633","12":"633","13":"633.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4025","6":"Arizona","7":"Yavapai","8":"2020-08-19 00:00:00","9":"3.25","10":"2020-08-19 03:15:00","11":"271","12":"307","13":"301.4615","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4025","6":"Arizona","7":"Yavapai","8":"2020-08-21 02:45:00","9":"0.75","10":"2020-08-21 03:30:00","11":"898","12":"898","13":"898.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-18 14:30:00","3":"2020-08-18 14:30:00","4":"Severe Weather","5":"4025","6":"Arizona","7":"Yavapai","8":"2020-08-21 10:15:00","9":"1.50","10":"2020-08-21 11:45:00","11":"1905","12":"2025","13":"2005.0000","14":"Weather"},{"1":"Arizona","2":"2020-11-20 09:10:00","3":"2020-11-20 09:22:00","4":"System Operations","5":"4003","6":"Arizona","7":"Cochise","8":"2020-11-22 23:45:00","9":"0.75","10":"2020-11-23 00:30:00","11":"566","12":"566","13":"566.0000","14":"System Operations"},{"1":"Arizona","2":"2020-11-20 09:10:00","3":"2020-11-20 09:22:00","4":"System Operations","5":"4005","6":"Arizona","7":"Coconino","8":"2020-11-20 19:30:00","9":"2.25","10":"2020-11-20 21:45:00","11":"1226","12":"1226","13":"1226.0000","14":"System Operations"},{"1":"Arizona","2":"2020-11-20 09:10:00","3":"2020-11-20 09:22:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-20 17:00:00","9":"1.50","10":"2020-11-20 18:30:00","11":"1845","12":"1880","13":"1866.1667","14":"System Operations"},{"1":"Arizona","2":"2020-11-20 09:10:00","3":"2020-11-20 09:22:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-21 09:15:00","9":"0.25","10":"2020-11-21 09:30:00","11":"1146","12":"1146","13":"1146.0000","14":"System Operations"},{"1":"Arizona","2":"2020-11-20 09:10:00","3":"2020-11-20 09:22:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-21 14:45:00","9":"2.75","10":"2020-11-21 17:30:00","11":"201","12":"1880","13":"1513.6364","14":"System Operations"},{"1":"Arizona","2":"2020-11-20 09:10:00","3":"2020-11-20 09:22:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-21 20:30:00","9":"0.75","10":"2020-11-21 21:15:00","11":"1767","12":"1767","13":"1767.0000","14":"System Operations"},{"1":"Arizona","2":"2020-11-20 09:10:00","3":"2020-11-20 09:22:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-22 10:45:00","9":"1.75","10":"2020-11-22 12:30:00","11":"825","12":"952","13":"896.1429","14":"System Operations"},{"1":"Arizona","2":"2020-11-20 09:10:00","3":"2020-11-20 09:22:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-23 02:45:00","9":"1.50","10":"2020-11-23 04:15:00","11":"745","12":"759","13":"747.3333","14":"System Operations"},{"1":"Arizona","2":"2020-11-20 09:10:00","3":"2020-11-20 09:22:00","4":"System Operations","5":"4015","6":"Arizona","7":"Mohave","8":"2020-11-21 23:30:00","9":"2.75","10":"2020-11-22 02:15:00","11":"1763","12":"1763","13":"1763.0000","14":"System Operations"},{"1":"Arizona","2":"2020-11-20 09:10:00","3":"2020-11-20 09:22:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2020-11-20 13:00:00","9":"2.50","10":"2020-11-20 15:30:00","11":"283","12":"509","13":"485.4000","14":"System Operations"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4005","6":"Arizona","7":"Coconino","8":"2020-08-20 20:30:00","9":"0.75","10":"2020-08-20 21:15:00","11":"313","12":"1000","13":"771.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4005","6":"Arizona","7":"Coconino","8":"2020-08-20 21:30:00","9":"0.25","10":"2020-08-20 21:45:00","11":"867","12":"867","13":"867.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4005","6":"Arizona","7":"Coconino","8":"2020-08-21 01:00:00","9":"3.50","10":"2020-08-21 04:30:00","11":"508","12":"551","13":"519.7857","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4005","6":"Arizona","7":"Coconino","8":"2020-08-21 19:45:00","9":"0.50","10":"2020-08-21 20:15:00","11":"2111","12":"2716","13":"2413.5000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4007","6":"Arizona","7":"Gila","8":"2020-08-19 22:45:00","9":"0.50","10":"2020-08-19 23:15:00","11":"3984","12":"3984","13":"3984.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4007","6":"Arizona","7":"Gila","8":"2020-08-20 00:45:00","9":"3.25","10":"2020-08-20 04:00:00","11":"296","12":"297","13":"296.6923","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-19 15:30:00","9":"0.25","10":"2020-08-19 15:45:00","11":"1564","12":"1564","13":"1564.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-20 00:45:00","9":"7.50","10":"2020-08-20 08:15:00","11":"203","12":"2503","13":"415.8333","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-20 09:15:00","9":"2.75","10":"2020-08-20 12:00:00","11":"986","12":"1172","13":"1025.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-20 15:00:00","9":"1.25","10":"2020-08-20 16:15:00","11":"237","12":"263","13":"255.4000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-20 17:30:00","9":"3.00","10":"2020-08-20 20:30:00","11":"204","12":"1098","13":"580.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-20 23:45:00","9":"0.50","10":"2020-08-21 00:15:00","11":"6762","12":"6774","13":"6768.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-21 02:00:00","9":"22.00","10":"2020-08-22 00:00:00","11":"210","12":"49571","13":"9908.7386","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-22 00:15:00","9":"1.00","10":"2020-08-22 01:15:00","11":"1967","12":"1967","13":"1967.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-22 02:30:00","9":"2.50","10":"2020-08-22 05:00:00","11":"253","12":"740","13":"565.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-08-22 19:30:00","9":"1.00","10":"2020-08-22 20:30:00","11":"435","12":"686","13":"560.5000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4017","6":"Arizona","7":"Navajo","8":"2020-08-20 20:30:00","9":"0.25","10":"2020-08-20 20:45:00","11":"255","12":"255","13":"255.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4019","6":"Arizona","7":"Pima","8":"2020-08-20 10:30:00","9":"1.75","10":"2020-08-20 12:15:00","11":"1015","12":"1840","13":"1479.7143","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4019","6":"Arizona","7":"Pima","8":"2020-08-21 02:15:00","9":"14.75","10":"2020-08-21 17:00:00","11":"239","12":"18677","13":"2192.7627","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4021","6":"Arizona","7":"Pinal","8":"2020-08-19 19:15:00","9":"1.25","10":"2020-08-19 20:30:00","11":"1031","12":"1031","13":"1031.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4021","6":"Arizona","7":"Pinal","8":"2020-08-20 09:30:00","9":"1.00","10":"2020-08-20 10:30:00","11":"1400","12":"1586","13":"1539.5000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4021","6":"Arizona","7":"Pinal","8":"2020-08-20 11:00:00","9":"0.25","10":"2020-08-20 11:15:00","11":"633","12":"633","13":"633.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4021","6":"Arizona","7":"Pinal","8":"2020-08-21 03:30:00","9":"13.50","10":"2020-08-21 17:00:00","11":"200","12":"4693","13":"1457.6111","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4021","6":"Arizona","7":"Pinal","8":"2020-08-21 18:15:00","9":"1.75","10":"2020-08-21 20:00:00","11":"206","12":"231","13":"227.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4025","6":"Arizona","7":"Yavapai","8":"2020-08-21 02:45:00","9":"0.75","10":"2020-08-21 03:30:00","11":"898","12":"898","13":"898.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4025","6":"Arizona","7":"Yavapai","8":"2020-08-21 10:15:00","9":"1.50","10":"2020-08-21 11:45:00","11":"1905","12":"2025","13":"2005.0000","14":"Weather"},{"1":"Arizona","2":"2020-08-19 14:00:00","3":"2020-08-19 21:00:00","4":"Severe Weather","5":"4025","6":"Arizona","7":"Yavapai","8":"2020-08-21 23:30:00","9":"0.75","10":"2020-08-22 00:15:00","11":"684","12":"5604","13":"3964.0000","14":"Weather"},{"1":"Arizona","2":"2020-11-10 10:42:00","3":"2020-11-10 12:45:00","4":"System Operations","5":"4005","6":"Arizona","7":"Coconino","8":"2020-11-10 21:00:00","9":"6.75","10":"2020-11-11 03:45:00","11":"495","12":"835","13":"612.9630","14":"System Operations"},{"1":"Arizona","2":"2020-11-10 10:42:00","3":"2020-11-10 12:45:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-10 15:45:00","9":"1.25","10":"2020-11-10 17:00:00","11":"210","12":"2045","13":"1302.6000","14":"System Operations"},{"1":"Arizona","2":"2020-11-10 10:42:00","3":"2020-11-10 12:45:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-10 18:15:00","9":"0.75","10":"2020-11-10 19:00:00","11":"231","12":"238","13":"235.0000","14":"System Operations"},{"1":"Arizona","2":"2020-11-10 10:42:00","3":"2020-11-10 12:45:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-11 11:30:00","9":"2.00","10":"2020-11-11 13:30:00","11":"886","12":"907","13":"896.1250","14":"System Operations"},{"1":"Arizona","2":"2020-11-10 10:42:00","3":"2020-11-10 12:45:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-11 16:30:00","9":"3.50","10":"2020-11-11 20:00:00","11":"222","12":"877","13":"735.1429","14":"System Operations"},{"1":"Arizona","2":"2020-11-10 10:42:00","3":"2020-11-10 12:45:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-11 22:45:00","9":"1.50","10":"2020-11-12 00:15:00","11":"616","12":"616","13":"616.0000","14":"System Operations"},{"1":"Arizona","2":"2020-11-10 10:42:00","3":"2020-11-10 12:45:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-12 14:30:00","9":"1.75","10":"2020-11-12 16:15:00","11":"207","12":"1339","13":"1106.4286","14":"System Operations"},{"1":"Arizona","2":"2020-11-10 10:42:00","3":"2020-11-10 12:45:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-12 23:15:00","9":"4.25","10":"2020-11-13 03:30:00","11":"642","12":"3142","13":"1465.0588","14":"System Operations"},{"1":"Arizona","2":"2020-11-10 10:42:00","3":"2020-11-10 12:45:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2020-11-13 04:45:00","9":"1.00","10":"2020-11-13 05:45:00","11":"222","12":"233","13":"224.7500","14":"System Operations"},{"1":"Arizona","2":"2020-11-10 10:42:00","3":"2020-11-10 12:45:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2020-11-12 02:30:00","9":"1.25","10":"2020-11-12 03:45:00","11":"557","12":"1659","13":"1218.2000","14":"System Operations"},{"1":"Arizona","2":"2021-09-15 22:42:00","3":"2021-09-16 00:37:00","4":"System Operations","5":"4005","6":"Arizona","7":"Coconino","8":"2021-09-17 05:15:00","9":"6.50","10":"2021-09-17 11:45:00","11":"216","12":"216","13":"216.0000","14":"System Operations"},{"1":"Arizona","2":"2021-09-15 22:42:00","3":"2021-09-16 00:37:00","4":"System Operations","5":"4007","6":"Arizona","7":"Gila","8":"2021-09-18 15:15:00","9":"2.00","10":"2021-09-18 17:15:00","11":"466","12":"467","13":"466.8750","14":"System Operations"},{"1":"Arizona","2":"2021-09-15 22:42:00","3":"2021-09-16 00:37:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2021-09-16 04:00:00","9":"1.25","10":"2021-09-16 05:15:00","11":"1487","12":"1496","13":"1494.2000","14":"System Operations"},{"1":"Arizona","2":"2021-09-15 22:42:00","3":"2021-09-16 00:37:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2021-09-17 02:30:00","9":"1.50","10":"2021-09-17 04:00:00","11":"1057","12":"1105","13":"1075.8333","14":"System Operations"},{"1":"Arizona","2":"2021-09-15 22:42:00","3":"2021-09-16 00:37:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2021-09-17 06:30:00","9":"1.50","10":"2021-09-17 08:00:00","11":"957","12":"984","13":"964.1667","14":"System Operations"},{"1":"Arizona","2":"2021-09-15 22:42:00","3":"2021-09-16 00:37:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2021-09-17 17:15:00","9":"1.50","10":"2021-09-17 18:45:00","11":"216","12":"2230","13":"1275.1667","14":"System Operations"},{"1":"Arizona","2":"2021-09-15 22:42:00","3":"2021-09-16 00:37:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2021-09-18 01:15:00","9":"1.75","10":"2021-09-18 03:00:00","11":"1116","12":"1152","13":"1130.5714","14":"System Operations"},{"1":"Arizona","2":"2021-09-15 22:42:00","3":"2021-09-16 00:37:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2021-09-16 00:30:00","9":"1.75","10":"2021-09-16 02:15:00","11":"2340","12":"2340","13":"2340.0000","14":"System Operations"},{"1":"Arizona","2":"2021-09-15 22:42:00","3":"2021-09-16 00:37:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2021-09-16 21:15:00","9":"2.25","10":"2021-09-16 23:30:00","11":"866","12":"866","13":"866.0000","14":"System Operations"},{"1":"Arizona","2":"2021-09-15 22:42:00","3":"2021-09-16 00:37:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2021-09-18 22:30:00","9":"0.25","10":"2021-09-18 22:45:00","11":"1402","12":"1402","13":"1402.0000","14":"System Operations"},{"1":"Arizona","2":"2021-09-15 22:42:00","3":"2021-09-16 00:37:00","4":"System Operations","5":"4025","6":"Arizona","7":"Yavapai","8":"2021-09-18 23:00:00","9":"1.50","10":"2021-09-19 00:30:00","11":"539","12":"539","13":"539.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4007","6":"Arizona","7":"Gila","8":"2022-05-28 22:15:00","9":"1.25","10":"2022-05-28 23:30:00","11":"1141","12":"1436","13":"1318.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-27 19:45:00","9":"1.25","10":"2022-05-27 21:00:00","11":"324","12":"1214","13":"848.8000","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-28 01:15:00","9":"0.75","10":"2022-05-28 02:00:00","11":"1107","12":"1205","13":"1172.3333","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-28 03:15:00","9":"1.00","10":"2022-05-28 04:15:00","11":"1831","12":"1847","13":"1843.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-28 05:45:00","9":"2.50","10":"2022-05-28 08:15:00","11":"972","12":"9148","13":"5090.8000","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-28 09:15:00","9":"2.75","10":"2022-05-28 12:00:00","11":"209","12":"214","13":"211.2727","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-28 12:30:00","9":"2.00","10":"2022-05-28 14:30:00","11":"230","12":"238","13":"231.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-28 18:45:00","9":"0.50","10":"2022-05-28 19:15:00","11":"1304","12":"1310","13":"1307.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-28 19:30:00","9":"0.25","10":"2022-05-28 19:45:00","11":"701","12":"701","13":"701.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-29 16:45:00","9":"0.50","10":"2022-05-29 17:15:00","11":"1020","12":"1057","13":"1038.5000","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2022-05-28 01:30:00","9":"0.25","10":"2022-05-28 01:45:00","11":"454","12":"454","13":"454.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2022-05-28 18:30:00","9":"3.00","10":"2022-05-28 21:30:00","11":"449","12":"449","13":"449.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-27 07:56:00","3":"2022-05-27 08:38:00","4":"System Operations","5":"4027","6":"Arizona","7":"Yuma","8":"2022-05-29 16:30:00","9":"1.25","10":"2022-05-29 17:45:00","11":"222","12":"1890","13":"1222.8000","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4005","6":"Arizona","7":"Coconino","8":"2022-10-15 20:00:00","9":"2.50","10":"2022-10-15 22:30:00","11":"371","12":"371","13":"371.0000","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4005","6":"Arizona","7":"Coconino","8":"2022-10-16 16:30:00","9":"3.75","10":"2022-10-16 20:15:00","11":"1098","12":"1100","13":"1099.7333","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-10-15 14:30:00","9":"41.25","10":"2022-10-17 07:45:00","11":"345","12":"15016","13":"2210.5515","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-10-17 13:15:00","9":"1.25","10":"2022-10-17 14:30:00","11":"3533","12":"3533","13":"3533.0000","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-10-17 16:30:00","9":"2.25","10":"2022-10-17 18:45:00","11":"1033","12":"4002","13":"2433.7778","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-10-18 00:30:00","9":"1.00","10":"2022-10-18 01:30:00","11":"553","12":"565","13":"558.5000","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4017","6":"Arizona","7":"Navajo","8":"2022-10-16 12:00:00","9":"5.25","10":"2022-10-16 17:15:00","11":"591","12":"1285","13":"991.7619","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4017","6":"Arizona","7":"Navajo","8":"2022-10-17 21:30:00","9":"2.00","10":"2022-10-17 23:30:00","11":"502","12":"963","13":"559.6250","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2022-10-16 22:45:00","9":"0.75","10":"2022-10-16 23:30:00","11":"437","12":"437","13":"437.0000","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2022-10-18 04:15:00","9":"1.50","10":"2022-10-18 05:45:00","11":"236","12":"271","13":"247.6667","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2022-10-15 20:15:00","9":"2.00","10":"2022-10-15 22:15:00","11":"1051","12":"1384","13":"1304.5000","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2022-10-16 00:30:00","9":"1.75","10":"2022-10-16 02:15:00","11":"827","12":"2628","13":"1922.4286","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2022-10-16 04:45:00","9":"0.75","10":"2022-10-16 05:30:00","11":"4314","12":"6362","13":"5671.0000","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2022-10-16 09:15:00","9":"3.50","10":"2022-10-16 12:45:00","11":"533","12":"555","13":"546.0000","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2022-10-17 14:15:00","9":"1.75","10":"2022-10-17 16:00:00","11":"561","12":"561","13":"561.0000","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4025","6":"Arizona","7":"Yavapai","8":"2022-10-15 23:15:00","9":"0.50","10":"2022-10-15 23:45:00","11":"1278","12":"1278","13":"1278.0000","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4025","6":"Arizona","7":"Yavapai","8":"2022-10-16 23:15:00","9":"6.00","10":"2022-10-17 05:15:00","11":"263","12":"1892","13":"340.2500","14":"System Operations"},{"1":"Arizona","2":"2022-10-15 09:52:00","3":"2022-10-15 10:23:00","4":"System Operations","5":"4027","6":"Arizona","7":"Yuma","8":"2022-10-15 16:00:00","9":"0.50","10":"2022-10-15 16:30:00","11":"347","12":"347","13":"347.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4003","6":"Arizona","7":"Cochise","8":"2022-05-18 13:45:00","9":"1.25","10":"2022-05-18 15:00:00","11":"386","12":"386","13":"386.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-16 19:15:00","9":"0.50","10":"2022-05-16 19:45:00","11":"1723","12":"2100","13":"1911.5000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-16 21:00:00","9":"1.00","10":"2022-05-16 22:00:00","11":"1009","12":"1044","13":"1026.5000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-16 22:30:00","9":"0.50","10":"2022-05-16 23:00:00","11":"273","12":"273","13":"273.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-17 03:00:00","9":"0.25","10":"2022-05-17 03:15:00","11":"262","12":"262","13":"262.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-17 05:15:00","9":"1.50","10":"2022-05-17 06:45:00","11":"1352","12":"1427","13":"1395.5000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-17 11:15:00","9":"2.00","10":"2022-05-17 13:15:00","11":"492","12":"1733","13":"985.6250","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-17 15:15:00","9":"0.25","10":"2022-05-17 15:30:00","11":"201","12":"201","13":"201.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-17 15:45:00","9":"1.00","10":"2022-05-17 16:45:00","11":"581","12":"645","13":"610.2500","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-17 20:15:00","9":"1.00","10":"2022-05-17 21:15:00","11":"989","12":"1006","13":"997.5000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-18 14:15:00","9":"0.25","10":"2022-05-18 14:30:00","11":"780","12":"780","13":"780.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-18 18:15:00","9":"1.00","10":"2022-05-18 19:15:00","11":"1006","12":"1019","13":"1012.5000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-18 20:45:00","9":"1.25","10":"2022-05-18 22:00:00","11":"600","12":"2281","13":"1447.2000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-18 22:30:00","9":"1.75","10":"2022-05-19 00:15:00","11":"1002","12":"1407","13":"1088.7143","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-19 15:15:00","9":"0.25","10":"2022-05-19 15:30:00","11":"203","12":"203","13":"203.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-19 15:45:00","9":"0.75","10":"2022-05-19 16:30:00","11":"203","12":"671","13":"361.6667","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2022-05-19 17:00:00","9":"0.25","10":"2022-05-19 17:15:00","11":"1429","12":"1429","13":"1429.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2022-05-16 22:45:00","9":"7.00","10":"2022-05-17 05:45:00","11":"240","12":"5547","13":"3238.8571","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2022-05-18 12:45:00","9":"1.50","10":"2022-05-18 14:15:00","11":"2090","12":"2987","13":"2688.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2022-05-18 21:00:00","9":"1.00","10":"2022-05-18 22:00:00","11":"2341","12":"2341","13":"2341.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2022-05-16 19:15:00","9":"0.25","10":"2022-05-16 19:30:00","11":"268","12":"268","13":"268.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2022-05-18 02:00:00","9":"0.50","10":"2022-05-18 02:30:00","11":"1033","12":"1033","13":"1033.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2022-05-18 21:00:00","9":"0.75","10":"2022-05-18 21:45:00","11":"237","12":"237","13":"237.0000","14":"System Operations"},{"1":"Arizona","2":"2022-05-16 16:03:00","3":"2022-05-16 19:32:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2022-05-19 12:30:00","9":"1.00","10":"2022-05-19 13:30:00","11":"986","12":"986","13":"986.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4005","6":"Arizona","7":"Coconino","8":"2023-04-03 22:30:00","9":"2.50","10":"2023-04-04 01:00:00","11":"445","12":"467","13":"456.0000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4005","6":"Arizona","7":"Coconino","8":"2023-04-04 01:15:00","9":"1.50","10":"2023-04-04 02:45:00","11":"200","12":"205","13":"203.3333","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4007","6":"Arizona","7":"Gila","8":"2023-04-05 16:15:00","9":"4.25","10":"2023-04-05 20:30:00","11":"461","12":"552","13":"468.0000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-04 01:15:00","9":"0.25","10":"2023-04-04 01:30:00","11":"233","12":"233","13":"233.0000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-04 02:45:00","9":"0.50","10":"2023-04-04 03:15:00","11":"205","12":"205","13":"205.0000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-04 16:45:00","9":"1.50","10":"2023-04-04 18:15:00","11":"290","12":"371","13":"330.8333","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-04 19:30:00","9":"0.25","10":"2023-04-04 19:45:00","11":"213","12":"213","13":"213.0000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-04 20:00:00","9":"0.50","10":"2023-04-04 20:30:00","11":"1331","12":"1332","13":"1331.5000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-05 09:15:00","9":"1.25","10":"2023-04-05 10:30:00","11":"977","12":"979","13":"977.8000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-05 15:30:00","9":"3.50","10":"2023-04-05 19:00:00","11":"208","12":"381","13":"310.0714","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4015","6":"Arizona","7":"Mohave","8":"2023-04-05 06:45:00","9":"2.25","10":"2023-04-05 09:00:00","11":"1491","12":"1491","13":"1491.0000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4019","6":"Arizona","7":"Pima","8":"2023-04-04 19:45:00","9":"1.25","10":"2023-04-04 21:00:00","11":"360","12":"1506","13":"589.2000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4019","6":"Arizona","7":"Pima","8":"2023-04-06 00:00:00","9":"1.00","10":"2023-04-06 01:00:00","11":"629","12":"794","13":"752.7500","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4021","6":"Arizona","7":"Pinal","8":"2023-04-03 21:45:00","9":"0.75","10":"2023-04-03 22:30:00","11":"667","12":"667","13":"667.0000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4021","6":"Arizona","7":"Pinal","8":"2023-04-04 01:15:00","9":"4.00","10":"2023-04-04 05:15:00","11":"240","12":"448","13":"357.0000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4021","6":"Arizona","7":"Pinal","8":"2023-04-04 08:00:00","9":"0.75","10":"2023-04-04 08:45:00","11":"240","12":"240","13":"240.0000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4021","6":"Arizona","7":"Pinal","8":"2023-04-04 18:00:00","9":"0.50","10":"2023-04-04 18:30:00","11":"448","12":"448","13":"448.0000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4021","6":"Arizona","7":"Pinal","8":"2023-04-05 03:15:00","9":"1.75","10":"2023-04-05 05:00:00","11":"1227","12":"1227","13":"1227.0000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4021","6":"Arizona","7":"Pinal","8":"2023-04-06 16:45:00","9":"1.25","10":"2023-04-06 18:00:00","11":"269","12":"271","13":"269.4000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4025","6":"Arizona","7":"Yavapai","8":"2023-04-03 20:00:00","9":"5.75","10":"2023-04-04 01:45:00","11":"218","12":"2537","13":"1246.4348","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4025","6":"Arizona","7":"Yavapai","8":"2023-04-05 15:45:00","9":"1.50","10":"2023-04-05 17:15:00","11":"378","12":"727","13":"500.3333","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-03 18:50:00","3":"2023-04-03 19:26:00","4":"Transmission Interruption","5":"4027","6":"Arizona","7":"Yuma","8":"2023-04-04 09:15:00","9":"0.25","10":"2023-04-04 09:30:00","11":"905","12":"905","13":"905.0000","14":"Equipment Issue"},{"1":"Arizona","2":"2023-04-15 16:30:00","3":"2023-04-15 17:18:00","4":"System Operations","5":"4005","6":"Arizona","7":"Coconino","8":"2023-04-15 23:30:00","9":"1.75","10":"2023-04-16 01:15:00","11":"320","12":"320","13":"320.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-15 16:30:00","3":"2023-04-15 17:18:00","4":"System Operations","5":"4007","6":"Arizona","7":"Gila","8":"2023-04-18 00:45:00","9":"1.50","10":"2023-04-18 02:15:00","11":"1468","12":"1478","13":"1476.3333","14":"System Operations"},{"1":"Arizona","2":"2023-04-15 16:30:00","3":"2023-04-15 17:18:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-16 01:15:00","9":"0.25","10":"2023-04-16 01:30:00","11":"1059","12":"1059","13":"1059.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-15 16:30:00","3":"2023-04-15 17:18:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-16 09:15:00","9":"2.75","10":"2023-04-16 12:00:00","11":"669","12":"691","13":"679.4545","14":"System Operations"},{"1":"Arizona","2":"2023-04-15 16:30:00","3":"2023-04-15 17:18:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-18 03:00:00","9":"2.00","10":"2023-04-18 05:00:00","11":"803","12":"1890","13":"1088.2500","14":"System Operations"},{"1":"Arizona","2":"2023-04-15 16:30:00","3":"2023-04-15 17:18:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-18 11:30:00","9":"1.25","10":"2023-04-18 12:45:00","11":"293","12":"293","13":"293.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-15 16:30:00","3":"2023-04-15 17:18:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2023-04-16 09:00:00","9":"1.75","10":"2023-04-16 10:45:00","11":"653","12":"1592","13":"1457.8571","14":"System Operations"},{"1":"Arizona","2":"2023-04-15 16:30:00","3":"2023-04-15 17:18:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2023-04-17 14:00:00","9":"2.25","10":"2023-04-17 16:15:00","11":"231","12":"290","13":"280.6667","14":"System Operations"},{"1":"Arizona","2":"2023-04-15 16:30:00","3":"2023-04-15 17:18:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2023-04-16 23:30:00","9":"2.00","10":"2023-04-17 01:30:00","11":"2094","12":"2094","13":"2094.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-15 16:30:00","3":"2023-04-15 17:18:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2023-04-17 16:00:00","9":"2.75","10":"2023-04-17 18:45:00","11":"316","12":"338","13":"334.5455","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-25 10:45:00","9":"0.75","10":"2023-04-25 11:30:00","11":"217","12":"842","13":"633.6667","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-25 15:45:00","9":"0.25","10":"2023-04-25 16:00:00","11":"1022","12":"1022","13":"1022.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-25 17:15:00","9":"0.25","10":"2023-04-25 17:30:00","11":"725","12":"725","13":"725.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-26 06:45:00","9":"1.00","10":"2023-04-26 07:45:00","11":"724","12":"724","13":"724.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-26 19:45:00","9":"0.75","10":"2023-04-26 20:30:00","11":"3087","12":"3131","13":"3102.3333","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-27 17:30:00","9":"1.25","10":"2023-04-27 18:45:00","11":"943","12":"951","13":"948.2000","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-28 06:15:00","9":"0.75","10":"2023-04-28 07:00:00","11":"688","12":"688","13":"688.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-28 07:45:00","9":"0.25","10":"2023-04-28 08:00:00","11":"764","12":"764","13":"764.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4013","6":"Arizona","7":"Maricopa","8":"2023-04-28 11:00:00","9":"1.25","10":"2023-04-28 12:15:00","11":"898","12":"912","13":"906.6000","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4015","6":"Arizona","7":"Mohave","8":"2023-04-25 21:45:00","9":"0.50","10":"2023-04-25 22:15:00","11":"1062","12":"1062","13":"1062.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4015","6":"Arizona","7":"Mohave","8":"2023-04-27 02:45:00","9":"0.25","10":"2023-04-27 03:00:00","11":"230","12":"230","13":"230.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4019","6":"Arizona","7":"Pima","8":"2023-04-27 19:45:00","9":"3.75","10":"2023-04-27 23:30:00","11":"381","12":"1787","13":"489.2667","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2023-04-26 14:30:00","9":"1.75","10":"2023-04-26 16:15:00","11":"1142","12":"1150","13":"1145.4286","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4021","6":"Arizona","7":"Pinal","8":"2023-04-27 03:15:00","9":"0.50","10":"2023-04-27 03:45:00","11":"1514","12":"1520","13":"1517.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4025","6":"Arizona","7":"Yavapai","8":"2023-04-25 12:00:00","9":"0.50","10":"2023-04-25 12:30:00","11":"315","12":"315","13":"315.0000","14":"System Operations"},{"1":"Arizona","2":"2023-04-25 10:33:00","3":"2023-04-25 15:43:00","4":"System Operations","5":"4025","6":"Arizona","7":"Yavapai","8":"2023-04-27 02:30:00","9":"0.50","10":"2023-04-27 03:00:00","11":"780","12":"780","13":"780.0000","14":"System Operations"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="some-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="some-analysis">Some analysis:</h2>
+<section id="common-cause-of-outages" class="level4">
+<h4 class="anchored" data-anchor-id="common-cause-of-outages">Common cause of outages</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode r code-annotation-code code-with-copy"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a>outages <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-5-2"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-5-3"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_events =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(total_events <span class="sc">|&gt;</span> <span class="fu">desc</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["event_category"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total_events"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"System Operations","2":"123"},{"1":"Weather","2":"87"},{"1":"Potential or Actual Physical Interference","2":"26"},{"1":"Equipment Issue","2":"22"},{"1":"Generation Inedequacy","2":"11"},{"1":"Fuel Supply Issue","2":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+</section>
+<section id="cause-of-longest-outages" class="level4">
+<h4 class="anchored" data-anchor-id="cause-of-longest-outages">Cause of longest outages</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode r code-annotation-code code-with-copy"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a>outages <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-6-2"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span> (event_category) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-6-3"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_outage_length =</span> <span class="fu">mean</span>(duration), <span class="at">total_occurences =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-6-4"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(avg_outage_length <span class="sc">|&gt;</span> <span class="fu">desc</span>(), total_occurences)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["event_category"],"name":[1],"type":["chr"],"align":["left"]},{"label":["avg_outage_length"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["total_occurences"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"Weather","2":"2.706897","3":"87"},{"1":"Generation Inedequacy","2":"2.250000","3":"11"},{"1":"System Operations","2":"2.079268","3":"123"},{"1":"Equipment Issue","2":"1.681818","3":"22"},{"1":"Potential or Actual Physical Interference","2":"1.173077","3":"26"},{"1":"Fuel Supply Issue","2":"1.100000","3":"5"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
