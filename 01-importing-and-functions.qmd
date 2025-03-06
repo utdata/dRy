@@ -26,6 +26,8 @@ library(scales)
 2. `#| message: false`  hides the output messages that usually appear when you import libraries.
 3. Sometimes you do something that creates a warning in R, but it doesn't always affect the output of the code. `#| warning: false` hides those warnings. We will talk about this more later.
 
+
+
 ## Creating a list of file names
 
 ```{r}
@@ -45,6 +47,8 @@ taylor_files_list
 2. The first argument is the path to find the files. In this case, we want to go into the directory (folder) called `data-proccessed-taylor`.
 3. `pattern` is an optional argument that takes a regular expression to define which specific files you want. In this case we want all files that contain `.csv`.
 4. `full.names = TRUE` gets the full path name rather than just the files name. Let's change this and see what happens...
+
+
 
 ## Reading in and combining the files
 
@@ -69,6 +73,8 @@ taylor_songs
 5. And then just to make everything look nice and uniform we use `clean_names()` to change the column names. 
 6. Let's add `set_names(basename)` by uncommenting it and add `names_to = "source"` inside `list_rbind()`. Look at the output. It creates a column that shows which file each row came from. This can be really helpful when you maybe don't have a column that has the date or year, but the file name does contain it. You can then extract it from that column.
 
+
+
 ## OYO: Importing multiple files at once - Power Outages
 
 Now, try this on your own with the power outage data.
@@ -78,28 +84,21 @@ Instructions: The files you want to import are all in a folder called `"data-pro
 ```{r}
 #| label: import-oyo
 
-power_files_list <- list.files(
-  "data-processed-power",
-  pattern = ".csv",
-  full.names = TRUE
-)
-
-power_files_list
+# power_files_list <- 
+#   
+# power_files_list
 ```
 
 ```{r}
 #| label: combine-files-oyo
 #| message: false
 
-power_outages <-  power_files_list |> 
-  map(
-    read_csv
-  ) |> list_rbind() |> 
-  clean_names()
-
-
-power_outages |> glimpse()
+# power_outages <-  
+# 
+# power_outages |> glimpse()
 ```
+
+
 
 # Section 2: Creating your own function
 
@@ -115,6 +114,8 @@ taylor_songs |> head(50)
 
 There are a lot of columns that describe different aspects of the music, but two that are obvious and stand our are popularity and song length. Do Taylor's songs have any sort of correlation in popularity to length of the song? Let's graph it to find out. The data creator has told us that popularity is on a scale of 1-100. 
 
+
+
 ## Create a plot
 
 ```{r}
@@ -126,6 +127,8 @@ ggplot(taylor_songs, aes(
 *For our Taylor Swift fans, can you tell which song is all the way on the right?*
 
 What if we want to add labels and scale the axes differently? And what if we wanted to make the same graph for multiple albums? That would require a lot of re-coding things we've already typed out before (or a lot of copy and pasting). Rather than rewriting this the same methods over and over again, we can make a function that does it for us. 
+
+
 
 ## Make our own function
 
@@ -150,7 +153,6 @@ Now that we've built our function we can apply it to whatever album(s) we want. 
 red <- taylor_songs |> filter(album |> str_detect("Red"))
 
 red
-                      
 ```
 
 Now we can apply our graphing function to the `red` object. 
@@ -162,6 +164,8 @@ graphing_taylor(red)
 *And again we see our "All Too Well (10 minute version)" as a big outlier.*
 
 Now try it on your own.
+
+
 
 ## OYO: Creating your own function
 

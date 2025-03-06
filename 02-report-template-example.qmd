@@ -19,6 +19,7 @@ What does all of this YAML mean? \
 * **params**: what we're filtering for. 
 * **echo**: 'true' repeats all code chunks in render file, 'false' excludes them. 
 
+
 ## Set up
 
 ```{r}
@@ -34,6 +35,7 @@ library(janitor)
 ```
 
 
+
 ### Importing our files 
 
 ```{r}
@@ -44,6 +46,8 @@ taylor_songs <- read_rds("data-processed-taylor/taylor_disco.rds")
 taylor_songs |> glimpse()
 
 ```
+
+
 
 # Defining paramater(s)
 
@@ -75,6 +79,8 @@ songs
 ```
 
 1. Filtering for every instance that album (the column) is equal to albums (the parameter.)
+
+
 
 ## Let's do some analysis!
 
