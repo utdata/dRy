@@ -16,6 +16,8 @@ library(tidyverse)
 library(janitor)
 ```
 
+
+
 ### Import your files
 
 ```{r}
@@ -25,6 +27,8 @@ all_outages <- read_rds("data-processed-power/power_outages.rds")
 
 all_outages |> glimpse()
 ```
+
+
 
 ## OYO: 
 
@@ -43,6 +47,8 @@ States: `r params$state`
 # 
 # outages
 ```
+
+
 
 ## Some analysis:
 
