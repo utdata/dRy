@@ -1,7 +1,7 @@
 # dRy - Don't Repeat Yourself in R
-*Karina Kumar, The University of Texas at Austin* \
-*Ella Barnes, The University of Texas at Austin* \
-*Christian McDonald, The University of Texas at Austin* 
+*Karina Kumar, The University of Texas at Austin, karina.kumar.usa@gmail.com* \
+*Ella Barnes, The University of Texas at Austin, ella@barnesclan.us* \
+*Christian McDonald, The University of Texas at Austin, christian.mcdonald@austin.utexas.edu* 
 
 This github repo is for the dRy: Don't Repeat Yourself in R session for NICAR25. This session will cover iteration techniques in R to help maximize your efficiency when doing data analysis. We will cover importing multiple files at once, creating your own unique function, and creating parameterized reports instanteously. 
 
